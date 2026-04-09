@@ -1,6 +1,6 @@
 # nginx-ingress-metadata
 
-Scripts para coleta e análise de metadados de Ingresses Kubernetes, com geração de depara de features NGINX/Kong → APISIX.
+Scripts para coleta e análise de metadados de Ingresses Kubernetes, com geração de mapeamento (depara) de features NGINX/Kong → APISIX.
 
 ## Contexto
 
