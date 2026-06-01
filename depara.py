@@ -236,9 +236,9 @@ NGINX_TO_APISIX: dict[str, dict] = {
     "nginx.ingress.kubernetes.io/proxy-body-size": {
         "funcionalidade": "Tamanho máximo do body da requisição",
         "apisix_plugin": "client-control",
-        "apisix_config": "plugin client-control: max_body_size",
-        "suporte": "completo",
-        "observacoes": "Valores como '0' (ilimitado) ou '10m' precisam conversão de unidade.",
+        "apisix_config": "ApisixPluginConfig com plugin client-control: max_body_size (valor em bytes)",
+        "suporte": "parcial",
+        "observacoes": "Não há annotation equivalente no APISIX IC. Requer criação de ApisixPluginConfig por ingress. Valor precisa conversão: Nm → N*1048576 bytes; '0' = ilimitado.",
     },
     "nginx.ingress.kubernetes.io/proxy-read-timeout": {
         "funcionalidade": "Timeout de leitura do backend",
@@ -545,9 +545,9 @@ NGINX_TO_APISIX: dict[str, dict] = {
     "nginx.ingress.kubernetes.io/auth-realm": {
         "funcionalidade": "Realm exibido no popup de autenticação básica do browser",
         "apisix_plugin": "basic-auth",
-        "apisix_config": "Não há campo realm no plugin basic-auth do APISIX",
-        "suporte": "sem_suporte",
-        "observacoes": "O plugin basic-auth do APISIX não expõe o realm customizado. Impacto cosmético apenas.",
+        "apisix_config": "plugin basic-auth: config.realm: <valor>",
+        "suporte": "completo",
+        "observacoes": "APISIX 3.14.1 suporta o campo realm nativamente no plugin basic-auth (default: 'basic'). Migração direta.",
     },
 
     # -----------------------------------------------------------------------
@@ -960,10 +960,98 @@ def write_depara_json(annotation_usage: dict, output_dir: Path):
     return out
 
 
+RAW_DIR = Path(__file__).parent / "data" / "raw"
+
+NGINX_PREFIXES = ("nginx.ingress.kubernetes.io/", "nginx.org/")
+KONG_PREFIXES = ("konghq.com/", "ingress.kubernetes.io/")
+
+
+def load_raw_usage(raw_dir: Path) -> dict[str, list[tuple[str, str, str, str]]]:
+    """
+    Lê os JSONs brutos e retorna:
+      annotation_key -> [(cluster, namespace, ingress_name, value), ...]
+    """
+    usage: dict[str, list] = {}
+    for path in sorted(raw_dir.glob("*.json")):
+        cluster = path.stem
+        data = json.loads(path.read_text())
+        items = data if isinstance(data, list) else data.get("items", [])
+        for ing in items:
+            if not isinstance(ing, dict):
+                continue
+            ns = ing.get("metadata", {}).get("namespace", "")
+            name = ing.get("metadata", {}).get("name", "")
+            annotations = ing.get("metadata", {}).get("annotations", {}) or {}
+            for key, value in annotations.items():
+                if not (any(key.startswith(p) for p in NGINX_PREFIXES)
+                        or any(key.startswith(p) for p in KONG_PREFIXES)):
+                    continue
+                usage.setdefault(key, []).append((cluster, ns, name, value))
+    return usage
+
+
+def write_detailed_csv(raw_usage: dict, output_dir: Path):
+    """
+    Gera depara_detalhado.csv: uma linha por (annotation, cluster, ingress),
+    com as colunas de mapeamento APISIX agregadas.
+    """
+    output_dir.mkdir(parents=True, exist_ok=True)
+    out = output_dir / "depara_detalhado.csv"
+
+    all_mappings = {**NGINX_TO_APISIX, **KONG_TO_APISIX}
+
+    with open(out, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow([
+            "source_controller",
+            "annotation",
+            "cluster",
+            "namespace",
+            "ingress",
+            "valor",
+            "funcionalidade",
+            "apisix_plugin",
+            "apisix_config",
+            "suporte",
+            "observacoes",
+            "jira_card",
+        ])
+        for key in sorted(raw_usage.keys(), key=lambda k: -len(raw_usage[k])):
+            entries = raw_usage[key]
+            mapping = all_mappings.get(key, {})
+            if any(key.startswith(p) for p in NGINX_PREFIXES):
+                controller = "nginx"
+            else:
+                controller = "kong"
+            suporte = SUPORTE_LABEL.get(mapping.get("suporte", ""), "A PREENCHER")
+            for cluster, ns, name, value in entries:
+                clean_value = value.replace("\n", " ").replace("\r", "")[:120]
+                writer.writerow([
+                    controller,
+                    key,
+                    cluster,
+                    ns,
+                    name,
+                    clean_value,
+                    mapping.get("funcionalidade", "A PREENCHER"),
+                    mapping.get("apisix_plugin", "A PREENCHER"),
+                    mapping.get("apisix_config", "A PREENCHER"),
+                    suporte,
+                    mapping.get("observacoes", ""),
+                    "",  # jira_card — preenchida durante análise dos tickets
+                ])
+
+    total = sum(len(v) for v in raw_usage.values())
+    print(f"Salvo: {out}  ({len(raw_usage)} annotations, {total} linhas)")
+    return out
+
+
 def main():
     parser = argparse.ArgumentParser(description="Gera depara NGINX Ingress -> APISIX")
     parser.add_argument("--features", default=str(FEATURES_REPORT),
                         help="Caminho para features_report.json")
+    parser.add_argument("--raw-dir", default=str(RAW_DIR),
+                        help="Diretório com os JSONs brutos (para depara_detalhado.csv)")
     args = parser.parse_args()
 
     features_path = Path(args.features)
@@ -974,19 +1062,19 @@ def main():
 
     report = json.loads(features_path.read_text())
 
-    # Constrói usage com valores distintos para o CSV (por controller)
-    all_sections = {
-        **report.get("nginx_features", {}),
-        **report.get("kong_features", {}),
-        **report.get("other_annotations", {}),
+    # Constrói usage com contagem real de ingresses (lendo dos JSONs brutos)
+    raw_dir = Path(args.raw_dir)
+    raw_usage = load_raw_usage(raw_dir)
+
+    # Para compatibilidade com write_depara_csv/json: (ingress_id, value)
+    full_usage: dict[str, list[tuple[str, str]]] = {
+        key: [(f"{ns}/{name}", val) for _, ns, name, val in entries]
+        for key, entries in raw_usage.items()
     }
-    full_usage: dict[str, list[tuple[str, str]]] = {}
-    for key, v in all_sections.items():
-        full_usage[key] = [(f"ingress_{i}", val)
-                           for i, val in enumerate(v.get("distinct_values", []))]
 
     write_depara_csv(full_usage, OUTPUT_DIR)
     write_depara_json(full_usage, OUTPUT_DIR)
+    write_detailed_csv(raw_usage, OUTPUT_DIR)
 
 
 if __name__ == "__main__":

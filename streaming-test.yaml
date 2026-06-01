@@ -1,0 +1,123 @@
+# Teste de comportamento proxy-buffering: NGINX vs APISIX
+# Aplicar: kubectl apply -f streaming-test.yaml
+# Remover: kubectl delete -f streaming-test.yaml
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: streaming-test
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: streaming-app
+  namespace: streaming-test
+data:
+  server.py: |
+    from http.server import HTTPServer, BaseHTTPRequestHandler
+    import time
+
+    class StreamHandler(BaseHTTPRequestHandler):
+        def log_message(self, format, *args):
+            pass  # silencia logs de acesso
+
+        def do_GET(self):
+            self.send_response(200)
+            self.send_header('Content-Type', 'text/plain; charset=utf-8')
+            self.send_header('X-Accel-Buffering', 'no')
+            self.end_headers()
+            for i in range(1, 11):
+                self.wfile.write(f"token {i}/10\n".encode())
+                self.wfile.flush()
+                time.sleep(1)
+
+    HTTPServer(('0.0.0.0', 8080), StreamHandler).serve_forever()
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: streaming-app
+  namespace: streaming-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: streaming-app
+  template:
+    metadata:
+      labels:
+        app: streaming-app
+    spec:
+      containers:
+        - name: app
+          image: python:3.11-slim
+          command: ["python3", "/app/server.py"]
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: script
+              mountPath: /app
+      volumes:
+        - name: script
+          configMap:
+            name: streaming-app
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: streaming-app
+  namespace: streaming-test
+spec:
+  selector:
+    app: streaming-app
+  ports:
+    - port: 80
+      targetPort: 8080
+---
+# NGINX — proxy-buffering: off (comportamento de referência)
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: streaming-nginx
+  namespace: streaming-test
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-buffering: "off"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: streaming-test-nginx.rdops.systems
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: streaming-app
+                port:
+                  number: 80
+---
+# APISIX — serverless-pre-function para simular proxy-buffering: off
+apiVersion: apisix.apache.org/v2
+kind: ApisixRoute
+metadata:
+  name: streaming-apisix
+  namespace: streaming-test
+spec:
+  ingressClassName: apisix
+  http:
+    - name: rule1
+      match:
+        hosts:
+          - streaming-test-apisix.rdops.systems
+        paths:
+          - /*
+      backends:
+        - serviceName: streaming-app
+          servicePort: 80
+      plugins:
+        - name: serverless-pre-function
+          enable: true
+          config:
+            phase: rewrite
+            functions:
+              - "return function(conf, ctx) ngx.var.proxy_buffering = 'off' end"
