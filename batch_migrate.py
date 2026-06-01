@@ -594,8 +594,6 @@ def find_deploy_pipeline(app: str, session: str, env_hint: str = "") -> dict | N
         name_lower = cfg.get("name", "").lower()
         if any(kw in name_lower for kw in skip_kw):
             continue
-        if pipeline_has_apisix_stage(cfg):
-            continue
         has_deploy = any(
             s.get("type") in ("deployManifest", "bakeManifest", "runJob")
             for s in cfg.get("stages", [])
@@ -631,13 +629,16 @@ def pipeline_has_apisix_stage(pipeline: dict) -> bool:
     )
 
 
-def build_apisix_stage(manifest_content: str, last_ref_id: str) -> dict:
+def build_apisix_stage(manifest_content: str, last_ref_id: str, ingress_name: str = "") -> dict:
     """Cria um stage 'Deploy APISIX Ingress' para a pipeline do Spinnaker."""
     import hashlib
     ref_id = f"apisix-{hashlib.md5(manifest_content.encode()).hexdigest()[:6]}"
+    # Suporta manifests multi-documento (Ingress + ApisixPluginConfig)
+    docs = [d for d in yaml.safe_load_all(manifest_content) if d is not None]
+    stage_name = f"Deploy APISIX Ingress ({ingress_name})" if ingress_name else "Deploy APISIX Ingress"
     return {
         "type": "deployManifest",
-        "name": "Deploy APISIX Ingress",
+        "name": stage_name,
         "refId": ref_id,
         "requisiteStageRefIds": [last_ref_id],
         "account": "k8s-staging",
@@ -645,7 +646,7 @@ def build_apisix_stage(manifest_content: str, last_ref_id: str) -> dict:
         "moniker": {"app": ""},
         "skipExpressionEvaluation": False,
         "source": "text",
-        "manifests": [yaml.safe_load(manifest_content)],
+        "manifests": docs,
         "trafficManagement": {"enabled": False, "options": {"enableTraffic": False}},
     }
 
@@ -655,16 +656,20 @@ def add_apisix_stage_to_pipeline(
     pipeline: dict,
     manifest_content: str,
     session: str,
+    ingress_name: str = "",
 ) -> bool:
     """Adiciona stage APISIX à pipeline e salva via POST /pipelines."""
-    if pipeline_has_apisix_stage(pipeline):
-        print("    [Spinnaker] Stage APISIX já existe nesta pipeline — pulando")
+    import hashlib
+    ref_id = f"apisix-{hashlib.md5(manifest_content.encode()).hexdigest()[:6]}"
+    stages = pipeline.get("stages", [])
+
+    # Verifica se já existe um stage com este refId específico
+    if any(s.get("refId") == ref_id for s in stages):
+        print(f"    [Spinnaker] Stage já existe (refId={ref_id}) — pulando")
         return True
 
-    stages = pipeline.get("stages", [])
     last_ref = stages[-1]["refId"] if stages else "1"
-
-    new_stage = build_apisix_stage(manifest_content, last_ref)
+    new_stage = build_apisix_stage(manifest_content, last_ref, ingress_name)
     pipeline["stages"] = stages + [new_stage]
 
     try:
@@ -828,7 +833,7 @@ def migrate_ingress(
                 pipeline_name = pipeline.get("name", "?")
                 last_exec = get_last_execution(spinnaker_app, pipeline["id"], spinnaker_session)
 
-                if add_apisix_stage_to_pipeline(spinnaker_app, pipeline, apisix_content, spinnaker_session):
+                if add_apisix_stage_to_pipeline(spinnaker_app, pipeline, apisix_content, spinnaker_session, ingress_name=gw_name):
                     result["actions"].append(f"Stage Spinnaker adicionado: {spinnaker_app}/{pipeline_name}")
 
                 if not is_recent_execution(last_exec) and do_apply:
