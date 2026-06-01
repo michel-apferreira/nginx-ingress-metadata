@@ -501,40 +501,53 @@ def kubectl_apply(manifest_path: Path, context: str) -> bool:
     return True
 
 
-def verify_apisix_route(gw_name: str, namespace: str, context: str, timeout: int = 30) -> bool:
-    """Verifica se o Service correspondente ao ingress aparece no APISIX."""
+def verify_apisix_route(gw_name: str, namespace: str, context: str, timeout: int = 60) -> bool:
+    """Verifica se o host do ingress aparece nos Services do APISIX via port-forward local."""
+    import subprocess as _sp
+
     admin_key = get_apisix_admin_key(context)
     if not admin_key:
         print("    [AVISO] Não foi possível obter admin key — pulando verificação")
         return True
 
-    pod = get_apisix_pod(context)
-    if not pod:
-        print("    [AVISO] APISIX pod não encontrado — pulando verificação")
+    # Resolve os hosts do ingress para usar na verificação
+    r = kubectl(
+        ["get", "ingress", gw_name, "-n", namespace,
+         "-o", "jsonpath={.spec.rules[*].host}"],
+        context, check=False,
+    )
+    expected_hosts = set(r.stdout.strip().split()) if r.returncode == 0 else set()
+    if not expected_hosts:
+        print("    [AVISO] Não foi possível obter hosts do ingress — pulando verificação")
         return True
 
-    # Busca services — host do ingress aparece no Service object do APISIX IC
-    deadline = time.time() + timeout
-    while time.time() < deadline:
-        r = kubectl(
-            ["exec", "-n", APISIX_NS, pod, "--",
-             "curl", "-s",
-             f"http://127.0.0.1:9180/apisix/admin/services",
-             "-H", f"X-API-KEY: {admin_key}"],
-            context, check=False,
-        )
-        if r.returncode == 0:
+    # Port-forward para o admin do APISIX
+    pf = _sp.Popen(
+        ["kubectl", "--context", context, "port-forward", "-n", APISIX_NS,
+         "svc/apisix-admin", "19180:9180"],
+        stdout=_sp.DEVNULL, stderr=_sp.DEVNULL,
+    )
+    time.sleep(2)
+
+    try:
+        deadline = time.time() + timeout
+        while time.time() < deadline:
             try:
-                data = json.loads(r.stdout)
-                items = data.get("list", [])
-                for item in items:
-                    svc_id = item.get("value", {}).get("id", "")
-                    # IC 2.x: service ID contém namespace_ingressname
-                    if f"{namespace}_{gw_name}" in svc_id:
+                r2 = _sp.run(
+                    ["curl", "-s", "http://127.0.0.1:19180/apisix/admin/services",
+                     "-H", f"X-API-KEY: {admin_key}"],
+                    capture_output=True, text=True, timeout=10,
+                )
+                data = json.loads(r2.stdout)
+                for item in data.get("list", []):
+                    hosts = set(item.get("value", {}).get("hosts", []))
+                    if hosts & expected_hosts:
                         return True
-            except (json.JSONDecodeError, KeyError):
+            except (json.JSONDecodeError, _sp.TimeoutExpired):
                 pass
-        time.sleep(3)
+            time.sleep(5)
+    finally:
+        pf.terminate()
 
     return False
 
