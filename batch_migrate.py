@@ -576,8 +576,12 @@ def _spinnaker_req(path: str, session: str, method: str = "GET", body: dict | No
         raise RuntimeError(f"URLError {url}: {e.reason}") from e
 
 
-def find_deploy_pipeline(app: str, session: str) -> dict | None:
-    """Retorna a pipeline principal de deploy da aplicação."""
+def find_deploy_pipeline(app: str, session: str, env_hint: str = "") -> dict | None:
+    """Retorna a pipeline de deploy do ambiente correspondente ao cluster.
+
+    env_hint: string que deve aparecer no nome da pipeline (ex: 'staging').
+    Quando informado, filtra pipelines cujo nome contém env_hint.
+    """
     configs = _spinnaker_req(f"/applications/{app}/pipelineConfigs", session)
     if not configs:
         return None
@@ -589,18 +593,22 @@ def find_deploy_pipeline(app: str, session: str) -> dict | None:
         name_lower = cfg.get("name", "").lower()
         if any(kw in name_lower for kw in skip_kw):
             continue
-        # Prefere pipelines com stages de deploy
+        if pipeline_has_apisix_stage(cfg):
+            continue
         has_deploy = any(
             s.get("type") in ("deployManifest", "bakeManifest", "runJob")
             for s in cfg.get("stages", [])
         )
-        candidates.append((has_deploy, cfg))
+        # Preferência: pipeline cujo nome contém o env_hint
+        env_match = bool(env_hint and env_hint.lower() in name_lower)
+        candidates.append((env_match, has_deploy, cfg))
 
     if not candidates:
         return None
 
-    candidates.sort(key=lambda x: (not x[0], x[1].get("name", "")))
-    return candidates[0][1]
+    # Ordena: env_match desc, has_deploy desc, nome asc
+    candidates.sort(key=lambda x: (not x[0], not x[1], x[2].get("name", "")))
+    return candidates[0][2]
 
 
 def get_last_execution(app: str, pipeline_id: str, session: str) -> dict | None:
@@ -710,6 +718,16 @@ def load_ingresses_from_raw(cluster: str, namespace: str) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 SKIP_DEPLOY_TYPES = {"spinnaker+helm-rails", "spinnaker+helm-rdsm", "spinnaker+helm-externo"}
+
+
+def _env_from_cluster(cluster: str) -> str:
+    """Extrai o ambiente (staging/production/etc) a partir do nome do cluster."""
+    name = cluster.lower()
+    if "staging" in name or "stg" in name:
+        return "staging"
+    if "prod" in name or "prd" in name:
+        return "production"
+    return ""
 RECENT_EXEC_DAYS  = 90  # considera "sem execução recente" se última foi há mais de X dias
 
 
@@ -804,7 +822,7 @@ def migrate_ingress(
     if deploy_type == "spinnaker+manifesto" and spinnaker_session and spinnaker_app:
         # Tentar adicionar stage na pipeline
         try:
-            pipeline = find_deploy_pipeline(spinnaker_app, spinnaker_session)
+            pipeline = find_deploy_pipeline(spinnaker_app, spinnaker_session, env_hint=_env_from_cluster(cluster))
             if pipeline:
                 pipeline_name = pipeline.get("name", "?")
                 last_exec = get_last_execution(spinnaker_app, pipeline["id"], spinnaker_session)
