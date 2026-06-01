@@ -423,8 +423,9 @@ def save_manifests(
 RAILS_HELM_LABEL = "resource_kind"
 RDSM_HELM_LABEL  = "app_group"
 SUPPORT_PIPELINE_KEYWORDS = {
-    "external-secret", "externalsecret", "cloudsql", "backup",
-    "cronjob", "rollback", "canary", "destroy", "teardown",
+    "external-secret", "externalsecret", "external secrets",
+    "cloudsql", "backup", "cronjob", "rollback", "canary",
+    "destroy", "teardown", "rake", "temporária", "temporaria",
 }
 
 
