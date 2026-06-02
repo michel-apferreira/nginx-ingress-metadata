@@ -598,8 +598,13 @@ def find_deploy_pipeline(app: str, session: str, env_hint: str = "") -> dict | N
             s.get("type") in ("deployManifest", "bakeManifest", "runJob")
             for s in cfg.get("stages", [])
         )
-        # Preferência: pipeline cujo nome contém o env_hint
-        env_match = bool(env_hint and env_hint.lower() in name_lower)
+        # Preferência: pipeline cujo nome contém o env_hint ou sinônimos (staging/stg)
+        env_hints = {env_hint.lower()} if env_hint else set()
+        if "staging" in env_hints:
+            env_hints.add("stg")
+        elif "stg" in env_hints:
+            env_hints.add("staging")
+        env_match = bool(env_hints and any(h in name_lower for h in env_hints))
         candidates.append((env_match, has_deploy, cfg))
 
     if not candidates:
