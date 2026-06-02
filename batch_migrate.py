@@ -629,25 +629,31 @@ def pipeline_has_apisix_stage(pipeline: dict) -> bool:
     )
 
 
-def build_apisix_stage(manifest_content: str, last_ref_id: str, ingress_name: str = "") -> dict:
+def build_apisix_stage(manifest_content: str, last_ref_id: str, ingress_name: str = "", app: str = "") -> dict:
     """Cria um stage 'Deploy APISIX Ingress' para a pipeline do Spinnaker."""
     import hashlib
     ref_id = f"apisix-{hashlib.md5(manifest_content.encode()).hexdigest()[:6]}"
     # Suporta manifests multi-documento (Ingress + ApisixPluginConfig)
     docs = [d for d in yaml.safe_load_all(manifest_content) if d is not None]
     stage_name = f"Deploy APISIX Ingress ({ingress_name})" if ingress_name else "Deploy APISIX Ingress"
+    description = (
+        "Stage adicionado automaticamente pela equipe de SRE Foundation durante os testes de migração do NGINX Ingress para o APISIX.\n\n"
+        "Este stage cria um Ingress paralelo com `ingressClassName: apisix` e não altera nem interfere nos demais stages da pipeline.\n\n"
+        "O tráfego continua sendo roteado normalmente pelo NGINX, enquanto ambos os Ingresses coexistem no cluster."
+    )
     return {
         "type": "deployManifest",
         "name": stage_name,
+        "description": description,
         "refId": ref_id,
         "requisiteStageRefIds": [last_ref_id],
         "account": "k8s-staging",
         "cloudProvider": "kubernetes",
-        "moniker": {"app": ""},
+        "moniker": {"app": app},
         "skipExpressionEvaluation": False,
         "source": "text",
         "manifests": docs,
-        "trafficManagement": {"enabled": False, "options": {"enableTraffic": False}},
+        "trafficManagement": {"enabled": False, "options": {"enableTraffic": False, "services": []}},
     }
 
 
@@ -669,7 +675,7 @@ def add_apisix_stage_to_pipeline(
         return True
 
     last_ref = stages[-1]["refId"] if stages else "1"
-    new_stage = build_apisix_stage(manifest_content, last_ref, ingress_name)
+    new_stage = build_apisix_stage(manifest_content, last_ref, ingress_name, app)
     pipeline["stages"] = stages + [new_stage]
 
     try:
@@ -685,35 +691,60 @@ def add_apisix_stage_to_pipeline(
 # Leitura dos dados coletados
 # ---------------------------------------------------------------------------
 
-def load_ingresses_from_raw(cluster: str, namespace: str) -> list[dict]:
+def load_ingresses_from_raw(cluster: str, namespace: str, kubectl_context: str = "") -> list[dict]:
     candidates = list(RAW_DIR.glob(f"*__{cluster}.json")) or list(RAW_DIR.glob(f"*{cluster}*.json"))
-    if not candidates:
-        raise FileNotFoundError(
-            f"Nenhum arquivo encontrado para cluster '{cluster}' em {RAW_DIR}. "
-            "Execute: python3 collect.py --cluster <cluster>"
-        )
 
     ingresses = []
-    for fpath in candidates:
-        data = json.loads(fpath.read_text())
-        items = data if isinstance(data, list) else data.get("items", [])
-        for item in items:
-            meta = item.get("metadata", {})
+    ns_found_in_raw = False
+
+    if candidates:
+        for fpath in candidates:
+            data = json.loads(fpath.read_text())
+            items = data if isinstance(data, list) else data.get("items", [])
+            for item in items:
+                meta = item.get("metadata", {})
+                spec = item.get("spec", {})
+                ns     = meta.get("namespace", "")
+                ic     = spec.get("ingressClassName", "")
+                ic_ann = meta.get("annotations", {}).get("kubernetes.io/ingress.class", "")
+
+                if ns != namespace:
+                    continue
+                ns_found_in_raw = True
+                # Pula recursos já migrados para APISIX
+                if ic == "apisix":
+                    continue
+                # Inclui apenas ingresses nginx (spec ou annotation)
+                is_nginx = ic == "nginx" or ic_ann == "nginx"
+                if not is_nginx:
+                    continue
+
+                ingresses.append(item)
+
+    if not ns_found_in_raw:
+        # Namespace não está no raw data — fallback via kubectl
+        if not kubectl_context:
+            raise FileNotFoundError(
+                f"Namespace '{namespace}' não encontrado no raw data e kubectl_context não fornecido. "
+                "Execute: python3 collect.py --cluster <cluster> ou passe --kubectl-context"
+            )
+        print(f"[INFO] Namespace '{namespace}' não está no raw data — coletando via kubectl...")
+        cmd = ["kubectl", "--context", kubectl_context, "get", "ingress", "-n", namespace, "-o", "json"]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        if result.returncode != 0:
+            print(f"[WARN] kubectl falhou para namespace '{namespace}': {result.stderr.strip()}")
+            return []
+        live_data = json.loads(result.stdout)
+        for item in live_data.get("items", []):
             spec = item.get("spec", {})
-            ns     = meta.get("namespace", "")
+            meta = item.get("metadata", {})
             ic     = spec.get("ingressClassName", "")
             ic_ann = meta.get("annotations", {}).get("kubernetes.io/ingress.class", "")
-
-            if ns != namespace:
-                continue
-            # Pula recursos já migrados para APISIX
             if ic == "apisix":
                 continue
-            # Inclui apenas ingresses nginx (spec ou annotation)
             is_nginx = ic == "nginx" or ic_ann == "nginx"
             if not is_nginx:
                 continue
-
             ingresses.append(item)
 
     return ingresses
@@ -951,10 +982,10 @@ def main():
         apply_only_mode(args.cluster, args.namespace, helm_apisix_dir, kubectl_context, do_verify)
         return
 
-    # Carregar ingresses do JSON coletado
+    # Carregar ingresses do JSON coletado (com fallback kubectl para namespaces novos)
     print(f"\nCarregando ingresses do cluster '{args.cluster}', namespace '{args.namespace}'...")
     try:
-        ingresses = load_ingresses_from_raw(args.cluster, args.namespace)
+        ingresses = load_ingresses_from_raw(args.cluster, args.namespace, kubectl_context)
     except FileNotFoundError as e:
         print(f"[ERRO] {e}")
         sys.exit(1)
