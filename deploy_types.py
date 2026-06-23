@@ -34,7 +34,7 @@ RDSM_HELM_LABEL  = "app_group"       # exclusivo do chart rdsm  (app_group: web/
 # Pipelines de suporte que não gerenciam o ingress diretamente
 SUPPORT_PIPELINE_KEYWORDS = {
     "external-secret", "externalsecret", "cloudsql", "backup",
-    "cronjob", "rollback", "canary", "destroy", "teardown",
+    "cronjob", "rollback", "destroy", "teardown",
 }
 
 
@@ -53,10 +53,12 @@ def classify(ann: dict, labels: dict) -> tuple[str, str]:
     artifact_name = ann.get("artifact.spinnaker.io/name", "")
     helm_chart = labels.get("helm.sh/chart", "")
 
-    # 1. Chart interno rails/rdsm — verificado antes do Spinnaker
+    # 1. Chart interno rails/rdsm — verificado antes do Spinnaker.
+    # app_group com valor "ingress" é label customizada, não vem do chart rdsm
+    # (no chart rdsm o valor é o componente: web, api, worker, etc.)
     if RAILS_HELM_LABEL in labels:
         return "spinnaker+helm-rails", helm_chart or "rails-style"
-    if RDSM_HELM_LABEL in labels:
+    if RDSM_HELM_LABEL in labels and labels[RDSM_HELM_LABEL] != "ingress":
         return "spinnaker+helm-rdsm", helm_chart or "rdsm-style"
 
     # 2. Spinnaker sem chart interno
@@ -114,6 +116,7 @@ def load_ingresses(raw_dir: Path) -> list[dict]:
                 "spinnaker_cluster": ann.get("moniker.spinnaker.io/cluster", ""),
                 "helm_release": ann.get("meta.helm.sh/release-name", ""),
                 "helm_chart": labels.get("helm.sh/chart", ""),
+                "helm_chart_artifact": "",
                 "evidence": evidence,
                 "hosts": "|".join(hosts),
                 "source_repo": "",
@@ -166,58 +169,137 @@ def _fetch_pipeline_configs(app: str, session: str) -> list[dict]:
         return []
 
 
+def _fetch_last_executions(app: str, session: str, limit: int = 5) -> list[dict]:
+    """Busca últimas execuções para extrair artifacts resolvidos (pipeline templates)."""
+    url = f"{SPINNAKER_GATE}/applications/{app}/pipelines?limit={limit}&expand=false"
+    req = urllib.request.Request(url, headers={"Cookie": f"SESSION={session}"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return json.loads(resp.read())
+    except (urllib.error.URLError, json.JSONDecodeError):
+        return []
+
+
+def _chart_from_executions(executions: list[dict]) -> str:
+    """Extrai nome do chart .tgz dos artifacts resolvidos nas últimas execuções."""
+    for execution in executions:
+        for artifact in execution.get("trigger", {}).get("artifacts", []):
+            chart = _chart_name_from_reference(artifact.get("reference", ""))
+            if chart:
+                return chart
+        for artifact in execution.get("artifacts", []):
+            chart = _chart_name_from_reference(artifact.get("reference", ""))
+            if chart:
+                return chart
+    return ""
+
+
 def _resolve_spel(value: str, app: str) -> str:
     """Substitui expressões SpEL conhecidas pelo valor real em runtime."""
     return value.replace("${execution['application']}", app)
 
 
-def _repo_from_pipeline_configs(configs: list[dict], app: str) -> str:
-    """Extrai o repo de origem da aplicação a partir dos inputArtifacts das pipelines.
+def _chart_name_from_reference(reference: str) -> str:
+    """Extrai o nome do arquivo de chart (ex: rails-0.5.3.tgz) de uma referência de artifact."""
+    if not reference:
+        return ""
+    # último segmento do path que termine em .tgz
+    for segment in reversed(reference.split("/")):
+        if segment.endswith(".tgz"):
+            return segment
+    return ""
 
-    Prioridade:
-      1. Repo de app (não é repo de charts Helm)
-      2. Repo de charts (fallback quando só há charts)
 
-    Busca em stages do tipo bakeManifest e deployManifest via inputArtifacts.
-    Pipelines de suporte (external-secrets, cloudsql, etc.) são ignoradas.
-    Expressões SpEL como ${execution['application']} são resolvidas com o nome do app.
+def _extract_refs_from_any(obj, app: str, refs: list[str]) -> None:
+    """Percorre recursivamente obj e coleta todas as referências GitHub e .tgz."""
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if k == "reference" and isinstance(v, str):
+                refs.append(_resolve_spel(v, app))
+            else:
+                _extract_refs_from_any(v, app, refs)
+    elif isinstance(obj, list):
+        for item in obj:
+            _extract_refs_from_any(item, app, refs)
+
+
+def _repo_and_chart_from_pipeline_configs(configs: list[dict], app: str) -> tuple[str, str]:
+    """Extrai (source_repo, helm_chart_artifact) dos configs de pipeline.
+
+    Busca em inputArtifacts dos stages E em qualquer campo 'reference' do JSON
+    (cobre pipeline templates, expectedArtifacts e variáveis).
     """
+    import re as _re
+
     app_repos: list[str] = []
     chart_repos: list[str] = []
+    chart_artifacts: list[str] = []
 
     for config in configs:
         if _is_support_pipeline(config.get("name", "")):
             continue
 
+        # busca específica em inputArtifacts de stages bakeManifest/deployManifest
         for stage in config.get("stages", []):
             if stage.get("type") not in ("bakeManifest", "deployManifest"):
                 continue
-
             for ia in stage.get("inputArtifacts", []):
                 raw_ref = ia.get("artifact", {}).get("reference", "")
                 ref = _resolve_spel(raw_ref, app)
                 repo = _parse_github_repo(ref)
-                if not repo:
-                    continue
-                if _is_chart_repo(repo):
-                    if repo not in chart_repos:
-                        chart_repos.append(repo)
-                else:
-                    if repo not in app_repos:
-                        app_repos.append(repo)
+                chart = _chart_name_from_reference(ref)
+                if chart and chart not in chart_artifacts:
+                    chart_artifacts.append(chart)
+                if repo:
+                    if _is_chart_repo(repo):
+                        if repo not in chart_repos:
+                            chart_repos.append(repo)
+                    else:
+                        if repo not in app_repos:
+                            app_repos.append(repo)
 
-    if app_repos:
-        return app_repos[0]
-    if chart_repos:
-        return chart_repos[0]
-    return ""
+        # fallback: varre todo o JSON do config procurando referências
+        if not chart_artifacts:
+            all_refs: list[str] = []
+            _extract_refs_from_any(config, app, all_refs)
+            for ref in all_refs:
+                chart = _chart_name_from_reference(ref)
+                if chart and chart not in chart_artifacts:
+                    chart_artifacts.append(chart)
+                repo = _parse_github_repo(ref)
+                if repo:
+                    if _is_chart_repo(repo):
+                        if repo not in chart_repos:
+                            chart_repos.append(repo)
+                    else:
+                        if repo not in app_repos:
+                            app_repos.append(repo)
+
+        # fallback regex: pega .tgz em qualquer string do config (variables, templates)
+        if not chart_artifacts:
+            raw_json = json.dumps(config)
+            for match in _re.findall(r'[\w][\w.\-]*-[\d]+\.[\d]+\.[\d]+\.tgz|[\w][\w.\-]*-[\d]+\.[\d]+\.tgz', raw_json):
+                if match not in chart_artifacts:
+                    chart_artifacts.append(match)
+
+    # prefere versão mais recente quando há múltiplas
+    if len(chart_artifacts) > 1:
+        try:
+            from packaging.version import Version
+            def _ver(s):
+                m = __import__('re').search(r'([\d]+\.[\d]+(?:\.[\d]+)?)', s)
+                return Version(m.group(1)) if m else Version("0")
+            chart_artifacts.sort(key=_ver, reverse=True)
+        except Exception:
+            pass
+
+    source_repo = app_repos[0] if app_repos else (chart_repos[0] if chart_repos else "")
+    helm_chart_artifact = chart_artifacts[0] if chart_artifacts else ""
+    return source_repo, helm_chart_artifact
 
 
 def enrich_with_source_repos(ingresses: list[dict], session: str) -> None:
-    """Consulta a API do Spinnaker e preenche source_repo em cada ingress Spinnaker.
-
-    Faz uma chamada por app (não por ingress) e cacheia o resultado.
-    """
+    """Consulta a API do Spinnaker e preenche source_repo e helm_chart_artifact em cada ingress."""
     spinnaker_apps = {
         i["spinnaker_app"]
         for i in ingresses
@@ -227,18 +309,26 @@ def enrich_with_source_repos(ingresses: list[dict], session: str) -> None:
     total = len(spinnaker_apps)
     print(f"\nConsultando API do Spinnaker para {total} apps...")
 
-    repo_cache: dict[str, str] = {}
+    cache: dict[str, tuple[str, str]] = {}
     for idx, app in enumerate(sorted(spinnaker_apps), 1):
         configs = _fetch_pipeline_configs(app, session)
-        repo = _repo_from_pipeline_configs(configs, app)
-        repo_cache[app] = repo
+        repo, chart = _repo_and_chart_from_pipeline_configs(configs, app)
+        # fallback: busca chart nas últimas execuções (pipeline templates não têm stages)
+        if not chart:
+            executions = _fetch_last_executions(app, session)
+            chart = _chart_from_executions(executions)
+        cache[app] = (repo, chart)
         status = repo if repo else "(não encontrado)"
-        print(f"  [{idx}/{total}] {app} → {status}")
+        chart_info = f" [{chart}]" if chart else ""
+        print(f"  [{idx}/{total}] {app} → {status}{chart_info}")
 
     for ingress in ingresses:
         app = ingress["spinnaker_app"]
         if app:
-            ingress["source_repo"] = repo_cache.get(app, "")
+            repo, chart = cache.get(app, ("", ""))
+            ingress["source_repo"] = repo
+            if chart and not ingress.get("helm_chart"):
+                ingress["helm_chart_artifact"] = chart
 
 
 # ---------------------------------------------------------------------------
@@ -250,7 +340,7 @@ def write_csv(ingresses: list[dict], output_path: Path) -> None:
     fieldnames = [
         "project_id", "cluster", "namespace", "ingress",
         "deploy_type", "spinnaker_app", "spinnaker_cluster",
-        "helm_release", "helm_chart", "evidence", "hosts", "source_repo",
+        "helm_release", "helm_chart", "helm_chart_artifact", "evidence", "hosts", "source_repo",
     ]
     with open(output_path, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)

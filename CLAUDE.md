@@ -552,3 +552,95 @@ pathType: Prefix  # nunca ImplementationSpecific para serviços com subpaths
 4. Só após todos os paths críticos validados → flipar DNS.
 
 **Identificar serviços com protobuf/gRPC antes de migrar:** verificar se o ingress serve um serviço gRPC ou com transcoding (headers `Accept: application/protobuf`, `Content-Type: application/grpc`). Esses serviços são os de maior risco pois um 404 JSON do APISIX causa crash no cliente em vez de um erro tratável.
+
+### Annotations críticas do NGINX — nunca remover sem verificar (incidente 2026-06-22)
+
+**O problema:** `kubectl apply` com um manifest sem annotations executa three-way merge e **remove** todas as annotations que não estão no manifest. Edição via FreeLens tem o mesmo efeito. Isso causou um incidente em 2026-06-22 ao remover `nginx.ingress.kubernetes.io/custom-http-errors: 501` do ingress `a3s-api-internal`, fazendo o NGINX global interceptar os 404 do Firestore e retornar HTML em vez de JSON — crashando o rd-auth.
+
+**Regra inegociável: antes de qualquer `kubectl apply` em ingress nginx existente, comparar as annotations atuais com o manifest que será aplicado.** Se o manifest não inclui annotations que existem no cluster, essas annotations serão apagadas.
+
+**Diagnóstico: usar `data/raw/` como backup de referência**
+```bash
+# Diff annotations do backup vs cluster atual para um namespace
+python3 - << 'EOF'
+import json, subprocess
+
+with open('data/raw/staging-234557__cluster-staging.json') as f:
+    raw = json.load(f)
+backup = {i['metadata']['name']: i for i in raw if i['metadata']['namespace'] == '<namespace>'}
+
+curr = json.loads(subprocess.check_output(
+    ['kubectl', 'get', 'ingress', '-n', '<namespace>', '-o', 'json']))
+current = {i['metadata']['name']: i for i in curr['items']}
+
+IGNORE = {'kubectl.kubernetes.io/last-applied-configuration'}
+for name in sorted(set(backup) & set(current)):
+    b_ann = {k: v for k, v in backup[name]['metadata'].get('annotations', {}).items() if k not in IGNORE}
+    c_ann = {k: v for k, v in current[name]['metadata'].get('annotations', {}).items() if k not in IGNORE}
+    for k in sorted(set(b_ann) | set(c_ann)):
+        if b_ann.get(k) != c_ann.get(k):
+            print(f'{name} [{k}]: backup={b_ann.get(k)} atual={c_ann.get(k)}')
+EOF
+```
+
+**Annotations de alto impacto no NGINX — verificar se estão presentes antes de qualquer apply:**
+
+| Annotation | Efeito se removida |
+|---|---|
+| `nginx.ingress.kubernetes.io/custom-http-errors: <código>` | O global do configmap passa a valer — pode interceptar 404/5xx do backend e retornar HTML em vez da resposta original |
+| `nginx.ingress.kubernetes.io/ssl-redirect: false` | NGINX passa a redirecionar HTTP → HTTPS (308) mesmo em contextos onde não deve |
+| `nginx.ingress.kubernetes.io/whitelist-source-range` | Abre acesso que deveria ser restrito por IP |
+| `nginx.ingress.kubernetes.io/proxy-body-size` | Limita uploads ao default global (1m) |
+
+**`nginx.ingress.kubernetes.io/custom-http-errors` por ingress sobrescreve o global.** O configmap do nginx-ingress no staging-234557 tem `custom-http-errors: 404` globalmente. Qualquer ingress que defina essa annotation por ingress (ex: `501`) está dizendo "para este ingress, só intercepta 501 — deixa o 404 do backend passar". Remover a annotation restaura o comportamento global → 404 vira HTML.
+
+**Identificar todos os ingresses com `custom-http-errors` no backup:**
+```bash
+python3 -c "
+import json
+with open('data/raw/staging-234557__cluster-staging.json') as f:
+    data = json.load(f)
+key = 'nginx.ingress.kubernetes.io/custom-http-errors'
+for i in data:
+    v = i['metadata'].get('annotations', {}).get(key)
+    if v:
+        print(i['metadata']['namespace'], i['metadata']['name'], '->', v)
+"
+```
+
+### grpc_pass vs proxy_pass — proxy_intercept_errors não tem efeito em gRPC (2026-06-22)
+
+O NGINX IC detecta serviços gRPC e gera `grpc_pass grpc://upstream_balancer` em vez de `proxy_pass`. A directive `proxy_intercept_errors` **só funciona com `proxy_pass`** — não tem qualquer efeito em `grpc_pass`. Tentar injetar `proxy_intercept_errors off` via `configuration-snippet` num ingress que usa `grpc_pass` causa 502.
+
+Não existe `grpc_intercept_errors` no nginx. Não há forma simples de desabilitar a interceptação de erros para serviços gRPC via annotation de ingress. A solução correta para esse caso é usar `custom-http-errors` por ingress (ex: `501`) para excluir o código 404 do escopo de interceptação global.
+
+**Como identificar se um ingress usa grpc_pass:** verificar no nginx.conf do controller se o server block do host contém `grpc_pass` em vez de `proxy_pass`:
+```bash
+kubectl exec -n ingress-nginx <pod-nginx> -- grep -A5 "server_name <host>" /etc/nginx/nginx.conf | grep -E "grpc_pass|proxy_pass"
+```
+
+### Geração de ingresses APISIX — preservar comportamento das annotations nginx originais
+
+Ao gerar um ingress APISIX com `migrate.py` ou manualmente, **não basta trocar `ingressClassName: nginx → apisix`**. As annotations do ingress nginx original que controlam comportamento global (ex: `custom-http-errors`) devem ser inspecionadas e o comportamento equivalente garantido no APISIX.
+
+**Antes de criar o ingress APISIX de qualquer serviço, checar no backup:**
+1. O ingress nginx original tem `custom-http-errors`? Se sim, o serviço depende do NGINX NÃO interceptar determinados códigos HTTP. No APISIX, o equivalente é garantir que o plugin `proxy-rewrite` ou `serverless-post-function` não mascare esses códigos.
+2. O ingress tem `ssl-redirect: false`? Se sim, o serviço aceita requisições HTTP puras — verificar se o APISIX também não está forçando redirect.
+3. O ingress tem `whitelist-source-range`? Se sim, o acesso é restrito por IP — replicar com `k8s.apisix.apache.org/allowlist-source-range` no ingress APISIX.
+
+**O migrate.py deve alertar (nunca silenciar) quando o ingress nginx original tiver `custom-http-errors`.** Esse é um sinal de que o serviço tem comportamento especial que depende da configuração global do NGINX e que pode quebrar se o APISIX não tiver o equivalente.
+
+### Auditoria de mudanças em ingresses via Cloud Logging (GKE)
+
+Para investigar quem removeu annotations ou fez mudanças em ingresses, usar o Cloud Logging do GKE — os audit logs registram cada patch/update com o principal (email) e o diff aplicado:
+
+```bash
+gcloud logging read \
+  'resource.type="k8s_cluster" AND resource.labels.cluster_name="cluster-staging" AND resource.labels.project_id="staging-234557" AND protoPayload.resourceName:"namespaces/<namespace>/ingresses/<nome>" AND protoPayload.methodName=~"(patch|update|create)"' \
+  --project=staging-234557 \
+  --format="value(timestamp, protoPayload.authenticationInfo.principalEmail, protoPayload.methodName, protoPayload.request)" \
+  --limit=20 \
+  --freshness=1d
+```
+
+O campo `protoPayload.request` mostra exatamente o que foi alterado — valores `None` indicam remoção de campo. Util para identificar se foi `kubectl apply`, FreeLens, Atlantis, ou Spinnaker que fez a mudança.

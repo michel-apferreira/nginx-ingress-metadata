@@ -791,6 +791,7 @@ def migrate_ingress(
     dry_run: bool,
     do_apply: bool,
     do_verify: bool,
+    migrate_helm: bool = False,
 ) -> dict:
     """
     Executa o workflow completo de migração para um ingress.
@@ -824,10 +825,10 @@ def migrate_ingress(
     deploy_type, _ = classify_deploy_type(ann, labels)
     result["deploy_type"] = deploy_type
 
-    if deploy_type in SKIP_DEPLOY_TYPES:
+    if deploy_type in SKIP_DEPLOY_TYPES and not migrate_helm:
         result["status"] = "skip_helm"
         result["actions"].append(
-            f"Tipo '{deploy_type}' — aguardar PR #165 e atualizar Spinnaker"
+            f"Tipo '{deploy_type}' — use --migrate-helm para coexistência"
         )
         return result
 
@@ -962,6 +963,8 @@ def main():
                         help="Apenas gerar manifestos, sem aplicar ou modificar Spinnaker")
     parser.add_argument("--apply-only", action="store_true",
                         help="Aplicar manifestos já gerados em helm-apisix (pular geração)")
+    parser.add_argument("--migrate-helm", action="store_true",
+                        help="Migrar ingresses spinnaker+helm-* (coexistência: gera manifest APISIX + stage, sem alterar o chart)")
     parser.add_argument("--no-verify", action="store_true",
                         help="Não verificar sincronização no APISIX após apply")
     parser.add_argument("--dry-run", action="store_true",
@@ -1029,6 +1032,7 @@ def main():
                 dry_run=args.dry_run,
                 do_apply=do_apply,
                 do_verify=do_verify,
+                migrate_helm=args.migrate_helm,
             )
         except Exception as e:
             print(f"  [ERRO] {e}")
