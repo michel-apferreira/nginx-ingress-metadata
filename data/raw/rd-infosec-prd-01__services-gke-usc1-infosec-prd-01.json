@@ -1,0 +1,79 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "defectdojo",
+        "artifact.spinnaker.io/name": "defectdojo",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "false",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"defectdojo\",\"artifact.spinnaker.io/name\":\"defectdojo\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"false\",\"kubernetes.io/ingress.class\":\"nginx\",\"moniker.spinnaker.io/application\":\"defect-dojo\",\"moniker.spinnaker.io/cluster\":\"ingress defectdojo\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"128m\",\"nginx.ingress.kubernetes.io/proxy-read-timeout\":\"1800\",\"nginx.ingress.kubernetes.io/proxy-send-timeout\":\"1800\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"45.235.52.24/29,179.108.123.80/28,189.28.39.112/29\"},\"labels\":{\"app.kubernetes.io/instance\":\"defectdojo\",\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"defectdojo\",\"defectdojo.org/component\":\"django\",\"helm.sh/chart\":\"defectdojo-1.6.135\"},\"name\":\"defectdojo\",\"namespace\":\"defectdojo\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"defectdojo.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"defectdojo-django\",\"port\":{\"name\":\"http\"}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"defectdojo.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "moniker.spinnaker.io/application": "defect-dojo",
+        "moniker.spinnaker.io/cluster": "ingress defectdojo",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "128m",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "1800",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "1800",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "45.235.52.24/29,179.108.123.80/28,189.28.39.112/29"
+      },
+      "creationTimestamp": "2024-10-08T15:10:47Z",
+      "generation": 12,
+      "labels": {
+        "app.kubernetes.io/instance": "defectdojo",
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "defectdojo",
+        "defectdojo.org/component": "django",
+        "helm.sh/chart": "defectdojo-1.6.135",
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "defectdojo",
+      "namespace": "defectdojo",
+      "resourceVersion": "485724121",
+      "uid": "6d46e5ef-4fc1-4a05-a479-a83da21036f6"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "defectdojo.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "defectdojo-django",
+                    "port": {
+                      "name": "http"
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "defectdojo.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.44.153.118"
+          }
+        ]
+      }
+    }
+  }
+]

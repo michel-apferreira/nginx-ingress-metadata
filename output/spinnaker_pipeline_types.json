@@ -1,0 +1,383 @@
+{
+  "a3s": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "access-orchestration-app": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "ai-platform": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "ai-platform-builder": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "ai-platform-inngest": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "alumni": [],
+  "api-predictive-lead-scoring": [
+    "deployManifest"
+  ],
+  "api-predictive-sending": [
+    "deployManifest"
+  ],
+  "atlantis": [
+    "deployManifest"
+  ],
+  "attribution-analysis-api": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "automation-event-based-engine": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "backstage": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "basic-analytics": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "bricks-editor": [
+    "deployManifest"
+  ],
+  "buzz": [
+    "deployManifest"
+  ],
+  "cap-hook": [
+    "deployManifest"
+  ],
+  "cdp": [],
+  "certmanager": [
+    "deployManifest"
+  ],
+  "checkout": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "circle-ci-metrics-extractor": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "city-api": [
+    "deployManifest"
+  ],
+  "crm": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "crm-mcp": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "data-platform-data-access-api": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "defect-dojo": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "dev-center-api": [
+    "deployManifest"
+  ],
+  "dev-center-backend": [
+    "deployManifest"
+  ],
+  "ecommerce-core": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "email-validator": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "event-api": [
+    "deployManifest"
+  ],
+  "event-harbor": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "executive-agent": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "eye-api": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "form": [
+    "deployManifest"
+  ],
+  "front-hub": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "galaga": [
+    "deployManifest"
+  ],
+  "github-scanner": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "gooddata-exporter": [
+    "deployManifest"
+  ],
+  "gyruss": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "hefesto": [
+    "deployManifest"
+  ],
+  "holmes": [
+    "deployManifest"
+  ],
+  "hydra-api": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "incident-io-ruby-client": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "ingress-nginx": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "insights-platform-api": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "ipconfig": [
+    "deployManifest"
+  ],
+  "kong": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "lead-tracker": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "lead-vacuum-worker": [
+    "deployManifest"
+  ],
+  "mailcannon": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "marketing-copilot": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "marketing-mcp": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "metrics-extractor-to-datalake": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "monitor-history": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "multichannel-api": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "n8n-automation-mid-mkt": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "neekapi": [
+    "deployManifest"
+  ],
+  "notify-api": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "oraculo-metrics-extractor": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "pageview-notify": [
+    "deployManifest"
+  ],
+  "partnership": [
+    "deployManifest"
+  ],
+  "platform-session-service": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "poc-anthos": [
+    "deployManifest"
+  ],
+  "pocs-rogerio": [
+    "erro"
+  ],
+  "preview-whatsfree": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "rails-template": [],
+  "rd-app-store": [
+    "deployManifest"
+  ],
+  "rd-auth": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "rd-chat-api": [
+    "deployManifest"
+  ],
+  "rd-chat-hook": [
+    "deployManifest"
+  ],
+  "rd-chatbot": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "rd-contas-smart-retry": [
+    "deployManifest"
+  ],
+  "rd-paas-bot": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "rd-pipedrive": [
+    "deployManifest"
+  ],
+  "rd-sms": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "rd-social-conversion": [
+    "deployManifest"
+  ],
+  "rd-whatsapp-console": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "rd-zenchatapp": [
+    "deployManifest"
+  ],
+  "rdpress-auth": [
+    "deployManifest"
+  ],
+  "rds-assets-app-api": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "rds-crm": [
+    "erro"
+  ],
+  "rds-crm-copilot": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "rdsc-copilot": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "rdsm": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "rdsm-deploy-metrics-collector": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "rdstation-api": [
+    "deployManifest"
+  ],
+  "report-builder-api": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "rocknrollout2": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "rudi-api": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "saas-internal": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "schema": [
+    "deployManifest"
+  ],
+  "sending-predictions-pls-worker": [
+    "deployManifest"
+  ],
+  "seobackend": [
+    "deployManifest"
+  ],
+  "showcase-backend-rails": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "showcase-public": [
+    "deployManifest"
+  ],
+  "sidekiq-dashboard": [
+    "deployManifest"
+  ],
+  "spin-cli-api": [
+    "deployManifest"
+  ],
+  "subscription-manager-api": [
+    "deployManifest"
+  ],
+  "synthetics-app": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "synthetics-pre-prod": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "todo-list": [
+    "deployManifest"
+  ],
+  "toolbelt": [
+    "deployManifest"
+  ],
+  "toolbeltemailstats": [
+    "deployManifest"
+  ],
+  "troublemakerbot": [
+    "deployManifest"
+  ],
+  "user-confirmail": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "veritas": [
+    "deployManifest"
+  ],
+  "webhook-service-connect": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "webpusher": [
+    "deployManifest",
+    "bakeManifest"
+  ],
+  "zendesk-hc-redirect": [
+    "erro"
+  ]
+}

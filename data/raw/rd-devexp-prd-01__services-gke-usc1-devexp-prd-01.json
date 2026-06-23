@@ -1,0 +1,1621 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "meta.helm.sh/release-name": "devlake",
+        "meta.helm.sh/release-namespace": "devlake",
+        "nginx.ingress.kubernetes.io/rewrite-target": "/$2",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,179.108.123.80/28,177.135.66.240/29,187.49.235.32/29,45.235.52.24/29,189.28.39.112/29"
+      },
+      "creationTimestamp": "2024-05-21T11:35:27Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/instance": "devlake",
+        "app.kubernetes.io/managed-by": "Helm",
+        "app.kubernetes.io/name": "devlake",
+        "app.kubernetes.io/version": "v0.21.0",
+        "helm.sh/chart": "devlake-0.21.0",
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "devlake",
+      "namespace": "devlake",
+      "resourceVersion": "1770366932213263001",
+      "uid": "2dd1fd61-b8e0-4899-994e-c16c6355b4ce"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "devlake.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "devlake-grafana",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/grafana(/|$)(.*)",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "devlake-ui",
+                    "port": {
+                      "number": 4000
+                    }
+                  }
+                },
+                "path": "/(/?|$)(.*)",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "devlake.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "devexp",
+        "artifact.spinnaker.io/name": "backstage",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"devexp\",\"artifact.spinnaker.io/name\":\"backstage\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"backstage\",\"moniker.spinnaker.io/cluster\":\"ingress backstage\",\"nginx.ingress.kubernetes.io/auth-signin\":\"https://backstage.production.rdops.systems/oauth2/start?rd=$escaped_request_uri\",\"nginx.ingress.kubernetes.io/auth-url\":\"http://backstage-oauth.devexp.svc.cluster.local:4180/oauth2/auth\",\"nginx.ingress.kubernetes.io/configuration-snippet\":\"auth_request_set $name_upstream_1 $upstream_cookie__oauth2_proxy_1;\\n\\naccess_by_lua_block {\\n  if ngx.var.name_upstream_1 ~= \\\"\\\" then\\n    ngx.header[\\\"Set-Cookie\\\"] = \\\"_oauth2_proxy_1=\\\" .. ngx.var.name_upstream_1 .. ngx.var.auth_cookie:match(\\\"(; .*)\\\")\\n  end\\n}\\n\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"backstage\",\"app_name\":\"backstage\",\"app_project\":\"backstage\",\"resource_kind\":\"ingress\",\"team\":\"devtools\"},\"name\":\"backstage\",\"namespace\":\"devexp\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"backstage.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"backstage\",\"port\":{\"number\":7000}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"backstage.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "backstage",
+        "moniker.spinnaker.io/cluster": "ingress backstage",
+        "nginx.ingress.kubernetes.io/affinity": "cookie",
+        "nginx.ingress.kubernetes.io/auth-signin": "https://backstage.production.rdops.systems/oauth2/start?rd=$escaped_request_uri",
+        "nginx.ingress.kubernetes.io/auth-url": "http://backstage-oauth.devexp.svc.cluster.local:4180/oauth2/auth",
+        "nginx.ingress.kubernetes.io/configuration-snippet": "auth_request_set $name_upstream_1 $upstream_cookie__oauth2_proxy_1;\n\naccess_by_lua_block {\n  if ngx.var.name_upstream_1 ~= \"\" then\n    ngx.header[\"Set-Cookie\"] = \"_oauth2_proxy_1=\" .. ngx.var.name_upstream_1 .. ngx.var.auth_cookie:match(\"(; .*)\")\n  end\n}\n",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/session-cookie-expires": "1h",
+        "nginx.ingress.kubernetes.io/session-cookie-max-age": "3600",
+        "nginx.ingress.kubernetes.io/session-cookie-name": "backstage_session",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-09-10T19:44:52Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "backstage",
+        "app_name": "backstage",
+        "app_project": "backstage",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "devtools"
+      },
+      "name": "backstage",
+      "namespace": "devexp",
+      "resourceVersion": "1770366933009551023",
+      "uid": "97f64a6a-2859-4969-ad84-a75ac78cf1db"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "backstage.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "backstage",
+                    "port": {
+                      "number": 7000
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "backstage.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "devexp",
+        "artifact.spinnaker.io/name": "backstage-bot-api",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"devexp\",\"artifact.spinnaker.io/name\":\"backstage-bot-api\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"backstage\",\"moniker.spinnaker.io/cluster\":\"ingress backstage-bot-api\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"backstage\",\"app_name\":\"backstage\",\"app_project\":\"backstage\",\"resource_kind\":\"ingress\",\"team\":\"devtools\"},\"name\":\"backstage-bot-api\",\"namespace\":\"devexp\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"backstage.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"backstage\",\"port\":{\"number\":7000}}},\"path\":\"/api/bot\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"backstage.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "backstage",
+        "moniker.spinnaker.io/cluster": "ingress backstage-bot-api",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-09-10T19:44:54Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "backstage",
+        "app_name": "backstage",
+        "app_project": "backstage",
+        "resource_kind": "ingress",
+        "team": "devtools"
+      },
+      "name": "backstage-bot-api",
+      "namespace": "devexp",
+      "resourceVersion": "1770366932811519022",
+      "uid": "c8ead9e3-687e-45e6-8dce-3200313d0b47"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "backstage.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "backstage",
+                    "port": {
+                      "number": 7000
+                    }
+                  }
+                },
+                "path": "/api/bot",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "backstage.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "devexp",
+        "artifact.spinnaker.io/name": "backstage-git-api",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"devexp\",\"artifact.spinnaker.io/name\":\"backstage-git-api\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"backstage\",\"moniker.spinnaker.io/cluster\":\"ingress backstage-git-api\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/proxy-connect-timeout\":\"600\",\"nginx.ingress.kubernetes.io/proxy-read-timeout\":\"600\",\"nginx.ingress.kubernetes.io/proxy-send-timeout\":\"600\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"backstage\",\"app_name\":\"backstage\",\"app_project\":\"backstage\",\"resource_kind\":\"ingress\",\"team\":\"devtools\"},\"name\":\"backstage-git-api\",\"namespace\":\"devexp\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"backstage.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"backstage\",\"port\":{\"number\":7000}}},\"path\":\"/api/git\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"backstage.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "backstage",
+        "moniker.spinnaker.io/cluster": "ingress backstage-git-api",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/proxy-connect-timeout": "600",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "600",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "600",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-09-10T19:44:53Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "backstage",
+        "app_name": "backstage",
+        "app_project": "backstage",
+        "resource_kind": "ingress",
+        "team": "devtools"
+      },
+      "name": "backstage-git-api",
+      "namespace": "devexp",
+      "resourceVersion": "1770366936623615000",
+      "uid": "298bee55-21cd-464f-8adb-370801960270"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "backstage.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "backstage",
+                    "port": {
+                      "number": 7000
+                    }
+                  }
+                },
+                "path": "/api/git",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "backstage.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "devexp",
+        "artifact.spinnaker.io/name": "backstage-oauth",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"devexp\",\"artifact.spinnaker.io/name\":\"backstage-oauth\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"backstage\",\"moniker.spinnaker.io/cluster\":\"ingress backstage-oauth\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"backstage\",\"app_name\":\"backstage-oauth\",\"app_project\":\"backstage\",\"resource_kind\":\"ingress\",\"team\":\"devtools\"},\"name\":\"backstage-oauth\",\"namespace\":\"devexp\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"backstage.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"backstage-oauth\",\"port\":{\"number\":4180}}},\"path\":\"/oauth2\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"backstage.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "backstage",
+        "moniker.spinnaker.io/cluster": "ingress backstage-oauth",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-09-10T19:44:53Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "backstage",
+        "app_name": "backstage-oauth",
+        "app_project": "backstage",
+        "resource_kind": "ingress",
+        "team": "devtools"
+      },
+      "name": "backstage-oauth",
+      "namespace": "devexp",
+      "resourceVersion": "1770366932012255016",
+      "uid": "ad0edfce-7184-402d-bdc0-99344cba62e4"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "backstage.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "backstage-oauth",
+                    "port": {
+                      "number": 4180
+                    }
+                  }
+                },
+                "path": "/oauth2",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "backstage.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "devexp",
+        "artifact.spinnaker.io/name": "backstage-subscribe-github",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"devexp\",\"artifact.spinnaker.io/name\":\"backstage-subscribe-github\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"backstage\",\"moniker.spinnaker.io/cluster\":\"ingress backstage-subscribe-github\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"backstage\",\"app_name\":\"backstage\",\"app_project\":\"backstage\",\"resource_kind\":\"ingress\",\"team\":\"devtools\"},\"name\":\"backstage-subscribe-github\",\"namespace\":\"devexp\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"backstage.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"backstage\",\"port\":{\"number\":7000}}},\"path\":\"/api/events/http/github\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"backstage.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "backstage",
+        "moniker.spinnaker.io/cluster": "ingress backstage-subscribe-github",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-09-10T19:44:54Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "backstage",
+        "app_name": "backstage",
+        "app_project": "backstage",
+        "resource_kind": "ingress",
+        "team": "devtools"
+      },
+      "name": "backstage-subscribe-github",
+      "namespace": "devexp",
+      "resourceVersion": "1770366937017631007",
+      "uid": "4703d2e0-9cf4-4414-a028-e59e1813e51f"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "backstage.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "backstage",
+                    "port": {
+                      "number": 7000
+                    }
+                  }
+                },
+                "path": "/api/events/http/github",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "backstage.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "devexp",
+        "artifact.spinnaker.io/name": "jobs-sidekiq",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"devexp\",\"artifact.spinnaker.io/name\":\"jobs-sidekiq\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"github-scanner\",\"moniker.spinnaker.io/cluster\":\"ingress jobs-sidekiq\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8,45.235.52.24/29,189.28.39.112/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"github-scanner\",\"app_name\":\"jobs-sidekiq\",\"app_project\":\"github-scanner\",\"resource_kind\":\"ingress\",\"team\":\"devtools\"},\"name\":\"jobs-sidekiq\",\"namespace\":\"devexp\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"github-scanner.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"jobs-sidekiq\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"github-scanner.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "github-scanner",
+        "moniker.spinnaker.io/cluster": "ingress jobs-sidekiq",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8,45.235.52.24/29,189.28.39.112/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-04-17T18:49:19Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "github-scanner",
+        "app_name": "jobs-sidekiq",
+        "app_project": "github-scanner",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "devtools"
+      },
+      "name": "jobs-sidekiq",
+      "namespace": "devexp",
+      "resourceVersion": "1770366931809183011",
+      "uid": "856c6922-2772-4565-9a4e-f1c62f4a98ad"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "github-scanner.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "jobs-sidekiq",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "github-scanner.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "devexp",
+        "artifact.spinnaker.io/name": "oraculo-metrics-extractor",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"devexp\",\"artifact.spinnaker.io/name\":\"oraculo-metrics-extractor\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"oraculo-metrics-extractor\",\"moniker.spinnaker.io/cluster\":\"ingress oraculo-metrics-extractor\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"oraculo-metrics-extractor\",\"app_name\":\"oraculo-metrics-extractor\",\"app_project\":\"oraculo-metrics-extractor\",\"resource_kind\":\"ingress\",\"team\":\"devtools\"},\"name\":\"oraculo-metrics-extractor\",\"namespace\":\"devexp\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"oraculo-metrics-extractor.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"oraculo-metrics-extractor\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"oraculo-metrics-extractor.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "oraculo-metrics-extractor",
+        "moniker.spinnaker.io/cluster": "ingress oraculo-metrics-extractor",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-09-06T18:47:28Z",
+      "generation": 3,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "oraculo-metrics-extractor",
+        "app_name": "oraculo-metrics-extractor",
+        "app_project": "oraculo-metrics-extractor",
+        "resource_kind": "ingress",
+        "team": "devtools"
+      },
+      "name": "oraculo-metrics-extractor",
+      "namespace": "devexp",
+      "resourceVersion": "1770366931410735023",
+      "uid": "0249d732-a7cf-4528-aeca-80ca9b850da0"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "oraculo-metrics-extractor.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "oraculo-metrics-extractor",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "oraculo-metrics-extractor.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "devexp",
+        "artifact.spinnaker.io/name": "rdsm-deploy-metrics-collector",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"devexp\",\"artifact.spinnaker.io/name\":\"rdsm-deploy-metrics-collector\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rdsm-deploy-metrics-collector\",\"moniker.spinnaker.io/cluster\":\"ingress rdsm-deploy-metrics-collector\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rdsm-deploy-metrics-collector\",\"app_name\":\"rdsm-deploy-metrics-collector\",\"app_project\":\"rdsm-deploy-metrics-collector\",\"resource_kind\":\"ingress\",\"team\":\"devtools\"},\"name\":\"rdsm-deploy-metrics-collector\",\"namespace\":\"devexp\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"rdsm-deploy-metrics-collector.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdsm-deploy-metrics-collector\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"rdsm-deploy-metrics-collector.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rdsm-deploy-metrics-collector",
+        "moniker.spinnaker.io/cluster": "ingress rdsm-deploy-metrics-collector",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-07-08T20:37:52Z",
+      "generation": 4,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rdsm-deploy-metrics-collector",
+        "app_name": "rdsm-deploy-metrics-collector",
+        "app_project": "rdsm-deploy-metrics-collector",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "devtools"
+      },
+      "name": "rdsm-deploy-metrics-collector",
+      "namespace": "devexp",
+      "resourceVersion": "1770366936412719016",
+      "uid": "2beb0302-8c82-49b0-9dae-132c2a74e133"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "rdsm-deploy-metrics-collector.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdsm-deploy-metrics-collector",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "rdsm-deploy-metrics-collector.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "devexp",
+        "artifact.spinnaker.io/name": "rocknrollout2",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"devexp\",\"artifact.spinnaker.io/name\":\"rocknrollout2\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rocknrollout2\",\"moniker.spinnaker.io/cluster\":\"ingress rocknrollout2\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8,45.235.52.24/29,189.28.39.112/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rocknrollout2\",\"app_name\":\"rocknrollout2\",\"app_project\":\"rocknrollout2\",\"resource_kind\":\"ingress\",\"team\":\"jedi\"},\"name\":\"rocknrollout2\",\"namespace\":\"devexp\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"rocknrollout2.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rocknrollout2\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"rocknrollout2.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rocknrollout2",
+        "moniker.spinnaker.io/cluster": "ingress rocknrollout2",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8,45.235.52.24/29,189.28.39.112/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-09-11T14:26:57Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rocknrollout2",
+        "app_name": "rocknrollout2",
+        "app_project": "rocknrollout2",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "jedi"
+      },
+      "name": "rocknrollout2",
+      "namespace": "devexp",
+      "resourceVersion": "1770366932613791020",
+      "uid": "7f7e4aa6-a712-4512-be27-030b4931d4ae"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "rocknrollout2.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rocknrollout2",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "rocknrollout2.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "hydra",
+        "artifact.spinnaker.io/name": "troublemakerbot",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"hydra\",\"artifact.spinnaker.io/name\":\"troublemakerbot\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"troublemakerbot\",\"moniker.spinnaker.io/cluster\":\"ingress troublemakerbot\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"troublemakerbot\"},\"name\":\"troublemakerbot\",\"namespace\":\"hydra\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"troublemakerbot.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"troublemakerbot-service\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"troublemakerbot.rdstation.com.br\"],\"secretName\":\"wildcard-rdstation-com-br\"}]}}\n",
+        "moniker.spinnaker.io/application": "troublemakerbot",
+        "moniker.spinnaker.io/cluster": "ingress troublemakerbot",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-09-06T14:10:16Z",
+      "generation": 8,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "troublemakerbot"
+      },
+      "name": "troublemakerbot",
+      "namespace": "hydra",
+      "resourceVersion": "1775583211940015017",
+      "uid": "87dfb889-ca05-4b67-aa08-826fd7bfa467"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "troublemakerbot.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "troublemakerbot-service",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "troublemakerbot.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"nginx.ingress.kubernetes.io/server-snippet\":\"return 444;\\n\"},\"name\":\"catch-all-deny-ingress\",\"namespace\":\"ingress-nginx\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"nginx-ingress-nginx-defaultbackend\",\"port\":{\"number\":8080}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "nginx.ingress.kubernetes.io/server-snippet": "return 444;\n"
+      },
+      "creationTimestamp": "2025-07-15T14:37:20Z",
+      "generation": 1,
+      "name": "catch-all-deny-ingress",
+      "namespace": "ingress-nginx",
+      "resourceVersion": "1770366935810143011",
+      "uid": "bcd023d6-8dea-4f91-98ef-367aa03ed7b0"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "nginx-ingress-nginx-defaultbackend",
+                    "port": {
+                      "number": 8080
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "shield",
+        "artifact.spinnaker.io/name": "toolbelt",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"shield\",\"artifact.spinnaker.io/name\":\"toolbelt\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"toolbelt\",\"moniker.spinnaker.io/cluster\":\"ingress toolbelt\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"45.235.52.24/29,179.108.123.80/28,177.135.66.240/29,187.49.235.32/29,187.72.169.109/30,168.232.86.246/32,189.28.39.112/29\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"toolbelt\"},\"name\":\"toolbelt\",\"namespace\":\"shield\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"toolbelt.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"toolbelt-frontend\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"},{\"backend\":{\"service\":{\"name\":\"toolbelt\",\"port\":{\"number\":80}}},\"path\":\"/api\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"toolbelt.rdstation.com.br\"],\"secretName\":\"wildcard-rdstation-com-br\"}]}}\n",
+        "moniker.spinnaker.io/application": "toolbelt",
+        "moniker.spinnaker.io/cluster": "ingress toolbelt",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "45.235.52.24/29,179.108.123.80/28,177.135.66.240/29,187.49.235.32/29,187.72.169.109/30,168.232.86.246/32,189.28.39.112/29",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-06-21T13:41:39Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "toolbelt",
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "toolbelt",
+      "namespace": "shield",
+      "resourceVersion": "1770366931612479006",
+      "uid": "32017575-1596-49bd-a92f-95f9e6203112"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "toolbelt.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "toolbelt-frontend",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "toolbelt",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/api",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "toolbelt.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "shield",
+        "artifact.spinnaker.io/name": "toolbeltemailstats",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"shield\",\"artifact.spinnaker.io/name\":\"toolbeltemailstats\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"toolbeltemailstats\",\"moniker.spinnaker.io/cluster\":\"ingress toolbeltemailstats\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"toolbeltemailstats\"},\"name\":\"toolbeltemailstats\",\"namespace\":\"shield\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"toolbeltemailstats.rd.services\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"toolbeltemailstats\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"toolbeltemailstats.rd.services\"],\"secretName\":\"wildcard-rd-services\"}]}}\n",
+        "moniker.spinnaker.io/application": "toolbeltemailstats",
+        "moniker.spinnaker.io/cluster": "ingress toolbeltemailstats",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-06-21T14:17:09Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "toolbeltemailstats"
+      },
+      "name": "toolbeltemailstats",
+      "namespace": "shield",
+      "resourceVersion": "1770366931215487005",
+      "uid": "8eea106f-2fb2-4a51-99f8-7c373c65d43f"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "toolbeltemailstats.rd.services",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "toolbeltemailstats",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "toolbeltemailstats.rd.services"
+          ],
+          "secretName": "wildcard-rd-services"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "support",
+        "artifact.spinnaker.io/name": "incident-io-ruby-client",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"support\",\"artifact.spinnaker.io/name\":\"incident-io-ruby-client\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"incident-io-ruby-client\",\"moniker.spinnaker.io/cluster\":\"ingress incident-io-ruby-client\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"incident-io-ruby-client\",\"app_name\":\"incident-io-ruby-client\",\"app_project\":\"incident-io-ruby-client\",\"resource_kind\":\"ingress\",\"team\":\"hydra\"},\"name\":\"incident-io-ruby-client\",\"namespace\":\"support\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"incident-io-ruby-client.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"incident-io-ruby-client\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"incident-io-ruby-client.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "incident-io-ruby-client",
+        "moniker.spinnaker.io/cluster": "ingress incident-io-ruby-client",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-06-26T18:52:57Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "incident-io-ruby-client",
+        "app_name": "incident-io-ruby-client",
+        "app_project": "incident-io-ruby-client",
+        "resource_kind": "ingress",
+        "team": "hydra"
+      },
+      "name": "incident-io-ruby-client",
+      "namespace": "support",
+      "resourceVersion": "1770366936213759016",
+      "uid": "faa6a0fc-42d1-432f-b9c9-c20532f27575"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "incident-io-ruby-client.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "incident-io-ruby-client",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "incident-io-ruby-client.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "synthetics",
+        "artifact.spinnaker.io/name": "synthetics-pre-prod",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"synthetics\",\"artifact.spinnaker.io/name\":\"synthetics-pre-prod\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"synthetics-pre-prod\",\"moniker.spinnaker.io/cluster\":\"ingress synthetics-pre-prod\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"synthetics-pre-prod\"},\"name\":\"synthetics-pre-prod\",\"namespace\":\"synthetics\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"synthetics-pre-pro.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"synthetics-pre-prod\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"synthetics-pre-pro.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "synthetics-pre-prod",
+        "moniker.spinnaker.io/cluster": "ingress synthetics-pre-prod",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "300",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "300",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true"
+      },
+      "creationTimestamp": "2025-06-02T17:08:10Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "synthetics-pre-prod"
+      },
+      "name": "synthetics-pre-prod",
+      "namespace": "synthetics",
+      "resourceVersion": "1770366935417311009",
+      "uid": "98584799-0bd6-410d-8439-1f250bac0923"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "synthetics-pre-pro.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "synthetics-pre-prod",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "synthetics-pre-pro.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "pope",
+        "artifact.spinnaker.io/name": "sidekiq-dashboard",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"pope\",\"artifact.spinnaker.io/name\":\"sidekiq-dashboard\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"sidekiq-dashboard\",\"moniker.spinnaker.io/cluster\":\"ingress sidekiq-dashboard\",\"nginx.ingress.kubernetes.io/auth-signin\":\"https://$host/oauth2/start?rd=$request_uri\",\"nginx.ingress.kubernetes.io/auth-url\":\"https://$host/oauth2/auth\",\"nginx.ingress.kubernetes.io/proxy-read-timeout\":\"300\",\"nginx.ingress.kubernetes.io/proxy-send-timeout\":\"300\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"false\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"sidekiq-dashboard\"},\"name\":\"sidekiq-dashboard\",\"namespace\":\"pope\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"sidekiq-production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"sidekiq-dashboard\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"sidekiq-production.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "sidekiq-dashboard",
+        "moniker.spinnaker.io/cluster": "ingress sidekiq-dashboard",
+        "nginx.ingress.kubernetes.io/auth-signin": "https://$host/oauth2/start?rd=$request_uri",
+        "nginx.ingress.kubernetes.io/auth-url": "https://$host/oauth2/auth",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "300",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "300",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "false"
+      },
+      "creationTimestamp": "2025-06-12T13:10:13Z",
+      "generation": 4,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "sidekiq-dashboard"
+      },
+      "name": "sidekiq-dashboard",
+      "namespace": "pope",
+      "resourceVersion": "1770366935616399005",
+      "uid": "867b6127-6c4c-4b0b-9b02-b0e04e17dd2b"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "sidekiq-production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "sidekiq-dashboard",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "sidekiq-production.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "pope",
+        "artifact.spinnaker.io/name": "sidekiq-dashboard-oauth",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"pope\",\"artifact.spinnaker.io/name\":\"sidekiq-dashboard-oauth\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"sidekiq-dashboard\",\"moniker.spinnaker.io/cluster\":\"ingress sidekiq-dashboard-oauth\",\"nginx.ingress.kubernetes.io/ssl-protocols\":\"TLSv1.2 TLSv1.3\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"0.0.0.0/0,179.108.123.80/28,45.235.52.24/29,189.28.39.112/29\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"sidekiq-dashboard\"},\"name\":\"sidekiq-dashboard-oauth\",\"namespace\":\"pope\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"sidekiq-production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"oauth\",\"port\":{\"number\":4180}}},\"path\":\"/oauth2\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"sidekiq-production.rdops.systems\"],\"secretName\":\"rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "sidekiq-dashboard",
+        "moniker.spinnaker.io/cluster": "ingress sidekiq-dashboard-oauth",
+        "nginx.ingress.kubernetes.io/ssl-protocols": "TLSv1.2 TLSv1.3"
+      },
+      "creationTimestamp": "2025-06-12T13:10:14Z",
+      "generation": 5,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "sidekiq-dashboard",
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "sidekiq-dashboard-oauth",
+      "namespace": "pope",
+      "resourceVersion": "1772131878627151000",
+      "uid": "5e6a5b5b-1edb-4cb4-b1ea-52cecb1962bf"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "sidekiq-production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "oauth",
+                    "port": {
+                      "number": 4180
+                    }
+                  }
+                },
+                "path": "/oauth2",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "sidekiq-production.rdops.systems"
+          ],
+          "secretName": "rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "fronthub",
+        "artifact.spinnaker.io/name": "front-hub-internal-rdops-systems",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"fronthub\",\"artifact.spinnaker.io/name\":\"front-hub-internal-rdops-systems\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"front-hub\",\"moniker.spinnaker.io/cluster\":\"ingress front-hub-internal-rdops-systems\",\"nginx.ingress.kubernetes.io/cors-allow-origin\":\"*\",\"nginx.ingress.kubernetes.io/server-snippet\":\"add_header X-Robots-Tag \\\"noindex, nofollow\\\";\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\"},\"labels\":{\"alert_group\":\"frontend-platform\",\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"front-hub\",\"app.kubernetes.io/version\":\"1.16.0\",\"app_group\":\"web\",\"app_name\":\"FrontHub\",\"app_project\":\"FrontHub\",\"helm.sh/chart\":\"front-hub-0.2.5\",\"packaged_by\":\"helm\",\"project\":\"front-hub\",\"role\":\"app\",\"team\":\"frontend-platform\"},\"name\":\"front-hub-internal-rdops-systems\",\"namespace\":\"fronthub\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"front-hub-internal-service.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"front-hub\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"front-hub-internal-service.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "front-hub",
+        "moniker.spinnaker.io/cluster": "ingress front-hub-internal-rdops-systems",
+        "nginx.ingress.kubernetes.io/cors-allow-origin": "*",
+        "nginx.ingress.kubernetes.io/server-snippet": "add_header X-Robots-Tag \"noindex, nofollow\";",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true"
+      },
+      "creationTimestamp": "2024-09-26T23:15:07Z",
+      "generation": 1,
+      "labels": {
+        "alert_group": "frontend-platform",
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "front-hub",
+        "app.kubernetes.io/version": "1.16.0",
+        "app_group": "web",
+        "app_name": "FrontHub",
+        "app_project": "FrontHub",
+        "helm.sh/chart": "front-hub-0.2.5",
+        "packaged_by": "helm",
+        "project": "front-hub",
+        "role": "app",
+        "team": "frontend-platform"
+      },
+      "name": "front-hub-internal-rdops-systems",
+      "namespace": "fronthub",
+      "resourceVersion": "1770366935216527021",
+      "uid": "9b9f1f8b-2933-4c0e-852b-85e85e02afbb"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "front-hub-internal-service.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "front-hub",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "front-hub-internal-service.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "dependency-track",
+        "artifact.spinnaker.io/name": "dependency-track",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"dependency-track\",\"artifact.spinnaker.io/name\":\"dependency-track\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"crm\",\"moniker.spinnaker.io/cluster\":\"ingress dependency-track\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"10M\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"crm\"},\"name\":\"dependency-track\",\"namespace\":\"dependency-track\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"dependencytrack.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"dependency-track-api-server\",\"port\":{\"name\":\"web\"}}},\"path\":\"/api\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"dependency-track-api-server\",\"port\":{\"name\":\"web\"}}},\"path\":\"/health\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"dependency-track-frontend\",\"port\":{\"name\":\"web\"}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"dependencytrack.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "crm",
+        "moniker.spinnaker.io/cluster": "ingress dependency-track",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "10M"
+      },
+      "creationTimestamp": "2025-08-11T19:31:12Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "crm",
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "dependency-track",
+      "namespace": "dependency-track",
+      "resourceVersion": "1770366936013487008",
+      "uid": "6902ac07-539c-4a0e-b2f6-6b5bcbbd3557"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "dependencytrack.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "dependency-track-api-server",
+                    "port": {
+                      "name": "web"
+                    }
+                  }
+                },
+                "path": "/api",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "dependency-track-api-server",
+                    "port": {
+                      "name": "web"
+                    }
+                  }
+                },
+                "path": "/health",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "dependency-track-frontend",
+                    "port": {
+                      "name": "web"
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "dependencytrack.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "meta.helm.sh/release-name": "atlantis",
+        "meta.helm.sh/release-namespace": "atlantis",
+        "nginx.ingress.kubernetes.io/service-upstream": "true",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "35.192.136.167/32,35.192.85.2/32,35.193.7.13/32,35.202.145.110/32,35.202.245.105/32,35.227.58.83/32,192.30.252.0/22,185.199.108.0/22,140.82.112.0/20,143.55.64.0/20,128.201.121.157/29,201.47.75.216/29,179.108.123.80/28,177.135.66.240/29,10.0.0.0/8,3.228.39.90/32,18.213.67.41/32,34.194.94.201/32,34.194.144.202/32,34.197.6.234/32,35.169.17.173/32,35.174.253.146/32,52.3.128.216/32,52.4.195.249/32,52.5.58.121/32,52.21.153.129/32,52.72.72.233/32,54.92.235.88/32,54.161.182.76/32,54.164.161.41/32,54.166.105.113/32,54.167.72.230/32,54.172.26.132/32,54.205.138.102/32,54.208.72.234/32,54.209.115.53,51.0.252.0/24,15.177.0.0/18,52.80.197.0/25,52.80.197.128/25,52.80.198.0/25,52.83.34.128/25,52.83.35.0/25,52.83.35.128/25,18.253.167.0/25,18.253.167.128/25,18.253.168.0/25,160.1.55.0/25,160.1.55.128/25,160.1.56.0/25,54.248.220.0/26,54.250.253.192/26,54.251.31.128/26,54.255.254.192/26,54.252.254.192/26,54.252.79.128/26,176.34.159.192/26,54.228.16.0/26,177.71.207.128/26,54.232.40.64/26,107.23.255.0/26,54.243.31.192/26,54.183.255.128/26,54.241.32.64/26,54.244.52.192/26,54.245.168.0/26"
+      },
+      "creationTimestamp": "2026-02-03T19:35:33Z",
+      "generation": 5,
+      "labels": {
+        "app": "atlantis",
+        "app.kubernetes.io/managed-by": "Helm",
+        "chart": "atlantis-5.17.0",
+        "helm.sh/chart": "atlantis-5.17.0",
+        "heritage": "Helm",
+        "release": "atlantis"
+      },
+      "name": "atlantis",
+      "namespace": "atlantis",
+      "resourceVersion": "1770675215390383012",
+      "uid": "c51d6acb-49e0-41b5-ad6b-0149674ce7c4"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "atlantis.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "atlantis",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "atlantis.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "sre",
+        "artifact.spinnaker.io/name": "atlantis-health-check",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"sre\",\"artifact.spinnaker.io/name\":\"atlantis-health-check\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"atlantis\",\"moniker.spinnaker.io/cluster\":\"ingress atlantis-health-check\",\"nginx.ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"51.0.252.0/24,15.177.0.0/18,52.80.197.0/25,52.80.197.128/25,52.80.198.0/25,52.83.34.128/25,52.83.35.0/25,52.83.35.128/25,18.253.167.0/25,18.253.167.128/25,18.253.168.0/25,160.1.55.0/25,160.1.55.128/25,160.1.56.0/25,54.248.220.0/26,54.250.253.192/26,54.251.31.128/26,54.255.254.192/26,54.252.254.192/26,54.252.79.128/26,176.34.159.192/26,54.228.16.0/26,177.71.207.128/26,54.232.40.64/26,107.23.255.0/26,54.243.31.192/26,54.183.255.128/26,54.241.32.64/26,54.244.52.192/26,54.245.168.0/26\"},\"labels\":{\"app\":\"atlantis-health-check\",\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"atlantis\"},\"name\":\"atlantis-health-check\",\"namespace\":\"sre\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"atlantis-health-check.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"atlantis-health-check\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"atlantis-health-check.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "atlantis",
+        "moniker.spinnaker.io/cluster": "ingress atlantis-health-check",
+        "nginx.ingress.kubernetes.io/service-upstream": "true",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "51.0.252.0/24,15.177.0.0/18,52.80.197.0/25,52.80.197.128/25,52.80.198.0/25,52.83.34.128/25,52.83.35.0/25,52.83.35.128/25,18.253.167.0/25,18.253.167.128/25,18.253.168.0/25,160.1.55.0/25,160.1.55.128/25,160.1.56.0/25,54.248.220.0/26,54.250.253.192/26,54.251.31.128/26,54.255.254.192/26,54.252.254.192/26,54.252.79.128/26,176.34.159.192/26,54.228.16.0/26,177.71.207.128/26,54.232.40.64/26,107.23.255.0/26,54.243.31.192/26,54.183.255.128/26,54.241.32.64/26,54.244.52.192/26,54.245.168.0/26"
+      },
+      "creationTimestamp": "2026-02-08T15:10:17Z",
+      "generation": 1,
+      "labels": {
+        "app": "atlantis-health-check",
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "atlantis"
+      },
+      "name": "atlantis-health-check",
+      "namespace": "sre",
+      "resourceVersion": "1770563465564719023",
+      "uid": "69a0562c-9713-4bc8-8ef9-fdb0bdcb41cd"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "atlantis-health-check.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "atlantis-health-check",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "atlantis-health-check.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.41.42.158"
+          }
+        ]
+      }
+    }
+  }
+]

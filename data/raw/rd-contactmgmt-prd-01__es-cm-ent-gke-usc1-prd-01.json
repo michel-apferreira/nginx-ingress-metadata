@@ -1,0 +1,77 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "cert-manager.io/cluster-issuer": "letsencrypt",
+        "ingress.kubernetes.io/backends": "{\"k8s-be-30858--35f586de03831870\":\"Unknown\",\"k8s1-35f586de-elasticse-kibana-es-cm-enterprise-usc-56-0206bfc1\":\"UNHEALTHY\"}",
+        "ingress.kubernetes.io/forwarding-rule": "k8s2-fr-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj",
+        "ingress.kubernetes.io/https-forwarding-rule": "k8s2-fs-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj",
+        "ingress.kubernetes.io/https-target-proxy": "k8s2-ts-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj",
+        "ingress.kubernetes.io/ssl-cert": "k8s2-cr-n3ea0enz-918r9bbyu50xg58p-76a3e4c887e005f9",
+        "ingress.kubernetes.io/static-ip": "k8s2-fr-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj",
+        "ingress.kubernetes.io/target-proxy": "k8s2-tp-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj",
+        "ingress.kubernetes.io/url-map": "k8s2-um-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"cert-manager.io/cluster-issuer\":\"letsencrypt\",\"ingress.kubernetes.io/backends\":\"{\\\"k8s-be-30858--35f586de03831870\\\":\\\"Unknown\\\",\\\"k8s1-35f586de-elasticse-kibana-es-cm-enterprise-usc-56-0206bfc1\\\":\\\"UNHEALTHY\\\"}\",\"ingress.kubernetes.io/forwarding-rule\":\"k8s2-fr-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj\",\"ingress.kubernetes.io/https-forwarding-rule\":\"k8s2-fs-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj\",\"ingress.kubernetes.io/https-target-proxy\":\"k8s2-ts-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj\",\"ingress.kubernetes.io/ssl-cert\":\"k8s2-cr-n3ea0enz-918r9bbyu50xg58p-76a3e4c887e005f9\",\"ingress.kubernetes.io/static-ip\":\"k8s2-fr-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj\",\"ingress.kubernetes.io/target-proxy\":\"k8s2-tp-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj\",\"ingress.kubernetes.io/url-map\":\"k8s2-um-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj\",\"kubernetes.io/ingress.class\":\"nginx\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"512m\",\"nginx.ingress.kubernetes.io/proxy-connect-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/proxy-read-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/proxy-send-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"179.191.65.118/32,189.22.9.242/32,179.108.123.82/32,177.135.66.243/32,201.47.75.216/32,35.222.163.73/32,10.0.0.0/8,179.108.123.80/28,45.235.52.24/29,189.28.39.112/29,35.224.157.232/32\",\"prometheus.io/scrape\":\"true\"},\"creationTimestamp\":\"2023-01-12T18:04:03Z\",\"generation\":4,\"labels\":{\"k8slens-edit-resource-version\":\"v1\"},\"managedFields\":[{\"apiVersion\":\"networking.k8s.io/v1\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:metadata\":{\"f:annotations\":{\".\":{},\"f:nginx.ingress.kubernetes.io/proxy-body-size\":{},\"f:nginx.ingress.kubernetes.io/proxy-connect-timeout\":{},\"f:nginx.ingress.kubernetes.io/proxy-read-timeout\":{},\"f:nginx.ingress.kubernetes.io/proxy-send-timeout\":{},\"f:prometheus.io/scrape\":{}}},\"f:spec\":{\"f:rules\":{}}},\"manager\":\"kubectl-client-side-apply\",\"operation\":\"Update\",\"time\":\"2023-01-12T18:04:03Z\"},{\"apiVersion\":\"networking.k8s.io/v1\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:metadata\":{\"f:annotations\":{\"f:ingress.kubernetes.io/backends\":{},\"f:ingress.kubernetes.io/forwarding-rule\":{},\"f:ingress.kubernetes.io/https-forwarding-rule\":{},\"f:ingress.kubernetes.io/https-target-proxy\":{},\"f:ingress.kubernetes.io/ssl-cert\":{},\"f:ingress.kubernetes.io/static-ip\":{},\"f:ingress.kubernetes.io/target-proxy\":{},\"f:ingress.kubernetes.io/url-map\":{}}}},\"manager\":\"glbc\",\"operation\":\"Update\",\"subresource\":\"status\",\"time\":\"2023-09-11T17:03:21Z\"},{\"apiVersion\":\"networking.k8s.io/v1\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:metadata\":{\"f:annotations\":{\"f:nginx.ingress.kubernetes.io/whitelist-source-range\":{}}},\"f:spec\":{\"f:ingressClassName\":{}}},\"manager\":\"kubectl-edit\",\"operation\":\"Update\",\"time\":\"2024-04-17T17:10:12Z\"},{\"apiVersion\":\"networking.k8s.io/v1\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:metadata\":{\"f:annotations\":{\"f:cert-manager.io/cluster-issuer\":{},\"f:kubernetes.io/ingress.class\":{}},\"f:labels\":{\".\":{},\"f:k8slens-edit-resource-version\":{}}},\"f:spec\":{\"f:tls\":{}}},\"manager\":\"node-fetch\",\"operation\":\"Update\",\"time\":\"2024-10-28T18:20:26Z\"},{\"apiVersion\":\"networking.k8s.io/v1\",\"fieldsType\":\"FieldsV1\",\"fieldsV1\":{\"f:status\":{\"f:loadBalancer\":{\"f:ingress\":{}}}},\"manager\":\"nginx-ingress-controller\",\"operation\":\"Update\",\"subresource\":\"status\",\"time\":\"2025-03-22T14:22:09Z\"}],\"name\":\"kibana-es-cm-ent-01\",\"namespace\":\"elasticsearch\",\"selfLink\":\"/apis/networking.k8s.io/v1/namespaces/elasticsearch/ingresses/kibana-es-cm-ent-01\",\"uid\":\"ebe63689-dd8b-4e2f-99a7-041671b37c4d\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"kibana-es-cm-enterprise-01.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kibana-es-cm-enterprise-usc1-prd-01-kb-http\",\"port\":{\"number\":5601}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"kibana-es-cm-enterprise-01.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "512m",
+        "nginx.ingress.kubernetes.io/proxy-connect-timeout": "15600",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "15600",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "15600",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "179.191.65.118/32,189.22.9.242/32,179.108.123.82/32,177.135.66.243/32,201.47.75.216/32,35.222.163.73/32,10.0.0.0/8,179.108.123.80/28,45.235.52.24/29,189.28.39.112/29,35.224.157.232/32",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2023-01-12T18:04:03Z",
+      "generation": 5,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "kibana-es-cm-ent-01",
+      "namespace": "elasticsearch",
+      "resourceVersion": "1312475296",
+      "uid": "ebe63689-dd8b-4e2f-99a7-041671b37c4d"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "kibana-es-cm-enterprise-01.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kibana-es-cm-enterprise-usc1-prd-01-kb-http",
+                    "port": {
+                      "number": 5601
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "kibana-es-cm-enterprise-01.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.225.125.112"
+          }
+        ]
+      }
+    }
+  }
+]

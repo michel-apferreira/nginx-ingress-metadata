@@ -1,0 +1,580 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"nginx.ingress.kubernetes.io/server-snippet\":\"return 444;\\n\"},\"name\":\"catch-all-deny-ingress\",\"namespace\":\"ingress-nginx\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"nginx-ingress-nginx-defaultbackend\",\"port\":{\"number\":8080}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "nginx.ingress.kubernetes.io/server-snippet": "return 444;\n"
+      },
+      "creationTimestamp": "2025-07-07T19:49:24Z",
+      "generation": 1,
+      "name": "catch-all-deny-ingress",
+      "namespace": "ingress-nginx",
+      "resourceVersion": "1772058441380799011",
+      "uid": "6fba503b-9f54-4f8c-8531-2bdc6a6b3185"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "nginx-ingress-nginx-defaultbackend",
+                    "port": {
+                      "number": 8080
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.72.173.70"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "rd-sms",
+        "artifact.spinnaker.io/name": "dispatcher",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"rd-sms\",\"artifact.spinnaker.io/name\":\"dispatcher\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rd-sms\",\"moniker.spinnaker.io/cluster\":\"ingress dispatcher\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,179.108.123.80/28,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rd-sms\",\"app_name\":\"dispatcher\",\"app_project\":\"rd-sms\",\"resource_kind\":\"ingress\",\"team\":\"sms\"},\"name\":\"dispatcher\",\"namespace\":\"rd-sms\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"rd-sms.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"dispatcher\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"rd-sms.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rd-sms",
+        "moniker.spinnaker.io/cluster": "ingress dispatcher",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,179.108.123.80/28,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-08-16T17:28:49Z",
+      "generation": 4,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rd-sms",
+        "app_name": "dispatcher",
+        "app_project": "rd-sms",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "sms"
+      },
+      "name": "dispatcher",
+      "namespace": "rd-sms",
+      "resourceVersion": "1772058440655231022",
+      "uid": "cbf22be6-e821-493e-ab18-1febb2fc57d1"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "rd-sms.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "dispatcher",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "rd-sms.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.72.173.70"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "rd-sms",
+        "artifact.spinnaker.io/name": "fake-api",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"rd-sms\",\"artifact.spinnaker.io/name\":\"fake-api\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rd-sms\",\"moniker.spinnaker.io/cluster\":\"ingress fake-api\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rd-sms\",\"app_name\":\"fake-api\",\"app_project\":\"rd-sms\",\"resource_kind\":\"ingress\",\"team\":\"sms\"},\"name\":\"fake-api\",\"namespace\":\"rd-sms\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"sms-staging.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"fake-api\",\"port\":{\"number\":80}}},\"path\":\"/account/v1/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"sms-staging.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rd-sms",
+        "moniker.spinnaker.io/cluster": "ingress fake-api",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-11-11T19:36:52Z",
+      "generation": 4,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rd-sms",
+        "app_name": "fake-api",
+        "app_project": "rd-sms",
+        "resource_kind": "ingress",
+        "team": "sms"
+      },
+      "name": "fake-api",
+      "namespace": "rd-sms",
+      "resourceVersion": "1772058440785903003",
+      "uid": "276e0423-4d34-406d-987d-3c67f0c287d3"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "sms-staging.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "fake-api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/account/v1/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "sms-staging.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.72.173.70"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "rd-sms",
+        "artifact.spinnaker.io/name": "webhook-billing",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"rd-sms\",\"artifact.spinnaker.io/name\":\"webhook-billing\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rd-sms\",\"moniker.spinnaker.io/cluster\":\"ingress webhook-billing\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rd-sms\",\"app_name\":\"webhook-billing\",\"app_project\":\"rd-sms\",\"resource_kind\":\"ingress\",\"team\":\"sms\"},\"name\":\"webhook-billing\",\"namespace\":\"rd-sms\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"sms.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"webhook-billing\",\"port\":{\"number\":80}}},\"path\":\"/webhook/billing\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"sms.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rd-sms",
+        "moniker.spinnaker.io/cluster": "ingress webhook-billing",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-09-09T11:46:08Z",
+      "generation": 3,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rd-sms",
+        "app_name": "webhook-billing",
+        "app_project": "rd-sms",
+        "resource_kind": "ingress",
+        "team": "sms"
+      },
+      "name": "webhook-billing",
+      "namespace": "rd-sms",
+      "resourceVersion": "1772058440985343004",
+      "uid": "0b2bb576-c14e-4077-93d5-fada935acf7b"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "sms.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "webhook-billing",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/webhook/billing",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "sms.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.72.173.70"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "rd-sms",
+        "artifact.spinnaker.io/name": "webhook-pubsub",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"rd-sms\",\"artifact.spinnaker.io/name\":\"webhook-pubsub\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rd-sms\",\"moniker.spinnaker.io/cluster\":\"ingress webhook-pubsub\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rd-sms\",\"app_name\":\"webhook-pubsub\",\"app_project\":\"rd-sms\",\"resource_kind\":\"ingress\",\"team\":\"sms\"},\"name\":\"webhook-pubsub\",\"namespace\":\"rd-sms\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"sms.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"webhook-pubsub\",\"port\":{\"number\":80}}},\"path\":\"/webhook/pubsub\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"sms.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rd-sms",
+        "moniker.spinnaker.io/cluster": "ingress webhook-pubsub",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-09-04T15:47:41Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rd-sms",
+        "app_name": "webhook-pubsub",
+        "app_project": "rd-sms",
+        "resource_kind": "ingress",
+        "team": "sms"
+      },
+      "name": "webhook-pubsub",
+      "namespace": "rd-sms",
+      "resourceVersion": "1772058440194383017",
+      "uid": "3d4a121a-0faa-46eb-9f75-5738b14b4cfb"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "sms.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "webhook-pubsub",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/webhook/pubsub",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "sms.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.72.173.70"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "rd-sms",
+        "artifact.spinnaker.io/name": "webhook-short-io",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"rd-sms\",\"artifact.spinnaker.io/name\":\"webhook-short-io\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rd-sms\",\"moniker.spinnaker.io/cluster\":\"ingress webhook-short-io\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rd-sms\",\"app_name\":\"webhook-short-io\",\"app_project\":\"rd-sms\",\"resource_kind\":\"ingress\",\"team\":\"sms\"},\"name\":\"webhook-short-io\",\"namespace\":\"rd-sms\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"sms.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"webhook-short-io\",\"port\":{\"number\":80}}},\"path\":\"/webhook/shortio\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"sms.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rd-sms",
+        "moniker.spinnaker.io/cluster": "ingress webhook-short-io",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-07-02T16:45:45Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rd-sms",
+        "app_name": "webhook-short-io",
+        "app_project": "rd-sms",
+        "resource_kind": "ingress",
+        "team": "sms"
+      },
+      "name": "webhook-short-io",
+      "namespace": "rd-sms",
+      "resourceVersion": "1772058440200303003",
+      "uid": "f9a89257-296b-40e0-badb-89f4ac7bb948"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "sms.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "webhook-short-io",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/webhook/shortio",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "sms.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.72.173.70"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "rd-sms",
+        "artifact.spinnaker.io/name": "webhook-twillio",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"rd-sms\",\"artifact.spinnaker.io/name\":\"webhook-twillio\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rd-sms\",\"moniker.spinnaker.io/cluster\":\"ingress webhook-twillio\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rd-sms\",\"app_name\":\"webhook-twillio\",\"app_project\":\"rd-sms\",\"resource_kind\":\"ingress\",\"team\":\"sms\"},\"name\":\"webhook-twillio\",\"namespace\":\"rd-sms\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"sms.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"webhook-twillio\",\"port\":{\"number\":80}}},\"path\":\"/webhook/twilio\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"sms.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rd-sms",
+        "moniker.spinnaker.io/cluster": "ingress webhook-twillio",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-10-14T19:46:59Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rd-sms",
+        "app_name": "webhook-twillio",
+        "app_project": "rd-sms",
+        "resource_kind": "ingress",
+        "team": "sms"
+      },
+      "name": "webhook-twillio",
+      "namespace": "rd-sms",
+      "resourceVersion": "1772058441181871024",
+      "uid": "149b50e1-2382-4eca-9889-fab4bd5dff61"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "sms.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "webhook-twillio",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/webhook/twilio",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "sms.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.72.173.70"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "rd-sms",
+        "artifact.spinnaker.io/name": "account-api",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"rd-sms\",\"artifact.spinnaker.io/name\":\"account-api\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rd-sms\",\"moniker.spinnaker.io/cluster\":\"ingress account-api\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rd-sms\",\"app_name\":\"account-api\",\"app_project\":\"rd-sms\",\"resource_kind\":\"ingress\",\"team\":\"sms\"},\"name\":\"account-api\",\"namespace\":\"rd-sms\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"sms.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"account-api\",\"port\":{\"number\":80}}},\"path\":\"/account\",\"pathType\":\"ImplementationSpecific\"},{\"backend\":{\"service\":{\"name\":\"account-api\",\"port\":{\"number\":80}}},\"path\":\"/sms\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"sms.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rd-sms",
+        "moniker.spinnaker.io/cluster": "ingress account-api",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-09-12T17:46:29Z",
+      "generation": 3,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rd-sms",
+        "app_name": "account-api",
+        "app_project": "rd-sms",
+        "resource_kind": "ingress",
+        "team": "sms"
+      },
+      "name": "account-api",
+      "namespace": "rd-sms",
+      "resourceVersion": "1772058440386127014",
+      "uid": "fe1c061e-9f5c-4c4f-a674-e6643a6faa51"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "sms.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "account-api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/account",
+                "pathType": "ImplementationSpecific"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "account-api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/sms",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "sms.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.72.173.70"
+          }
+        ]
+      }
+    }
+  }
+]

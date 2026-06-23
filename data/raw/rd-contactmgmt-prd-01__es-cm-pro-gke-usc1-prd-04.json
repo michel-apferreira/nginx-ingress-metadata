@@ -1,0 +1,70 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "cert-manager.io/cluster-issuer": "letsencrypt",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"kubernetes.io/ingress.class\":\"nginx\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"512m\",\"nginx.ingress.kubernetes.io/proxy-connect-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/proxy-read-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/proxy-send-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8,179.191.65.118/32,189.22.9.242/32,179.108.123.82/32,177.135.66.243/32,201.47.75.216/29,35.222.163.73/32\",\"prometheus.io/scrape\":\"true\"},\"generation\":1,\"name\":\"kibana-es-cm-pro-04\",\"namespace\":\"elasticsearch\"},\"spec\":{\"rules\":[{\"host\":\"kibana-es-cm-pro-04.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kibana-es-cm-pro-usc1-prd-04-kb-http\",\"port\":{\"number\":5601}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"kibana-es-cm-pro-04.rdops.systems\"],\"secretName\":\"rdops-systems\"}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "512m",
+        "nginx.ingress.kubernetes.io/proxy-connect-timeout": "15600",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "15600",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "15600",
+        "nginx.ingress.kubernetes.io/service-upstream": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8,179.191.65.118/32,189.22.9.242/32,179.108.123.82/32,177.135.66.243/32,201.47.75.216/29,35.222.163.73/32,179.108.123.80/28,45.235.52.24/29,189.28.39.112/29,35.224.157.232/32",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2023-01-12T18:08:17Z",
+      "generation": 4,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "kibana-es-cm-pro-04",
+      "namespace": "elasticsearch",
+      "resourceVersion": "1263918544",
+      "uid": "7b007f65-d379-4592-be8e-02de0deabe93"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "kibana-es-cm-pro-04.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kibana-es-cm-pro-usc1-prd-04-kb-http",
+                    "port": {
+                      "number": 5601
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "kibana-es-cm-pro-04.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.134.106.97"
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,259 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "ecommerce",
+        "artifact.spinnaker.io/name": "ecommerce-core",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"ecommerce\",\"artifact.spinnaker.io/name\":\"ecommerce-core\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"ecommerce-core\",\"moniker.spinnaker.io/cluster\":\"ingress ecommerce-core\",\"nginx.ingress.kubernetes.io/cors-allow-headers\":\"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Platform-Account-Id,x-csrf-token\",\"nginx.ingress.kubernetes.io/custom-http-errors\":\"500,502,503\",\"nginx.ingress.kubernetes.io/enable-cors\":\"true\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"ecommerce-core\",\"app_name\":\"ecommerce-core\"},\"name\":\"ecommerce-core\",\"namespace\":\"ecommerce\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"ecommerce.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"ecommerce-core\",\"port\":{\"number\":3000}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"ecommerce.rdstation.com\"],\"secretName\":\"wildcard-rdstation-com\"}]}}\n",
+        "moniker.spinnaker.io/application": "ecommerce-core",
+        "moniker.spinnaker.io/cluster": "ingress ecommerce-core",
+        "nginx.ingress.kubernetes.io/cors-allow-headers": "DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Platform-Account-Id,x-csrf-token",
+        "nginx.ingress.kubernetes.io/custom-http-errors": "500,502,503",
+        "nginx.ingress.kubernetes.io/enable-cors": "true",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true"
+      },
+      "creationTimestamp": "2024-12-09T20:06:08Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "ecommerce-core",
+        "app_name": "ecommerce-core"
+      },
+      "name": "ecommerce-core",
+      "namespace": "ecommerce",
+      "resourceVersion": "1775162502826623014",
+      "uid": "be793460-65a1-4c62-810a-07cc2d7e98f8"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "ecommerce.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "ecommerce-core",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "ecommerce.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.121.122.176"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"ecommerce-core\",\"app_name\":\"ecommerce-core\"},\"name\":\"ecommerce-core-rdops-systems\",\"namespace\":\"ecommerce\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"ecommerce-core.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"ecommerce-core\",\"port\":{\"number\":3000}}},\"path\":\"/api/v1/public/*\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"ecommerce-core.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n"
+      },
+      "creationTimestamp": "2025-08-20T19:22:16Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "ecommerce-core",
+        "app_name": "ecommerce-core"
+      },
+      "name": "ecommerce-core-rdops-systems",
+      "namespace": "ecommerce",
+      "resourceVersion": "1775162502819983016",
+      "uid": "4844f2da-7d83-4e29-93fc-b1b273b6a0d6"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "ecommerce-core.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "ecommerce-core",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/api/v1/public/*",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "ecommerce-core.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.121.122.176"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "ecommerce",
+        "artifact.spinnaker.io/name": "ecommerce-core-whitelist",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"ecommerce\",\"artifact.spinnaker.io/name\":\"ecommerce-core-whitelist\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"ecommerce-core\",\"moniker.spinnaker.io/cluster\":\"ingress ecommerce-core-whitelist\",\"nginx.ingress.kubernetes.io/cors-allow-headers\":\"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Platform-Account-Id,x-csrf-token\",\"nginx.ingress.kubernetes.io/custom-http-errors\":\"500,502,503\",\"nginx.ingress.kubernetes.io/enable-cors\":\"true\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"177.67.112.0/21,177.67.120.0/21,138.122.172.0/22\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"ecommerce-core\",\"app_name\":\"ecommerce-core\"},\"name\":\"ecommerce-core-whitelist\",\"namespace\":\"ecommerce\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"ecommerce.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"ecommerce-core\",\"port\":{\"number\":3000}}},\"path\":\"/webhooks/tray\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"ecommerce.rdstation.com\"],\"secretName\":\"wildcard-rdstation-com\"}]}}\n",
+        "moniker.spinnaker.io/application": "ecommerce-core",
+        "moniker.spinnaker.io/cluster": "ingress ecommerce-core-whitelist",
+        "nginx.ingress.kubernetes.io/cors-allow-headers": "DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Platform-Account-Id,x-csrf-token",
+        "nginx.ingress.kubernetes.io/custom-http-errors": "500,502,503",
+        "nginx.ingress.kubernetes.io/enable-cors": "true",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "177.67.112.0/21,177.67.120.0/21,138.122.172.0/22"
+      },
+      "creationTimestamp": "2024-12-09T20:01:48Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "ecommerce-core",
+        "app_name": "ecommerce-core"
+      },
+      "name": "ecommerce-core-whitelist",
+      "namespace": "ecommerce",
+      "resourceVersion": "1775162502819999012",
+      "uid": "5f5405c9-fe71-4f68-8ff9-f1a071f38337"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "ecommerce.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "ecommerce-core",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/webhooks/tray",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "ecommerce.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.121.122.176"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"nginx.ingress.kubernetes.io/server-snippet\":\"return 444;\\n\"},\"name\":\"catch-all-deny-ingress\",\"namespace\":\"ingress-nginx\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"nginx-ingress-nginx-defaultbackend\",\"port\":{\"number\":8080}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "nginx.ingress.kubernetes.io/server-snippet": "return 444;\n"
+      },
+      "creationTimestamp": "2025-07-15T14:09:23Z",
+      "generation": 1,
+      "name": "catch-all-deny-ingress",
+      "namespace": "ingress-nginx",
+      "resourceVersion": "1775162502833775011",
+      "uid": "fbba4552-a113-48bc-b518-030da48d9244"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "nginx-ingress-nginx-defaultbackend",
+                    "port": {
+                      "number": 8080
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.121.122.176"
+          }
+        ]
+      }
+    }
+  }
+]

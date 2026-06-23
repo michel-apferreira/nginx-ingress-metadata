@@ -1,0 +1,434 @@
+project_id,cluster,namespace,ingress,deploy_type,spinnaker_app,spinnaker_cluster,helm_release,helm_chart,helm_chart_artifact,evidence,hosts,source_repo
+production-230322,cluster-production,accounts-auth,a3s-api-internal,spinnaker+helm-rdsm,,,,,,rdsm-style,a3s-api.production.rdops.systems,
+production-230322,cluster-production,automation,automation-event-based-engine,spinnaker+helm-rails,automation-event-based-engine,ingress automation-event-based-engine,,,rails-0.5.4.tgz,rails-style,automation-event-based-engine.production.rdops.systems,
+production-230322,cluster-production,automation,workflow-engine,manual,,,,,,lens/freelens,wengine-production.rdstation.com.br,
+production-230322,cluster-production,connect,rd-albato,manual,,,,,,lens/freelens,albato.rdstation.com,
+production-230322,cluster-production,connect,rd-albato-com-br,manual,,,,,,lens/freelens,albato.rdstation.com.br,
+production-230322,cluster-production,connect,rd-albato-nuvemshop,manual,,,,,,lens/freelens,albato-nuvemshop.rdstation.com,
+production-230322,cluster-production,connect,rd-albato-nuvemshop-com-br,manual,,,,,,lens/freelens,albato-nuvemshop.rdstation.com.br,
+production-230322,cluster-production,connect,rd-albato-woocommerce,manual,,,,,,lens/freelens,albato-woocommerce.rdstation.com,
+production-230322,cluster-production,connect,rd-albato-woocommerce-com-br,manual,,,,,,lens/freelens,albato-woocommerce.rdstation.com.br,
+production-230322,cluster-production,connect,rdstation-albato-pipedrive-com,manual,,,,,,lens/freelens,albato-pipedrive.rdstation.com,
+production-230322,cluster-production,connect,rdstation-albato-pipedrive-com-br,manual,,,,,,lens/freelens,albato-pipedrive.rdstation.com.br,
+production-230322,cluster-production,connect,rdstation-albato-salesforce-com,manual,,,,,,lens/freelens,albato-salesforce.rdstation.com,
+production-230322,cluster-production,connect,rdstation-albato-salesforce-com-br,manual,,,,,,lens/freelens,albato-salesforce.rdstation.com.br,
+production-230322,cluster-production,connect,rdstation-albato-shopify-com,manual,,,,,,lens/freelens,albato-shopify.rdstation.com,
+production-230322,cluster-production,connect,rdstation-albato-shopify-com-br,manual,,,,,,lens/freelens,albato-shopify.rdstation.com.br,
+production-230322,cluster-production,connect,rdstation-albato-vtex-com,manual,,,,,,lens/freelens,albato-vtex.rdstation.com,
+production-230322,cluster-production,connect,rdstation-albato-vtex-com-br,manual,,,,,,lens/freelens,albato-vtex.rdstation.com.br,
+production-230322,cluster-production,connect,statuspage-rdstation,manual,,,,,,lens/freelens,status.rdstation.com.br,
+production-230322,cluster-production,core,cdp-entities-consistency-checker,manual,,,,,,lens/freelens,cdp.rd.services,
+production-230322,cluster-production,crm,kibana-crm,spinnaker+helm-rails,crm,ingress kibana-crm,,,eck-elasticsearch-0.3.0.tgz,rails-style,kibana-crm.production.rdops.systems,https://github.com/ResultadosDigitais/rds-crm
+production-230322,cluster-production,moteam,galaga,spinnaker+manifesto,galaga,ingress galaga,,,,galaga,galaga.rdstation.com.br,
+production-230322,cluster-production,leadgen,event-harbor,spinnaker+helm-rails,event-harbor,ingress event-harbor,,,go-app-0.6.0.tgz,rails-style,event-harbor.rdstation.com,
+production-230322,cluster-production,olimpo,hefesto,spinnaker+manifesto,hefesto,ingress hefesto,,,,hefesto,hefesto.rdstation.com.br,
+production-230322,cluster-production,olimpo,lead-vacuum,spinnaker+manifesto,lead-vacuum-worker,ingress lead-vacuum,,,,lead-vacuum-worker,lead-vacuum.rdstation.com.br,
+production-230322,cluster-production,sauron,gyruss,spinnaker+manifesto,gyruss,ingress gyruss,,,external-secret-0.1.1.tgz,gyruss,event-api.rdstation.com.br,https://github.com/ResultadosDigitais/helm
+production-230322,cluster-production,sauron,gyruss-cta-redirect,spinnaker+manifesto,gyruss,ingress gyruss-cta-redirect,,,external-secret-0.1.1.tgz,gyruss,cta-redirect.rdstation.com,https://github.com/ResultadosDigitais/helm
+production-230322,cluster-production,sauron,gyruss-ingress-internal,spinnaker+manifesto,gyruss,ingress gyruss-ingress-internal,,,external-secret-0.1.1.tgz,gyruss,gyruss-internal.production.rdops.systems,https://github.com/ResultadosDigitais/helm
+production-230322,cluster-production,sauron,gyruss-rdops-systems,spinnaker+manifesto,gyruss,ingress gyruss-rdops-systems,,,external-secret-0.1.1.tgz,gyruss,gyruss.rdops.systems,https://github.com/ResultadosDigitais/helm
+production-230322,cluster-production,rdsm,rdsm-web,spinnaker+manifesto,rdsm,ingress rdsm-web,,,rdsm-${parameters.helm_version}.tgz,rdsm,app.rdstation.com.br,https://github.com/resultadosdigitais/rdstation
+production-230322,cluster-production,kong,api-gateway-new-with-nginx,outros,,,,,,,*.rdstation.com.br|*.rdstation.com|*.rd.services|*.rdops.systems|*.production.rdops.systems,
+production-230322,cluster-production,ingress-nginx,catch-all-deny-ingress,outros,,,,,,,,
+production-230322,cluster-production,kong,kong-admin-ingress,manual,,,,,,lens/freelens,kong-admin-internal.production.rdops.systems,
+production-230322,cluster-production,kong,kongadmin,helm-direto,,,,konga-1.0.0,,konga-1.0.0,konga-production.rdops.systems,
+production-230322,cluster-production,pope,sidekiq-dashboard,spinnaker+manifesto,sidekiq-dashboard,ingress sidekiq-dashboard,,,,sidekiq-dashboard,sidekiq-production.rdops.systems,
+production-230322,cluster-production,pope,sidekiq-dashboard-oauth,spinnaker+manifesto,sidekiq-dashboard,ingress sidekiq-dashboard-oauth,,,,sidekiq-dashboard,sidekiq-production.rdops.systems,
+production-230322,cluster-production,core,rd-whatsapp-console,spinnaker+helm-rails,rd-whatsapp-console,ingress rd-whatsapp-console,,,rails-0.5.5.tgz,rails-style,rd-whatsapp-console.production.rdops.systems,
+rd-accounts-prd-01,services-gke-usc1-accounts-prd-01,accounts-auth,a3s-api-internal,spinnaker+helm-rdsm,a3s,ingress a3s-api-internal,,,go-app-0.9.0.tgz,rdsm-style,a3s-api-accounts-prd.production.rdops.systems,https://github.com/resultadosdigitais/platform
+rd-accounts-prd-01,services-gke-usc1-accounts-prd-01,accounts-auth,hydra-admin-api,spinnaker+helm-rails,hydra-api,ingress hydra-admin-api,,,go-app-0.7.0.tgz,rails-style,hydra-admin-api-internal.production.rdops.systems,https://github.com/resultadosdigitais/hydra-api
+rd-accounts-prd-01,services-gke-usc1-accounts-prd-01,accounts-auth,hydra-api,spinnaker+helm-rails,hydra-api,ingress hydra-api,,,go-app-0.7.0.tgz,rails-style,hydra-api-internal.production.rdops.systems,https://github.com/resultadosdigitais/hydra-api
+rd-accounts-prd-01,services-gke-usc1-accounts-prd-01,accounts-auth,platform-session-service,spinnaker+helm-rails,platform-session-service,ingress platform-session-service,,,rails-0.5.3.tgz,rails-style,platform-session-service.production.rdops.systems,
+rd-accounts-prd-01,services-gke-usc1-accounts-prd-01,accounts-auth,rd-auth,spinnaker+helm-rails,rd-auth,ingress rd-auth,,,rails-0.5.3.tgz,rails-style,accounts-internal.production.rdops.systems,https://github.com/resultadosdigitais/rd-auth
+rd-accounts-prd-01,services-gke-usc1-accounts-prd-01,accounts-auth,teste-rd-auth,spinnaker+manifesto,veritas,ingress veritas,,,,veritas,accounts.rdstation.com.br,
+rd-accounts-prd-01,services-gke-usc1-accounts-prd-01,accounts-auth,user-confirmail,spinnaker+helm-rails,user-confirmail,ingress user-confirmail,,,rails-0.5.3.tgz,rails-style,user-confirmail.production.rdops.systems,https://github.com/resultadosdigitais/user-confirmail
+rd-accounts-prd-01,services-gke-usc1-accounts-prd-01,ingress-nginx,catch-all-deny-ingress,outros,,,,,,,,
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,analyze,access-orchestration-app,spinnaker+helm-rails,access-orchestration-app,ingress access-orchestration-app,,,rails-0.5.3.tgz,rails-style,access-orchestration-app.production.rdops.systems,https://github.com/resultadosdigitais/access-orchestration-app
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,analyze,attribution-analysis-api,spinnaker+helm-rails,attribution-analysis-api,ingress attribution-analysis-api,,,rails-0.5.3.tgz,rails-style,attribution-analysis-api.production.rdops.systems,https://github.com/resultadosdigitais/attribution-analysis-api
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,analyze,basic-analytics-ingress,spinnaker+manifesto,basic-analytics,ingress basic-analytics-ingress,,,rails-0.6.1.tgz,basic-analytics,basic-analytics.production.rdops.systems,https://github.com/resultadosdigitais/basic_analytics
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,analyze,data-platform-data-access-api,spinnaker+helm-rails,data-platform-data-access-api,ingress data-platform-data-access-api,,,rails-0.5.3.tgz,rails-style,data-platform-data-access-api.production.rdops.systems,https://github.com/resultadosdigitais/data-platform-data-access-api
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,analyze,insights-platform-api-v8,spinnaker+helm-rails,insights-platform-api,ingress insights-platform-api-v8,,,rails-0.6.1.tgz,rails-style,insights-platform-api-v8.production.rdops.systems,https://github.com/resultadosdigitais/insights-platform-api
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,analyze,rds-assets-app-api,spinnaker+helm-rails,rds-assets-app-api,ingress rds-assets-app-api,,,rails-0.5.3.tgz,rails-style,assets-api.production.rdops.systems,
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,analyze,rds-assets-app-api-internal,spinnaker+helm-rails,rds-assets-app-api,ingress rds-assets-app-api-internal,,,rails-0.5.3.tgz,rails-style,assets-api-internal.production.rdops.systems,
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,analyze,report-builder-api,spinnaker+helm-rails,report-builder-api,ingress report-builder-api,,,rails-0.5.3.tgz,rails-style,report-builder-api.production.rdops.systems,
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,insights,executive-agent,spinnaker+helm-rails,executive-agent,ingress executive-agent,,,rails-0.5.3.tgz,rails-style,executive-agent.production.rdops.systems,https://github.com/resultadosdigitais/executive-agent
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,insights,inngest,spinnaker+helm-externo,ai-platform-inngest,ingress inngest,,inngest-0.1.1,,inngest-0.1.1,inngest.production.rdops.systems,https://github.com/ResultadosDigitais/ai-platform
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,insights,inngest-public,spinnaker+helm-externo,ai-platform-inngest,ingress inngest-public,,inngest-0.1.1,,inngest-0.1.1,inngest.production.rdops.systems,https://github.com/ResultadosDigitais/ai-platform
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,insights,insights-platform-api,spinnaker+helm-rails,insights-platform-api,ingress insights-platform-api,,,rails-0.6.1.tgz,rails-style,insights-platform-api.production.rdops.systems,https://github.com/resultadosdigitais/insights-platform-api
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,insights,marketing-mcp,spinnaker+helm-rails,marketing-mcp,ingress marketing-mcp,,,rails-0.5.3.tgz,rails-style,marketing-mcp.production.rdops.systems,https://github.com/ResultadosDigitais/marketing-mcp
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,insights,rds-crm-copilot,spinnaker+helm-rails,rds-crm-copilot,ingress rds-crm-copilot,,,rails-0.5.3.tgz,rails-style,rds-crm-copilot.production.rdops.systems,https://github.com/ResultadosDigitais/rds-crm-copilot
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,insights,rds-crm-copilot-public,spinnaker+helm-rails,rds-crm-copilot,ingress rds-crm-copilot-public,,,rails-0.5.3.tgz,rails-style,rds-crm-copilot.production.rdops.systems,https://github.com/ResultadosDigitais/rds-crm-copilot
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,insights,rdsc-copilot,spinnaker+helm-rails,rdsc-copilot,ingress rdsc-copilot,,,rails-0.5.3.tgz,rails-style,rdsc-copilot.production.rdops.systems,https://github.com/ResultadosDigitais/rdsc-copilot
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,insights,rudi-api,spinnaker+helm-rails,rudi-api,ingress rudi-api,,,rails-0.5.3.tgz,rails-style,rudi-api.production.rdops.systems,https://github.com/resultadosdigitais/rudi
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,insights,ai-platform-builder,spinnaker+helm-rails,ai-platform-builder,ingress ai-platform-builder,,,rails-0.5.3.tgz,rails-style,agentes.rdstation.com|www.agentes.rdstation.com,https://github.com/ResultadosDigitais/ai-platform
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,insights,ai-platform-litellm,spinnaker+helm-externo,ai-platform,ingress ai-platform-litellm,,litellm-0.1.824,,litellm-0.1.824,inference.production.rdops.systems,https://github.com/ResultadosDigitais/ai-platform
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,insights,marketing-copilot,spinnaker+helm-rails,marketing-copilot,ingress marketing-copilot,,,rails-0.5.3.tgz,rails-style,marketing-copilot.production.rdops.systems,https://github.com/ResultadosDigitais/marketing-copilot
+rd-analytics-prd-01,gke-usc1-analytics-prd-01,insights,marketing-copilot-public,spinnaker+helm-rails,marketing-copilot,ingress marketing-copilot-public,,,rails-0.5.3.tgz,rails-style,marketing-copilot.production.rdops.systems,https://github.com/ResultadosDigitais/marketing-copilot
+rd-automation-prd-01,gke-usc1-automation-prd-01,automation,automation-event-based-engine,spinnaker+helm-rails,automation-event-based-engine,ingress automation-event-based-engine,,,rails-0.5.4.tgz,rails-style,automation-event-based-engine.production.rdops.systems,
+rd-automation-prd-01,gke-usc1-automation-prd-01,automation,rdsm-automation-engine-execution-action-api,outros,,,,,,,rdsm-automation-engine-execution-action-api.rdstation.com,
+rd-billing-prd-01,services-gke-usc1-billing-prd-01,billing,cap-hook,spinnaker+manifesto,cap-hook,ingress cap-hook,,,,cap-hook,cap-hook.rdstation.com.br,
+rd-billing-prd-01,services-gke-usc1-billing-prd-01,billing,partnership,spinnaker+manifesto,partnership,ingress partnership,,,,partnership,partnership.rd.services,
+rd-billing-prd-01,services-gke-usc1-billing-prd-01,billing,rabbitmq-cluster,spinnaker+helm-externo,saas-internal,ingress rabbitmq-cluster,,rabbitmq-12.6.1,,rabbitmq-12.6.1,rmq-stats-billing-prd.rdops.systems,https://github.com/ResultadosDigitais/helm
+rd-billing-prd-01,services-gke-usc1-billing-prd-01,billing,rd-contas-smart-retry,spinnaker+manifesto,rd-contas-smart-retry,ingress rd-contas-smart-retry,,,,rd-contas-smart-retry,rd-contas-smart-retry.rdstation.com.br,
+rd-billing-prd-01,services-gke-usc1-billing-prd-01,billing,saas-internal,spinnaker+manifesto,saas-internal,ingress saas-internal,,,rabbitmq-12.6.1.tgz,saas-internal,contas-k8s.rdstation.com.br|contas.rdstation.com.br|billing.rdstation.com.br|rmq-contas.rdops.systems|amqp-contas.production.rdops.systems,https://github.com/ResultadosDigitais/helm
+rd-billing-prd-01,services-gke-usc1-billing-prd-01,billing,subscription-manager-api,spinnaker+manifesto,subscription-manager-api,ingress subscription-manager-api,,,,subscription-manager-api,rd-subscriber-internal.rdops.systems,
+rd-billing-prd-01,services-gke-usc1-billing-prd-01,ingress-nginx,catch-all-deny-ingress,outros,,,,,,,,
+rd-checkout-prd-01,services-gke-usc1-checkout-prd-01,paypay,paypay,spinnaker+manifesto,checkout,ingress paypay,,,rd-paas-0.1.31.tgz,checkout,paypay.rd.services,https://github.com/resultadosdigitais/paypay
+rd-contactmgmt-prd-01,es-cm-default-gke-usc1-prd-01,elasticsearch,kibana-es-cm-default-01,manual,,,,,,lens/freelens,kibana-es-cm-default-01.rdops.systems,
+rd-contactmgmt-prd-01,es-cm-ent-gke-usc1-prd-01,elasticsearch,kibana-es-cm-ent-01,manual,,,,,,lens/freelens,kibana-es-cm-enterprise-01.rdops.systems,
+rd-contactmgmt-prd-01,es-cm-etl-gke-usc1-prd-01,elasticsearch,kibana-es-cm-etl-01,manual,,,,,,lens/freelens,kibana-es-cm-entrylevel-01.rdops.systems,
+rd-contactmgmt-prd-01,es-cm-midmarket-01-gke-usc1-prd-01,elasticsearch,kibana-es-cm-usc1-prd-midmarket-01,manual,,,,,,lens/freelens,kibana-es-cm-midmarket-01.rdops.systems,
+rd-contactmgmt-prd-01,es-cm-pro-gke-usc1-prd-01,elasticsearch,kibana-es-cm-pro-01,manual,,,,,,lens/freelens,kibana-es-cm-pro-01.rdops.systems,
+rd-contactmgmt-prd-01,es-cm-pro-gke-usc1-prd-02,elasticsearch,kibana-es-cm-pro-02,manual,,,,,,lens/freelens,kibana-es-cm-pro-02.rdops.systems,
+rd-contactmgmt-prd-01,es-cm-pro-gke-usc1-prd-03,elasticsearch,kibana-es-cm-pro-03,manual,,,,,,lens/freelens,kibana-es-cm-pro-03.rdops.systems,
+rd-contactmgmt-prd-01,es-cm-pro-gke-usc1-prd-04,elasticsearch,kibana-es-cm-pro-04,manual,,,,,,lens/freelens,kibana-es-cm-pro-04.rdops.systems,
+rd-contactmgmt-prd-01,es-cm-pro-gke-usc1-prd-05,elasticsearch,kibana-es-cm-pro-05,manual,,,,,,lens/freelens,kibana-es-cm-pro-05.rdops.systems,
+rd-contactmgmt-prd-01,es-cm-pro-gke-usc1-prd-06,elasticsearch,kibana-es-cm-pro-06,manual,,,,,,lens/freelens,kibana-es-cm-pro-06.rdops.systems,
+rd-contactmgmt-prd-01,esleadscor-gke-usc1-contactmgmt-prd-01,default,kibana-es-leadscoring,manual,,,,,,lens/freelens,kibana-leadscoring.rdops.systems,
+rd-contactmgmt-prd-01,kafkacdc-gke-usc1-contactmgmt-prd-01,migrator,cdc-migrator-web,helm-direto,,,cdc-migrator,,,cdc-migrator,cdc-migrador.rdops.systems,
+rd-contactmgmt-prd-01,kafkacdc-gke-usc1-contactmgmt-prd-01,kafka,kafka-dashboard,manual,,,,,,lens/freelens,kafka-dashboard.rdops.systems,
+rd-contactmgmt-prd-01,kafkacdc-gke-usc1-contactmgmt-prd-01,kafka,migrador,outros,,,,,,,migrador.rdops.systems,
+rd-contactmgmt-prd-01,services-gke-usc1-contactmgmt-prd-01,timescaledb,ingress-rdmetrics,manual,,,,,,lens/freelens,rdmetrics.production.rdops.systems,
+rd-contactmgmt-prd-01,services-gke-usc1-contactmgmt-prd-01,platform,schema-api-yucatan,spinnaker+helm-rdsm,,,,,,rdsm-style,schema-api-yucatan.production.rdops.systems,
+rd-contactmgmt-prd-01,services-gke-usc1-contactmgmt-prd-01,elasticsearch,ingress-kibana-services-temp,manual,,,,,,lens/freelens,kibana.services.rd-contactmgmt-prd-01.production.rdops.systems,
+rd-contactmgmt-prd-01,services-gke-usc1-contactmgmt-prd-01,elasticsearch,kibana-es-benchmark,outros,,,,,,,kibana-es-benchmark.production.rdops.systems,
+rd-crm-prd-01,services-gke-usc1-crm-prd-01,crm,api,spinnaker+helm-rails,crm,ingress api,,,eck-elasticsearch-0.3.0.tgz,rails-style,crm.rdstation.com,https://github.com/ResultadosDigitais/rds-crm
+rd-crm-prd-01,services-gke-usc1-crm-prd-01,crm,api-internal-v2,spinnaker+helm-rails,crm,ingress api-internal-v2,,,eck-elasticsearch-0.3.0.tgz,rails-style,crm-api-v2.production.rdops.systems,https://github.com/ResultadosDigitais/rds-crm
+rd-crm-prd-01,services-gke-usc1-crm-prd-01,crm,crm-aws-index-html,spinnaker+manifesto,crm,ingress crm-aws-index-html,,,eck-elasticsearch-0.3.0.tgz,crm,crm.rdstation.com,https://github.com/ResultadosDigitais/rds-crm
+rd-crm-prd-01,services-gke-usc1-crm-prd-01,crm,plugcrm-blog-redirect,spinnaker+manifesto,notify-api,ingress plugcrm-blog-redirect,,,go-app-0.3.9.tgz,notify-api,blog.plugcrm.net,
+rd-crm-prd-01,services-gke-usc1-crm-prd-01,crm,sidekiq-okta-oauth,spinnaker+helm-rails,crm,ingress sidekiq-okta-oauth,,,eck-elasticsearch-0.3.0.tgz,rails-style,crm.rdstation.com,https://github.com/ResultadosDigitais/rds-crm
+rd-crm-prd-01,services-gke-usc1-crm-prd-01,crm,web,spinnaker+helm-rails,crm,ingress web,,,eck-elasticsearch-0.3.0.tgz,rails-style,crm.rdstation.com,https://github.com/ResultadosDigitais/rds-crm
+rd-crm-prd-01,services-gke-usc1-crm-prd-01,crm,web-internal,spinnaker+helm-rails,crm,ingress web-internal,,,eck-elasticsearch-0.3.0.tgz,rails-style,crm.production.rdops.systems,https://github.com/ResultadosDigitais/rds-crm
+rd-crm-prd-01,services-gke-usc1-crm-prd-01,crm,web-sidekiq-oauth,spinnaker+helm-rails,crm,ingress web-sidekiq-oauth,,,eck-elasticsearch-0.3.0.tgz,rails-style,crm.rdstation.com,https://github.com/ResultadosDigitais/rds-crm
+rd-crm-prd-01,services-gke-usc1-crm-prd-01,crm,web-whitelist,spinnaker+helm-rails,crm,ingress web-whitelist,,,eck-elasticsearch-0.3.0.tgz,rails-style,crm.production.rdops.systems,https://github.com/ResultadosDigitais/rds-crm
+rd-crm-prd-01,services-gke-usc1-crm-prd-01,hydra,zendesk-hc-redirect,spinnaker+manifesto,zendesk-hc-redirect,ingress zendesk-hc-redirect,,,,zendesk-hc-redirect,ajuda.rdstation.com.br|crmsupport.rdstation.com.br,
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,devlake,devlake,helm-direto,,,devlake,devlake-0.21.0,,devlake,devlake.production.rdops.systems,
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,devexp,backstage,spinnaker+helm-rails,backstage,ingress backstage,,,rails-0.5.3.tgz,rails-style,backstage.production.rdops.systems,https://github.com/resultadosdigitais/rds-crm
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,devexp,backstage-bot-api,spinnaker+helm-rails,backstage,ingress backstage-bot-api,,,rails-0.5.3.tgz,rails-style,backstage.production.rdops.systems,https://github.com/resultadosdigitais/rds-crm
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,devexp,backstage-git-api,spinnaker+helm-rails,backstage,ingress backstage-git-api,,,rails-0.5.3.tgz,rails-style,backstage.production.rdops.systems,https://github.com/resultadosdigitais/rds-crm
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,devexp,backstage-oauth,spinnaker+helm-rails,backstage,ingress backstage-oauth,,,rails-0.5.3.tgz,rails-style,backstage.production.rdops.systems,https://github.com/resultadosdigitais/rds-crm
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,devexp,backstage-subscribe-github,spinnaker+helm-rails,backstage,ingress backstage-subscribe-github,,,rails-0.5.3.tgz,rails-style,backstage.production.rdops.systems,https://github.com/resultadosdigitais/rds-crm
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,devexp,jobs-sidekiq,spinnaker+helm-rails,github-scanner,ingress jobs-sidekiq,,,rails-0.5.3.tgz,rails-style,github-scanner.production.rdops.systems,https://github.com/resultadosdigitais/github_scanner
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,devexp,oraculo-metrics-extractor,spinnaker+helm-rails,oraculo-metrics-extractor,ingress oraculo-metrics-extractor,,,rails-0.5.3.tgz,rails-style,oraculo-metrics-extractor.rdops.systems,
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,devexp,rdsm-deploy-metrics-collector,spinnaker+helm-rails,rdsm-deploy-metrics-collector,ingress rdsm-deploy-metrics-collector,,,rails-0.5.3.tgz,rails-style,rdsm-deploy-metrics-collector.production.rdops.systems,https://github.com/resultadosdigitais/rdsm-deploy-metrics-collector
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,devexp,rocknrollout2,spinnaker+helm-rails,rocknrollout2,ingress rocknrollout2,,,rails-0.5.3.tgz,rails-style,rocknrollout2.production.rdops.systems,
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,hydra,troublemakerbot,spinnaker+manifesto,troublemakerbot,ingress troublemakerbot,,,,troublemakerbot,troublemakerbot.rdstation.com.br,
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,ingress-nginx,catch-all-deny-ingress,outros,,,,,,,,
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,shield,toolbelt,spinnaker+manifesto,toolbelt,ingress toolbelt,,,,toolbelt,toolbelt.rdstation.com.br,
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,shield,toolbeltemailstats,spinnaker+manifesto,toolbeltemailstats,ingress toolbeltemailstats,,,,toolbeltemailstats,toolbeltemailstats.rd.services,
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,support,incident-io-ruby-client,spinnaker+helm-rails,incident-io-ruby-client,ingress incident-io-ruby-client,,,rails-0.4.18.tgz,rails-style,incident-io-ruby-client.production.rdops.systems,https://github.com/resultadosdigitais/incident-io-ruby-client
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,synthetics,synthetics-pre-prod,spinnaker+manifesto,synthetics-pre-prod,ingress synthetics-pre-prod,,,synthetics-pre-prod-0.1.3.tgz,synthetics-pre-prod,synthetics-pre-pro.rdops.systems,https://github.com/ResultadosDigitais/helm
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,pope,sidekiq-dashboard,spinnaker+manifesto,sidekiq-dashboard,ingress sidekiq-dashboard,,,,sidekiq-dashboard,sidekiq-production.rdops.systems,
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,pope,sidekiq-dashboard-oauth,spinnaker+manifesto,sidekiq-dashboard,ingress sidekiq-dashboard-oauth,,,,sidekiq-dashboard,sidekiq-production.rdops.systems,
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,fronthub,front-hub-internal-rdops-systems,spinnaker+helm-rdsm,front-hub,ingress front-hub-internal-rdops-systems,,front-hub-0.2.5,,front-hub-0.2.5,front-hub-internal-service.rdops.systems,https://github.com/ResultadosDigitais/helm
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,dependency-track,dependency-track,spinnaker+manifesto,crm,ingress dependency-track,,,eck-elasticsearch-0.3.0.tgz,crm,dependencytrack.production.rdops.systems,https://github.com/ResultadosDigitais/rds-crm
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,atlantis,atlantis,helm-direto,,,atlantis,atlantis-5.17.0,,atlantis,atlantis.rdops.systems,
+rd-devexp-prd-01,services-gke-usc1-devexp-prd-01,sre,atlantis-health-check,spinnaker+manifesto,atlantis,ingress atlantis-health-check,,,,atlantis,atlantis-health-check.rdops.systems,https://github.com/resultadosdigitais/pope
+rd-devops,rd-devops,internaltools,oraculo,manual,,,,,,lens/freelens,oraculo.rdstation.com.br,
+rd-devops,rd-devops,internaltools,oraculo-admin,manual,,,,,,lens/freelens,oraculo.rdstation.com.br,
+rd-devops,rd-devops,spin-cli-api,spin-cli,spinnaker+manifesto,spin-cli-api,ingress spin-cli,,,,spin-cli-api,spincli.rdops.systems,https://github.com/ResultadosDigitais/pope
+rd-devops,rd-devops,spinnaker,ingress,manual,,,,,,lens/freelens,spinnaker.rdops.systems|spinnaker-api.rdops.systems,
+rd-devops,rd-devops,ingress-nginx,catch-all-deny-ingress,outros,,,,,,,,
+rd-devops,rd-devops,internaltools,synthetics-app,spinnaker+helm-rails,synthetics-app,ingress synthetics-app,,,rails-0.5.3.tgz,rails-style,synthetics.rdops.systems,https://github.com/resultadosdigitais/synthetics-app
+rd-devops,rd-devops,internaltools,synthetics-app-auth,spinnaker+helm-rails,synthetics-app,ingress synthetics-app-auth,,,rails-0.5.3.tgz,rails-style,synthetics-app.rdops.systems,https://github.com/resultadosdigitais/synthetics-app
+rd-devops,rd-devops,internaltools,synthetics-app-leads,spinnaker+helm-rails,synthetics-app,ingress synthetics-app-leads,,,rails-0.5.3.tgz,rails-style,synthetics.rdops.systems,https://github.com/resultadosdigitais/synthetics-app
+rd-devops,rd-devops,vault,vault,manual,,,,,,lens/freelens,vault.rdops.systems,
+rd-devops,rd-devops,vault,vault-internal,manual,,,,,,lens/freelens,vault-internal.rdops.systems,
+rd-devops,rd-devops,jenkins,ingress,manual,,,,,,lens/freelens,jenkins.rdops.systems,
+rd-devops,rd-devops,atlantis,atlantis,helm-direto,,,atlantis,atlantis-5.17.0,,atlantis,atlantis.rdops.systems|atlantis-primary.rdops.systems,
+rd-devops,rd-devops,sre,synthetics-orchestrator,manual,,,,,,lens/freelens,synthetics-orchestrator.rdops.systems,
+rd-ecommerce-prd-01,services-gke-usc1-rd-ecommerce-prd-01,ecommerce,ecommerce-core,spinnaker+manifesto,ecommerce-core,ingress ecommerce-core,,,rd-paas-0.1.31.tgz,ecommerce-core,ecommerce.rdstation.com,https://github.com/resultadosdigitais/ecommerce-core
+rd-ecommerce-prd-01,services-gke-usc1-rd-ecommerce-prd-01,ecommerce,ecommerce-core-rdops-systems,outros,,,,,,,ecommerce-core.production.rdops.systems,
+rd-ecommerce-prd-01,services-gke-usc1-rd-ecommerce-prd-01,ecommerce,ecommerce-core-whitelist,spinnaker+manifesto,ecommerce-core,ingress ecommerce-core-whitelist,,,rd-paas-0.1.31.tgz,ecommerce-core,ecommerce.rdstation.com,https://github.com/resultadosdigitais/ecommerce-core
+rd-ecommerce-prd-01,services-gke-usc1-rd-ecommerce-prd-01,ingress-nginx,catch-all-deny-ingress,outros,,,,,,,,
+rd-email-prd-01,services-gke-usc1-email-prd-01,email,email-validator,spinnaker+helm-rails,email-validator,ingress email-validator,,,rails-0.5.1.tgz,rails-style,email-validator.rdops.systems,https://github.com/resultadosdigitais/email-validator
+rd-email-prd-01,services-gke-usc1-email-prd-01,email,email-validator-wh-billing,spinnaker+helm-rails,email-validator,ingress email-validator-wh-billing,,,rails-0.5.1.tgz,rails-style,email-validator.rdstation.com.br,https://github.com/resultadosdigitais/email-validator
+rd-email-prd-01,services-gke-usc1-email-prd-01,email,email-validator-wh-exact,spinnaker+helm-rails,email-validator,ingress email-validator-wh-exact,,,rails-0.5.1.tgz,rails-style,email-validator.rdstation.com.br,https://github.com/resultadosdigitais/email-validator
+rd-email-prd-01,services-gke-usc1-email-prd-01,email,email-validator-wh-pubsub,spinnaker+helm-rails,email-validator,ingress email-validator-wh-pubsub,,,rails-0.5.1.tgz,rails-style,email-validator.rdstation.com.br,https://github.com/resultadosdigitais/email-validator
+rd-infosec-prd-01,services-gke-usc1-infosec-prd-01,defectdojo,defectdojo,spinnaker+helm-externo,defect-dojo,ingress defectdojo,,defectdojo-1.6.135,,defectdojo-1.6.135,defectdojo.production.rdops.systems,https://github.com/ResultadosDigitais/helm
+rd-multichannel-prd-01,services-gke-usc1-multichannel-prd-01,multi,multichannel-api,spinnaker+helm-rails,multichannel-api,ingress multichannel-api,,,rails-0.5.1.tgz,rails-style,multichannel-api.rdops.systems,
+rd-platform-stg-01,services-gke-usc1-platform-stg-01,accounts-auth,a3s-api,spinnaker+manifesto,ecommerce-core,ingress a3s-api,,,rd-paas-0.1.31.tgz,ecommerce-core,paas-a3s-api.staging.rdops.systems,https://github.com/resultadosdigitais/ecommerce-core
+rd-platform-stg-01,services-gke-usc1-platform-stg-01,accounts-auth,rd-auth,spinnaker+manifesto,ecommerce-core,ingress rd-auth,,,rd-paas-0.1.31.tgz,ecommerce-core,paas-accounts.staging.rdops.systems,https://github.com/resultadosdigitais/ecommerce-core
+rd-platform-stg-01,services-gke-usc1-platform-stg-01,bot,ingress-rdpaas-slack-bot,spinnaker+manifesto,rd-paas-bot,ingress ingress-rdpaas-slack-bot,,,,rd-paas-bot,rdpaas-bot-stg.staging.rdops.systems,
+rd-platform-stg-01,services-gke-usc1-platform-stg-01,bot,ingress-rdpaas-slack-bot-teste,spinnaker+manifesto,,,,,,ingress-rdpaas-slack-bot,bot.rdpaas.rdops.systems,
+rd-platform-stg-01,services-gke-usc1-platform-stg-01,checkout,paypay,spinnaker+manifesto,checkout,ingress paypay,,,rd-paas-0.1.31.tgz,checkout,paypay.staging.rdops.systems,https://github.com/resultadosdigitais/paypay
+rd-platform-stg-01,services-gke-usc1-platform-stg-01,connect,ecommerce-core,spinnaker+manifesto,ecommerce-core,ingress ecommerce-core,,,rd-paas-0.1.31.tgz,ecommerce-core,ecommerce-core.staging.rdops.systems,https://github.com/resultadosdigitais/ecommerce-core
+rd-platform-stg-01,services-gke-usc1-platform-stg-01,connect,test-nginx-ingress,outros,,,,,,,default-chart-example.local,
+rd-platform-stg-01,services-gke-usc1-platform-stg-01,analyze,access-orchestration-app,spinnaker+helm-rails,attribution-analysis-api,ingress access-orchestration-app,,,rails-0.5.3.tgz,rails-style,access-orchestration-app.staging.rdops.systems,https://github.com/resultadosdigitais/attribution-analysis-api
+rd-platform-stg-01,services-gke-usc1-platform-stg-01,analyze,attribution-analysis-api,spinnaker+helm-rails,attribution-analysis-api,ingress attribution-analysis-api,,,rails-0.5.3.tgz,rails-style,attribution-analysis-api.staging.rdops.systems,https://github.com/resultadosdigitais/attribution-analysis-api
+rd-platform-stg-01,services-gke-usc1-platform-stg-01,dev-center-backend,dev-center-api-ingress,spinnaker+manifesto,dev-center-api,ingress dev-center-api-ingress,,,,dev-center-api,devcenter-api.rdops.systems,
+rd-platform-stg-01,services-gke-usc1-platform-stg-01,dev-center-backend,dev-center-backend-ingress,spinnaker+manifesto,dev-center-backend,ingress dev-center-backend-ingress,,,,dev-center-backend,devcenter.rdstation.com.br,
+rd-platform-stg-01,services-gke-usc1-platform-stg-01,ingress-nginx,catch-all-deny-ingress,outros,,,,,,,,
+rd-prod-eng-stg-01,services-gke-usc1-prod-eng-stg-01,default,echo,manual,,,,,,lens/freelens,,
+rd-prod-eng-stg-01,services-gke-usc1-prod-eng-stg-01,dev-center-backend,dev-center-backend-ingress,spinnaker+manifesto,dev-center-backend,ingress dev-center-backend-ingress,,,,dev-center-backend,devcenter.rdstation.com.br,
+rd-prod-eng-stg-01,services-gke-usc1-prod-eng-stg-01,platagen2520,flask-ingress,spinnaker+manifesto,kong,ingress flask-ingress,,,kong-1.17.0.tgz,kong,poc-romao-flask.rdops.system,https://github.com/resultadosdigitais/api-gateway
+rd-prod-eng-stg-01,services-gke-usc1-prod-eng-stg-01,kong-system,kong-ingress-controller-kong-admin,spinnaker+helm-externo,kong,ingress kong-ingress-controller-kong-admin,,kong-2.49.0,,kong-2.49.0,poc-romao-kong-admin.rdops.system,https://github.com/resultadosdigitais/api-gateway
+rd-prod-eng-stg-01,services-gke-usc1-prod-eng-stg-01,kong-system,kong-ingress-controller-kong-manager,spinnaker+helm-externo,kong,ingress kong-ingress-controller-kong-manager,,kong-2.49.0,,kong-2.49.0,wildcard-rdops-systems,https://github.com/resultadosdigitais/api-gateway
+rd-prod-eng-stg-01,services-gke-usc1-prod-eng-stg-01,kong-system,kong-manager,spinnaker+manifesto,kong,ingress kong-manager,,,kong-1.17.0.tgz,kong,kong-poc-manager.rdops.systems,https://github.com/resultadosdigitais/api-gateway
+rd-prod-eng-stg-01,services-gke-usc1-prod-eng-stg-01,rdsm,model-app-ingress,spinnaker+manifesto,poc-anthos,ingress model-app-ingress,,,go-app-0.4.0.tgz,poc-anthos,model-app.34.170.24.68.nip.io,https://github.com/resultadosdigitais/platform
+rd-prod-eng-stg-01,services-gke-usc1-prod-eng-stg-01,sre,atlantis,spinnaker+manifesto,atlantis,ingress atlantis,,,,atlantis,atlantis.rdops.systems,https://github.com/resultadosdigitais/pope
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,attract,seobackend,spinnaker+manifesto,seobackend,ingress seobackend,,,,seobackend,seo.rdstation.com.br,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,attract,showcase-backend-rails,spinnaker+helm-rails,showcase-backend-rails,ingress showcase-backend-rails,,,rails-0.4.17.tgz,rails-style,showcase.rdstation.com.br,https://github.com/resultadosdigitais/showcase-backend-rails
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,attract,showcase-backend-rails-internal,spinnaker+manifesto,showcase-backend-rails,ingress showcase-backend-rails-internal,,,rails-0.4.17.tgz,showcase-backend-rails,showcase-backend-rails-internal.production.rdops.systems,https://github.com/resultadosdigitais/showcase-backend-rails
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,attract,showcase-backend-rails-public,spinnaker+manifesto,showcase-public,ingress showcase-backend-rails-public,,,,showcase-public,showcase-backend-api.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,attract,showcase-public,spinnaker+manifesto,showcase-public,ingress showcase-public,,,,showcase-public,ig.rdstation.com,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,compliance,veritas-ingress,spinnaker+manifesto,veritas,ingress veritas,,,,veritas,internal-veritas.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,connect,appstore-externo,spinnaker+manifesto,rd-app-store,ingress appstore-externo,,,,rd-app-store,appstore.rdstation.com,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,connect,appstore-interno,spinnaker+manifesto,rd-app-store,ingress appstore-interno,,,,rd-app-store,rd-app-store.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,connect,rdpress-auth-rdops-systems,spinnaker+manifesto,rdpress-auth,ingress rdpress-auth-rdops-systems,,,,rdpress-auth,wp.rd.services,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,connect,rdstation-api,spinnaker+manifesto,rdstation-api,ingress rdstation-api,,,,rdstation-api,api.rdstation.com.br|originapi.rdstation.com.br,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,connect,webhook-service-api,spinnaker+helm-rails,webhook-service-connect,ingress webhook-service-api,,,rails-0.5.1.tgz,rails-style,webhook-service-api.rdops.systems,https://github.com/ResultadosDigitais/webhook-service
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,contact-mgmt,api-predictive-lead-scoring,spinnaker+manifesto,api-predictive-lead-scoring,ingress api-predictive-lead-scoring,,,,api-predictive-lead-scoring,apipredictiveleadscoring.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,contact-mgmt,sending-predictions-pls-worker,spinnaker+manifesto,sending-predictions-pls-worker,ingress sending-predictions-pls-worker,,,,sending-predictions-pls-worker,sendingpredictionsplsworker.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,moteam,galaga,spinnaker+manifesto,galaga,ingress galaga,,,,galaga,galaga.rdstation.com.br,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,moteam,rd-zenchatapp,spinnaker+manifesto,rd-zenchatapp,ingress rd-zenchatapp,,,,rd-zenchatapp,zendeskchat.rd.services,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,moteam,rd-zenchatapp-rdops-systems,spinnaker+manifesto,rd-zenchatapp,ingress rd-zenchatapp-rdops-systems,,,,rd-zenchatapp,zendeskchat.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,core,rd-chat-api,spinnaker+manifesto,rd-chat-api,ingress rd-chat-api,,,,rd-chat-api,rd-chat-api.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,core,rd-chat-api-tallos,spinnaker+manifesto,rd-chat-api,ingress rd-chat-api-tallos,,,,rd-chat-api,rd-chat-api-tallos.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,core,rd-chat-hook,spinnaker+manifesto,rd-chat-hook,ingress rd-chat-hook,,,,rd-chat-hook,rd-chat-hook.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,default,echo,outros,,,,,,,echo-temp.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,core,holmes,spinnaker+manifesto,holmes,ingress holmes,,,,holmes,holmes.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,core,ipconfig,spinnaker+manifesto,ipconfig,ingress ipconfig,,,,ipconfig,ipconfig.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,core,ipconfig-health-check,spinnaker+manifesto,ipconfig,ingress ipconfig-health-check,,,,ipconfig,ipconfig.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,core,ipconfig-internal,spinnaker+manifesto,ipconfig,ingress ipconfig-internal,,,,ipconfig,ipconfig-internal.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,core,mailcannon,spinnaker+manifesto,mailcannon,ingress mailcannon,,,rails-0.5.1.tgz,mailcannon,mailcannon.rdstation.com.br,https://github.com/resultadosdigitais/mailcannon-outpost
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,core,neek-api,spinnaker+manifesto,neekapi,ingress neek-api,,,,neekapi,neek-api.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,core,notify-api,spinnaker+manifesto,notify-api,ingress notify-api,,,go-app-0.3.9.tgz,notify-api,notify-api.rdstation.com.br,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,rdsm,rdsm-email,spinnaker+manifesto,rdsm,ingress rdsm-email,,,rdsm-${parameters.helm_version}.tgz,rdsm,app.rdstation.email,https://github.com/resultadosdigitais/rdstation
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,rdsm,rdsm-email-validator,spinnaker+manifesto,rdsm,ingress rdsm-email-validator,,,rdsm-${parameters.helm_version}.tgz,rdsm,app.rdstation.com.br,https://github.com/resultadosdigitais/rdstation
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,rdsm,rdsm-web-with-whitelist,spinnaker+manifesto,rdsm,ingress rdsm-web-with-whitelist,,,rdsm-${parameters.helm_version}.tgz,rdsm,app.rdstation.com.br,https://github.com/resultadosdigitais/rdstation
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,ingress-nginx,catch-all-deny-ingress,outros,,,,,,,,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,moteam,pipedrive,spinnaker+manifesto,rd-pipedrive,ingress pipedrive,,,,rd-pipedrive,integrations.rdstation.com,https://github.com/ResultadosDigitais/rd-pipedrive
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,rdsm,rdsm-web-webhook,spinnaker+manifesto,rdsm,ingress rdsm-web-webhook,,,rdsm-${parameters.helm_version}.tgz,rdsm,app.rdstation.com.br,https://github.com/resultadosdigitais/rdstation
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,elasticsearch-leadgen,kibana-es-leadgen-prd-01,manual,,,,,,lens/freelens,kibana-es-leadgen-prd-01.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,leadgen,bricks-editor,spinnaker+manifesto,bricks-editor,ingress bricks-editor,,,,bricks-editor,bricks-editor.rdstation.com.br,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,leadgen,certmanager-internal,spinnaker+manifesto,certmanager,ingress certmanager-internal,,,,certmanager,certmanager-internal.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,leadgen,city-api,spinnaker+manifesto,city-api,ingress city-api,,,,city-api,cidades.rdstation.com.br,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,leadgen,event-harbor,spinnaker+helm-rails,event-harbor,ingress event-harbor,,,go-app-0.6.0.tgz,rails-style,event-harbor.rdstation.com,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,leadgen,form-integrations-api-rdops-systems,spinnaker+manifesto,form,ingress form-integrations-api-rdops-systems,,,,form,form-integrations.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,leadgen,form-intergrations-api-internal,spinnaker+manifesto,form,ingress form-intergrations-api-internal,,,,form,form-integrations-api-internal.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,olimpo,hefesto,spinnaker+manifesto,hefesto,ingress hefesto,,,,hefesto,hefesto.rdstation.com.br,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,olimpo,lead-vacuum,spinnaker+manifesto,lead-vacuum-worker,ingress lead-vacuum,,,,lead-vacuum-worker,lead-vacuum.rdstation.com.br,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,leadgen,lp-api,outros,,,,,,,lp-api-internal.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,leadgen,rd-social-conversion,spinnaker+manifesto,rd-social-conversion,ingress rd-social-conversion,,,,rd-social-conversion,rd-social-conversion.rdstation.com.br,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,leadgen,webpusher,spinnaker+helm-rails,webpusher,ingress webpusher,,,go-app-0.6.0.tgz,rails-style,webpusher.rdstation.com|webpusher.production.rdops.systems,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,sauron,gyruss,spinnaker+manifesto,gyruss,ingress gyruss,,,external-secret-0.1.1.tgz,gyruss,event-api.rdstation.com.br,https://github.com/ResultadosDigitais/helm
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,sauron,gyruss-cta-redirect,spinnaker+manifesto,gyruss,ingress gyruss-cta-redirect,,,external-secret-0.1.1.tgz,gyruss,cta-redirect.rdstation.com,https://github.com/ResultadosDigitais/helm
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,sauron,gyruss-ingress-internal,spinnaker+manifesto,gyruss,ingress gyruss-ingress-internal,,,external-secret-0.1.1.tgz,gyruss,gyruss-internal.production.rdops.systems,https://github.com/ResultadosDigitais/helm
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,sauron,gyruss-rdops-systems,spinnaker+manifesto,gyruss,ingress gyruss-rdops-systems,,,external-secret-0.1.1.tgz,gyruss,gyruss.rdops.systems,https://github.com/ResultadosDigitais/helm
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,sauron,lead-tracker,spinnaker+manifesto,lead-tracker,ingress lead-tracker,,,external-secret-0.1.0.tgz,lead-tracker,lead-tracker.rdstation.com.br,https://github.com/ResultadosDigitais/helm
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,sauron,pageview-notify,spinnaker+manifesto,pageview-notify,ingress pageview-notify,,,,pageview-notify,pageview-notify.rdstation.com.br,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,platform,event-api-internal,spinnaker+manifesto,event-api,ingress event-api-internal,,,,event-api,event-api.production.rd.services,https://github.com/ResultadosDigitais/cdp-kubernetes-config
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,platform,schema-api-internal,spinnaker+helm-rdsm,schema,ingress schema-api-internal,,,,rdsm-style,schema-api.production.rdops.systems,https://github.com/ResultadosDigitais/cdp-kubernetes-config
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,plg,preview-whatsfree,spinnaker+helm-rails,preview-whatsfree,ingress preview-whatsfree,,,rails-0.5.3.tgz,rails-style,whatsfree.rdstation.com,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,plg,todo-list,spinnaker+manifesto,todo-list,ingress todo-list,,,,todo-list,todo-list.rd.services,
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,n8n-automation-mid-mkt,n8n-mid-mkt-ingress,spinnaker+helm-externo,n8n-automation-mid-mkt,ingress n8n-mid-mkt-ingress,n8n-mid-mkt,n8n-0.1.5,,n8n-0.1.5,automation-mid-mkt.rdops.systems,https://github.com/ResultadosDigitais/n8n-automation-mid-mkt
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,rdsm,rdsm-web,spinnaker+manifesto,rdsm,ingress rdsm-web,,,rdsm-${parameters.helm_version}.tgz,rdsm,app.rdstation.com.br|originapp.rdstation.com.br,https://github.com/resultadosdigitais/rdstation
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,rdsm,rdsm-web-api,spinnaker+manifesto,rdsm,ingress rdsm-web-api,,,rdsm-${parameters.helm_version}.tgz,rdsm,internal-web-api.production.rdops.systems,https://github.com/resultadosdigitais/rdstation
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,rdsm,rdsm-www,spinnaker+manifesto,rdsm,ingress rdsm-www,,,rdsm-${parameters.helm_version}.tgz,rdsm,www.rdstation.com.br,https://github.com/resultadosdigitais/rdstation
+rd-rdsm-prd-01,services-gke-usc1-rdsm-prd-01,core,rd-whatsapp-console,spinnaker+helm-rails,rd-whatsapp-console,ingress rd-whatsapp-console,,,rails-0.5.5.tgz,rails-style,mensagens.rdstation.com,
+rd-sms-prd-01,services-gke-usc1-sms-prd-01,ingress-nginx,catch-all-deny-ingress,outros,,,,,,,,
+rd-sms-prd-01,services-gke-usc1-sms-prd-01,rd-sms,dispatcher,spinnaker+helm-rails,rd-sms,ingress dispatcher,,,rails-0.5.1.tgz,rails-style,rd-sms.production.rdops.systems,https://github.com/resultadosdigitais/rd-sms-fake-api
+rd-sms-prd-01,services-gke-usc1-sms-prd-01,rd-sms,fake-api,spinnaker+helm-rails,rd-sms,ingress fake-api,,,rails-0.5.1.tgz,rails-style,sms-staging.rdops.systems,https://github.com/resultadosdigitais/rd-sms-fake-api
+rd-sms-prd-01,services-gke-usc1-sms-prd-01,rd-sms,webhook-billing,spinnaker+helm-rails,rd-sms,ingress webhook-billing,,,rails-0.5.1.tgz,rails-style,sms.rdops.systems,https://github.com/resultadosdigitais/rd-sms-fake-api
+rd-sms-prd-01,services-gke-usc1-sms-prd-01,rd-sms,webhook-pubsub,spinnaker+helm-rails,rd-sms,ingress webhook-pubsub,,,rails-0.5.1.tgz,rails-style,sms.rdops.systems,https://github.com/resultadosdigitais/rd-sms-fake-api
+rd-sms-prd-01,services-gke-usc1-sms-prd-01,rd-sms,webhook-short-io,spinnaker+helm-rails,rd-sms,ingress webhook-short-io,,,rails-0.5.1.tgz,rails-style,sms.rdops.systems,https://github.com/resultadosdigitais/rd-sms-fake-api
+rd-sms-prd-01,services-gke-usc1-sms-prd-01,rd-sms,webhook-twillio,spinnaker+helm-rails,rd-sms,ingress webhook-twillio,,,rails-0.5.1.tgz,rails-style,sms.rdops.systems,https://github.com/resultadosdigitais/rd-sms-fake-api
+rd-sms-prd-01,services-gke-usc1-sms-prd-01,rd-sms,account-api,spinnaker+helm-rails,rd-sms,ingress account-api,,,rails-0.5.1.tgz,rails-style,sms.rdops.systems,https://github.com/resultadosdigitais/rd-sms-fake-api
+rd-sre-stg-01,gke-usc1-rd-sre-stg-01,accounts-auth,a3s-api,spinnaker+manifesto,ecommerce-core,ingress a3s-api,,,rd-paas-0.1.31.tgz,ecommerce-core,rd-paas-a3s-api.staging.rdops.systems,https://github.com/resultadosdigitais/ecommerce-core
+rd-sre-stg-01,gke-usc1-rd-sre-stg-01,accounts-auth,rd-auth,spinnaker+helm-rails,rd-auth,ingress rd-auth,,,rails-0.5.3.tgz,rails-style,rd-paas-accounts-staging.staging.rdops.systems,https://github.com/resultadosdigitais/rd-auth
+rd-sre-stg-01,gke-usc1-rd-sre-stg-01,argocd,ingress-argocd,manual,,,,,,lens/freelens,argocd-paas.staging.rdops.systems,
+rd-sre-stg-01,gke-usc1-rd-sre-stg-01,bot,ingress-rdpaas-slack-bot,spinnaker+manifesto,rd-paas-bot,ingress ingress-rdpaas-slack-bot,,,,rd-paas-bot,rdpaas-bot.staging.rdops.systems,
+rd-sre-stg-01,gke-usc1-rd-sre-stg-01,bot-paas-adamatti,ingress-rdpaas-slack-bot-paas-adamatti,spinnaker+manifesto,rd-paas-bot,ingress ingress-rdpaas-slack-bot-paas-adamatti,,,,rd-paas-bot,rdpaas-bot-paas-adamatti.staging.rdops.systems,
+rd-sre-stg-01,gke-usc1-rd-sre-stg-01,bot-paas-daniel,ingress-rdpaas-slack-bot-paas-daniel,spinnaker+manifesto,rd-paas-bot,ingress ingress-rdpaas-slack-bot-paas-daniel,,,,rd-paas-bot,rdpaas-bot-paas-daniel.staging.rdops.systems,
+rd-sre-stg-01,gke-usc1-rd-sre-stg-01,bot-paas-grott,ingress-rdpaas-slack-bot-paas-grott,spinnaker+manifesto,rd-paas-bot,ingress ingress-rdpaas-slack-bot-paas-grott,,,,rd-paas-bot,rdpaas-bot-paas-grott.staging.rdops.systems,
+rd-sre-stg-01,gke-usc1-rd-sre-stg-01,bot-paas-matsumoto,ingress-rdpaas-slack-bot-paas-matsumoto,spinnaker+manifesto,rd-paas-bot,ingress ingress-rdpaas-slack-bot-paas-matsumoto,,,,rd-paas-bot,rdpaas-bot-paas-matsumoto.staging.rdops.systems,
+rd-sre-stg-01,gke-usc1-rd-sre-stg-01,email,rd-chat-hook,manual,,,,,,lens/freelens,rd-paas-rd-chat-hook.staging.rdops.systems,
+rd-sre-stg-01,gke-usc1-rd-sre-stg-01,dev-center-backend,dev-center-api-ingress,spinnaker+manifesto,dev-center-api,ingress dev-center-api-ingress,,,,dev-center-api,devcenter-api-stg.rdops.systems,
+rd-sre-stg-01,gke-usc1-rd-sre-stg-01,dev-center-backend,dev-center-backend-ingress,spinnaker+manifesto,dev-center-backend,ingress dev-center-backend-ingress,,,,dev-center-backend,devcenter-stg.rdstation.com.br,
+rd-sre-stg-01,gke-usc1-rd-sre-stg-01,devexp,ingress-basic-analytics,manual,,,,,,lens/freelens,poc-oraculo.staging.rdops.systems,
+rd-sre-stg-01,gke-usc1-rd-sre-stg-01,ingress-nginx,catch-all-deny-ingress,spinnaker+manifesto,ingress-nginx,ingress catch-all-deny-ingress,,,ingress-nginx-4.12.1.tgz,ingress-nginx,,https://github.com/ResultadosDigitais/helm
+rd-sre-stg-01,gke-usc1-rd-sre-stg-01,kube-system,ingress-headlamp,outros,,,,,,,headlamp-sre-stg-01.staging.rdops.systems|headlamp.staging.rdops.systems,
+staging-234557,cluster-staging,accounts-auth,a3s-api-internal,spinnaker+helm-rdsm,,,,,,rdsm-style,a3s-api.staging.rdops.systems,
+staging-234557,cluster-staging,accounts-auth,hydra-admin-api,spinnaker+helm-rails,hydra-api,ingress hydra-admin-api,,,go-app-0.7.0.tgz,rails-style,hydra-admin-api-internal.staging.rdops.systems,https://github.com/resultadosdigitais/hydra-api
+staging-234557,cluster-staging,accounts-auth,hydra-api,spinnaker+helm-rails,hydra-api,ingress hydra-api,,,go-app-0.7.0.tgz,rails-style,hydra-api-internal.staging.rdops.systems,https://github.com/resultadosdigitais/hydra-api
+staging-234557,cluster-staging,accounts-auth,platform-session-service,spinnaker+helm-rails,platform-session-service,ingress platform-session-service,,,rails-0.5.3.tgz,rails-style,platform-session-service.staging.rdops.systems,
+staging-234557,cluster-staging,accounts-auth,rd-auth,spinnaker+helm-rails,rd-auth,ingress rd-auth,,,rails-0.5.3.tgz,rails-style,accounts-staging.rdstation.com.br,https://github.com/resultadosdigitais/rd-auth
+staging-234557,cluster-staging,accounts-auth,rd-auth-internal,spinnaker+helm-rails,rd-auth,ingress rd-auth-internal,,,rails-0.5.3.tgz,rails-style,accounts-internal.staging.rdops.systems,https://github.com/resultadosdigitais/rd-auth
+staging-234557,cluster-staging,accounts-auth,user-confirmail,spinnaker+helm-rails,user-confirmail,ingress user-confirmail,,,rails-0.5.3.tgz,rails-style,user-confirmail.staging.rdops.systems,https://github.com/resultadosdigitais/user-confirmail
+staging-234557,cluster-staging,analyze,access-orchestration-app,spinnaker+helm-rails,attribution-analysis-api,ingress access-orchestration-app,,,rails-0.5.3.tgz,rails-style,access-orchestration-app.staging.rdops.systems,https://github.com/resultadosdigitais/attribution-analysis-api
+staging-234557,cluster-staging,analyze,advanced-analytics,outros,,,,,,,advanced-analytics-staging.rdstation.com.br,
+staging-234557,cluster-staging,analyze,attribution-analysis-api,spinnaker+helm-rails,attribution-analysis-api,ingress attribution-analysis-api,,,rails-0.5.3.tgz,rails-style,attribution-analysis-api.staging.rdops.systems,https://github.com/resultadosdigitais/attribution-analysis-api
+staging-234557,cluster-staging,analyze,basic-analytics,spinnaker+manifesto,basic-analytics,ingress basic-analytics,,,rails-0.6.1.tgz,basic-analytics,basic-analytics-staging.rdstation.com.br,https://github.com/resultadosdigitais/basic_analytics
+staging-234557,cluster-staging,analyze,data-platform-data-access-api,spinnaker+helm-rails,data-platform-data-access-api,ingress data-platform-data-access-api,,,rails-0.5.3.tgz,rails-style,data-platform-data-access-api.staging.rdops.systems,https://github.com/resultadosdigitais/data-platform-data-access-api
+staging-234557,cluster-staging,analyze,gooddata-exporter,spinnaker+manifesto,gooddata-exporter,ingress gooddata-exporter,,,,gooddata-exporter,rds-gd-data-exporter-staging.rdstation.com.br,
+staging-234557,cluster-staging,analyze,report-builder-api,spinnaker+helm-rails,report-builder-api,ingress report-builder-api,,,rails-0.5.3.tgz,rails-style,report-builder-api.staging.rdops.systems,
+staging-234557,cluster-staging,attract,es-staging-http,manual,,,,,,lens/freelens,es-staging.rdops.systems,
+staging-234557,cluster-staging,attract,eye-api,spinnaker+manifesto,eye-api,ingress eye-api,,,eye-api-0.1.0.tgz,eye-api,eye-api.staging.rdops.systems,https://github.com/ResultadosDigitais/rd-paas
+staging-234557,cluster-staging,attract,kibana-es-staging,manual,,,,,,lens/freelens,kibana-es-staging.rdops.systems,
+staging-234557,cluster-staging,attract,laracna,outros,,,,,,,laracna-staging.rdstation.com.br,
+staging-234557,cluster-staging,attract,lead-tracker,manual,,,,,,lens/freelens,lead-tracker-staging.rdstation.com.br,
+staging-234557,cluster-staging,attract,pageview-notify,spinnaker+manifesto,pageview-notify,ingress pageview-notify,,,,pageview-notify,pageview-notify-staging.rdstation.com.br,
+staging-234557,cluster-staging,attract,seobackend,spinnaker+manifesto,seobackend,ingress seobackend,,,,seobackend,seo-staging.rdstation.com.br,
+staging-234557,cluster-staging,attract,showcase-backend-rails,spinnaker+helm-rails,showcase-backend-rails,ingress showcase-backend-rails,,,rails-0.4.17.tgz,rails-style,showcase-backend-api-staging.rdops.systems,https://github.com/resultadosdigitais/showcase-backend-rails
+staging-234557,cluster-staging,attract,showcase-public,spinnaker+manifesto,showcase-public,ingress showcase-public,,,,showcase-public,ig-staging.rdstation.com,
+staging-234557,cluster-staging,automation,automation-event-based-engine,spinnaker+helm-rails,automation-event-based-engine,ingress automation-event-based-engine,,,rails-0.5.4.tgz,rails-style,automation-event-based-engine.staging.rdops.systems,
+staging-234557,cluster-staging,compliance,hefesto-app,spinnaker+manifesto,hefesto,ingress hefesto-app,,,,hefesto,hefesto-staging.rdstation.com.br,
+staging-234557,cluster-staging,compliance,lead-vacuum-app,outros,,,,,,,lead-vacuum-staging.rdstation.com.br,
+staging-234557,cluster-staging,compliance,veritas-ingress,spinnaker+manifesto,veritas,ingress veritas,,,,veritas,external-veritas.rdops.systems,
+staging-234557,cluster-staging,connect,appstore-externo,spinnaker+manifesto,rd-app-store,ingress appstore-externo,,,,rd-app-store,appstore-staging.rdstation.com.br,
+staging-234557,cluster-staging,connect,appstore-interno,spinnaker+manifesto,rd-app-store,ingress appstore-interno,,,,rd-app-store,rd-app-store.staging.rdops.systems,
+staging-234557,cluster-staging,connect,rd-albato,outros,,,,,,,albato-staging.rdstation.com,
+staging-234557,cluster-staging,connect,rd-albato-com-br,manual,,,,,,lens/freelens,albato-staging.rdstation.com.br,
+staging-234557,cluster-staging,connect,rd-albato-nuvemshop,outros,,,,,,,albato-nuvemshop-staging.rdstation.com,
+staging-234557,cluster-staging,connect,rd-albato-nuvemshop-com-br,outros,,,,,,,albato-nuvemshop-staging.rdstation.com.br,
+staging-234557,cluster-staging,connect,rd-albato-woocommerce,outros,,,,,,,albato-woocommerce-staging.rdstation.com,
+staging-234557,cluster-staging,connect,rd-albato-woocommerce-com-br,outros,,,,,,,albato-woocommerce-staging.rdstation.com.br,
+staging-234557,cluster-staging,connect,rd-pipedrive,outros,,,,,,,integrations-staging.rdstation.com,
+staging-234557,cluster-staging,connect,rdpress-auth-rdops-systems,spinnaker+manifesto,rdpress-auth,ingress rdpress-auth-rdops-systems,,,,rdpress-auth,rdpressauth.staging.rdops.systems,
+staging-234557,cluster-staging,connect,rds-assets-app-api,spinnaker+helm-rails,rds-assets-app-api,ingress rds-assets-app-api,,,rails-0.5.3.tgz,rails-style,assets-api.staging.rdops.systems,
+staging-234557,cluster-staging,connect,rdstation-albato-pipedrive-com,outros,,,,,,,albato-pipedrive-staging.rdstation.com,
+staging-234557,cluster-staging,connect,rdstation-albato-pipedrive-com-br,outros,,,,,,,albato-pipedrive-staging.rdstation.com.br,
+staging-234557,cluster-staging,connect,rdstation-albato-salesforce-com,outros,,,,,,,albato-salesforce-staging.rdstation.com,
+staging-234557,cluster-staging,connect,rdstation-albato-salesforce-com-br,manual,,,,,,lens/freelens,albato-salesforce-staging.rdstation.com.br,
+staging-234557,cluster-staging,connect,rdstation-albato-shopify-com,outros,,,,,,,albato-shopify-staging.rdstation.com,
+staging-234557,cluster-staging,connect,rdstation-albato-shopify-com-br,outros,,,,,,,albato-shopify-staging.rdstation.com.br,
+staging-234557,cluster-staging,connect,rdstation-albato-vtex-com,outros,,,,,,,albato-vtex-staging.rdstation.com,
+staging-234557,cluster-staging,connect,rdstation-albato-vtex-com-br,outros,,,,,,,albato-vtex-staging.rdstation.com.br,
+staging-234557,cluster-staging,connect,rdstation-api,outros,,,,,,,rdstation-api-staging.rdstation.com.br,
+staging-234557,cluster-staging,connect,webhook-service-api,spinnaker+helm-rails,webhook-service-connect,ingress webhook-service-api,,,rails-0.5.1.tgz,rails-style,webhook-service-api-staging.rdops.systems,https://github.com/ResultadosDigitais/webhook-service
+staging-234557,cluster-staging,contact-mgmt,api-predictive-lead-scoring,spinnaker+manifesto,api-predictive-lead-scoring,ingress api-predictive-lead-scoring,,,,api-predictive-lead-scoring,apipredictiveleadscoring.staging.rdops.systems,
+staging-234557,cluster-staging,contact-mgmt,api-predictive-sending-web,spinnaker+manifesto,api-predictive-sending,ingress api-predictive-sending-web,,,,api-predictive-sending,apipredictivesending.staging.rdops.systems,
+staging-234557,cluster-staging,contact-mgmt,cdp,spinnaker+manifesto,cdp,ingress cdp,,,,cdp,cdp-staging.rd.services,https://github.com/ResultadosDigitais/cdp-kubernetes-config
+staging-234557,cluster-staging,contact-mgmt,cdp-core,outros,,,,,,,cdp-core-staging.rd.services,
+staging-234557,cluster-staging,contact-mgmt,clustering-engine,outros,,,,,,,clustering-engine-staging.rd.services,
+staging-234557,cluster-staging,contact-mgmt,clustering-engine-elasticsearch,outros,,,,,,,clustering-engine-elasticsearch.staging.rdops.systems,
+staging-234557,cluster-staging,contact-mgmt,event-api-internal,spinnaker+manifesto,event-api,ingress event-api-internal,,,,event-api,event-api.staging.rd.services,https://github.com/ResultadosDigitais/cdp-kubernetes-config
+staging-234557,cluster-staging,contact-mgmt,leads-pls-worker,outros,,,,,,,leadsplsworker.staging.rdops.systems,
+staging-234557,cluster-staging,contact-mgmt,sending-predictions-pls-worker,spinnaker+manifesto,sending-predictions-pls-worker,ingress sending-predictions-pls-worker,,,,sending-predictions-pls-worker,sendingpredictionsplsworker.staging.rdops.systems,
+staging-234557,cluster-staging,convert,certmanager-internal,spinnaker+manifesto,certmanager,ingress certmanager-internal,,,,certmanager,certmanager-internal.staging.rdops.systems,
+staging-234557,cluster-staging,convert,city-api,outros,,,,,,,cidades-staging.rdstation.com.br,
+staging-234557,cluster-staging,convert,form-integrations-api,manual,,,,,,lens/freelens,form-integrations-staging.rd.services,
+staging-234557,cluster-staging,convert,form-integrations-api-internal,spinnaker+manifesto,form,ingress form-integrations-api-internal,,,,form,form-integrations-api-internal.staging.rdops.systems,
+staging-234557,cluster-staging,convert,gyruss,outros,,,,,,,event-api-staging.rdstation.com.br,
+staging-234557,cluster-staging,convert,gyruss-rdops-systems,spinnaker+manifesto,gyruss,ingress gyruss-rdops-systems,,,external-secret-0.1.1.tgz,gyruss,gyruss-staging.rdops.systems,https://github.com/ResultadosDigitais/helm
+staging-234557,cluster-staging,convert,rd-social-conversion,spinnaker+manifesto,rd-social-conversion,ingress rd-social-conversion,,,,rd-social-conversion,rd-social-conversion-stg.rdstation.com.br,
+staging-234557,cluster-staging,crm-es-upgrade,kibana-crm,spinnaker+helm-rails,crm,ingress kibana-crm,,,eck-elasticsearch-0.3.0.tgz,rails-style,kibana-crm.staging-poc.rdstation.com.br,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,crm,crm-aws-index-html,spinnaker+manifesto,crm,ingress crm-aws-index-html,,,eck-elasticsearch-0.3.0.tgz,crm,crm-staging.rdstation.com,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,crm,crm-elastic,spinnaker+helm-rails,,,,,,rails-style,crm-elastic.staging.rdops.systems,
+staging-234557,cluster-staging,crm,elasticsearch-crm,spinnaker+helm-rails,crm,ingress elasticsearch-crm,,,eck-elasticsearch-0.3.0.tgz,rails-style,elasticsearch-crm.staging.rdstation.com.br,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,crm,kibana-crm,spinnaker+helm-rails,crm,ingress kibana-crm,,,eck-elasticsearch-0.3.0.tgz,rails-style,kibana-crm.staging.rdstation.com.br,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,crm,sidekiq-okta-oauth,spinnaker+helm-rails,crm,ingress sidekiq-okta-oauth,,,eck-elasticsearch-0.3.0.tgz,rails-style,crm-staging.rdstation.com,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,crm,web,spinnaker+helm-rails,crm,ingress web,,,eck-elasticsearch-0.3.0.tgz,rails-style,crm-staging.rdstation.com,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,crm,web-canary,spinnaker+helm-rails,rds-crm,ingress web-canary,,,,rails-style,crm-staging.rdstation.com,
+staging-234557,cluster-staging,crm,web-internal,spinnaker+helm-rails,crm,ingress web-internal,,,eck-elasticsearch-0.3.0.tgz,rails-style,crm.staging.rdops.systems,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,crm,web-internal-v2,spinnaker+helm-rails,crm,ingress web-internal-v2,,,eck-elasticsearch-0.3.0.tgz,rails-style,crm-api-v2.staging.rdops.systems,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,crm,web-sidekiq-oauth,spinnaker+helm-rails,crm,ingress web-sidekiq-oauth,,,eck-elasticsearch-0.3.0.tgz,rails-style,crm-staging.rdstation.com,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,crm,web-whitelist,spinnaker+helm-rails,crm,ingress web-whitelist,,,eck-elasticsearch-0.3.0.tgz,rails-style,crm.staging.rdops.systems,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,default,teste-ingress,outros,,,,,,,teste.matheus.com,
+staging-234557,cluster-staging,default,teste2-ingress,outros,,,,,,,teste2.matheus.com,
+staging-234557,cluster-staging,devexp,backstage,spinnaker+helm-rails,backstage,ingress backstage,,,rails-0.5.3.tgz,rails-style,backstage.staging.rdops.systems,https://github.com/resultadosdigitais/rds-crm
+staging-234557,cluster-staging,devexp,backstage-bot-api,spinnaker+helm-rails,backstage,ingress backstage-bot-api,,,rails-0.5.3.tgz,rails-style,backstage.staging.rdops.systems,https://github.com/resultadosdigitais/rds-crm
+staging-234557,cluster-staging,devexp,backstage-entities-api,spinnaker+helm-rails,,,,,,rails-style,backstage-internal.staging.rdops.systems,
+staging-234557,cluster-staging,devexp,backstage-git-api,spinnaker+helm-rails,backstage,ingress backstage-git-api,,,rails-0.5.3.tgz,rails-style,backstage.staging.rdops.systems,https://github.com/resultadosdigitais/rds-crm
+staging-234557,cluster-staging,devexp,backstage-oauth,spinnaker+helm-rails,backstage,ingress backstage-oauth,,,rails-0.5.3.tgz,rails-style,backstage.staging.rdops.systems,https://github.com/resultadosdigitais/rds-crm
+staging-234557,cluster-staging,devexp,backstage-rollbar-api,spinnaker+helm-rails,,,,,,rails-style,backstage.staging.rdops.systems,
+staging-234557,cluster-staging,devexp,backstage-subscribe-github,spinnaker+helm-rails,backstage,ingress backstage-subscribe-github,,,rails-0.5.3.tgz,rails-style,backstage.staging.rdops.systems,https://github.com/resultadosdigitais/rds-crm
+staging-234557,cluster-staging,devexp,circle-ci-metrics-extractor,spinnaker+helm-rails,circle-ci-metrics-extractor,ingress circle-ci-metrics-extractor,,,rails-0.5.3.tgz,rails-style,circle-ci-metrics-extractor.staging.rdops.systems,https://github.com/resultadosdigitais/circle-ci-metrics-extractor
+staging-234557,cluster-staging,devexp,metrics-extractor-to-datalake,spinnaker+helm-rails,metrics-extractor-to-datalake,ingress metrics-extractor-to-datalake,,,rails-0.4.22.tgz,rails-style,metrics-extractor-to-datalake.staging.rdops.systems,
+staging-234557,cluster-staging,devexp,oraculo-metrics-extractor,spinnaker+helm-rails,oraculo-metrics-extractor,ingress oraculo-metrics-extractor,,,rails-0.5.3.tgz,rails-style,oraculo-metrics-extractor.staging.rdops.systems,
+staging-234557,cluster-staging,devexp,oraculo-staging,spinnaker+helm-rails,,,,,,rails-style,oraculo.staging.rdops.systems,
+staging-234557,cluster-staging,devexp,rdsm-deploy-metrics-collector,spinnaker+helm-rails,rdsm-deploy-metrics-collector,ingress rdsm-deploy-metrics-collector,,,rails-0.5.3.tgz,rails-style,rdsm-deploy-metrics-collector.staging.rdops.systems,https://github.com/resultadosdigitais/rdsm-deploy-metrics-collector
+staging-234557,cluster-staging,devexp,rocknrollout2,spinnaker+helm-rails,rocknrollout2,ingress rocknrollout2,,,rails-0.5.3.tgz,rails-style,rocknrollout2.staging.rdops.systems,
+staging-234557,cluster-staging,elasticsearch,kibana-es-cm-staging,manual,,,,,,lens/freelens,kibana-es-cm-staging.staging.rdops.systems,
+staging-234557,cluster-staging,email,buz,spinnaker+manifesto,buzz,ingress buz,,,,buzz,buz.staging.rdops.systems,
+staging-234557,cluster-staging,email,buzz,spinnaker+manifesto,buzz,ingress buzz,,,,buzz,buzz.staging.rdops.systems,
+staging-234557,cluster-staging,email,cortex,spinnaker+helm-rails,cortex,ingress cortex,,,rails-0.5.1.tgz,rails-style,cortex.staging.rdops.systems,https://github.com/resultadosdigitais/cortex
+staging-234557,cluster-staging,email,email-validator,spinnaker+helm-rails,email-validator,ingress email-validator,,,rails-0.5.1.tgz,rails-style,email-validator-staging.rdstation.com.br,https://github.com/resultadosdigitais/email-validator
+staging-234557,cluster-staging,email,email-validator-wh-billing,spinnaker+helm-rails,email-validator,ingress email-validator-wh-billing,,,rails-0.5.1.tgz,rails-style,email-validator-staging.rdstation.com.br,https://github.com/resultadosdigitais/email-validator
+staging-234557,cluster-staging,email,email-validator-wh-exact,spinnaker+helm-rails,email-validator,ingress email-validator-wh-exact,,,rails-0.5.1.tgz,rails-style,email-validator-staging.rdstation.com.br,https://github.com/resultadosdigitais/email-validator
+staging-234557,cluster-staging,email,email-validator-wh-pubsub,spinnaker+helm-rails,email-validator,ingress email-validator-wh-pubsub,,,rails-0.5.1.tgz,rails-style,email-validator-staging.rdstation.com.br,https://github.com/resultadosdigitais/email-validator
+staging-234557,cluster-staging,email,holmes,spinnaker+manifesto,holmes,ingress holmes,,,,holmes,holmes.staging.rdops.systems,
+staging-234557,cluster-staging,email,ipconfig,spinnaker+manifesto,ipconfig,ingress ipconfig,,,,ipconfig,ipconfig.staging.rdops.systems,
+staging-234557,cluster-staging,email,neek-api,spinnaker+manifesto,neekapi,ingress neek-api,,,,neekapi,neek-api.staging.rdops.systems,
+staging-234557,cluster-staging,email,notify-api,spinnaker+manifesto,notify-api,ingress notify-api,,,go-app-0.3.9.tgz,notify-api,notify-api-staging.rdstation.com.br,
+staging-234557,cluster-staging,email,rd-chat-api-internal,spinnaker+manifesto,rd-chat-api,ingress rd-chat-api-internal,,,,rd-chat-api,rd-chat-api-internal.staging.rdops.systems,
+staging-234557,cluster-staging,email,rd-chat-api-tallos,spinnaker+manifesto,rd-chat-api,ingress rd-chat-api-tallos,,,,rd-chat-api,rd-chat-api-tallos-stg.rdops.systems,
+staging-234557,cluster-staging,email,rd-chat-bot,spinnaker+helm-rails,rd-chatbot,ingress rd-chat-bot,,,rails-0.5.3.tgz,rails-style,rd-chat-bot.staging.rdops.systems,
+staging-234557,cluster-staging,email,rd-chat-hook,spinnaker+manifesto,rd-chat-hook,ingress rd-chat-hook,,,,rd-chat-hook,rd-chat-hook-staging.rdstation.com.br,
+staging-234557,cluster-staging,email,rd-whatsapp-console,spinnaker+helm-rails,rd-whatsapp-console,ingress rd-whatsapp-console,,,rails-0.5.5.tgz,rails-style,mensagens-stg.rdstation.com,
+staging-234557,cluster-staging,es-testes,kibana-crm,spinnaker+helm-rails,crm,ingress kibana-crm,,,eck-elasticsearch-0.3.0.tgz,rails-style,kibana-crm.staging-poc2.rdstation.com.br,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,frontend,tangram-website,outros,,,,,,,tangram-staging-v1.rdstation.com.br,
+staging-234557,cluster-staging,fronthub,datadog-workshop,spinnaker+helm-rails,pocs-rogerio,ingress datadog-workshop,,,,rails-style,datadog-workshop.staging.rdops.systems,
+staging-234557,cluster-staging,fronthub,front-hub-internal-rdops-systems,spinnaker+helm-rdsm,front-hub,ingress front-hub-internal-rdops-systems,,front-hub-0.2.5,,front-hub-0.2.5,front-hub-internal-service-staging.rdops.systems,https://github.com/ResultadosDigitais/helm
+staging-234557,cluster-staging,fronthub,front-hub-rdos-systems,spinnaker+helm-rdsm,front-hub,ingress front-hub-rdos-systems,,front-hub-0.2.5,,front-hub-0.2.5,front-hub-staging.rdops.systems,https://github.com/ResultadosDigitais/helm
+staging-234557,cluster-staging,fronthub,front-hub-staging.rdstation.com.br,spinnaker+helm-rdsm,front-hub,ingress front-hub-staging.rdstation.com.br,,front-hub-0.2.5,,front-hub-0.2.5,front-hub-staging.rdstation.com.br,https://github.com/ResultadosDigitais/helm
+staging-234557,cluster-staging,ingress-nginx,catch-all-deny-ingress,manual,,,,,,lens/freelens,,
+staging-234557,cluster-staging,insights,ai-platform-builder,spinnaker+helm-rails,ai-platform-builder,ingress ai-platform-builder,,,rails-0.5.3.tgz,rails-style,stg.agentes.rdstation.com|www.stg.agentes.rdstation.com,https://github.com/ResultadosDigitais/ai-platform
+staging-234557,cluster-staging,insights,ai-platform-builder-app,spinnaker+helm-rails,ai-platform-builder,ingress ai-platform-builder-app,,,rails-0.5.3.tgz,rails-style,stg.agentes.rdstation.com|www.stg.agentes.rdstation.com,https://github.com/ResultadosDigitais/ai-platform
+staging-234557,cluster-staging,insights,ai-platform-litellm,spinnaker+helm-externo,ai-platform,ingress ai-platform-litellm,,litellm-0.1.824,,litellm-0.1.824,inference.staging.rdops.systems,https://github.com/ResultadosDigitais/ai-platform
+staging-234557,cluster-staging,insights,crm-mcp,spinnaker+helm-rails,crm-mcp,ingress crm-mcp,,,rails-0.5.3.tgz,rails-style,crm-mcp.staging.rdops.systems,https://github.com/ResultadosDigitais/crm-mcp
+staging-234557,cluster-staging,insights,executive-agent,spinnaker+helm-rails,executive-agent,ingress executive-agent,,,rails-0.5.3.tgz,rails-style,executive-agent.staging.rdops.systems,https://github.com/resultadosdigitais/executive-agent
+staging-234557,cluster-staging,insights,inngest,spinnaker+helm-externo,ai-platform-inngest,ingress inngest,,inngest-0.1.1,,inngest-0.1.1,inngest.staging.rdops.systems,https://github.com/ResultadosDigitais/ai-platform
+staging-234557,cluster-staging,insights,inngest-public,spinnaker+helm-externo,ai-platform-inngest,ingress inngest-public,,inngest-0.1.1,,inngest-0.1.1,inngest.staging.rdops.systems,https://github.com/ResultadosDigitais/ai-platform
+staging-234557,cluster-staging,insights,insights-platform-api,spinnaker+helm-rails,insights-platform-api,ingress insights-platform-api,,,rails-0.6.1.tgz,rails-style,insights-platform-api-test.staging.rdops.systems,https://github.com/resultadosdigitais/insights-platform-api
+staging-234557,cluster-staging,insights,insights-platform-api-v2,spinnaker+helm-rails,insights-platform-api,ingress insights-platform-api-v2,,,rails-0.6.1.tgz,rails-style,insights-platform-api-v3.staging.rdops.systems,https://github.com/resultadosdigitais/insights-platform-api
+staging-234557,cluster-staging,insights,insights-platform-api-v2-v2,spinnaker+helm-rails,insights-platform-api,ingress insights-platform-api-v2-v2,,,rails-0.6.1.tgz,rails-style,insights-platform-api-v4.staging.rdops.systems,https://github.com/resultadosdigitais/insights-platform-api
+staging-234557,cluster-staging,insights,marketing-copilot,spinnaker+helm-rails,marketing-copilot,ingress marketing-copilot,,,rails-0.5.3.tgz,rails-style,marketing-copilot.staging.rdops.systems,https://github.com/ResultadosDigitais/marketing-copilot
+staging-234557,cluster-staging,insights,marketing-copilot-public,spinnaker+helm-rails,marketing-copilot,ingress marketing-copilot-public,,,rails-0.5.3.tgz,rails-style,marketing-copilot.staging.rdops.systems,https://github.com/ResultadosDigitais/marketing-copilot
+staging-234557,cluster-staging,insights,marketing-mcp,spinnaker+helm-rails,marketing-mcp,ingress marketing-mcp,,,rails-0.5.3.tgz,rails-style,marketing-mcp.staging.rdops.systems,https://github.com/ResultadosDigitais/marketing-mcp
+staging-234557,cluster-staging,insights,rds-crm-copilot,spinnaker+helm-rails,rds-crm-copilot,ingress rds-crm-copilot,,,rails-0.5.3.tgz,rails-style,rds-crm-copilot.staging.rdops.systems,https://github.com/ResultadosDigitais/rds-crm-copilot
+staging-234557,cluster-staging,insights,rds-crm-copilot-public,spinnaker+helm-rails,rds-crm-copilot,ingress rds-crm-copilot-public,,,rails-0.5.3.tgz,rails-style,rds-crm-copilot.staging.rdops.systems,https://github.com/ResultadosDigitais/rds-crm-copilot
+staging-234557,cluster-staging,insights,rdsc-copilot,spinnaker+helm-rails,rdsc-copilot,ingress rdsc-copilot,,,rails-0.5.3.tgz,rails-style,rdsc-copilot.staging.rdops.systems,https://github.com/ResultadosDigitais/rdsc-copilot
+staging-234557,cluster-staging,insights,rudi-api,spinnaker+helm-rails,rudi-api,ingress rudi-api,,,rails-0.5.3.tgz,rails-style,rudi-api.staging.rdops.systems,https://github.com/resultadosdigitais/rudi
+staging-234557,cluster-staging,kafka01,kafka-ui,outros,,,,,,,dashboard-kafka.staging.rdops.systems,
+staging-234557,cluster-staging,kong-system,kong-ingress-controller-kong-admin,spinnaker+helm-externo,kong,ingress kong-ingress-controller-kong-admin,,kong-2.49.0,,kong-2.49.0,kong-admin-poc-staging.rdops.systems,https://github.com/resultadosdigitais/api-gateway
+staging-234557,cluster-staging,kong-system,kong-ingress-controller-kong-manager,spinnaker+helm-externo,kong,ingress kong-ingress-controller-kong-manager,,kong-2.49.0,,kong-2.49.0,kong-manager-poc-staging.rdops.systems,https://github.com/resultadosdigitais/api-gateway
+staging-234557,cluster-staging,kong,api-gateway-new-with-nginx,manual,,,,,,lens/freelens,*.rdstation.com.br|*.rdstation.com|*.rd.services|*.rdops.systems|*.staging.rdops.systems,
+staging-234557,cluster-staging,kong,kong-admin,manual,,,,,,lens/freelens,kong-admin-internal.staging.rdops.systems,
+staging-234557,cluster-staging,kong,kong-admin-ingress,outros,,,,,,,kong-admin-external.staging.rdops.systems,
+staging-234557,cluster-staging,kong,kong-proxy,manual,,,,,,lens/freelens,kong-proxy-internal.staging.rdops.systems,
+staging-234557,cluster-staging,kong,kongadmin,manual,,,,,,lens/freelens,konga-staging.rdops.systems,
+staging-234557,cluster-staging,leadgen,event-harbor,spinnaker+helm-rails,event-harbor,ingress event-harbor,,,go-app-0.6.0.tgz,rails-style,event-harbor.staging.rdops.systems,
+staging-234557,cluster-staging,leadgen,webpusher,spinnaker+helm-rails,webpusher,ingress webpusher,,,go-app-0.6.0.tgz,rails-style,webpusher.staging.rdops.systems,
+staging-234557,cluster-staging,mirror-test,echo-ingress,outros,,,,,,,echo.local,
+staging-234557,cluster-staging,moteam,galaga,spinnaker+manifesto,galaga,ingress galaga,,,,galaga,galaga-staging.rdstation.com.br,
+staging-234557,cluster-staging,multi,multichannel-api,spinnaker+helm-rails,multichannel-api,ingress multichannel-api,,,rails-0.5.1.tgz,rails-style,multichannel-api.staging.rdops.systems,
+staging-234557,cluster-staging,n8n,n8n-ingress,outros,,,,,,,n8n-playground.rdops.systems,
+staging-234557,cluster-staging,ops-central,monitor-history,spinnaker+helm-rails,monitor-history,ingress monitor-history,,,rails-0.5.3.tgz,rails-style,monitor-history.staging.rdops.systems,https://github.com/resultadosdigitais/monitor-history
+staging-234557,cluster-staging,oraculo-agent-staging,oraculo-agent,spinnaker+manifesto,oraculo-agent,ingress oraculo-agent,,,,oraculo-agent,oraculo-agent.staging.rdops.systems,
+staging-234557,cluster-staging,platagen2520,flask-ingress,spinnaker+manifesto,kong,ingress flask-ingress,,,kong-1.17.0.tgz,kong,poc-romao-flask.rdops.systems,https://github.com/resultadosdigitais/api-gateway
+staging-234557,cluster-staging,platform,schema-api-internal,spinnaker+helm-rdsm,,,,,,rdsm-style,schema-api.staging.rdops.systems,
+staging-234557,cluster-staging,plg,chat-backend,manual,,,,,,lens/freelens,chat-staging.rd.services,
+staging-234557,cluster-staging,plg,preview-whatsfree,spinnaker+helm-rails,preview-whatsfree,ingress preview-whatsfree,,,rails-0.5.3.tgz,rails-style,preview-whatsfree.staging.rdops.systems,
+staging-234557,cluster-staging,plg,todo-list,manual,,,,,,lens/freelens,todo-list-staging.rd.services,
+staging-234557,cluster-staging,rd-sms,account-api,spinnaker+helm-rails,rd-sms,ingress account-api,,,rails-0.5.1.tgz,rails-style,sms-staging.rdops.systems,https://github.com/resultadosdigitais/rd-sms-fake-api
+staging-234557,cluster-staging,rd-sms,webhook-billing,spinnaker+helm-rails,rd-sms,ingress webhook-billing,,,rails-0.5.1.tgz,rails-style,sms-staging.rdops.systems,https://github.com/resultadosdigitais/rd-sms-fake-api
+staging-234557,cluster-staging,rd-sms,webhook-pubsub,spinnaker+helm-rails,rd-sms,ingress webhook-pubsub,,,rails-0.5.1.tgz,rails-style,sms-staging.rdops.systems,https://github.com/resultadosdigitais/rd-sms-fake-api
+staging-234557,cluster-staging,rd360-entities,objects-api,spinnaker+helm-rails,objects-api,ingress objects-api,,,rails-0.6.3.tgz,rails-style,objects-api.staging.rdops.systems,
+staging-234557,cluster-staging,rdsm,rdsm-email,outros,,,,,,,app-staging.rdstation.email,
+staging-234557,cluster-staging,rdsm,rdsm-email-validator,spinnaker+manifesto,rdsm,ingress rdsm-email-validator,,,rdsm-${parameters.helm_version}.tgz,rdsm,app-staging.rdstation.com.br,https://github.com/resultadosdigitais/rdstation
+staging-234557,cluster-staging,rdsm,rdsm-web-api,spinnaker+manifesto,rdsm,ingress rdsm-web-api,,,rdsm-${parameters.helm_version}.tgz,rdsm,internal-web-api-staging.rdops.systems,https://github.com/resultadosdigitais/rdstation
+staging-234557,cluster-staging,rdsm,rdsm-web-webhook,outros,,,,,,,app-staging.rdstation.com.br,
+staging-234557,cluster-staging,rdsm,rdsm-web-whitelist-mario,outros,,,,,,,app-staging.rdstation.com.br,
+staging-234557,cluster-staging,rdsm,rdsm-web-with-whitelist,outros,,,,,,,app-staging.rdstation.com.br,
+staging-234557,cluster-staging,rdsm,staging,outros,,,,,,,staging.rdstation.com.br,
+staging-234557,cluster-staging,rdsm,web,manual,,,,,,lens/freelens,app-staging.rdstation.com.br,
+staging-234557,cluster-staging,rdsm,web-signup-user,manual,,,,,,lens/freelens,app-staging.rdstation.com.br,
+staging-234557,cluster-staging,review-6003-crmcruj,review-6003-crmcruj,spinnaker+helm-rails,crm,ingress review-6003-crmcruj,,,eck-elasticsearch-0.3.0.tgz,rails-style,review-6003-crmcruj.staging.rdstation.com.br,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,review-6003-crmcruj,review-6003-crmcruj-internal,spinnaker+helm-rails,crm,ingress review-6003-crmcruj-internal,,,eck-elasticsearch-0.3.0.tgz,rails-style,review-6003-crmcruj-internal.staging.rdstation.com.br,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,review-crmgrowt3481,review-crmgrowt3481,spinnaker+helm-rails,crm,ingress review-crmgrowt3481,,,eck-elasticsearch-0.3.0.tgz,rails-style,review-crmgrowt3481.staging.rdstation.com.br,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,review-crmgrowt3481,review-crmgrowt3481-internal,spinnaker+helm-rails,crm,ingress review-crmgrowt3481-internal,,,eck-elasticsearch-0.3.0.tgz,rails-style,review-crmgrowt3481-internal.staging.rdstation.com.br,https://github.com/ResultadosDigitais/rds-crm
+staging-234557,cluster-staging,rms,cap-hook,spinnaker+manifesto,cap-hook,ingress cap-hook,,,,cap-hook,cap-hook-staging.rdstation.com.br,
+staging-234557,cluster-staging,rms,contas-staging,spinnaker+manifesto,saas-internal,ingress contas-staging,,,rabbitmq-12.6.1.tgz,saas-internal,contas-staging.rdstation.com.br|billing-staging.rdstation.com.br|contas-staging2.rdstation.com.br|rmq-contas-staging.rdops.systems|amqp-contas.staging.rdops.systems,https://github.com/ResultadosDigitais/helm
+staging-234557,cluster-staging,rms,partnership,spinnaker+manifesto,partnership,ingress partnership,,,,partnership,partnership.rd.services,
+staging-234557,cluster-staging,rms,partnership-staging,manual,,,,,,lens/freelens,partnership-staging.rd.services,
+staging-234557,cluster-staging,rms,rabbitmq-cluster,spinnaker+helm-externo,saas-internal,ingress rabbitmq-cluster,,rabbitmq-12.6.1,,rabbitmq-12.6.1,rmq-stats-billing-staging.rdops.systems|rmq-billing-staging.rdops.systems,https://github.com/ResultadosDigitais/helm
+staging-234557,cluster-staging,rms,rd-contas-smart-retry-staging,spinnaker+manifesto,alumni,ingress rd-contas-smart-retry-staging,,,,alumni,rd-contas-smart-retry-staging.rdstation.com.br,
+staging-234557,cluster-staging,rms,subscription-manager-api,spinnaker+manifesto,subscription-manager-api,ingress subscription-manager-api,,,,subscription-manager-api,rd-subscriber-staging.rdstation.com.br,
+staging-234557,cluster-staging,sre,internal-ingress,spinnaker+manifesto,rails-template,ingress internal-ingress,,,,rails-template,out-teach.staging.rdops.systems,
+staging-234557,cluster-staging,sre,sidekiq-dashboard,spinnaker+manifesto,sidekiq-dashboard,ingress sidekiq-dashboard,,,,sidekiq-dashboard,sidekiq-staging.rdops.systems,
+staging-234557,cluster-staging,support,incident-io-ruby-client,spinnaker+helm-rails,incident-io-ruby-client,ingress incident-io-ruby-client,,,rails-0.4.18.tgz,rails-style,incident-io-ruby-client.staging.rdops.systems,https://github.com/resultadosdigitais/incident-io-ruby-client
+staging-234557,cluster-staging,support,toolbelt,spinnaker+manifesto,toolbelt,ingress toolbelt,,,,toolbelt,toolbelt-staging.rdstation.com.br,
+staging-234557,cluster-staging,support,toolbeltemailstats,outros,,,,,,,toolbeltemailstats-staging.rd.services,
+staging-234557,cluster-staging,wpp,wppaddon-api,spinnaker+helm-rails,wppaddon-api,ingress wppaddon-api,,,rails-0.5.1.tgz,rails-style,wppaddon-api.staging.rdops.systems,https://github.com/resultadosdigitais/wppaddon-api

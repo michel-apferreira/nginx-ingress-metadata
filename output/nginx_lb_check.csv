@@ -1,0 +1,160 @@
+cluster,namespace,service,type,classificacao,external_ip,backend_configs,annotations_lb
+cluster-production,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,35.223.116.65,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+cluster-production,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+cluster-production,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.1.97.35,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+cluster-production,ingress-nginx,nginx-ingress-nginx-controller-metrics,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+cluster-production,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+services-gke-usc1-accounts-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,35.223.144.170,nenhum,{}
+services-gke-usc1-accounts-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-accounts-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.80.0.9,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+services-gke-usc1-accounts-prd-01,ingress-nginx,nginx-ingress-nginx-controller-metrics,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-accounts-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+gke-usc1-analytics-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,104.154.80.242,nenhum,{}
+gke-usc1-analytics-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+gke-usc1-analytics-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.80.16.39,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+gke-usc1-analytics-prd-01,ingress-nginx,nginx-ingress-nginx-controller-metrics,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+gke-usc1-analytics-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+gke-usc1-automation-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,35.184.60.44,nenhum,{}
+gke-usc1-automation-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+gke-usc1-automation-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.80.48.24,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+gke-usc1-automation-prd-01,ingress-nginx,nginx-ingress-nginx-controller-metrics,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+gke-usc1-automation-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-billing-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,34.123.246.199,nenhum,{}
+services-gke-usc1-billing-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-billing-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.80.64.6,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+services-gke-usc1-billing-prd-01,ingress-nginx,nginx-ingress-nginx-controller-metrics,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-billing-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-checkout-prd-01,N/A,NÃO ENCONTRADO,,nginx IC não localizado nos namespaces verificados,,,{}
+es-cm-default-gke-usc1-prd-01,ingress-nginx,ingress-nginx-controller,LoadBalancer,LB com NEG,34.173.254.12,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-default-gke-usc1-prd-01,ingress-nginx,ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-default-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-default-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-default-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LB com NEG,10.244.0.117,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal"", ""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-default-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-ent-gke-usc1-prd-01,ingress-nginx,ingress-nginx-controller,LoadBalancer,LB com NEG,35.225.125.112,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-ent-gke-usc1-prd-01,ingress-nginx,ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-ent-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-ent-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-ent-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LB com NEG,10.246.0.4,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal"", ""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-ent-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-etl-gke-usc1-prd-01,ingress-nginx,ingress-nginx-controller,LoadBalancer,LB com NEG,34.123.168.203,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-etl-gke-usc1-prd-01,ingress-nginx,ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-etl-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-etl-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-etl-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LB com NEG,10.245.0.33,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal"", ""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-etl-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-midmarket-01-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,35.193.223.108,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-midmarket-01-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-midmarket-01-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LB com NEG,10.242.0.43,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal"", ""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-midmarket-01-gke-usc1-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-01,ingress-nginx,ingress-nginx-controller,LoadBalancer,LB com NEG,35.226.47.170,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-01,ingress-nginx,ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-02,ingress-nginx,ingress-nginx-controller,LoadBalancer,LB com NEG,34.135.220.4,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-02,ingress-nginx,ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-02,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-02,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-02,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LB com NEG,10.251.0.4,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal"", ""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-02,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-03,ingress-nginx,ingress-nginx-controller,LoadBalancer,LB com NEG,23.251.154.45,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-03,ingress-nginx,ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-03,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-03,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-03,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LB com NEG,10.250.0.87,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal"", ""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-03,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-04,ingress-nginx,ingress-nginx-controller,LoadBalancer,LB com NEG,34.134.106.97,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-04,ingress-nginx,ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-04,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-04,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-04,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LB com NEG,10.249.0.25,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal"", ""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-04,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-05,ingress-nginx,ingress-nginx-controller,LoadBalancer,LB com NEG,34.66.255.70,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-05,ingress-nginx,ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-05,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-05,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-05,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LB com NEG,10.248.0.10,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal"", ""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-05,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-06,ingress-nginx,ingress-nginx-controller,LoadBalancer,LB com NEG,34.68.236.207,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-06,ingress-nginx,ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-06,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-06,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-06,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LB com NEG,10.247.0.17,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal"", ""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+es-cm-pro-gke-usc1-prd-06,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+esautocomp-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,34.9.73.24,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+esautocomp-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+esautocomp-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LB com NEG,10.70.3.237,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal"", ""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+esautocomp-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+esleadscor-gke-usc1-contactmgmt-prd-01,ingress-nginx,ingress-nginx-controller,LoadBalancer,LB com NEG,34.68.141.179,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+esleadscor-gke-usc1-contactmgmt-prd-01,ingress-nginx,ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+esleadscor-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,34.27.153.85,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+esleadscor-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+esleadscor-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LB com NEG,10.71.0.14,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal"", ""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+kafkacdc-gke-usc1-contactmgmt-prd-01,ingress-nginx,ingress-nginx-controller,LoadBalancer,LB com NEG,34.27.92.164,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+kafkacdc-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+kafkacdc-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+kafkacdc-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LB com NEG,10.11.0.132,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal"", ""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+kafkacdc-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+services-gke-usc1-contactmgmt-prd-01,ingress-nginx,ingress-nginx-controller,LoadBalancer,LB com NEG,34.172.198.221,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+services-gke-usc1-contactmgmt-prd-01,ingress-nginx,ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+services-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,34.58.24.228,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+services-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+services-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LB com NEG,10.15.0.66,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal"", ""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+services-gke-usc1-contactmgmt-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+services-gke-usc1-rd-conversas-prd-01,N/A,NÃO ENCONTRADO,,nginx IC não localizado nos namespaces verificados,,,{}
+services-gke-usc1-rd-conversas-bsp-01,N/A,NÃO ENCONTRADO,,nginx IC não localizado nos namespaces verificados,,,{}
+services-gke-usc1-rd-conversas-stg-01,N/A,NÃO ENCONTRADO,,nginx IC não localizado nos namespaces verificados,,,{}
+services-gke-usc1-crm-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,35.238.65.228,nenhum,{}
+services-gke-usc1-crm-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-crm-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.80.112.36,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+services-gke-usc1-crm-prd-01,ingress-nginx,nginx-ingress-nginx-controller-metrics,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-crm-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-devexp-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,34.41.42.158,nenhum,{}
+services-gke-usc1-devexp-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-devexp-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.80.128.6,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+services-gke-usc1-devexp-prd-01,ingress-nginx,nginx-ingress-nginx-controller-metrics,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-devexp-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+rd-devops,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,35.224.80.175,nenhum,{}
+rd-devops,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+rd-devops,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.0.96.44,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+rd-devops,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-rd-ecommerce-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,34.121.122.176,nenhum,{}
+services-gke-usc1-rd-ecommerce-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-rd-ecommerce-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.97.16.51,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+services-gke-usc1-rd-ecommerce-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-email-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,34.57.118.157,nenhum,{}
+services-gke-usc1-email-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-email-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.50.48.3,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+services-gke-usc1-email-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-infosec-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,34.44.153.118,nenhum,{}
+services-gke-usc1-infosec-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-infosec-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.80.240.6,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+services-gke-usc1-infosec-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-multichannel-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,35.239.137.111,nenhum,{}
+services-gke-usc1-multichannel-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-multichannel-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.50.212.4,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+services-gke-usc1-multichannel-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-platform-stg-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,34.69.245.1,nenhum,{}
+services-gke-usc1-platform-stg-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-platform-stg-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.50.240.57,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+services-gke-usc1-platform-stg-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-prod-eng-stg-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,34.170.24.68,nenhum,{}
+services-gke-usc1-prod-eng-stg-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-prod-eng-stg-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.50.0.14,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+services-gke-usc1-prod-eng-stg-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-rdsm-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,35.222.155.74,nenhum,{}
+services-gke-usc1-rdsm-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-rdsm-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.80.224.238,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+services-gke-usc1-rdsm-prd-01,ingress-nginx,nginx-ingress-nginx-controller-metrics,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-rdsm-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-sms-prd-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,34.72.173.70,nenhum,{}
+services-gke-usc1-sms-prd-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-sms-prd-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.97.0.35,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+services-gke-usc1-sms-prd-01,ingress-nginx,nginx-ingress-nginx-controller-metrics,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+services-gke-usc1-sms-prd-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+gke-usc1-rd-sre-stg-01,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,LB com NEG,35.188.188.55,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+gke-usc1-rd-sre-stg-01,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+gke-usc1-rd-sre-stg-01,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LB com NEG,10.239.0.12,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal"", ""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+gke-usc1-rd-sre-stg-01,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,"{""cloud.google.com/neg"": ""{\""ingress\"":true}""}"
+cluster-staging,ingress-nginx,nginx-ingress-nginx-controller,LoadBalancer,TCP passthrough,35.184.12.116,nenhum,{}
+cluster-staging,ingress-nginx,nginx-ingress-nginx-controller-admission,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}
+cluster-staging,ingress-nginx,nginx-ingress-nginx-controller-internal,LoadBalancer,LoadBalancer Internal (L4),10.3.96.94,nenhum,"{""cloud.google.com/load-balancer-type"": ""Internal""}"
+cluster-staging,ingress-nginx,nginx-ingress-nginx-defaultbackend,ClusterIP,ClusterIP (interno — sem papel na migração),nenhum,nenhum,{}

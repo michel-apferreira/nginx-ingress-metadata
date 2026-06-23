@@ -1,0 +1,352 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "automation",
+        "artifact.spinnaker.io/name": "automation-engine",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"automation\",\"artifact.spinnaker.io/name\":\"automation-engine\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"automation-engine\",\"moniker.spinnaker.io/cluster\":\"ingress automation-engine\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"automation-engine\",\"app_name\":\"automation-engine\",\"app_project\":\"automation-engine\",\"resource_kind\":\"ingress\",\"team\":\"cruj\"},\"name\":\"automation-engine\",\"namespace\":\"automation\"},\"spec\":{\"rules\":[{\"host\":\"automation-engine.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"automation-engine\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"automation-engine.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "automation-engine",
+        "moniker.spinnaker.io/cluster": "ingress automation-engine"
+      },
+      "creationTimestamp": "2024-06-17T19:42:41Z",
+      "finalizers": [
+        "networking.gke.io/ingress-finalizer-V2"
+      ],
+      "generation": 3,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "automation-engine",
+        "app_name": "automation-engine",
+        "app_project": "automation-engine",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "cruj"
+      },
+      "name": "automation-engine",
+      "namespace": "automation",
+      "resourceVersion": "639854592",
+      "uid": "df1b49b2-bd3e-427f-b1b1-cbed5cce6ad6"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "automation-engine.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "automation-engine",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "automation-engine.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.184.60.44"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "automation",
+        "artifact.spinnaker.io/name": "automation-event-based-engine",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"automation\",\"artifact.spinnaker.io/name\":\"automation-event-based-engine\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"automation-event-based-engine\",\"moniker.spinnaker.io/cluster\":\"ingress automation-event-based-engine\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"automation-event-based-engine\",\"app_name\":\"automation-event-based-engine\",\"app_project\":\"automation-event-based-engine\",\"resource_kind\":\"ingress\",\"team\":\"friday\"},\"name\":\"automation-event-based-engine\",\"namespace\":\"automation\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"automation-event-based-engine.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"automation-event-based-engine\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"automation-event-based-engine.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "automation-event-based-engine",
+        "moniker.spinnaker.io/cluster": "ingress automation-event-based-engine",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-05-13T17:05:32Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "automation-event-based-engine",
+        "app_name": "automation-event-based-engine",
+        "app_project": "automation-event-based-engine",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "friday"
+      },
+      "name": "automation-event-based-engine",
+      "namespace": "automation",
+      "resourceVersion": "629494131",
+      "uid": "d5333208-00aa-4459-b0f0-462ae2d43a2e"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "automation-event-based-engine.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "automation-event-based-engine",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "automation-event-based-engine.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.184.60.44"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "automation",
+        "artifact.spinnaker.io/name": "automation-templates-core",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"automation\",\"artifact.spinnaker.io/name\":\"automation-templates-core\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"automation-templates-core\",\"moniker.spinnaker.io/cluster\":\"ingress automation-templates-core\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"automation-templates-core\",\"app_name\":\"automation-templates-core\",\"app_project\":\"automation-templates-core\",\"resource_kind\":\"ingress\",\"team\":\"automation\"},\"name\":\"automation-templates-core\",\"namespace\":\"automation\"},\"spec\":{\"rules\":[{\"host\":\"automation-templates-core.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"automation-templates-core\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"automation-templates-core.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "automation-templates-core",
+        "moniker.spinnaker.io/cluster": "ingress automation-templates-core"
+      },
+      "creationTimestamp": "2025-10-02T20:37:24Z",
+      "finalizers": [
+        "networking.gke.io/ingress-finalizer-V2"
+      ],
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "automation-templates-core",
+        "app_name": "automation-templates-core",
+        "app_project": "automation-templates-core",
+        "resource_kind": "ingress",
+        "team": "automation"
+      },
+      "name": "automation-templates-core",
+      "namespace": "automation",
+      "resourceVersion": "760590915",
+      "uid": "a8d24932-28ca-4542-9053-ad101a61a1d9"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "automation-templates-core.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "automation-templates-core",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "automation-templates-core.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.184.60.44"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\"},\"name\":\"rdsm-automation-engine-execution-action-api\",\"namespace\":\"automation\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"rdsm-automation-engine-execution-action-api.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdsm-automation-engine-execution-action-api\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"rdsm-automation-engine-execution-action-api.rdstation.com\"],\"secretName\":\"wildcard-rdstation-com\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true"
+      },
+      "creationTimestamp": "2025-09-30T17:41:46Z",
+      "generation": 1,
+      "name": "rdsm-automation-engine-execution-action-api",
+      "namespace": "automation",
+      "resourceVersion": "755438270",
+      "uid": "16df377e-b022-4b2b-8456-37b8ae4c586e"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "rdsm-automation-engine-execution-action-api.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdsm-automation-engine-execution-action-api",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "rdsm-automation-engine-execution-action-api.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.184.60.44"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "rdsm-automation-engine",
+        "artifact.spinnaker.io/name": "automation-engine-api",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"rdsm-automation-engine\",\"artifact.spinnaker.io/name\":\"automation-engine-api\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"automation-engine\",\"moniker.spinnaker.io/cluster\":\"ingress automation-engine-api\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"automation-engine\",\"app_name\":\"automation-engine-api\",\"app_project\":\"automation-engine\",\"resource_kind\":\"ingress\",\"team\":\"automation\"},\"name\":\"automation-engine-api\",\"namespace\":\"rdsm-automation-engine\"},\"spec\":{\"rules\":[{\"host\":\"rdsm-automation-engine.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"automation-engine-api\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"rdsm-automation-engine.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "automation-engine",
+        "moniker.spinnaker.io/cluster": "ingress automation-engine-api"
+      },
+      "creationTimestamp": "2025-08-18T17:52:21Z",
+      "finalizers": [
+        "networking.gke.io/ingress-finalizer-V2"
+      ],
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "automation-engine",
+        "app_name": "automation-engine-api",
+        "app_project": "automation-engine",
+        "resource_kind": "ingress",
+        "team": "automation"
+      },
+      "name": "automation-engine-api",
+      "namespace": "rdsm-automation-engine",
+      "resourceVersion": "655587181",
+      "uid": "c26e6a2c-0613-40cb-b4af-d9617b46c324"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "rdsm-automation-engine.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "automation-engine-api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "rdsm-automation-engine.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.184.60.44"
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,299 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "email",
+        "artifact.spinnaker.io/name": "email-validator",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"email\",\"artifact.spinnaker.io/name\":\"email-validator\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"email-validator\",\"moniker.spinnaker.io/cluster\":\"ingress email-validator\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"125m\",\"nginx.ingress.kubernetes.io/proxy-read-timeout\":\"600\",\"nginx.ingress.kubernetes.io/proxy-send-timeout\":\"600\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,179.108.123.80/28,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"email-validator\",\"app_name\":\"email-validator\",\"app_project\":\"email-validator\",\"resource_kind\":\"ingress\",\"team\":\"email-team\"},\"name\":\"email-validator\",\"namespace\":\"email\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"email-validator.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"email-validator\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"email-validator.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "email-validator",
+        "moniker.spinnaker.io/cluster": "ingress email-validator",
+        "nginx.ingress.kubernetes.io/cors-allow-credentials": "true",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "125m",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "600",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "600",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,179.108.123.80/28,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-12-16T23:49:46Z",
+      "generation": 11,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "email-validator",
+        "app_name": "email-validator",
+        "app_project": "email-validator",
+        "resource_kind": "ingress",
+        "team": "email-team"
+      },
+      "name": "email-validator",
+      "namespace": "email",
+      "resourceVersion": "1775100597349775014",
+      "uid": "591e1315-29fe-47ba-8a13-ce857c8a35ae"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "email-validator.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "email-validator",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "email-validator.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.57.118.157"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "email",
+        "artifact.spinnaker.io/name": "email-validator-wh-billing",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"email\",\"artifact.spinnaker.io/name\":\"email-validator-wh-billing\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"email-validator\",\"moniker.spinnaker.io/cluster\":\"ingress email-validator-wh-billing\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"email-validator\",\"app_name\":\"email-validator-wh-billing\",\"app_project\":\"email-validator\",\"resource_kind\":\"ingress\",\"team\":\"email-team\"},\"name\":\"email-validator-wh-billing\",\"namespace\":\"email\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"email-validator.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"email-validator-wh-billing\",\"port\":{\"number\":80}}},\"path\":\"/webhook/billing\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"email-validator.rdstation.com.br\"],\"secretName\":\"wildcard-rdstation-com-br\"}]}}\n",
+        "moniker.spinnaker.io/application": "email-validator",
+        "moniker.spinnaker.io/cluster": "ingress email-validator-wh-billing",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2026-03-24T17:04:45Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "email-validator",
+        "app_name": "email-validator-wh-billing",
+        "app_project": "email-validator",
+        "resource_kind": "ingress",
+        "team": "email-team"
+      },
+      "name": "email-validator-wh-billing",
+      "namespace": "email",
+      "resourceVersion": "1775100597349647005",
+      "uid": "7bf32808-58d5-4443-9e4d-6b7cb67f5601"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "email-validator.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "email-validator-wh-billing",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/webhook/billing",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "email-validator.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.57.118.157"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "email",
+        "artifact.spinnaker.io/name": "email-validator-wh-exact",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"email\",\"artifact.spinnaker.io/name\":\"email-validator-wh-exact\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"email-validator\",\"moniker.spinnaker.io/cluster\":\"ingress email-validator-wh-exact\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"email-validator\",\"app_name\":\"email-validator-wh-exact\",\"app_project\":\"email-validator\",\"resource_kind\":\"ingress\",\"team\":\"email-team\"},\"name\":\"email-validator-wh-exact\",\"namespace\":\"email\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"email-validator.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"email-validator-wh-exact\",\"port\":{\"number\":80}}},\"path\":\"/webhook/exact\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"email-validator.rdstation.com.br\"],\"secretName\":\"wildcard-rdstation-com-br\"}]}}\n",
+        "moniker.spinnaker.io/application": "email-validator",
+        "moniker.spinnaker.io/cluster": "ingress email-validator-wh-exact",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2026-03-04T17:40:32Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "email-validator",
+        "app_name": "email-validator-wh-exact",
+        "app_project": "email-validator",
+        "resource_kind": "ingress",
+        "team": "email-team"
+      },
+      "name": "email-validator-wh-exact",
+      "namespace": "email",
+      "resourceVersion": "1775100597354399019",
+      "uid": "6075b311-38a7-49f4-b916-e1cc39bedfa4"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "email-validator.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "email-validator-wh-exact",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/webhook/exact",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "email-validator.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.57.118.157"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "email",
+        "artifact.spinnaker.io/name": "email-validator-wh-pubsub",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"email\",\"artifact.spinnaker.io/name\":\"email-validator-wh-pubsub\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"email-validator\",\"moniker.spinnaker.io/cluster\":\"ingress email-validator-wh-pubsub\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"email-validator\",\"app_name\":\"email-validator-wh-pubsub\",\"app_project\":\"email-validator\",\"resource_kind\":\"ingress\",\"team\":\"email-team\"},\"name\":\"email-validator-wh-pubsub\",\"namespace\":\"email\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"email-validator.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"email-validator-wh-pubsub\",\"port\":{\"number\":80}}},\"path\":\"/webhook/pubsub\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"email-validator.rdstation.com.br\"],\"secretName\":\"wildcard-rdstation-com-br\"}]}}\n",
+        "moniker.spinnaker.io/application": "email-validator",
+        "moniker.spinnaker.io/cluster": "ingress email-validator-wh-pubsub",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2026-02-26T13:26:39Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "email-validator",
+        "app_name": "email-validator-wh-pubsub",
+        "app_project": "email-validator",
+        "resource_kind": "ingress",
+        "team": "email-team"
+      },
+      "name": "email-validator-wh-pubsub",
+      "namespace": "email",
+      "resourceVersion": "1775100597354383009",
+      "uid": "0e19ac48-7d62-4cf1-a3d1-a4f93fe3d00c"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "email-validator.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "email-validator-wh-pubsub",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/webhook/pubsub",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "email-validator.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.57.118.157"
+          }
+        ]
+      }
+    }
+  }
+]

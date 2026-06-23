@@ -1,0 +1,213 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "kubernetes.io/ingress.class": "nginx",
+        "meta.helm.sh/release-name": "cdc-migrator",
+        "meta.helm.sh/release-namespace": "migrator",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "512m",
+        "nginx.ingress.kubernetes.io/proxy-connect-timeout": "15600",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "15600",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "15600",
+        "nginx.ingress.kubernetes.io/service-upstream": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "179.108.123.82/32,187.114.40.121/32,191.189.211.126/32,168.181.195.19/32,45.160.91.7/32,10.0.0.0/8,35.222.163.73/32,45.160.91.51/32,187.114.11.211/32,179.190.144.219/32,191.189.211.126/32"
+      },
+      "creationTimestamp": "2023-02-01T15:10:12Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "Helm"
+      },
+      "name": "cdc-migrator-web",
+      "namespace": "migrator",
+      "resourceVersion": "1633290186",
+      "uid": "10033e4a-ff26-4290-a653-c0de0e6ce2c4"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "cdc-migrador.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "cdc-migrator-web",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "cdc-migrador.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.27.92.164"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/rewrite-target": "/",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"kubernetes.io/ingress.class\":\"nginx\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"512m\",\"nginx.ingress.kubernetes.io/proxy-connect-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/proxy-read-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/proxy-send-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"179.191.65.118/32,189.22.9.242/32,179.108.123.82/32,177.135.66.243/32,201.47.75.216/29,35.222.163.73/32\",\"prometheus.io/scrape\":\"true\"},\"generation\":1,\"name\":\"kafka-dashboard\",\"namespace\":\"kafka\"},\"spec\":{\"rules\":[{\"host\":\"kafka-dashboard.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kafka-dashboard\",\"port\":{\"number\":8080}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"kafka-dashboard.rdops.systems\"],\"secretName\":\"rdops-systems\"}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "512m",
+        "nginx.ingress.kubernetes.io/proxy-connect-timeout": "15600",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "15600",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "15600",
+        "nginx.ingress.kubernetes.io/service-upstream": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "187.114.40.121/32,191.189.211.126/32,168.181.195.19/32,45.160.91.7/32,10.0.0.0/8,35.222.163.73/32,45.160.91.51/32,187.114.11.211/32,179.190.144.219/32,191.189.211.126/32,179.108.123.80/28,45.235.52.24/29,189.28.39.112/29,35.224.157.232/32,187.61.130.87/32,193.186.4.193/32,191.30.2.51/32,189.113.247.106/32",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2023-01-17T18:00:20Z",
+      "generation": 3,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "kafka-dashboard",
+      "namespace": "kafka",
+      "resourceVersion": "1633290185",
+      "uid": "3e19c46d-6935-4634-b161-8aa90d5c1892"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "kafka-dashboard.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kafka-dashboard",
+                    "port": {
+                      "number": 8080
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "cdc-migrator",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/cdc",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "kafka-dashboard.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.27.92.164"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"kubernetes.io/ingress.class\":\"nginx\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"512m\",\"nginx.ingress.kubernetes.io/proxy-connect-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/proxy-read-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/proxy-send-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"187.114.40.121/32,191.189.211.126/32,168.181.195.19/32,45.160.91.7/32,10.0.0.0/8,35.222.163.73/32,45.160.91.51/32,187.114.11.211/32,179.190.144.219/32,191.189.211.126/32\",\"prometheus.io/scrape\":\"true\"},\"generation\":2,\"name\":\"migrador\",\"namespace\":\"kafka\"},\"spec\":{\"rules\":[{\"host\":\"migrador.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"cdc-migrator\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"migrador.rdops.systems\"],\"secretName\":\"rdops-systems\"}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "512m",
+        "nginx.ingress.kubernetes.io/proxy-connect-timeout": "15600",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "15600",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "15600",
+        "nginx.ingress.kubernetes.io/service-upstream": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "187.114.40.121/32,191.189.211.126/32,168.181.195.19/32,45.160.91.7/32,10.0.0.0/8,35.222.163.73/32,45.160.91.51/32,187.114.11.211/32,179.190.144.219/32,191.189.211.126/32",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2023-01-26T17:59:50Z",
+      "generation": 1,
+      "name": "migrador",
+      "namespace": "kafka",
+      "resourceVersion": "1633290184",
+      "uid": "e0d412ed-9251-4819-b8af-db9572a4f1af"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "migrador.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "cdc-migrator",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "migrador.rdops.systems"
+          ],
+          "secretName": "rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.27.92.164"
+          }
+        ]
+      }
+    }
+  }
+]

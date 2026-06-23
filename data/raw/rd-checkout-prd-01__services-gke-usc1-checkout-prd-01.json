@@ -1,0 +1,73 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "paypay",
+        "artifact.spinnaker.io/name": "paypay",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"paypay\",\"artifact.spinnaker.io/name\":\"paypay\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"checkout\",\"moniker.spinnaker.io/cluster\":\"ingress paypay\",\"nginx.ingress.kubernetes.io/cors-allow-headers\":\"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Platform-Account-Id,x-csrf-token\",\"nginx.ingress.kubernetes.io/custom-http-errors\":\"500,502,503\",\"nginx.ingress.kubernetes.io/enable-cors\":\"true\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"checkout\",\"app_name\":\"paypay\"},\"name\":\"paypay\",\"namespace\":\"paypay\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"paypay.rd.services\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"paypay\",\"port\":{\"number\":8080}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"paypay.rd.services\"],\"secretName\":\"wildcard-rd-services\"}]}}\n",
+        "moniker.spinnaker.io/application": "checkout",
+        "moniker.spinnaker.io/cluster": "ingress paypay",
+        "nginx.ingress.kubernetes.io/cors-allow-headers": "DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Platform-Account-Id,x-csrf-token",
+        "nginx.ingress.kubernetes.io/custom-http-errors": "500,502,503",
+        "nginx.ingress.kubernetes.io/enable-cors": "true",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true"
+      },
+      "creationTimestamp": "2025-09-26T14:12:50Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "checkout",
+        "app_name": "paypay"
+      },
+      "name": "paypay",
+      "namespace": "paypay",
+      "resourceVersion": "1758896028298543009",
+      "uid": "74dc3de0-07f8-4e7c-8885-180055e3d3a9"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "paypay.rd.services",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "paypay",
+                    "port": {
+                      "number": 8080
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "paypay.rd.services"
+          ],
+          "secretName": "wildcard-rd-services"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.69.145.11"
+          }
+        ]
+      }
+    }
+  }
+]

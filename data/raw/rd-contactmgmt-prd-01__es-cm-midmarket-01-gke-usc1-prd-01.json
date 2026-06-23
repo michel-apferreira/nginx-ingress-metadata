@@ -1,0 +1,71 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"kubernetes.io/ingress.class\":\"nginx\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"512m\",\"nginx.ingress.kubernetes.io/proxy-connect-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/proxy-read-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/proxy-send-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8,179.191.65.118/32,189.22.9.242/32,179.108.123.82/32,177.135.66.243/32,201.47.75.216/29,35.222.163.73/32,35.224.157.232/32\",\"prometheus.io/scrape\":\"true\"},\"generation\":1,\"name\":\"kibana-es-cm-usc1-prd-midmarket-01\",\"namespace\":\"elasticsearch\"},\"spec\":{\"rules\":[{\"host\":\"kibana-es-cm-midmarket-01.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kibana-es-cm-usc1-prd-midmarket-01-kb-http\",\"port\":{\"number\":5601}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"kibana-es-cm-midmarket-01.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "nginx.ingress.kubernetes.io/compute-full-forwarded-for": "true",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "512m",
+        "nginx.ingress.kubernetes.io/proxy-connect-timeout": "15600",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "15600",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "15600",
+        "nginx.ingress.kubernetes.io/service-upstream": "true",
+        "nginx.ingress.kubernetes.io/use-forwarded-headers": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "189.124.148.73/32,35.224.157.232/32,179.191.65.118/32,189.22.9.242/32,179.108.123.82/32,177.135.66.243/32,201.47.75.216/32",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-08-14T13:48:23Z",
+      "generation": 3,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "kibana-es-cm-usc1-prd-midmarket-01",
+      "namespace": "elasticsearch",
+      "resourceVersion": "1769063944243135012",
+      "uid": "56bda8ac-c70c-4b41-b0d6-35b74c9c463d"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "kibana-es-cm-midmarket-01.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kibana-es-cm-usc1-prd-midmarket-01-kb-http",
+                    "port": {
+                      "number": 5601
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "kibana-es-cm-midmarket-01.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.193.223.108"
+          }
+        ]
+      }
+    }
+  }
+]

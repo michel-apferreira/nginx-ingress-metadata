@@ -1,0 +1,76 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/backends": "{\"k8s-be-32695--b658fc5bcbe7058d\":\"HEALTHY\",\"k8s1-b658fc5b-elasticsea-kibana-es-autocomplete-prd-56-fd389d69\":\"HEALTHY\"}",
+        "ingress.kubernetes.io/forwarding-rule": "k8s2-fr-n8kcj5wd-elasticsearch-kibana-80dkhd60",
+        "ingress.kubernetes.io/https-forwarding-rule": "k8s2-fs-n8kcj5wd-elasticsearch-kibana-80dkhd60",
+        "ingress.kubernetes.io/https-target-proxy": "k8s2-ts-n8kcj5wd-elasticsearch-kibana-80dkhd60",
+        "ingress.kubernetes.io/ssl-cert": "k8s2-cr-n8kcj5wd-9d6ej76v603lpivh-6ac28f49523a7a5e",
+        "ingress.kubernetes.io/static-ip": "k8s2-fr-n8kcj5wd-elasticsearch-kibana-80dkhd60",
+        "ingress.kubernetes.io/target-proxy": "k8s2-tp-n8kcj5wd-elasticsearch-kibana-80dkhd60",
+        "ingress.kubernetes.io/url-map": "k8s2-um-n8kcj5wd-elasticsearch-kibana-80dkhd60",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"kubernetes.io/ingress.ingressClassName\":\"nginx\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"512m\",\"nginx.ingress.kubernetes.io/proxy-connect-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/proxy-read-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/proxy-send-timeout\":\"15600\",\"nginx.ingress.kubernetes.io/service-upstream\":\"true\",\"prometheus.io/scrape\":\"true\"},\"name\":\"kibana\",\"namespace\":\"elasticsearch\"},\"spec\":{\"rules\":[{\"host\":\"kibana-es-autocomplete-prd-01.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kibana-es-autocomplete-prd-01-kb-http\",\"port\":{\"number\":5601}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"kibana-es-autocomplete-prd-01.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "kubernetes.io/ingress.ingressClassName": "nginx",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "512m",
+        "nginx.ingress.kubernetes.io/proxy-connect-timeout": "15600",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "15600",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "15600",
+        "nginx.ingress.kubernetes.io/service-upstream": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-10-20T19:05:32Z",
+      "finalizers": [
+        "networking.gke.io/ingress-finalizer-V2"
+      ],
+      "generation": 1,
+      "name": "kibana",
+      "namespace": "elasticsearch",
+      "resourceVersion": "1504996921",
+      "uid": "0b1d706f-904e-485f-b5a2-310be7ab6307"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "kibana-es-autocomplete-prd-01.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kibana-es-autocomplete-prd-01-kb-http",
+                    "port": {
+                      "number": 5601
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "kibana-es-autocomplete-prd-01.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.107.144.83"
+          }
+        ]
+      }
+    }
+  }
+]

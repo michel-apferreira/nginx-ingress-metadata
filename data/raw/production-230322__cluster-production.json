@@ -1,0 +1,2644 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/custom-http-errors\":\"501\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"false\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"alert_group\":\"gandauth\",\"app\":\"a3s-api\",\"app_group\":\"web\",\"app_name\":\"a3s-api\",\"app_project\":\"a3s\",\"team\":\"gandauth\"},\"name\":\"a3s-api-internal\",\"namespace\":\"accounts-auth\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"a3s-api.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"a3s-api-internal\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"a3s-api.production.rdops.systems\"],\"secretName\":\"production-rdops-systems\"}]}}\n",
+        "nginx.ingress.kubernetes.io/custom-http-errors": "501",
+        "nginx.ingress.kubernetes.io/keepalive": "64",
+        "nginx.ingress.kubernetes.io/keepalive-timeout": "120",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "128m",
+        "nginx.ingress.kubernetes.io/proxy-buffer-size": "2048k",
+        "nginx.ingress.kubernetes.io/proxy-buffering": "off",
+        "nginx.ingress.kubernetes.io/proxy-buffers-number": "32",
+        "nginx.ingress.kubernetes.io/proxy-connect-timeout": "600",
+        "nginx.ingress.kubernetes.io/proxy-max-temp-file-size": "2048m",
+        "nginx.ingress.kubernetes.io/proxy-next-upstream": "error timeout invalid_header http_502 http_503 http_504",
+        "nginx.ingress.kubernetes.io/proxy-next-upstream-tries": "8",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "600",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "600",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "false",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2021-06-30T18:15:46Z",
+      "generation": 3,
+      "labels": {
+        "alert_group": "gandauth",
+        "app": "a3s-api",
+        "app_group": "web",
+        "app_name": "a3s-api",
+        "app_project": "a3s",
+        "k8slens-edit-resource-version": "v1",
+        "team": "gandauth"
+      },
+      "name": "a3s-api-internal",
+      "namespace": "accounts-auth",
+      "resourceVersion": "4802454614",
+      "uid": "c326c17e-fefe-4958-b2b9-88bfa3f5be25"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "a3s-api.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "a3s-api-internal",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "a3s-api.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "automation",
+        "artifact.spinnaker.io/name": "automation-event-based-engine",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"automation\",\"artifact.spinnaker.io/name\":\"automation-event-based-engine\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"automation-event-based-engine\",\"moniker.spinnaker.io/cluster\":\"ingress automation-event-based-engine\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8,45.235.52.24/29,189.28.39.112/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"automation-event-based-engine\",\"app_name\":\"automation-event-based-engine\",\"app_project\":\"automation-event-based-engine\",\"resource_kind\":\"ingress\",\"team\":\"friday\"},\"name\":\"automation-event-based-engine\",\"namespace\":\"automation\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"automation-event-based-engine.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"automation-event-based-engine\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"automation-event-based-engine.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "automation-event-based-engine",
+        "moniker.spinnaker.io/cluster": "ingress automation-event-based-engine",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8,45.235.52.24/29,189.28.39.112/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-01-20T18:46:21Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "automation-event-based-engine",
+        "app_name": "automation-event-based-engine",
+        "app_project": "automation-event-based-engine",
+        "resource_kind": "ingress",
+        "team": "friday"
+      },
+      "name": "automation-event-based-engine",
+      "namespace": "automation",
+      "resourceVersion": "5027180916",
+      "uid": "f9576a48-a5f5-4227-923a-76b70b4f8dc0"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "automation-event-based-engine.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "automation-event-based-engine",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "automation-event-based-engine.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"179.191.65.118/32,189.22.9.242/32,179.108.123.82/32,177.135.66.243/32,10.0.0.0/8,201.47.75.216/29,179.108.123.80/28,177.135.66.240/29,187.49.235.32/29\",\"prometheus.io/scrape\":\"true\"},\"name\":\"workflow-engine\",\"namespace\":\"automation\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"wengine-production.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"workflow-engine\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"wengine-production.rdstation.com.br\"],\"secretName\":\"rdstation-com-br\"}]}}\n",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2020-05-26T13:40:47Z",
+      "generation": 5,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "workflow-engine",
+      "namespace": "automation",
+      "resourceVersion": "4647009057",
+      "uid": "e0805c1f-1fc0-4074-af1d-584477a4c2ab"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "wengine-production.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "workflow-engine",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "wengine-production.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"rdstation.albato-embedded.net\",\"prometheus.io/scrape\":\"true\"},\"name\":\"rd-albato\",\"namespace\":\"connect\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"albato.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"albato-external\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"albato.rdstation.com\"],\"secretName\":\"rdstation-com\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "rdstation.albato-embedded.net",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "189.28.39.112/29,179.108.123.80/28,45.235.52.24/29,10.0.0.0/8,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2022-03-25T19:39:49Z",
+      "generation": 3,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "rd-albato",
+      "namespace": "connect",
+      "resourceVersion": "4653785643",
+      "uid": "8de47a75-c433-4883-8112-1aa01156ae8e"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "albato.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "albato-external",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "albato.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"rdstation.albato-embedded.net\",\"prometheus.io/scrape\":\"true\"},\"name\":\"rd-albato-com-br\",\"namespace\":\"connect\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"albato.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"albato-external\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"albato.rdstation.com.br\"],\"secretName\":\"rdstation-com-br\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "rdstation.albato-embedded.net",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2022-03-25T19:40:00Z",
+      "generation": 3,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "rd-albato-com-br",
+      "namespace": "connect",
+      "resourceVersion": "4653786910",
+      "uid": "4f246188-c160-42ea-8bf3-4255b7c5d096"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "albato.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "albato-external",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "albato.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"rdstation-nuvemshop.albato-embedded.net\",\"prometheus.io/scrape\":\"true\"},\"name\":\"rd-albato-nuvemshop\",\"namespace\":\"connect\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"albato-nuvemshop.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdstation-nuvemshop-external\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"albato-nuvemshop.rdstation.com\"],\"secretName\":\"rdstation-com\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "rdstation-nuvemshop.albato-embedded.net",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2022-05-13T19:01:39Z",
+      "generation": 3,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "rd-albato-nuvemshop",
+      "namespace": "connect",
+      "resourceVersion": "4653798658",
+      "uid": "507e63e8-658b-4eb5-ab0f-fad864c2ce68"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "albato-nuvemshop.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdstation-nuvemshop-external",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "albato-nuvemshop.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"rdstation-nuvemshop.albato-embedded.net\",\"prometheus.io/scrape\":\"true\"},\"name\":\"rd-albato-nuvemshop-com-br\",\"namespace\":\"connect\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"albato-nuvemshop.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdstation-nuvemshop-external\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"albato-nuvemshop.rdstation.com.br\"],\"secretName\":\"rdstation-com-br\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "rdstation-nuvemshop.albato-embedded.net",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2022-05-13T19:01:41Z",
+      "generation": 4,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "rd-albato-nuvemshop-com-br",
+      "namespace": "connect",
+      "resourceVersion": "4653800862",
+      "uid": "e7302a1c-77af-42f0-9c35-388691502ec7"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "albato-nuvemshop.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdstation-nuvemshop-external",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "albato-nuvemshop.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"rdstation-woocommerce.albato-embedded.net\",\"prometheus.io/scrape\":\"true\"},\"name\":\"rd-albato-woocommerce\",\"namespace\":\"connect\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"albato-woocommerce.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdstation-woocommerce-external\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"albato-woocommerce.rdstation.com\"],\"secretName\":\"rdstation-com\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "rdstation-woocommerce.albato-embedded.net",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2022-06-06T19:44:02Z",
+      "generation": 3,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "rd-albato-woocommerce",
+      "namespace": "connect",
+      "resourceVersion": "4653801596",
+      "uid": "728a603b-7ae4-4cdb-8886-94aa30f9eef9"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "albato-woocommerce.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdstation-woocommerce-external",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "albato-woocommerce.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"rdstation-woocommerce.albato-embedded.net\",\"prometheus.io/scrape\":\"true\"},\"name\":\"rd-albato-woocommerce-com-br\",\"namespace\":\"connect\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"albato-woocommerce.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdstation-woocommerce-external\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"albato-woocommerce.rdstation.com.br\"],\"secretName\":\"rdstation-com-br\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "rdstation-woocommerce.albato-embedded.net",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2022-06-06T19:44:04Z",
+      "generation": 3,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "rd-albato-woocommerce-com-br",
+      "namespace": "connect",
+      "resourceVersion": "4653802331",
+      "uid": "0b38feaf-ffe3-4486-b32f-435d23916d60"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "albato-woocommerce.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdstation-woocommerce-external",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "albato-woocommerce.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"rdstation-pipedrive.albato-embedded.net\",\"prometheus.io/scrape\":\"true\"},\"name\":\"rdstation-albato-pipedrive-com\",\"namespace\":\"connect\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"albato-pipedrive.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdstation-albato-pipedrive\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"albato-pipedrive.rdstation.com\"],\"secretName\":\"rdstation-com\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "rdstation-pipedrive.albato-embedded.net",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2022-12-13T18:17:14Z",
+      "generation": 3,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "rdstation-albato-pipedrive-com",
+      "namespace": "connect",
+      "resourceVersion": "4653804247",
+      "uid": "43d803a8-537e-4258-b30e-7627192825e6"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "albato-pipedrive.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdstation-albato-pipedrive",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "albato-pipedrive.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"rdstation-pipedrive.albato-embedded.net\",\"prometheus.io/scrape\":\"true\"},\"name\":\"rdstation-albato-pipedrive-com-br\",\"namespace\":\"connect\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"albato-pipedrive.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdstation-albato-pipedrive\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"albato-pipedrive.rdstation.com.br\"],\"secretName\":\"rdstation-com-br\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "rdstation-pipedrive.albato-embedded.net",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2022-12-13T18:17:14Z",
+      "generation": 3,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "rdstation-albato-pipedrive-com-br",
+      "namespace": "connect",
+      "resourceVersion": "4653805714",
+      "uid": "07fe4055-31e3-4cac-8d99-9a3412b8b30d"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "albato-pipedrive.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdstation-albato-pipedrive",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "albato-pipedrive.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"kubernetes.io/ingress.class\":\"nginx\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"rdstation-salesforce.albato-embedded.net\",\"prometheus.io/scrape\":\"true\"},\"name\":\"rdstation-albato-salesforce-com\",\"namespace\":\"connect\"},\"spec\":{\"rules\":[{\"host\":\"albato-salesforce.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdstation-albato-salesforce\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"albato-salesforce.rdstation.com\"],\"secretName\":\"rdstation-com\"}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "rdstation-salesforce.albato-embedded.net",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2023-03-27T19:33:42Z",
+      "generation": 2,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "rdstation-albato-salesforce-com",
+      "namespace": "connect",
+      "resourceVersion": "4653806857",
+      "uid": "3f577d52-929c-475c-88fc-1361c13a615f"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "albato-salesforce.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdstation-albato-salesforce",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "albato-salesforce.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"kubernetes.io/ingress.class\":\"nginx\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"rdstation-salesforce.albato-embedded.net\",\"prometheus.io/scrape\":\"true\"},\"name\":\"rdstation-albato-salesforce-com-br\",\"namespace\":\"connect\"},\"spec\":{\"rules\":[{\"host\":\"albato-salesforce.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdstation-albato-salesforce\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"albato-salesforce.rdstation.com.br\"],\"secretName\":\"rdstation-com-br\"}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "rdstation-salesforce.albato-embedded.net",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2023-03-27T19:33:43Z",
+      "generation": 2,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "rdstation-albato-salesforce-com-br",
+      "namespace": "connect",
+      "resourceVersion": "4653811073",
+      "uid": "17b41ac3-8110-4e12-b1d5-66a37c5a4110"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "albato-salesforce.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdstation-albato-salesforce",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "albato-salesforce.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"rdstation-shopify.albato-embedded.net\",\"prometheus.io/scrape\":\"true\"},\"name\":\"rdstation-albato-shopify-com\",\"namespace\":\"connect\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"albato-shopify.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdstation-albato-shopify\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"albato-shopify.rdstation.com\"],\"secretName\":\"rdstation-com\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "rdstation-shopify.albato-embedded.net",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2023-03-23T18:35:18Z",
+      "generation": 2,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "rdstation-albato-shopify-com",
+      "namespace": "connect",
+      "resourceVersion": "4653812139",
+      "uid": "6f507931-7663-44e6-8d01-60801d3d0c8e"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "albato-shopify.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdstation-albato-shopify",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "albato-shopify.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"rdstation-shopify.albato-embedded.net\",\"prometheus.io/scrape\":\"true\"},\"name\":\"rdstation-albato-shopify-com-br\",\"namespace\":\"connect\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"albato-shopify.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdstation-albato-shopify\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"albato-shopify.rdstation.com.br\"],\"secretName\":\"rdstation-com-br\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "rdstation-shopify.albato-embedded.net",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2023-03-23T18:35:19Z",
+      "generation": 2,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "rdstation-albato-shopify-com-br",
+      "namespace": "connect",
+      "resourceVersion": "4653812941",
+      "uid": "54238856-0b31-4222-aae7-4d6a24adc864"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "albato-shopify.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdstation-albato-shopify",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "albato-shopify.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"rdstation-vtex.albato-embedded.net\",\"prometheus.io/scrape\":\"true\"},\"name\":\"rdstation-albato-vtex-com\",\"namespace\":\"connect\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"albato-vtex.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdstation-albato-vtex\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"albato-vtex.rdstation.com\"],\"secretName\":\"rdstation-com\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "rdstation-vtex.albato-embedded.net",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2022-06-21T18:40:16Z",
+      "generation": 3,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "rdstation-albato-vtex-com",
+      "namespace": "connect",
+      "resourceVersion": "4653814966",
+      "uid": "55e55691-bbce-4e72-a6a7-82e9c70961d9"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "albato-vtex.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdstation-albato-vtex",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "albato-vtex.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"rdstation-vtex.albato-embedded.net\",\"prometheus.io/scrape\":\"true\"},\"name\":\"rdstation-albato-vtex-com-br\",\"namespace\":\"connect\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"albato-vtex.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdstation-albato-vtex\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"albato-vtex.rdstation.com.br\"],\"secretName\":\"rdstation-com-br\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "rdstation-vtex.albato-embedded.net",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2022-06-21T18:40:17Z",
+      "generation": 3,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "rdstation-albato-vtex-com-br",
+      "namespace": "connect",
+      "resourceVersion": "4653817075",
+      "uid": "f5900784-4bb1-48b4-b384-0fee2a13469f"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "albato-vtex.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdstation-albato-vtex",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "albato-vtex.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"status.rdstation.com\",\"prometheus.io/scrape\":\"true\"},\"name\":\"statuspage-rdstation\",\"namespace\":\"connect\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"status.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"statuspage-rdstation\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"status.rdstation.com.br\"],\"secretName\":\"rdstation-com-br\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "status.rdstation.com",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2023-01-19T20:51:51Z",
+      "generation": 4,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "statuspage-rdstation",
+      "namespace": "connect",
+      "resourceVersion": "4653817926",
+      "uid": "4daf6373-3c9b-491b-887f-8080275e6d49"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "status.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "statuspage-rdstation",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "status.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/rewrite-target\":\"/$1\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/name\":\"cdp-events-consistency-checker\"},\"name\":\"cdp-entities-consistency-checker\",\"namespace\":\"core\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"cdp.rd.services\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"cdp-entities-consistency-checker-web\",\"port\":{\"number\":80}}},\"path\":\"/cdp-entities-validator/(.*)\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"cdp.rd.services\"],\"secretName\":\"rd-services\"}]}}\n",
+        "nginx.ingress.kubernetes.io/rewrite-target": "/$1",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2020-12-09T20:45:37Z",
+      "generation": 3,
+      "labels": {
+        "app.kubernetes.io/name": "cdp-events-consistency-checker",
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "cdp-entities-consistency-checker",
+      "namespace": "core",
+      "resourceVersion": "4649946617",
+      "uid": "d7cd93e5-c060-4b4c-9ebb-b15a3008e1a9"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "cdp.rd.services",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "cdp-entities-consistency-checker-web",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/cdp-entities-validator/(.*)",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "cdp.rd.services"
+          ],
+          "secretName": "wildcard-rd-services"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "crm",
+        "artifact.spinnaker.io/name": "kibana-crm",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"crm\",\"artifact.spinnaker.io/name\":\"kibana-crm\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"crm\",\"moniker.spinnaker.io/cluster\":\"ingress kibana-crm\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8,177.135.66.241/29,177.135.66.241/29,177.135.66.241/29,179.108.123.80/28,177.135.66.241/29,201.47.75.216/29\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"crm\",\"app_name\":\"elasticsearch-crm\",\"app_project\":\"crm\",\"resource_kind\":\"ingress\",\"team\":\"chapolin\"},\"name\":\"kibana-crm\",\"namespace\":\"crm\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"kibana-crm.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kibana-elasticsearch-crm-production-kb-http\",\"port\":{\"number\":5601}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"kibana-crm.production.rdops.systems\"],\"secretName\":\"production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "crm",
+        "moniker.spinnaker.io/cluster": "ingress kibana-crm",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8,177.135.66.241/29,177.135.66.241/29,177.135.66.241/29,179.108.123.80/28,177.135.66.241/29,201.47.75.216/29,45.235.52.24/29,189.28.39.112/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109,35.224.157.232/32"
+      },
+      "creationTimestamp": "2023-08-17T20:24:42Z",
+      "generation": 3,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "crm",
+        "app_name": "elasticsearch-crm",
+        "app_project": "crm",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "chapolin"
+      },
+      "name": "kibana-crm",
+      "namespace": "crm",
+      "resourceVersion": "5147547105",
+      "uid": "2cb96a45-1806-4274-8832-764c0a1a07f1"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "kibana-crm.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kibana-elasticsearch-crm-production-kb-http",
+                    "port": {
+                      "number": 5601
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "kibana-crm.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "moteam",
+        "artifact.spinnaker.io/name": "galaga",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"moteam\",\"artifact.spinnaker.io/name\":\"galaga\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"galaga\",\"moniker.spinnaker.io/cluster\":\"ingress galaga\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"5m\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"false\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"galaga\"},\"name\":\"galaga\",\"namespace\":\"moteam\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"galaga.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"galaga\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"galaga.rdstation.com.br\"],\"secretName\":\"wildcard-rdstation-com-br\"}]}}\n",
+        "moniker.spinnaker.io/application": "galaga",
+        "moniker.spinnaker.io/cluster": "ingress galaga",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "5m",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "false",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2019-05-10T23:13:14Z",
+      "generation": 5,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "galaga",
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "galaga",
+      "namespace": "moteam",
+      "resourceVersion": "4628509989",
+      "uid": "2fcb16a7-7379-11e9-9be1-42010a800069"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "galaga.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "galaga",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "galaga.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "leadgen",
+        "artifact.spinnaker.io/name": "event-harbor",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"leadgen\",\"artifact.spinnaker.io/name\":\"event-harbor\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"event-harbor\",\"moniker.spinnaker.io/cluster\":\"ingress event-harbor\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"1m\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"event-harbor\",\"app_name\":\"event-harbor\",\"app_project\":\"event-harbor\",\"resource_kind\":\"ingress\",\"team\":\"leadgen\"},\"name\":\"event-harbor\",\"namespace\":\"leadgen\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"event-harbor.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"event-harbor\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"event-harbor.rdstation.com\"],\"secretName\":\"wildcard-rdstation-com\"}]}}\n",
+        "moniker.spinnaker.io/application": "event-harbor",
+        "moniker.spinnaker.io/cluster": "ingress event-harbor",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "1m",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-05-29T17:17:09Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "event-harbor",
+        "app_name": "event-harbor",
+        "app_project": "event-harbor",
+        "resource_kind": "ingress",
+        "team": "leadgen"
+      },
+      "name": "event-harbor",
+      "namespace": "leadgen",
+      "resourceVersion": "5371754379",
+      "uid": "1c283ae7-eb05-44f5-8cce-93ef748c914f"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "event-harbor.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "event-harbor",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "event-harbor.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "olimpo",
+        "artifact.spinnaker.io/name": "hefesto",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"olimpo\",\"artifact.spinnaker.io/name\":\"hefesto\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"hefesto\",\"moniker.spinnaker.io/cluster\":\"ingress hefesto\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"false\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"hefesto\"},\"name\":\"hefesto\",\"namespace\":\"olimpo\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"hefesto.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"hefesto-app\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"hefesto.rdstation.com.br\"],\"secretName\":\"wildcard-rdstation-com-br\"}]}}\n",
+        "moniker.spinnaker.io/application": "hefesto",
+        "moniker.spinnaker.io/cluster": "ingress hefesto",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "false",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2019-05-10T23:13:16Z",
+      "generation": 3,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "hefesto"
+      },
+      "name": "hefesto",
+      "namespace": "olimpo",
+      "resourceVersion": "4629279691",
+      "uid": "30fc81c9-7379-11e9-9be1-42010a800069"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "hefesto.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "hefesto-app",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "hefesto.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "olimpo",
+        "artifact.spinnaker.io/name": "lead-vacuum",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"olimpo\",\"artifact.spinnaker.io/name\":\"lead-vacuum\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"lead-vacuum-worker\",\"moniker.spinnaker.io/cluster\":\"ingress lead-vacuum\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"false\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"lead-vacuum-worker\"},\"name\":\"lead-vacuum\",\"namespace\":\"olimpo\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"lead-vacuum.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"lead-vacuum-app\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"lead-vacuum.rdstation.com.br\"],\"secretName\":\"wildcard-rdstation-com-br\"}]}}\n",
+        "moniker.spinnaker.io/application": "lead-vacuum-worker",
+        "moniker.spinnaker.io/cluster": "ingress lead-vacuum",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "false",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2019-05-10T23:13:16Z",
+      "generation": 3,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "lead-vacuum-worker",
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "lead-vacuum",
+      "namespace": "olimpo",
+      "resourceVersion": "4629357705",
+      "uid": "314950ea-7379-11e9-9be1-42010a800069"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "lead-vacuum.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "lead-vacuum-app",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "lead-vacuum.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "sauron",
+        "artifact.spinnaker.io/name": "gyruss",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"sauron\",\"artifact.spinnaker.io/name\":\"gyruss\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"gyruss\",\"moniker.spinnaker.io/cluster\":\"ingress gyruss\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"gyruss\"},\"name\":\"gyruss\",\"namespace\":\"sauron\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"event-api.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"gyruss\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"event-api.rdstation.com.br\"],\"secretName\":\"wildcard-rdstation-com-br\"}]}}\n",
+        "moniker.spinnaker.io/application": "gyruss",
+        "moniker.spinnaker.io/cluster": "ingress gyruss",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-05-27T13:25:13Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "gyruss"
+      },
+      "name": "gyruss",
+      "namespace": "sauron",
+      "resourceVersion": "5365929724",
+      "uid": "72d83ee6-a56f-44cb-a090-73f053b22132"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "event-api.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "gyruss",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "event-api.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "sauron",
+        "artifact.spinnaker.io/name": "gyruss-cta-redirect",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"sauron\",\"artifact.spinnaker.io/name\":\"gyruss-cta-redirect\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"gyruss\",\"moniker.spinnaker.io/cluster\":\"ingress gyruss-cta-redirect\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"gyruss\"},\"name\":\"gyruss-cta-redirect\",\"namespace\":\"sauron\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"cta-redirect.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"gyruss\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"cta-redirect.rdstation.com\"],\"secretName\":\"wildcard-rdstation-com\"}]}}\n",
+        "moniker.spinnaker.io/application": "gyruss",
+        "moniker.spinnaker.io/cluster": "ingress gyruss-cta-redirect",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-05-27T13:25:13Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "gyruss"
+      },
+      "name": "gyruss-cta-redirect",
+      "namespace": "sauron",
+      "resourceVersion": "5365929720",
+      "uid": "64444459-39d3-44af-a846-94e539140f58"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "cta-redirect.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "gyruss",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "cta-redirect.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "sauron",
+        "artifact.spinnaker.io/name": "gyruss-ingress-internal",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"sauron\",\"artifact.spinnaker.io/name\":\"gyruss-ingress-internal\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"gyruss\",\"moniker.spinnaker.io/cluster\":\"ingress gyruss-ingress-internal\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\"},\"labels\":{\"alert_group\":\"sauron\",\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"gyruss\",\"project\":\"gyruss-internal\"},\"name\":\"gyruss-ingress-internal\",\"namespace\":\"sauron\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"gyruss-internal.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"gyruss\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"gyruss-internal.production.rdops.systems\"],\"secretName\":\"production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "gyruss",
+        "moniker.spinnaker.io/cluster": "ingress gyruss-ingress-internal",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true"
+      },
+      "creationTimestamp": "2025-05-27T13:25:14Z",
+      "generation": 1,
+      "labels": {
+        "alert_group": "sauron",
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "gyruss",
+        "project": "gyruss-internal"
+      },
+      "name": "gyruss-ingress-internal",
+      "namespace": "sauron",
+      "resourceVersion": "5365929722",
+      "uid": "e3bc9643-0c5c-4ff4-926c-049c90a1354f"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "gyruss-internal.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "gyruss",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "gyruss-internal.production.rdops.systems"
+          ],
+          "secretName": "production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "sauron",
+        "artifact.spinnaker.io/name": "gyruss-rdops-systems",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"sauron\",\"artifact.spinnaker.io/name\":\"gyruss-rdops-systems\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"gyruss\",\"moniker.spinnaker.io/cluster\":\"ingress gyruss-rdops-systems\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app\":\"gyruss\",\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"gyruss\"},\"name\":\"gyruss-rdops-systems\",\"namespace\":\"sauron\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"gyruss.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"gyruss\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"gyruss.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "gyruss",
+        "moniker.spinnaker.io/cluster": "ingress gyruss-rdops-systems",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-05-27T13:25:12Z",
+      "generation": 1,
+      "labels": {
+        "app": "gyruss",
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "gyruss"
+      },
+      "name": "gyruss-rdops-systems",
+      "namespace": "sauron",
+      "resourceVersion": "5365929723",
+      "uid": "35c46444-ff1a-4dd4-acaf-c180cdda3997"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "gyruss.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "gyruss",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "gyruss.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "rdsm",
+        "artifact.spinnaker.io/name": "rdsm-web",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"rdsm\",\"artifact.spinnaker.io/name\":\"rdsm-web\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rdsm\",\"moniker.spinnaker.io/cluster\":\"ingress rdsm-web\",\"nginx.ingress.kubernetes.io/configuration-snippet\":\"resolver kube-dns.kube-system.svc.cluster.local valid=10s;\\nif ($http_cookie ~* \\\"rdsm_target_version=alpha\\\") {\\n  set $proxy http://web-alpha.rdsm.svc.cluster.local:80;\\n  proxy_pass $proxy;\\n}\\nif ($http_cookie ~* \\\"rdsm_target_version=beta\\\") {\\n  set $proxy http://web-beta.rdsm.svc.cluster.local:80;\\n  proxy_pass $proxy;\\n}\\nif ($http_cookie ~* \\\"rdsm_target_version=release_candidate\\\") {\\n  set $proxy http://web-release-candidate.rdsm.svc.cluster.local:80;\\n  proxy_pass $proxy;\\n}\\nif ($http_cookie ~* \\\"rdsm_target_version=stable\\\") {\\n  set $proxy http://web.rdsm.svc.cluster.local:80;\\n  proxy_pass $proxy;\\n}\\n\\nlocation ~ ^/signup/?$ {\\n  set $redirect_url \\\"https://accounts.rdstation.com.br/signup?product=marketing\\u0026$args\\\";\\n  return 302 $redirect_url;\\n\\n  proxy_pass $proxy;\\n}\\n\\nlocation ~ ^/signup_account/?$ {\\n  set $redirect_url \\\"https://accounts.rdstation.com.br/signup?product=marketing\\u0026$args\\\";\\n  return 302 $redirect_url;\\n\\n  proxy_pass $proxy;\\n}\\n\\nproxy_set_header Client-IP \\\"\\\";\\nproxy_set_header Authorization $http_authorization;\\n\\nif ($request_uri ~* \\\"^/api/v2\\\"){\\n  return 401;\\n}\\n\",\"nginx.ingress.kubernetes.io/custom-http-errors\":\"500,502,503\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"16m\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/use-regex\":\"true\"},\"creationTimestamp\":\"2025-06-24T12:20:15Z\",\"generation\":2,\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rdsm\",\"app_group\":\"ingress\",\"app_name\":\"rdsm-web\",\"app_project\":\"rdstation\",\"k8slens-edit-resource-version\":\"v1\",\"team\":\"pope\",\"version\":\"production\"},\"name\":\"rdsm-web\",\"namespace\":\"rdsm\",\"resourceVersion\":\"1768921102364959016\",\"uid\":\"52a6070c-f9d8-4a55-8ac3-8454080826bf\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"app.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"web\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"app.rdstation.com.br\"],\"secretName\":\"wildcard-rdstation-com-br\"}]},\"status\":{\"loadBalancer\":{\"ingress\":[{\"ip\":\"35.222.155.74\"}]}}}\n",
+        "moniker.spinnaker.io/application": "rdsm",
+        "moniker.spinnaker.io/cluster": "ingress rdsm-web",
+        "nginx.ingress.kubernetes.io/configuration-snippet": "resolver kube-dns.kube-system.svc.cluster.local valid=10s;\nif ($http_cookie ~* \"rdsm_target_version=alpha\") {\n  set $proxy http://web-alpha.rdsm.svc.cluster.local:80;\n  proxy_pass $proxy;\n}\nif ($http_cookie ~* \"rdsm_target_version=beta\") {\n  set $proxy http://web-beta.rdsm.svc.cluster.local:80;\n  proxy_pass $proxy;\n}\nif ($http_cookie ~* \"rdsm_target_version=release_candidate\") {\n  set $proxy http://web-release-candidate.rdsm.svc.cluster.local:80;\n  proxy_pass $proxy;\n}\nif ($http_cookie ~* \"rdsm_target_version=stable\") {\n  set $proxy http://web.rdsm.svc.cluster.local:80;\n  proxy_pass $proxy;\n}\n\nlocation ~ ^/signup/?$ {\n  set $redirect_url \"https://accounts.rdstation.com.br/signup?product=marketing&$args\";\n  return 302 $redirect_url;\n\n  proxy_pass $proxy;\n}\n\nlocation ~ ^/signup_account/?$ {\n  set $redirect_url \"https://accounts.rdstation.com.br/signup?product=marketing&$args\";\n  return 302 $redirect_url;\n\n  proxy_pass $proxy;\n}\n\nproxy_set_header Client-IP \"\";\nproxy_set_header Authorization $http_authorization;\n\nif ($request_uri ~* \"^/api/v2\"){\n  return 401;\n}\n",
+        "nginx.ingress.kubernetes.io/custom-http-errors": "500,502,503",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "16m",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/use-regex": "true"
+      },
+      "creationTimestamp": "2026-03-03T20:14:42Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rdsm",
+        "app_group": "ingress",
+        "app_name": "rdsm-web",
+        "app_project": "rdstation",
+        "k8slens-edit-resource-version": "v1",
+        "team": "pope",
+        "version": "production"
+      },
+      "name": "rdsm-web",
+      "namespace": "rdsm",
+      "resourceVersion": "1772568885299871016",
+      "uid": "9f1c65cc-1a39-4ea6-b873-5471715e9cbd"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "app.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "web",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "app.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "ingress.kubernetes.io/backends": "{\"k8s-be-31914--0b06ba8d05326855\":\"HEALTHY\",\"k8s-be-32333--0b06ba8d05326855\":\"HEALTHY\",\"k8s-be-32443--0b06ba8d05326855\":\"HEALTHY\"}",
+        "ingress.kubernetes.io/forwarding-rule": "k8s-fw-kong-api-gateway--0b06ba8d05326855",
+        "ingress.kubernetes.io/https-forwarding-rule": "k8s-fws-kong-api-gateway--0b06ba8d05326855",
+        "ingress.kubernetes.io/https-target-proxy": "k8s-tps-kong-api-gateway--0b06ba8d05326855",
+        "ingress.kubernetes.io/ssl-cert": "k8s-ssl-fb53af87bd7b6e14-366fb88e5011671d--0b06ba8d05326855,k8s-ssl-fb53af87bd7b6e14-0b0746e409432629--0b06ba8d05326855,k8s-ssl-fb53af87bd7b6e14-413ccc8540839141--0b06ba8d05326855,k8s-ssl-fb53af87bd7b6e14-d7a5e9c66500c933--0b06ba8d05326855,k8s-ssl-fb53af87bd7b6e14-b17937e25b8b6d6a--0b06ba8d05326855",
+        "ingress.kubernetes.io/static-ip": "k8s-fw-kong-api-gateway--0b06ba8d05326855",
+        "ingress.kubernetes.io/target-proxy": "k8s-tp-kong-api-gateway--0b06ba8d05326855",
+        "ingress.kubernetes.io/url-map": "k8s-um-kong-api-gateway--0b06ba8d05326855",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"ingress.kubernetes.io/backends\":\"{\\\"k8s-be-31914--0b06ba8d05326855\\\":\\\"HEALTHY\\\",\\\"k8s-be-32333--0b06ba8d05326855\\\":\\\"HEALTHY\\\"}\",\"ingress.kubernetes.io/forwarding-rule\":\"k8s-fw-kong-api-gateway--0b06ba8d05326855\",\"ingress.kubernetes.io/https-forwarding-rule\":\"k8s-fws-kong-api-gateway--0b06ba8d05326855\",\"ingress.kubernetes.io/https-target-proxy\":\"k8s-tps-kong-api-gateway--0b06ba8d05326855\",\"ingress.kubernetes.io/ssl-cert\":\"k8s-ssl-fb53af87bd7b6e14-0e2dc481a017e611--0b06ba8d05326855,k8s-ssl-fb53af87bd7b6e14-332f61c6ed7b44ed--0b06ba8d05326855,k8s-ssl-fb53af87bd7b6e14-06ba991f47b89750--0b06ba8d05326855,k8s-ssl-fb53af87bd7b6e14-76a3e4c887e005f9--0b06ba8d05326855\",\"ingress.kubernetes.io/static-ip\":\"k8s-fw-kong-api-gateway--0b06ba8d05326855\",\"ingress.kubernetes.io/target-proxy\":\"k8s-tp-kong-api-gateway--0b06ba8d05326855\",\"ingress.kubernetes.io/url-map\":\"k8s-um-kong-api-gateway--0b06ba8d05326855\",\"kubernetes.io/ingress.class\":\"gce\"},\"name\":\"api-gateway\",\"namespace\":\"kong\"},\"spec\":{\"rules\":[{\"host\":\"*.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kong-kong-proxy\",\"port\":{\"number\":80}}},\"pathType\":\"ImplementationSpecific\"}]}},{\"host\":\"*.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kong-kong-proxy\",\"port\":{\"number\":80}}},\"pathType\":\"ImplementationSpecific\"}]}},{\"host\":\"*.rd.services\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kong-kong-proxy\",\"port\":{\"number\":80}}},\"pathType\":\"ImplementationSpecific\"}]}},{\"host\":\"*.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kong-kong-proxy\",\"port\":{\"number\":80}}},\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"secretName\":\"rd-services\"},{\"secretName\":\"rdstation-com-br\"},{\"secretName\":\"rdstation-com\"},{\"secretName\":\"rdops-systems\"}]}}\n",
+        "kubernetes.io/ingress.class": "gce"
+      },
+      "creationTimestamp": "2020-03-26T00:07:23Z",
+      "finalizers": [
+        "networking.gke.io/ingress-finalizer"
+      ],
+      "generation": 6,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "api-gateway",
+      "namespace": "kong",
+      "resourceVersion": "1774905963653551000",
+      "uid": "8c285aea-80c7-4891-993a-a701b62cbcac"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "*.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kong-kong-proxy",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        },
+        {
+          "host": "*.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kong-kong-proxy",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        },
+        {
+          "host": "*.rd.services",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kong-kong-proxy",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        },
+        {
+          "host": "*.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kong-kong-proxy",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        },
+        {
+          "host": "api-gateway.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kong-kong-proxy",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "secretName": "wildcard-rd-services"
+        },
+        {
+          "secretName": "wildcard-rdstation-com-br"
+        },
+        {
+          "secretName": "wildcard-rdstation-com"
+        },
+        {
+          "secretName": "wildcard-rdops-systems"
+        },
+        {
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.244.138.111"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\"},\"name\":\"api-gateway-new-with-nginx\",\"namespace\":\"kong\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"*.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kong-kong-proxy\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}},{\"host\":\"*.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kong-kong-proxy\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}},{\"host\":\"*.rd.services\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kong-kong-proxy\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}},{\"host\":\"*.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kong-kong-proxy\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}},{\"host\":\"*.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kong-kong-proxy\",\"port\":{\"number\":443}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"secretName\":\"wildcard-rd-services\"},{\"secretName\":\"wildcard-rdstation-com-br\"},{\"secretName\":\"wildcard-rdstation-com\"},{\"secretName\":\"wildcard-rdops-systems\"},{\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true"
+      },
+      "creationTimestamp": "2025-07-15T22:08:02Z",
+      "generation": 1,
+      "name": "api-gateway-new-with-nginx",
+      "namespace": "kong",
+      "resourceVersion": "5490455488",
+      "uid": "4a113a28-218e-40e8-beba-d4a9bcbbbaaa"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "*.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kong-kong-proxy",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        },
+        {
+          "host": "*.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kong-kong-proxy",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        },
+        {
+          "host": "*.rd.services",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kong-kong-proxy",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        },
+        {
+          "host": "*.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kong-kong-proxy",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        },
+        {
+          "host": "*.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kong-kong-proxy",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "secretName": "wildcard-rd-services"
+        },
+        {
+          "secretName": "wildcard-rdstation-com-br"
+        },
+        {
+          "secretName": "wildcard-rdstation-com"
+        },
+        {
+          "secretName": "wildcard-rdops-systems"
+        },
+        {
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"nginx.ingress.kubernetes.io/server-snippet\":\"return 444;\\n\"},\"name\":\"catch-all-deny-ingress\",\"namespace\":\"ingress-nginx\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"nginx-ingress-nginx-defaultbackend\",\"port\":{\"number\":8080}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "nginx.ingress.kubernetes.io/server-snippet": "return 444;\n"
+      },
+      "creationTimestamp": "2025-07-16T12:58:46Z",
+      "generation": 1,
+      "name": "catch-all-deny-ingress",
+      "namespace": "ingress-nginx",
+      "resourceVersion": "5492029230",
+      "uid": "bea4380f-ee5f-42fe-8476-c94131bf74b3"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "nginx-ingress-nginx-defaultbackend",
+                    "port": {
+                      "number": 8080
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\"},\"name\":\"kong-admin-ingress\",\"namespace\":\"kong\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"kong-admin-internal.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kong-kong-admin\",\"port\":{\"number\":8444}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"kong-admin-internal.production.rdops.systems\"],\"secretName\":\"production-rdops-systems\"}]}}\n",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS"
+      },
+      "creationTimestamp": "2025-07-14T18:15:04Z",
+      "generation": 2,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "kong-admin-ingress",
+      "namespace": "kong",
+      "resourceVersion": "5487430702",
+      "uid": "ff621109-dd46-417f-b2e2-edd6fce22659"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "kong-admin-internal.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kong-kong-admin",
+                    "port": {
+                      "number": 8444
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "kong-admin-internal.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"201.47.75.216/29,179.108.123.80/28,177.135.66.240/29,187.49.235.32/29\"},\"labels\":{\"app.kubernetes.io/instance\":\"kongadmin\",\"app.kubernetes.io/managed-by\":\"Helm\",\"app.kubernetes.io/name\":\"konga\",\"helm.sh/chart\":\"konga-1.0.0\"},\"name\":\"kongadmin\",\"namespace\":\"kong\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"konga-production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kongadmin\",\"port\":{\"name\":\"http\"}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"konga-production.rdops.systems\"],\"secretName\":\"rdops-systems\"}]}}\n",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "201.47.75.216/29,179.108.123.80/28,177.135.66.240/29,187.49.235.32/29,45.235.52.24/29,189.28.39.112/29,179.190.144.219/32,35.224.157.232/32,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109, 35.224.157.232/32"
+      },
+      "creationTimestamp": "2020-04-13T20:00:45Z",
+      "generation": 3,
+      "labels": {
+        "app.kubernetes.io/instance": "kongadmin",
+        "app.kubernetes.io/managed-by": "Helm",
+        "app.kubernetes.io/name": "konga",
+        "helm.sh/chart": "konga-1.0.0",
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "kongadmin",
+      "namespace": "kong",
+      "resourceVersion": "5232916283",
+      "uid": "0903ac53-5f72-4b98-8f8a-4b937852ef96"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "konga-production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kongadmin",
+                    "port": {
+                      "name": "http"
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "konga-production.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "pope",
+        "artifact.spinnaker.io/name": "sidekiq-dashboard",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "freelens.app/resource-version": "v1",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"pope\",\"artifact.spinnaker.io/name\":\"sidekiq-dashboard\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"sidekiq-dashboard\",\"moniker.spinnaker.io/cluster\":\"ingress sidekiq-dashboard\",\"nginx.ingress.kubernetes.io/auth-signin\":\"https://$host/oauth2/start?rd=$request_uri\",\"nginx.ingress.kubernetes.io/auth-url\":\"https://$host/oauth2/auth\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"false\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"45.235.52.26/32,35.192.136.167/32,35.192.85.2/32,35.193.7.13/32,35.202.145.110/32,35.202.245.105/32,35.227.58.83/32,192.30.252.0/22,185.199.108.0/22,140.82.112.0/20,143.55.64.0/20,128.201.121.157/29,201.47.75.216/29,179.108.123.80/28,177.135.66.240/29,10.0.0.0/8,3.228.39.90/32,18.213.67.41/32,34.194.94.201/32,34.194.144.202/32,34.197.6.234/32,35.169.17.173/32,35.174.253.146/32,52.3.128.216/32,52.4.195.249/32,52.5.58.121/32,52.21.153.129/32,52.72.72.233/32,54.92.235.88/32,54.161.182.76/32,54.164.161.41/32,54.166.105.113/32,54.167.72.230/32,54.172.26.132/32,54.205.138.102/32,54.208.72.234/32,54.209.115.53, 35.222.163.73/32\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"sidekiq-dashboard\"},\"name\":\"sidekiq-dashboard\",\"namespace\":\"pope\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"sidekiq-production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"sidekiq-dashboard\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"sidekiq-production.rdops.systems\"],\"secretName\":\"rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "sidekiq-dashboard",
+        "moniker.spinnaker.io/cluster": "ingress sidekiq-dashboard",
+        "nginx.ingress.kubernetes.io/auth-signin": "https://$host/oauth2/start?rd=$request_uri",
+        "nginx.ingress.kubernetes.io/auth-url": "https://$host/oauth2/auth",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "300",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "300",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "false",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-06-03T17:13:54Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "sidekiq-dashboard",
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "sidekiq-dashboard",
+      "namespace": "pope",
+      "resourceVersion": "5405349019",
+      "uid": "b5932693-0abc-48cb-9158-ac61e62c9119"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "sidekiq-production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "sidekiq-dashboard",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "sidekiq-production.rdops.systems"
+          ],
+          "secretName": "rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "pope",
+        "artifact.spinnaker.io/name": "sidekiq-dashboard-oauth",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "freelens.app/resource-version": "v1",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"pope\",\"artifact.spinnaker.io/name\":\"sidekiq-dashboard-oauth\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"sidekiq-dashboard\",\"moniker.spinnaker.io/cluster\":\"ingress sidekiq-dashboard-oauth\",\"nginx.ingress.kubernetes.io/ssl-protocols\":\"TLSv1.2 TLSv1.3\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"0.0.0.0/0,179.108.123.80/28,45.235.52.24/29,189.28.39.112/29\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"sidekiq-dashboard\"},\"name\":\"sidekiq-dashboard-oauth\",\"namespace\":\"pope\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"sidekiq-production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"oauth\",\"port\":{\"number\":4180}}},\"path\":\"/oauth2\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"sidekiq-production.rdops.systems\"],\"secretName\":\"rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "sidekiq-dashboard",
+        "moniker.spinnaker.io/cluster": "ingress sidekiq-dashboard-oauth",
+        "nginx.ingress.kubernetes.io/ssl-protocols": "TLSv1.2 TLSv1.3"
+      },
+      "creationTimestamp": "2025-06-03T17:13:56Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "sidekiq-dashboard"
+      },
+      "name": "sidekiq-dashboard-oauth",
+      "namespace": "pope",
+      "resourceVersion": "5384788598",
+      "uid": "920b2e62-4901-42cf-8f53-72e221bd1a0f"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "sidekiq-production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "oauth",
+                    "port": {
+                      "number": 4180
+                    }
+                  }
+                },
+                "path": "/oauth2",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "sidekiq-production.rdops.systems"
+          ],
+          "secretName": "rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "core",
+        "artifact.spinnaker.io/name": "rd-whatsapp-console",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"core\",\"artifact.spinnaker.io/name\":\"rd-whatsapp-console\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rd-whatsapp-console\",\"moniker.spinnaker.io/cluster\":\"ingress rd-whatsapp-console\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8,45.235.52.24/29,189.28.39.112/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rd-whatsapp-console\",\"app_name\":\"rd-whatsapp-console\",\"app_project\":\"rd-whatsapp-console\",\"resource_kind\":\"ingress\",\"team\":\"whatsapp-team\"},\"name\":\"rd-whatsapp-console\",\"namespace\":\"core\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"rd-whatsapp-console.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rd-whatsapp-console\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"rd-whatsapp-console.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rd-whatsapp-console",
+        "moniker.spinnaker.io/cluster": "ingress rd-whatsapp-console",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8,45.235.52.24/29,189.28.39.112/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-06-13T11:27:37Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rd-whatsapp-console",
+        "app_name": "rd-whatsapp-console",
+        "app_project": "rd-whatsapp-console",
+        "resource_kind": "ingress",
+        "team": "whatsapp-team"
+      },
+      "name": "rd-whatsapp-console",
+      "namespace": "core",
+      "resourceVersion": "5409569151",
+      "uid": "c88781cd-b9bf-4b89-9673-bfb907769235"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "rd-whatsapp-console.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rd-whatsapp-console",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "rd-whatsapp-console.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.223.116.65"
+          }
+        ]
+      }
+    }
+  }
+]

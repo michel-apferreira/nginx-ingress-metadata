@@ -1,0 +1,116 @@
+controller,annotation,qtd_ingresses,pct_do_total,valores_distintos,valores_encontrados,exemplos_de_ingresses
+kong,ingress.kubernetes.io/service-upstream,315,51.7%,2,false | true,accounts-auth/a3s-api-internal | automation/automation-event-based-engine | automation/workflow-engine
+nginx,nginx.ingress.kubernetes.io/force-ssl-redirect,244,40.1%,2,false | true,automation/automation-event-based-engine | connect/rd-albato | connect/rd-albato-com-br
+nginx,nginx.ingress.kubernetes.io/whitelist-source-range,173,28.4%,53,"0.0.0.0/0 | 0.0.0.0/0,
+179.108.123.80/28,
+45.235.52.24/29,
+189.28.39.112 | 0.0.0.0/0,179.108.123.80/28,45.235.52.24/29,189.28.39.112/29 | 0.0.0.0/0,::/0 | 10.0.0.0/8 | 10.0.0.0/8,177.135.66.241/29,177.135.66.241/29,177.135.66.24 | 10.0.0.0/8,179.108.123.80/28,177.135.66.240/29,187.61.201.25 | 10.0.0.0/8,179.108.123.80/28,177.135.66.240/29,187.61.201.25",automation/automation-event-based-engine | connect/rd-albato | crm/kibana-crm
+kong,konghq.com/strip-path,151,24.8%,2,false | true,account-onboarding-service/account-onboarding-service-ingress | automation-api/automation-api-ingress | automation-external/automation-external-ingress
+kong,konghq.com/preserve-host,146,24.0%,2,false | true,account-onboarding-service/account-onboarding-service-ingress | automation-api/automation-api-ingress | automation-external/automation-external-ingress
+kong,konghq.com/protocols,144,23.6%,3,"grpc | http | http,https",account-onboarding-service/account-onboarding-service-ingress | automation-api/automation-api-ingress | automation-external/automation-external-ingress
+kong,konghq.com/connect-timeout,141,23.2%,1,600000,account-onboarding-service/account-onboarding-service-ingress | automation-api/automation-api-ingress | automation-external/automation-external-ingress
+kong,konghq.com/https-redirect-status-code,141,23.2%,2,301 | 426,account-onboarding-service/account-onboarding-service-ingress | automation-api/automation-api-ingress | automation-external/automation-external-ingress
+kong,konghq.com/path-handling,141,23.2%,1,v0,account-onboarding-service/account-onboarding-service-ingress | automation-api/automation-api-ingress | automation-external/automation-external-ingress
+kong,konghq.com/read-timeout,141,23.2%,1,600000,account-onboarding-service/account-onboarding-service-ingress | automation-api/automation-api-ingress | automation-external/automation-external-ingress
+kong,konghq.com/retries,141,23.2%,2,0 | 5,account-onboarding-service/account-onboarding-service-ingress | automation-api/automation-api-ingress | automation-external/automation-external-ingress
+kong,konghq.com/write-timeout,141,23.2%,1,600000,account-onboarding-service/account-onboarding-service-ingress | automation-api/automation-api-ingress | automation-external/automation-external-ingress
+kong,konghq.com/request-buffering,139,22.8%,2,false | true,account-onboarding-service/account-onboarding-service-ingress | automation-api/automation-api-ingress | automation-external/automation-external-ingress
+kong,konghq.com/response-buffering,139,22.8%,2,false | true,account-onboarding-service/account-onboarding-service-ingress | automation-api/automation-api-ingress | automation-external/automation-external-ingress
+nginx,nginx.ingress.kubernetes.io/ssl-redirect,134,22.0%,2,false | true,accounts-auth/a3s-api-internal | automation/workflow-engine | core/cdp-entities-consistency-checker
+kong,konghq.com/regex-priority,123,20.2%,3,0 | 10 | 100,account-onboarding-service/account-onboarding-service-ingress | automation-api/automation-api-ingress | automation-external/automation-external-ingress
+kong,konghq.com/tags,120,19.7%,2,grpc | http,account-onboarding-service/account-onboarding-service-ingress | automation-api/automation-api-ingress | automation-external/automation-external-ingress
+nginx,nginx.ingress.kubernetes.io/proxy-body-size,72,11.8%,14,100m | 10M | 125m | 128m | 16m | 1m | 256m | 25M,accounts-auth/a3s-api-internal | moteam/galaga | leadgen/event-harbor
+nginx,nginx.ingress.kubernetes.io/proxy-read-timeout,50,8.2%,6,15600 | 1800 | 300 | 3600 | 60 | 600,accounts-auth/a3s-api-internal | pope/sidekiq-dashboard | accounts-auth/a3s-api-internal
+nginx,nginx.ingress.kubernetes.io/proxy-send-timeout,50,8.2%,6,15600 | 1800 | 300 | 3600 | 60 | 600,accounts-auth/a3s-api-internal | pope/sidekiq-dashboard | accounts-auth/a3s-api-internal
+nginx,nginx.ingress.kubernetes.io/backend-protocol,46,7.6%,3,GRPC | HTTP | HTTPS,connect/rd-albato | connect/rd-albato-com-br | connect/rd-albato-nuvemshop
+nginx,nginx.ingress.kubernetes.io/proxy-connect-timeout,37,6.1%,5,15600 | 30 | 300 | 60 | 600,accounts-auth/a3s-api-internal | accounts-auth/a3s-api-internal | elasticsearch/kibana-es-cm-ent-01
+nginx,nginx.ingress.kubernetes.io/upstream-vhost,32,5.3%,17,model-app-svc.rdsm.svc.cluster.local | plugcrm-assets.s3.amazonaws.com | rdstation-nuvemshop.albato-embedded.net | rdstation-nuvemshop.albato.net | rdstation-pipedrive.albato-embedded.net | rdstation-pipedrive.albato.net | rdstation-salesforce.albato-embedded-staging.net | rdstation-salesforce.albato-embedded.net,connect/rd-albato | connect/rd-albato-com-br | connect/rd-albato-nuvemshop
+nginx,nginx.ingress.kubernetes.io/custom-http-errors,31,5.1%,10," | 404, 412, 413, 500, 501, 502, 503, 504 | 404,500,502,503 | 418 | 500 | 500,502,503 | 500,502,503,401,404 | 501",accounts-auth/a3s-api-internal | rdsm/rdsm-web | accounts-auth/a3s-api-internal
+nginx,nginx.ingress.kubernetes.io/server-snippet,29,4.8%,11,"# Favicon fix
+location = /favicon.ico {
+  access_log off;
+   | add_header X-Robots-Tag ""noindex, nofollow""; | keepalive_timeout 75;
+client_header_timeout 75;
+
+sendfile on | keepalive_timeout 75;
+client_header_timeout 75;
+
+sendfile on | keepalive_timeout 75;
+client_header_timeout 75;
+
+sendfile on | location /signup {
+  if ($args ~* ""step=setup"") {
+  # Se tiv | location ~ ^/signup/?$ {
+  # It redirects if URL do not cont | location ~ ^/signup/?$ {
+  # It redirects if URL do not cont",ingress-nginx/catch-all-deny-ingress | ingress-nginx/catch-all-deny-ingress | analyze/rds-assets-app-api
+nginx,nginx.ingress.kubernetes.io/service-upstream,23,3.8%,1,true,elasticsearch/kibana-es-cm-etl-01 | elasticsearch/kibana-es-cm-usc1-prd-midmarket-01 | elasticsearch/kibana-es-cm-pro-03
+nginx,nginx.ingress.kubernetes.io/configuration-snippet,20,3.3%,11,"add_header Content-Security-Policy ""frame-ancestors 'self' h | auth_request_set $name_upstream_1 $upstream_cookie__oauth2_p | if ($request_uri ~* ""^/api/v2"") {
+  return 401;
+}
+
+location  | location /api/v1/credentials {
+  return 403;
+}
+ | more_clear_headers 'Content-Security-Policy';
+more_clear_hea | more_clear_headers Content-Security-Policy; more_clear_heade | proxy_intercept_errors off;
+ | proxy_set_header Client-IP """";
+proxy_set_header Authorizatio",rdsm/rdsm-web | crm/web-sidekiq-oauth | devexp/backstage
+kong,konghq.com/plugins,16,2.6%,15,"rate-limiting | rate-limiting-resource-name,response-transformer-resource-na | ratelimit-hydra-api-consumer | redirect-academy-api | redirect-docs-v2 | redirect-faq-api | redirect-faq-public-api | redirect-megasac-root",megasac/academy-api | megasac/faq-api | megasac/faq-public-api
+nginx,nginx.ingress.kubernetes.io/enable-cors,14,2.3%,1,true,paypay/paypay | ecommerce/ecommerce-core | ecommerce/ecommerce-core-whitelist
+nginx,nginx.ingress.kubernetes.io/rewrite-target,12,2.0%,4,/ | /$1 | /$2 | /dialer/index.html,core/cdp-entities-consistency-checker | crm/crm-aws-index-html | devlake/devlake
+nginx,nginx.ingress.kubernetes.io/use-regex,12,2.0%,1,true,rdsm/rdsm-web | crm/crm-aws-index-html | connect/test-kong-ingress
+nginx,nginx.ingress.kubernetes.io/proxy-buffering,9,1.5%,2,off | on,accounts-auth/a3s-api-internal | accounts-auth/a3s-api-internal | accounts-auth/a3s-api
+nginx,nginx.ingress.kubernetes.io/auth-signin,7,1.1%,5,https://$host/oauth2/start?rd=$request_uri | https://backstage.production.rdops.systems/oauth2/start?rd=$ | https://backstage.staging.rdops.systems/oauth2/start?rd=$esc | https://crm-staging.rdstation.com/oauth2/start?rd=$escaped_r | https://crm.rdstation.com/oauth2/start?rd=$escaped_request_u,pope/sidekiq-dashboard | crm/web-sidekiq-oauth | devexp/backstage
+nginx,nginx.ingress.kubernetes.io/auth-url,7,1.1%,3,http://backstage-oauth.devexp.svc.cluster.local:4180/oauth2/ | http://sidekiq-okta-oauth.crm.svc.cluster.local:4180/oauth2/ | https://$host/oauth2/auth,pope/sidekiq-dashboard | crm/web-sidekiq-oauth | devexp/backstage
+nginx,nginx.ingress.kubernetes.io/cors-allow-headers,7,1.1%,2,"Content-Type, Authorization, X-API-Key | DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since",paypay/paypay | ecommerce/ecommerce-core | ecommerce/ecommerce-core-whitelist
+kong,ingress.kubernetes.io/backends,6,1.0%,6,"{""k8s-be-30858--35f586de03831870"":""Unknown"",""k8s1-35f586de-e | {""k8s-be-31217--08b5fd8ec5d689fb"":""HEALTHY"",""k8s-be-32333--0 | {""k8s-be-31850--f5d3b5065c8ba841"":""HEALTHY"",""k8s-be-32333--f | {""k8s-be-31914--0b06ba8d05326855"":""HEALTHY"",""k8s-be-32333--0 | {""k8s-be-31914--0b06ba8d05326855"":""HEALTHY"",""k8s1-0b06ba8d-m | {""k8s-be-32695--b658fc5bcbe7058d"":""HEALTHY"",""k8s1-b658fc5b-e",kong/api-gateway | analyze/basic-analytics-ingress | elasticsearch/kibana-es-cm-ent-01
+kong,ingress.kubernetes.io/forwarding-rule,6,1.0%,6,k8s-fw-kong-api-gateway--0b06ba8d05326855 | k8s2-fr-3583siai-kong-api-gateway-8tt4frcg | k8s2-fr-cbdlf969-kong-api-gateway-5dmshybw | k8s2-fr-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj | k8s2-fr-n8kcj5wd-elasticsearch-kibana-80dkhd60 | k8s2-fr-q7jh97t3-mushin-basic-analytics-ingress-197m56bh,kong/api-gateway | analyze/basic-analytics-ingress | elasticsearch/kibana-es-cm-ent-01
+kong,ingress.kubernetes.io/https-forwarding-rule,6,1.0%,6,k8s-fws-kong-api-gateway--0b06ba8d05326855 | k8s2-fs-3583siai-kong-api-gateway-8tt4frcg | k8s2-fs-cbdlf969-kong-api-gateway-5dmshybw | k8s2-fs-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj | k8s2-fs-n8kcj5wd-elasticsearch-kibana-80dkhd60 | k8s2-fs-q7jh97t3-mushin-basic-analytics-ingress-197m56bh,kong/api-gateway | analyze/basic-analytics-ingress | elasticsearch/kibana-es-cm-ent-01
+kong,ingress.kubernetes.io/https-target-proxy,6,1.0%,6,k8s-tps-kong-api-gateway--0b06ba8d05326855 | k8s2-ts-3583siai-kong-api-gateway-8tt4frcg | k8s2-ts-cbdlf969-kong-api-gateway-5dmshybw | k8s2-ts-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj | k8s2-ts-n8kcj5wd-elasticsearch-kibana-80dkhd60 | k8s2-ts-q7jh97t3-mushin-basic-analytics-ingress-197m56bh,kong/api-gateway | analyze/basic-analytics-ingress | elasticsearch/kibana-es-cm-ent-01
+kong,ingress.kubernetes.io/ssl-cert,6,1.0%,6,"k8s-ssl-fb53af87bd7b6e14-366fb88e5011671d--0b06ba8d05326855, | k8s2-cr-3583siai-23nubgj20ph16vc6-b7e53ef05ff5d89e,k8s2-cr-3 | k8s2-cr-cbdlf969-bqyn93j5xtp6h6b6-33647a9635c68148,k8s2-cr-c | k8s2-cr-n3ea0enz-918r9bbyu50xg58p-76a3e4c887e005f9 | k8s2-cr-n8kcj5wd-9d6ej76v603lpivh-6ac28f49523a7a5e | k8s2-cr-q7jh97t3-n9be43vcxyz4s2qf-5b905f9d6299e231",kong/api-gateway | analyze/basic-analytics-ingress | elasticsearch/kibana-es-cm-ent-01
+kong,ingress.kubernetes.io/static-ip,6,1.0%,6,k8s-fw-kong-api-gateway--0b06ba8d05326855 | k8s2-fr-3583siai-kong-api-gateway-8tt4frcg | k8s2-fr-cbdlf969-kong-api-gateway-5dmshybw | k8s2-fr-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj | k8s2-fr-n8kcj5wd-elasticsearch-kibana-80dkhd60 | k8s2-fr-q7jh97t3-mushin-basic-analytics-ingress-197m56bh,kong/api-gateway | analyze/basic-analytics-ingress | elasticsearch/kibana-es-cm-ent-01
+kong,ingress.kubernetes.io/target-proxy,6,1.0%,6,k8s-tp-kong-api-gateway--0b06ba8d05326855 | k8s2-tp-3583siai-kong-api-gateway-8tt4frcg | k8s2-tp-cbdlf969-kong-api-gateway-5dmshybw | k8s2-tp-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj | k8s2-tp-n8kcj5wd-elasticsearch-kibana-80dkhd60 | k8s2-tp-q7jh97t3-mushin-basic-analytics-ingress-197m56bh,kong/api-gateway | analyze/basic-analytics-ingress | elasticsearch/kibana-es-cm-ent-01
+kong,ingress.kubernetes.io/url-map,6,1.0%,6,k8s-um-kong-api-gateway--0b06ba8d05326855 | k8s2-um-3583siai-kong-api-gateway-8tt4frcg | k8s2-um-cbdlf969-kong-api-gateway-5dmshybw | k8s2-um-n3ea0enz-elasticsearch-kibana-es-cm-ent-01-ncz21ljj | k8s2-um-n8kcj5wd-elasticsearch-kibana-80dkhd60 | k8s2-um-q7jh97t3-mushin-basic-analytics-ingress-197m56bh,kong/api-gateway | analyze/basic-analytics-ingress | elasticsearch/kibana-es-cm-ent-01
+kong,konghq.com/grpc,6,1.0%,1,true,brokers/brokers-ingress-grpc | mis-rollouts-hub/mis-rollouts-hub-ingress-grpc | brokers/brokers-ingress-grpc
+nginx,nginx.ingress.kubernetes.io/cors-allow-origin,6,1.0%,3,"* | https://devcenter-stg.rdstation.com.br,https://devcenter.rds | https://devcenter.rdstation.com.br",fronthub/front-hub-internal-rdops-systems | dev-center-backend/dev-center-api-ingress | dev-center-backend/dev-center-api-ingress
+nginx,nginx.ingress.kubernetes.io/auth-realm,6,1.0%,2,Authentication Required | Authentication Required - ipconfig,internaltools/synthetics-app | internaltools/synthetics-app-auth | core/rd-chat-api-tallos
+nginx,nginx.ingress.kubernetes.io/auth-secret,6,1.0%,4,ipconfig-basic-auth | synthetics-basic-auth | token-secret-tallos | token-secret-tallos-v000,internaltools/synthetics-app | internaltools/synthetics-app-auth | core/rd-chat-api-tallos
+nginx,nginx.ingress.kubernetes.io/auth-type,6,1.0%,1,basic,internaltools/synthetics-app | internaltools/synthetics-app-auth | core/rd-chat-api-tallos
+nginx,nginx.ingress.kubernetes.io/send_timeout,6,1.0%,1,15600,internaltools/synthetics-app-auth | core/ipconfig | core/ipconfig-health-check
+nginx,nginx.ingress.kubernetes.io/proxy-buffer-size,5,0.8%,1,2048k,accounts-auth/a3s-api-internal | accounts-auth/a3s-api-internal | accounts-auth/a3s-api
+nginx,nginx.ingress.kubernetes.io/proxy-buffers-number,5,0.8%,1,32,accounts-auth/a3s-api-internal | accounts-auth/a3s-api-internal | accounts-auth/a3s-api
+nginx,nginx.ingress.kubernetes.io/proxy-next-upstream-tries,5,0.8%,1,8,accounts-auth/a3s-api-internal | accounts-auth/a3s-api-internal | accounts-auth/a3s-api
+nginx,nginx.ingress.kubernetes.io/proxy-max-temp-file-size,4,0.7%,1,2048m,accounts-auth/a3s-api-internal | accounts-auth/a3s-api-internal | accounts-auth/a3s-api
+kong,ingress.kubernetes.io/rewrite-target,4,0.7%,2,/ | /$1,kafka/kafka-dashboard | accounts-auth/rd-auth | accounts-auth/rd-auth
+nginx,nginx.ingress.kubernetes.io/cors-allow-credentials,4,0.7%,1,true,email/email-validator | multi/multichannel-api | dev-center-backend/dev-center-api-ingress
+kong,ingress.kubernetes.io/whitelist-source-range,4,0.7%,1,10.0.0.0/8,attract/showcase-backend-rails-internal | connect/appstore-interno | convert/form-integrations-api-internal
+nginx,nginx.ingress.kubernetes.io/ssl-protocols,3,0.5%,1,TLSv1.2 TLSv1.3,pope/sidekiq-dashboard-oauth | pope/sidekiq-dashboard-oauth | sre/sidekiq-dashboard-oauth
+kong,ingress.kubernetes.io/use-regex,3,0.5%,1,true,accounts-auth/rd-auth | accounts-auth/rd-auth | accounts-auth/rd-auth
+nginx,nginx.ingress.kubernetes.io/limit-rpm,3,0.5%,2,1000 | 5,platform/event-api-internal | contact-mgmt/event-api-internal | rdsm/web-signup-user
+nginx,nginx.ingress.kubernetes.io/keepalive,2,0.3%,1,64,accounts-auth/a3s-api-internal | accounts-auth/a3s-api-internal
+nginx,nginx.ingress.kubernetes.io/keepalive-timeout,2,0.3%,1,120,accounts-auth/a3s-api-internal | accounts-auth/a3s-api-internal
+nginx,nginx.ingress.kubernetes.io/proxy-next-upstream,2,0.3%,1,error timeout invalid_header http_502 http_503 http_504,accounts-auth/a3s-api-internal | accounts-auth/a3s-api-internal
+nginx,nginx.ingress.kubernetes.io/default-backend,2,0.3%,1,saas-internal,billing/saas-internal | rms/contas-staging
+nginx,nginx.ingress.kubernetes.io/auth-response-headers,2,0.3%,1,Authorization,crm/web-sidekiq-oauth | crm/web-sidekiq-oauth
+nginx,nginx.ingress.kubernetes.io/cors-allow-methods,2,0.3%,1,"GET, POST, PUT, PATCH, DELETE, OPTIONS",dev-center-backend/dev-center-api-ingress | dev-center-backend/dev-center-api-ingress
+nginx,nginx.ingress.kubernetes.io/cors-max-age,2,0.3%,1,86400,dev-center-backend/dev-center-api-ingress | dev-center-backend/dev-center-api-ingress
+nginx,nginx.ingress.kubernetes.io/cors-allow-Origin,2,0.3%,1,*,attract/showcase-backend-rails-internal | attract/showcase-backend-rails-public
+nginx,nginx.ingress.kubernetes.io/limit-burst-multiplier,2,0.3%,1,2,platform/event-api-internal | contact-mgmt/event-api-internal
+kong,konghq.com/methods,2,0.3%,1,GET,platagen2520/flask-rota-simples | platagen2520/flask-service-argparse
+nginx,nginx.ingress.kubernetes.io/compute-full-forwarded-for,1,0.2%,1,true,elasticsearch/kibana-es-cm-usc1-prd-midmarket-01
+nginx,nginx.ingress.kubernetes.io/use-forwarded-headers,1,0.2%,1,true,elasticsearch/kibana-es-cm-usc1-prd-midmarket-01
+nginx,nginx.ingress.kubernetes.io/affinity,1,0.2%,1,cookie,devexp/backstage
+nginx,nginx.ingress.kubernetes.io/session-cookie-expires,1,0.2%,1,1h,devexp/backstage
+nginx,nginx.ingress.kubernetes.io/session-cookie-max-age,1,0.2%,1,3600,devexp/backstage
+nginx,nginx.ingress.kubernetes.io/session-cookie-name,1,0.2%,1,backstage_session,devexp/backstage
+nginx,nginx.ingress.kubernetes.io/priority,1,0.2%,1,100,internaltools/oraculo-admin
+nginx,nginx.ingress.kubernetes.io/proxy-hide-headers,1,0.2%,1,"X-Frame-Options, Content-Security-Policy",internaltools/oraculo-admin
+nginx,nginx.ingress.kubernetes.io/proxy-intercept-errors,1,0.2%,1,false,internaltools/oraculo-admin
+nginx,nginx.ingress.kubernetes.io/reload-ts,1,0.2%,1,1763131917,connect/rdpress-auth-rdops-systems
+nginx,nginx.ingress.kubernetes.io/denylist-source-range,1,0.2%,1,179.190.144.219/32,rdsm/rdsm-web-webhook
+nginx,nginx.ingress.kubernetes.io/canary,1,0.2%,1,true,crm/web-canary
+nginx,nginx.ingress.kubernetes.io/canary-weight,1,0.2%,1,30,crm/web-canary
+nginx,nginx.ingress.kubernetes.io/load-balance,1,0.2%,1,ewma,email/neek-api
+nginx,nginx.ingress.kubernetes.io/mirror-request-body,1,0.2%,1,true,mirror-test/echo-ingress
+nginx,nginx.ingress.kubernetes.io/mirror-target,1,0.2%,1,http://echo-mirror.mirror-test.svc.cluster.local$request_uri,mirror-test/echo-ingress
+nginx,nginx.ingress.kubernetes.io/health-check-path,1,0.2%,1,/sidekiq/stats,rms/cap-hook

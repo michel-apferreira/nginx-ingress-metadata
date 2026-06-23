@@ -1,0 +1,811 @@
+{
+  "nginx.ingress.kubernetes.io/force-ssl-redirect": {
+    "uso_nos_clusters": 244,
+    "valores_encontrados": [
+      "false",
+      "true"
+    ],
+    "funcionalidade": "Força redirecionamento para HTTPS mesmo com X-Forwarded-Proto",
+    "apisix_plugin": "redirect",
+    "apisix_config": "plugin redirect: http_to_https: true",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/whitelist-source-range": {
+    "uso_nos_clusters": 173,
+    "valores_encontrados": [
+      "0.0.0.0/0",
+      "0.0.0.0/0,\n179.108.123.80/28,\n45.235.52.24/29,\n189.28.39.112/29\n",
+      "0.0.0.0/0,179.108.123.80/28,45.235.52.24/29,189.28.39.112/29",
+      "0.0.0.0/0,::/0",
+      "10.0.0.0/8",
+      "10.0.0.0/8,177.135.66.241/29,177.135.66.241/29,177.135.66.241/29,179.108.123.80/28,177.135.66.241/29,201.47.75.216/29,45.235.52.24/29,189.28.39.112/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109,35.224.157.232/32",
+      "10.0.0.0/8,179.108.123.80/28,177.135.66.240/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32",
+      "10.0.0.0/8,179.108.123.80/28,177.135.66.240/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29",
+      "10.0.0.0/8,179.108.123.80/28,177.135.66.240/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29",
+      "10.0.0.0/8,179.108.123.80/28,177.135.66.240/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,45.235.52.24/29,189.28.39.112/29",
+      "10.0.0.0/8,179.108.123.80/28,201.47.75.218/29,187.49.235.34/29,45.235.52.24/29,45.235.52.26/29,189.28.39.112/29",
+      "10.0.0.0/8,179.108.123.80/28,45.235.52.24/29,189.28.39.112/29",
+      "10.0.0.0/8,179.108.123.80/28,45.235.52.24/29,189.28.39.112/29,34.42.162.110/32,35.184.177.222/32,35.225.89.240/32,34.136.72.72/32,34.170.200.52/32",
+      "10.0.0.0/8,179.191.65.118/32,189.22.9.242/32,179.108.123.82/32,177.135.66.243/32,201.47.75.216/29,35.222.163.73/32, 35.224.157.232/32",
+      "10.0.0.0/8,179.191.65.118/32,189.22.9.242/32,179.108.123.82/32,177.135.66.243/32,201.47.75.216/29,35.222.163.73/32,179.108.123.80/28,45.235.52.24/29,189.28.39.112/29",
+      "10.0.0.0/8,179.191.65.118/32,189.22.9.242/32,179.108.123.82/32,177.135.66.243/32,201.47.75.216/29,35.222.163.73/32,179.108.123.80/28,45.235.52.24/29,189.28.39.112/29, 179.190.144.219/32,35.224.157.232/32",
+      "10.0.0.0/8,179.191.65.118/32,189.22.9.242/32,179.108.123.82/32,177.135.66.243/32,201.47.75.216/29,35.222.163.73/32,179.108.123.80/28,45.235.52.24/29,189.28.39.112/29,35.224.157.232/32",
+      "10.0.0.0/8,179.191.65.118/32,189.22.9.242/32,179.108.123.82/32,177.135.66.243/32,201.47.75.216/29,35.222.163.73/32,179.108.123.80/28,45.235.52.24/29,189.28.39.112/29,35.224.157.232/32,179.190.144.219/32",
+      "10.0.0.0/8,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,179.108.123.80/28,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109",
+      "10.0.0.0/8,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,179.108.123.80/28,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109,45.235.52.24/29,189.28.39.112/29"
+    ],
+    "funcionalidade": "CIDRs permitidos (whitelist de IP)",
+    "apisix_plugin": "ip-restriction",
+    "apisix_config": "plugin ip-restriction: whitelist",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/ssl-redirect": {
+    "uso_nos_clusters": 134,
+    "valores_encontrados": [
+      "false",
+      "true"
+    ],
+    "funcionalidade": "Redireciona HTTP para HTTPS",
+    "apisix_plugin": "redirect",
+    "apisix_config": "plugin redirect: http_to_https: true",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/proxy-body-size": {
+    "uso_nos_clusters": 72,
+    "valores_encontrados": [
+      "100m",
+      "10M",
+      "125m",
+      "128m",
+      "16m",
+      "1m",
+      "256m",
+      "25M",
+      "32m",
+      "4m",
+      "50m",
+      "512m",
+      "5m",
+      "700m"
+    ],
+    "funcionalidade": "Tamanho máximo do body da requisição",
+    "apisix_plugin": "client-control",
+    "apisix_config": "ApisixPluginConfig com plugin client-control: max_body_size (valor em bytes)",
+    "suporte": "parcial",
+    "observacoes": "Não há annotation equivalente no APISIX IC. Requer criação de ApisixPluginConfig por ingress. Valor precisa conversão: Nm → N*1048576 bytes; '0' = ilimitado.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/proxy-read-timeout": {
+    "uso_nos_clusters": 50,
+    "valores_encontrados": [
+      "15600",
+      "1800",
+      "300",
+      "3600",
+      "60",
+      "600"
+    ],
+    "funcionalidade": "Timeout de leitura do backend",
+    "apisix_plugin": "configuração do upstream",
+    "apisix_config": "upstream: read_timeout",
+    "suporte": "completo",
+    "observacoes": "Configurar no objeto Upstream do APISIX.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/proxy-send-timeout": {
+    "uso_nos_clusters": 50,
+    "valores_encontrados": [
+      "15600",
+      "1800",
+      "300",
+      "3600",
+      "60",
+      "600"
+    ],
+    "funcionalidade": "Timeout de envio para o backend",
+    "apisix_plugin": "configuração do upstream",
+    "apisix_config": "upstream: send_timeout",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/backend-protocol": {
+    "uso_nos_clusters": 46,
+    "valores_encontrados": [
+      "GRPC",
+      "HTTP",
+      "HTTPS"
+    ],
+    "funcionalidade": "Protocolo do backend: HTTP, HTTPS, GRPC, GRPCS, AJP, FCGI",
+    "apisix_plugin": "grpc-transcode / configuração do upstream",
+    "apisix_config": "Upstream scheme: http|https|grpc|grpcs",
+    "suporte": "completo",
+    "observacoes": "GRPC requer plugin grpc-transcode ou rota gRPC nativa.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/proxy-connect-timeout": {
+    "uso_nos_clusters": 37,
+    "valores_encontrados": [
+      "15600",
+      "30",
+      "300",
+      "60",
+      "600"
+    ],
+    "funcionalidade": "Timeout de conexão com o backend",
+    "apisix_plugin": "configuração do upstream",
+    "apisix_config": "upstream: connect_timeout",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/upstream-vhost": {
+    "uso_nos_clusters": 32,
+    "valores_encontrados": [
+      "model-app-svc.rdsm.svc.cluster.local",
+      "plugcrm-assets.s3.amazonaws.com",
+      "rdstation-nuvemshop.albato-embedded.net",
+      "rdstation-nuvemshop.albato.net",
+      "rdstation-pipedrive.albato-embedded.net",
+      "rdstation-pipedrive.albato.net",
+      "rdstation-salesforce.albato-embedded-staging.net",
+      "rdstation-salesforce.albato-embedded.net",
+      "rdstation-shopify.albato-embedded.net",
+      "rdstation-shopify.albato.net",
+      "rdstation-vtex.albato-embedded.net",
+      "rdstation-vtex.albato.net",
+      "rdstation-woocommerce.albato-embedded.net",
+      "rdstation-woocommerce.albato.net",
+      "rdstation.albato-embedded.net",
+      "rdstation.albato.net",
+      "status.rdstation.com"
+    ],
+    "funcionalidade": "Define o header Host enviado ao upstream (sobrescreve o host original)",
+    "apisix_plugin": "proxy-rewrite",
+    "apisix_config": "plugin proxy-rewrite: headers.host: <valor>",
+    "suporte": "completo",
+    "observacoes": "Usado para backends S3, serviços internos ou proxies que exigem Host específico.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/custom-http-errors": {
+    "uso_nos_clusters": 31,
+    "valores_encontrados": [
+      "",
+      "404, 412, 413, 500, 501, 502, 503, 504",
+      "404,500,502,503",
+      "418",
+      "500",
+      "500,502,503",
+      "500,502,503,401,404",
+      "501",
+      "502,503",
+      "599"
+    ],
+    "funcionalidade": "Redireciona erros HTTP para URL de erro customizada",
+    "apisix_plugin": "response-rewrite / serverless",
+    "apisix_config": "plugin serverless-post-function para interceptar status codes",
+    "suporte": "manual",
+    "observacoes": "Não há equivalente direto; requer lógica Lua.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/server-snippet": {
+    "uso_nos_clusters": 29,
+    "valores_encontrados": [
+      "# Favicon fix\nlocation = /favicon.ico {\n  access_log off;\n  log_not_found off;\n  return 204;\n}\n\n# Bloquear Datadog RUM recorder - interceptar antes do webpack tentar carregar\nlocation ~* ^/static/.*recorder.*\\.(js|chunk\\.js)$ {\n  add_header Content-Type \"application/javascript\" always;\n  add_header Cache-Control \"no-cache, no-store, must-revalidate, max-age=0\" always;\n  add_header Pragma \"no-cache\" always;\n  add_header Expires \"0\" always;\n  add_header Access-Control-Allow-Origin \"*\" always;\n  return 200 \"// Datadog RUM recorder disabled - intercept webpack chunk loading\n(function() {\n  console.warn('[DATADOG] RUM recorder chunk disabled, intercepting webpack loading');\n  \n  // Interceptar o sistema de chunks do webpack\n  if (typeof self !== 'undefined' && self.webpackChunkdatadog_rum) {\n    self.webpackChunkdatadog_rum.push([[777], {\n      777: function(module, exports, __webpack_require__) {\n        console.warn('[DATADOG] RUM recorder chunk 777 loaded but disabled');\n        module.exports = function() { return {}; };\n      }\n    }]);\n  }\n  \n  // Interceptar o carregamento dinâmico\n  if (typeof __webpack_require__ !== 'undefined' && __webpack_require__.e) {\n    const originalE = __webpack_require__.e;\n    __webpack_require__.e = function(chunkId) {\n      if (chunkId === 777) {\n        console.warn('[DATADOG] Intercepting chunk 777 loading');\n        return Promise.resolve();\n      }\n      return originalE.call(this, chunkId);\n    };\n  }\n  \n  // Retornar função vazia para compatibilidade\n  return function() { return {}; };\n})();\n\n// Export para diferentes sistemas de módulos\nif (typeof module !== 'undefined' && module.exports) {\n  module.exports = function() { return {}; };\n}\n\nif (typeof define === 'function' && define.amd) {\n  define(function() { return function() { return {}; }; });\n}\";\n}\n\n# Bloquear qualquer arquivo que contenha \"recorder\" no path\nlocation ~* ^/.*recorder.*\\.js$ {\n  add_header Content-Type \"application/javascript\" always;\n  add_header Cache-Control \"no-cache, no-store, must-revalidate, max-age=0\" always;\n  add_header Pragma \"no-cache\" always;\n  add_header Expires \"0\" always;\n  add_header Access-Control-Allow-Origin \"*\" always;\n  return 200 \"// Datadog RUM recorder disabled - intercept webpack chunk loading\n(function() {\n  console.warn('[DATADOG] RUM recorder chunk disabled, intercepting webpack loading');\n  \n  // Interceptar o sistema de chunks do webpack\n  if (typeof self !== 'undefined' && self.webpackChunkdatadog_rum) {\n    self.webpackChunkdatadog_rum.push([[777], {\n      777: function(module, exports, __webpack_require__) {\n        console.warn('[DATADOG] RUM recorder chunk 777 loaded but disabled');\n        module.exports = function() { return {}; };\n      }\n    }]);\n  }\n  \n  // Interceptar o carregamento dinâmico\n  if (typeof __webpack_require__ !== 'undefined' && __webpack_require__.e) {\n    const originalE = __webpack_require__.e;\n    __webpack_require__.e = function(chunkId) {\n      if (chunkId === 777) {\n        console.warn('[DATADOG] Intercepting chunk 777 loading');\n        return Promise.resolve();\n      }\n      return originalE.call(this, chunkId);\n    };\n  }\n  \n  // Retornar função vazia para compatibilidade\n  return function() { return {}; };\n})();\n\n// Export para diferentes sistemas de módulos\nif (typeof module !== 'undefined' && module.exports) {\n  module.exports = function() { return {}; };\n}\n\nif (typeof define === 'function' && define.amd) {\n  define(function() { return function() { return {}; }; });\n}\";\n}\n",
+      "add_header X-Robots-Tag \"noindex, nofollow\";",
+      "keepalive_timeout 75;\nclient_header_timeout 75;\n\nsendfile on;\n\ngzip on;\ngzip_proxied any;\ngzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;\ngzip_vary on;\ngzip_disable \"MSIE [1-6]\\.(?!.*SV1)\";\n",
+      "keepalive_timeout 75;\nclient_header_timeout 75;\n\nsendfile on;\n\ngzip on;\ngzip_proxied any;\ngzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;\ngzip_vary on;\ngzip_disable \"MSIE [1-6]\\.(?!.*SV1)\";\n\nlocation /assets/manifest.json {\n  return 404;\n}\n\nlocation /assets/ {\n  gzip_static on;\n  expires     max;\n  add_header  Cache-Control public;\n  add_header  Last-Modified \"\";\n  add_header  ETag \"\";\n  break;\n}\n\nlocation / {\n  try_files $uri/index.html $uri @default;\n}\n\nif ($request_uri ~* ^/activate) {\n  return 403;\n}\n",
+      "keepalive_timeout 75;\nclient_header_timeout 75;\n\nsendfile on;\n\ngzip on;\ngzip_proxied any;\ngzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;\ngzip_vary on;\ngzip_disable \"MSIE [1-6]\\.(?!.*SV1)\";\n\nlocation /assets/manifest.json {\n  return 404;\n}\n\nlocation ~ ^/api/v2/ {\n  return 403;\n}\n\nlocation /assets/ {\n  gzip_static on;\n  expires     max;\n  add_header  Cache-Control public;\n  add_header  Last-Modified \"\";\n  add_header  ETag \"\";\n  break;\n}\n\nlocation / {\n  try_files $uri/index.html $uri @default;\n}\n",
+      "location /signup {\n  if ($args ~* \"step=setup\") {\n  # Se tiver step=setup, não faz o redirecionamento\n  return 200;\n}\n\n  # Caso contrário, redireciona\n  set $redirect_url \"https://accounts-staging.rdstation.com.br/signup?product=crm&$args\";\n  return 302 $redirect_url;\n}\n",
+      "location ~ ^/signup/?$ {\n  # It redirects if URL do not contains step=setup\n  if ($args !~* \"step=setup\") {\n    set $redirect_url \"https://accounts-staging.rdstation.com.br/signup?product=crm&$args\";\n    return 302 $redirect_url;\n  }\n\n  proxy_pass http://web.crm.svc.cluster.local;\n}\n\nlocation ~ ^/api/v2/ {\n  return 403;\n}\n\nkeepalive_timeout 75;\nclient_header_timeout 75;\n\nsendfile on;\n\ngzip on;\ngzip_proxied any;\ngzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;\ngzip_vary on;\ngzip_disable \"MSIE [1-6]\\.(?!.*SV1)\";\n\nlocation /assets/manifest.json {\n  return 404;\n}\n\nlocation /assets/ {\n  gzip_static on;\n  expires     max;\n  add_header  Cache-Control public;\n  add_header  Last-Modified \"\";\n  add_header  ETag \"\";\n  break;\n}\n\nlocation / {\n  try_files $uri/index.html $uri @default;\n}\n\nif ($request_uri ~* ^/activate) {\n  return 403;\n}\n",
+      "location ~ ^/signup/?$ {\n  # It redirects if URL do not contains step=setup\n  if ($args !~* \"step=setup\") {\n    set $redirect_url \"https://accounts.rdstation.com/signup?product=crm&$args\";\n    return 302 $redirect_url;\n  }\n\n  proxy_pass http://web.crm.svc.cluster.local;\n}\nkeepalive_timeout 75;\nclient_header_timeout 75;\n\nsendfile on;\n\ngzip on;\ngzip_proxied any;\ngzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;\ngzip_vary on;\ngzip_disable \"MSIE [1-6]\\.(?!.*SV1)\";\n\nlocation /assets/manifest.json {\n  return 404;\n}\n\nlocation ~ ^/api/v2/ {\n  return 403;\n}\n\nlocation /assets/ {\n  gzip_static on;\n  expires     max;\n  add_header  Cache-Control public;\n  add_header  Last-Modified \"\";\n  add_header  ETag \"\";\n  break;\n}\n\nlocation / {\n  try_files $uri/index.html $uri @default;\n}\n",
+      "location ~* \"^/api/public\" {\n  deny all;\n  return 404;\n}\n",
+      "return 444;\n",
+      "return 444;    \n"
+    ],
+    "funcionalidade": "Bloco de configuração NGINX customizado no server block",
+    "apisix_plugin": "serverless-pre-function",
+    "apisix_config": "plugin serverless-pre-function com código Lua",
+    "suporte": "manual",
+    "observacoes": "Requer análise caso a caso.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/service-upstream": {
+    "uso_nos_clusters": 23,
+    "valores_encontrados": [
+      "true"
+    ],
+    "funcionalidade": "Usa o ClusterIP do Service em vez de IPs dos pods",
+    "apisix_plugin": "configuração do upstream",
+    "apisix_config": "Upstream apontando para ClusterIP do Service",
+    "suporte": "completo",
+    "observacoes": "No APISIX via Ingress controller, o discovery cuida disso.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/configuration-snippet": {
+    "uso_nos_clusters": 20,
+    "valores_encontrados": [
+      "add_header Content-Security-Policy \"frame-ancestors 'self' https://devcenter.rdstation.com.br\" always;\nadd_header X-Frame-Options \"\" always;\n",
+      "auth_request_set $name_upstream_1 $upstream_cookie__oauth2_proxy_1;\n\naccess_by_lua_block {\n  if ngx.var.name_upstream_1 ~= \"\" then\n    ngx.header[\"Set-Cookie\"] = \"_oauth2_proxy_1=\" .. ngx.var.name_upstream_1 .. ngx.var.auth_cookie:match(\"(; .*)\")\n  end\n}\n",
+      "if ($request_uri ~* \"^/api/v2\") {\n  return 401;\n}\n\nlocation ~ ^/signup/?$ {\n  # It redirects if URL do not contains step=setup\n  set $redirect_url \"https://accounts-staging.rdstation.com.br/signup?product=marketing&$args\";\n  return 302 $redirect_url;\n\n  proxy_pass http://web.rdsm.svc.cluster.local;\n}\n\nlocation ~ ^/signup_account/?$ {\n  # It redirects if URL do not contains step=setup\n  set $redirect_url \"https://accounts-staging.rdstation.com.br/signup?product=marketing&$args\";\n  return 302 $redirect_url;\n\n  proxy_pass http://web.rdsm.svc.cluster.local;\n}\n\nproxy_set_header Client-Ip \"\";\nproxy_set_header Authorization $http_authorization;\n",
+      "location /api/v1/credentials {\n  return 403;\n}\n",
+      "more_clear_headers 'Content-Security-Policy';\nmore_clear_headers 'X-Frame-Options';\n",
+      "more_clear_headers Content-Security-Policy; more_clear_headers X-Frame-Options; add_header Content-Security-Policy \"default-src self https: data: blob:; script-src self unsafe-inline unsafe-eval https:; style-src self unsafe-inline https:; img-src self https: data: blob:; connect-src self https: wss:; worker-src self blob:; frame-src self https:;\" always; add_header Vary \"Origin\" always;\n",
+      "proxy_intercept_errors off;\n",
+      "proxy_set_header Client-IP \"\";\nproxy_set_header Authorization $http_authorization;\n",
+      "proxy_set_header Client-Ip \"\";",
+      "proxy_set_header Client-Ip \"\";\nproxy_set_header Authorization $http_authorization;\n",
+      "resolver kube-dns.kube-system.svc.cluster.local valid=10s;\nif ($http_cookie ~* \"rdsm_target_version=alpha\") {\n  set $proxy http://web-alpha.rdsm.svc.cluster.local:80;\n  proxy_pass $proxy;\n}\nif ($http_cookie ~* \"rdsm_target_version=beta\") {\n  set $proxy http://web-beta.rdsm.svc.cluster.local:80;\n  proxy_pass $proxy;\n}\nif ($http_cookie ~* \"rdsm_target_version=release_candidate\") {\n  set $proxy http://web-release-candidate.rdsm.svc.cluster.local:80;\n  proxy_pass $proxy;\n}\nif ($http_cookie ~* \"rdsm_target_version=stable\") {\n  set $proxy http://web.rdsm.svc.cluster.local:80;\n  proxy_pass $proxy;\n}\n\nlocation ~ ^/signup/?$ {\n  set $redirect_url \"https://accounts.rdstation.com.br/signup?product=marketing&$args\";\n  return 302 $redirect_url;\n\n  proxy_pass $proxy;\n}\n\nlocation ~ ^/signup_account/?$ {\n  set $redirect_url \"https://accounts.rdstation.com.br/signup?product=marketing&$args\";\n  return 302 $redirect_url;\n\n  proxy_pass $proxy;\n}\n\nproxy_set_header Client-IP \"\";\nproxy_set_header Authorization $http_authorization;\n\nif ($request_uri ~* \"^/api/v2\"){\n  return 401;\n}\n"
+    ],
+    "funcionalidade": "Bloco de configuração NGINX customizado por location",
+    "apisix_plugin": "serverless-pre-function / serverless-post-function",
+    "apisix_config": "plugin serverless-pre-function com código Lua",
+    "suporte": "manual",
+    "observacoes": "Requer análise caso a caso. Cada snippet deve ser convertido manualmente para Lua ou plugin equivalente.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/enable-cors": {
+    "uso_nos_clusters": 14,
+    "valores_encontrados": [
+      "true"
+    ],
+    "funcionalidade": "Habilita CORS",
+    "apisix_plugin": "cors",
+    "apisix_config": "plugin cors",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/rewrite-target": {
+    "uso_nos_clusters": 12,
+    "valores_encontrados": [
+      "/",
+      "/$1",
+      "/$2",
+      "/dialer/index.html"
+    ],
+    "funcionalidade": "Reescreve o path antes de encaminhar ao backend",
+    "apisix_plugin": "proxy-rewrite",
+    "apisix_config": "plugin proxy-rewrite: regex_uri ou uri",
+    "suporte": "completo",
+    "observacoes": "APISIX usa regex_uri: ['regex', 'replacement']. Sintaxe diferente do $1/$2 do NGINX.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/use-regex": {
+    "uso_nos_clusters": 12,
+    "valores_encontrados": [
+      "true"
+    ],
+    "funcionalidade": "Habilita regex no path do Ingress",
+    "apisix_plugin": "proxy-rewrite",
+    "apisix_config": "Rota APISIX suporta regex nativamente no campo 'uri'",
+    "suporte": "completo",
+    "observacoes": "APISIX suporta regex nas rotas por padrão.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/proxy-buffering": {
+    "uso_nos_clusters": 9,
+    "valores_encontrados": [
+      "off",
+      "on"
+    ],
+    "funcionalidade": "Habilita ou desabilita o buffer de resposta do upstream (on/off)",
+    "apisix_plugin": "sem equivalente direto",
+    "apisix_config": "Configurar via nginx variables no APISIX se necessário",
+    "suporte": "sem_suporte",
+    "observacoes": "Relevante para streaming. APISIX herda comportamento padrão do nginx (on). Avaliar se o serviço precisa de streaming antes de migrar.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/auth-signin": {
+    "uso_nos_clusters": 7,
+    "valores_encontrados": [
+      "https://$host/oauth2/start?rd=$request_uri",
+      "https://backstage.production.rdops.systems/oauth2/start?rd=$escaped_request_uri",
+      "https://backstage.staging.rdops.systems/oauth2/start?rd=$escaped_request_uri",
+      "https://crm-staging.rdstation.com/oauth2/start?rd=$escaped_request_uri",
+      "https://crm.rdstation.com/oauth2/start?rd=$escaped_request_uri"
+    ],
+    "funcionalidade": "URL de redirecionamento quando autenticação falha",
+    "apisix_plugin": "forward-auth",
+    "apisix_config": "plugin forward-auth: request_headers + resposta 401",
+    "suporte": "parcial",
+    "observacoes": "APISIX forward-auth não redireciona automaticamente; requer lógica adicional.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/auth-url": {
+    "uso_nos_clusters": 7,
+    "valores_encontrados": [
+      "http://backstage-oauth.devexp.svc.cluster.local:4180/oauth2/auth",
+      "http://sidekiq-okta-oauth.crm.svc.cluster.local:4180/oauth2/auth",
+      "https://$host/oauth2/auth"
+    ],
+    "funcionalidade": "URL externa para autenticação (auth_request)",
+    "apisix_plugin": "forward-auth",
+    "apisix_config": "plugin forward-auth: uri",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/cors-allow-headers": {
+    "uso_nos_clusters": 7,
+    "valores_encontrados": [
+      "Content-Type, Authorization, X-API-Key",
+      "DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,X-Platform-Account-Id,x-csrf-token"
+    ],
+    "funcionalidade": "Headers permitidos para CORS",
+    "apisix_plugin": "cors",
+    "apisix_config": "plugin cors: allow_headers",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/cors-allow-origin": {
+    "uso_nos_clusters": 6,
+    "valores_encontrados": [
+      "*",
+      "https://devcenter-stg.rdstation.com.br,https://devcenter.rdstation.com.br",
+      "https://devcenter.rdstation.com.br"
+    ],
+    "funcionalidade": "Origins permitidas para CORS",
+    "apisix_plugin": "cors",
+    "apisix_config": "plugin cors: allow_origins",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/auth-realm": {
+    "uso_nos_clusters": 6,
+    "valores_encontrados": [
+      "Authentication Required",
+      "Authentication Required - ipconfig"
+    ],
+    "funcionalidade": "Realm exibido no popup de autenticação básica do browser",
+    "apisix_plugin": "basic-auth",
+    "apisix_config": "plugin basic-auth: config.realm: <valor>",
+    "suporte": "completo",
+    "observacoes": "APISIX 3.14.1 suporta o campo realm nativamente no plugin basic-auth (default: 'basic'). Migração direta.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/auth-secret": {
+    "uso_nos_clusters": 6,
+    "valores_encontrados": [
+      "ipconfig-basic-auth",
+      "synthetics-basic-auth",
+      "token-secret-tallos",
+      "token-secret-tallos-v000"
+    ],
+    "funcionalidade": "Secret com credenciais de autenticação básica",
+    "apisix_plugin": "basic-auth",
+    "apisix_config": "Consumer com plugin basic-auth",
+    "suporte": "completo",
+    "observacoes": "Credenciais devem ser migradas para Consumers no APISIX.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/auth-type": {
+    "uso_nos_clusters": 6,
+    "valores_encontrados": [
+      "basic"
+    ],
+    "funcionalidade": "Tipo de autenticação: basic ou digest",
+    "apisix_plugin": "basic-auth",
+    "apisix_config": "plugin basic-auth",
+    "suporte": "completo",
+    "observacoes": "digest-auth não tem plugin nativo no APISIX; basic-auth sim.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/send_timeout": {
+    "uso_nos_clusters": 6,
+    "valores_encontrados": [
+      "15600"
+    ],
+    "funcionalidade": "Timeout de envio para o cliente (nota: underscore em vez de hífen — possível typo no cluster)",
+    "apisix_plugin": "configuração do upstream",
+    "apisix_config": "upstream: send_timeout",
+    "suporte": "completo",
+    "observacoes": "Annotation com underscore provavelmente não tem efeito no NGINX. Verificar se é typo de proxy-send-timeout.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/proxy-buffer-size": {
+    "uso_nos_clusters": 5,
+    "valores_encontrados": [
+      "2048k"
+    ],
+    "funcionalidade": "Tamanho do buffer de proxy",
+    "apisix_plugin": "não mapeado diretamente",
+    "apisix_config": "Configurar via nginx.conf customizado (se necessário)",
+    "suporte": "sem_suporte",
+    "observacoes": "APISIX não expõe proxy_buffer_size como plugin; geralmente não necessário.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/proxy-buffers-number": {
+    "uso_nos_clusters": 5,
+    "valores_encontrados": [
+      "32"
+    ],
+    "funcionalidade": "Número de buffers usados para leitura da resposta do upstream",
+    "apisix_plugin": "sem equivalente direto",
+    "apisix_config": "Não exposto como plugin; usar configuração nginx customizada se crítico",
+    "suporte": "sem_suporte",
+    "observacoes": "Tunning de baixo nível. Na maioria dos casos o padrão do APISIX é suficiente.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/proxy-next-upstream-tries": {
+    "uso_nos_clusters": 5,
+    "valores_encontrados": [
+      "8"
+    ],
+    "funcionalidade": "Número máximo de tentativas ao próximo upstream em caso de falha",
+    "apisix_plugin": "configuração do upstream",
+    "apisix_config": "upstream: retries: <valor>",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/proxy-max-temp-file-size": {
+    "uso_nos_clusters": 4,
+    "valores_encontrados": [
+      "2048m"
+    ],
+    "funcionalidade": "Tamanho máximo do arquivo temporário quando o buffer está cheio",
+    "apisix_plugin": "sem equivalente direto",
+    "apisix_config": "Não exposto como plugin",
+    "suporte": "sem_suporte",
+    "observacoes": "Tunning de baixo nível. Avaliar se é realmente necessário.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/cors-allow-credentials": {
+    "uso_nos_clusters": 4,
+    "valores_encontrados": [
+      "true"
+    ],
+    "funcionalidade": "Permite credentials em CORS",
+    "apisix_plugin": "cors",
+    "apisix_config": "plugin cors: allow_credential: true",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/ssl-protocols": {
+    "uso_nos_clusters": 3,
+    "valores_encontrados": [
+      "TLSv1.2 TLSv1.3"
+    ],
+    "funcionalidade": "Protocolos TLS aceitos (ex: TLSv1.2 TLSv1.3)",
+    "apisix_plugin": "configuração global de SSL do APISIX",
+    "apisix_config": "apisix.ssl.ssl_protocols no config.yaml do APISIX",
+    "suporte": "parcial",
+    "observacoes": "Não é configurável por rota no APISIX — é configuração global. Verificar se o padrão (TLSv1.2, TLSv1.3) atende.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/limit-rpm": {
+    "uso_nos_clusters": 3,
+    "valores_encontrados": [
+      "1000",
+      "5"
+    ],
+    "funcionalidade": "Limita requisições por minuto por IP",
+    "apisix_plugin": "limit-count",
+    "apisix_config": "plugin limit-count: count, time_window: 60, key: remote_addr",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/keepalive": {
+    "uso_nos_clusters": 2,
+    "valores_encontrados": [
+      "64"
+    ],
+    "funcionalidade": "Número máximo de conexões keepalive ao upstream",
+    "apisix_plugin": "configuração do upstream",
+    "apisix_config": "upstream: keepalive: <valor>",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/keepalive-timeout": {
+    "uso_nos_clusters": 2,
+    "valores_encontrados": [
+      "120"
+    ],
+    "funcionalidade": "Timeout das conexões keepalive ao upstream (segundos)",
+    "apisix_plugin": "configuração do upstream",
+    "apisix_config": "upstream: keepalive_timeout: <valor>",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/proxy-next-upstream": {
+    "uso_nos_clusters": 2,
+    "valores_encontrados": [
+      "error timeout invalid_header http_502 http_503 http_504"
+    ],
+    "funcionalidade": "Condições para tentar próximo upstream",
+    "apisix_plugin": "configuração do upstream (retries)",
+    "apisix_config": "upstream: retries, retry_timeout",
+    "suporte": "parcial",
+    "observacoes": "APISIX suporta retries mas não todas as condições do proxy_next_upstream.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/default-backend": {
+    "uso_nos_clusters": 2,
+    "valores_encontrados": [
+      "saas-internal"
+    ],
+    "funcionalidade": "Service de fallback quando nenhuma regra do ingress bate",
+    "apisix_plugin": "configuração da rota APISIX",
+    "apisix_config": "Criar rota catch-all com upstream apontando para o service de fallback",
+    "suporte": "manual",
+    "observacoes": "Criar uma rota separada no APISIX com prioridade baixa para capturar requisições não roteadas.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/auth-response-headers": {
+    "uso_nos_clusters": 2,
+    "valores_encontrados": [
+      "Authorization"
+    ],
+    "funcionalidade": "Headers retornados pelo auth service a serem repassados ao backend",
+    "apisix_plugin": "forward-auth",
+    "apisix_config": "plugin forward-auth: upstream_headers",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/cors-allow-methods": {
+    "uso_nos_clusters": 2,
+    "valores_encontrados": [
+      "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+    ],
+    "funcionalidade": "Métodos HTTP permitidos para CORS",
+    "apisix_plugin": "cors",
+    "apisix_config": "plugin cors: allow_methods",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/cors-max-age": {
+    "uso_nos_clusters": 2,
+    "valores_encontrados": [
+      "86400"
+    ],
+    "funcionalidade": "Max-age do preflight CORS",
+    "apisix_plugin": "cors",
+    "apisix_config": "plugin cors: max_age",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/cors-allow-Origin": {
+    "uso_nos_clusters": 2,
+    "valores_encontrados": [
+      "*"
+    ],
+    "funcionalidade": "Origins permitidas para CORS (typo: 'O' maiúsculo — provavelmente inativo no cluster)",
+    "apisix_plugin": "cors",
+    "apisix_config": "plugin cors: allow_origins",
+    "suporte": "completo",
+    "observacoes": "Atenção: esta annotation tem 'O' maiúsculo em 'Origin', o que é um typo — o NGINX provavelmente ignora ela. Usar nginx.ingress.kubernetes.io/cors-allow-origin (minúsculo) no APISIX.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/limit-burst-multiplier": {
+    "uso_nos_clusters": 2,
+    "valores_encontrados": [
+      "2"
+    ],
+    "funcionalidade": "Multiplicador de burst para rate limiting",
+    "apisix_plugin": "limit-req",
+    "apisix_config": "plugin limit-req: burst",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/compute-full-forwarded-for": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "true"
+    ],
+    "funcionalidade": "Acumula todos os IPs no header X-Forwarded-For (não sobrescreve)",
+    "apisix_plugin": "real-ip / proxy-rewrite",
+    "apisix_config": "plugin real-ip: recursive: true",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/use-forwarded-headers": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "true"
+    ],
+    "funcionalidade": "Usa os headers X-Forwarded-* recebidos em vez de sobrescrevê-los",
+    "apisix_plugin": "real-ip",
+    "apisix_config": "plugin real-ip: trusted_addresses com CIDRs dos proxies upstream",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/affinity": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "cookie"
+    ],
+    "funcionalidade": "Session affinity (cookie-based sticky sessions)",
+    "apisix_plugin": "configuração do upstream",
+    "apisix_config": "upstream: hash_on: cookie, key: <cookie_name>",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/session-cookie-expires": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "1h"
+    ],
+    "funcionalidade": "Tempo de expiração do cookie de session affinity (segundos)",
+    "apisix_plugin": "configuração do upstream",
+    "apisix_config": "Não há campo de expiração de cookie no upstream do APISIX",
+    "suporte": "sem_suporte",
+    "observacoes": "APISIX não gerencia expiração do cookie de sticky session. O cookie persiste enquanto o browser estiver aberto.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/session-cookie-max-age": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "3600"
+    ],
+    "funcionalidade": "Max-age do cookie de session affinity (segundos)",
+    "apisix_plugin": "configuração do upstream",
+    "apisix_config": "Não há campo de max-age de cookie no upstream do APISIX",
+    "suporte": "sem_suporte",
+    "observacoes": "Mesmo caso do session-cookie-expires.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/session-cookie-name": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "backstage_session"
+    ],
+    "funcionalidade": "Nome do cookie de session affinity",
+    "apisix_plugin": "configuração do upstream",
+    "apisix_config": "upstream: hash_on: cookie, key: <nome>",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/priority": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "100"
+    ],
+    "funcionalidade": "Prioridade da rota quando múltiplos ingresses têm regras conflitantes",
+    "apisix_plugin": "configuração da rota APISIX",
+    "apisix_config": "Route: priority: <valor>",
+    "suporte": "completo",
+    "observacoes": "APISIX tem campo priority nativo nas rotas.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/proxy-hide-headers": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "X-Frame-Options, Content-Security-Policy"
+    ],
+    "funcionalidade": "Lista de headers da resposta do upstream a remover antes de enviar ao cliente",
+    "apisix_plugin": "response-rewrite",
+    "apisix_config": "plugin response-rewrite: headers (setar header como empty string para remover)",
+    "suporte": "parcial",
+    "observacoes": "APISIX response-rewrite permite remover headers setando valor vazio.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/proxy-intercept-errors": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "false"
+    ],
+    "funcionalidade": "Intercepta respostas de erro do upstream para repassar ao custom-http-errors",
+    "apisix_plugin": "serverless-post-function",
+    "apisix_config": "plugin serverless-post-function para interceptar status codes de erro",
+    "suporte": "manual",
+    "observacoes": "Funciona em conjunto com custom-http-errors. Requer lógica Lua.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/reload-ts": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "1763131917"
+    ],
+    "funcionalidade": "Timestamp interno usado pelo NGINX controller para forçar reload de configuração",
+    "apisix_plugin": "não aplicável",
+    "apisix_config": "não aplicável",
+    "suporte": "sem_suporte",
+    "observacoes": "Annotation interna do NGINX Ingress Controller. Não tem função de roteamento e não precisa ser migrada.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/denylist-source-range": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "179.190.144.219/32"
+    ],
+    "funcionalidade": "CIDRs bloqueados (blacklist de IP)",
+    "apisix_plugin": "ip-restriction",
+    "apisix_config": "plugin ip-restriction: blacklist",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/canary": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "true"
+    ],
+    "funcionalidade": "Habilita roteamento canary",
+    "apisix_plugin": "traffic-split",
+    "apisix_config": "plugin traffic-split",
+    "suporte": "completo",
+    "observacoes": "APISIX traffic-split é mais poderoso; suporta múltiplos upstreams.",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/canary-weight": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "30"
+    ],
+    "funcionalidade": "Peso percentual do tráfego para o canary",
+    "apisix_plugin": "traffic-split",
+    "apisix_config": "plugin traffic-split: rules[].weighted_upstreams[].weight",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/load-balance": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "ewma"
+    ],
+    "funcionalidade": "Algoritmo de load balancing",
+    "apisix_plugin": "configuração do upstream",
+    "apisix_config": "upstream: type: roundrobin|chash|ewma|least_conn",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/mirror-request-body": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "true"
+    ],
+    "funcionalidade": "Habilita/desabilita espelhamento do body da requisição",
+    "apisix_plugin": "proxy-mirror",
+    "apisix_config": "plugin proxy-mirror — espelha body por padrão",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/mirror-target": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "http://echo-mirror.mirror-test.svc.cluster.local$request_uri"
+    ],
+    "funcionalidade": "URL para espelhar (mirror) o tráfego — útil para testes em paralelo",
+    "apisix_plugin": "proxy-mirror",
+    "apisix_config": "plugin proxy-mirror: host: <url>",
+    "suporte": "completo",
+    "observacoes": "",
+    "mapeado": true
+  },
+  "nginx.ingress.kubernetes.io/health-check-path": {
+    "uso_nos_clusters": 1,
+    "valores_encontrados": [
+      "/sidekiq/stats"
+    ],
+    "funcionalidade": "Path de health check do upstream",
+    "apisix_plugin": "configuração do upstream",
+    "apisix_config": "upstream: checks.active.http_path: <path>",
+    "suporte": "completo",
+    "observacoes": "APISIX suporta health checks ativos e passivos no upstream.",
+    "mapeado": true
+  }
+}

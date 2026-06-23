@@ -1,0 +1,652 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/strip-path": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/strip-path\":\"true\"},\"name\":\"echo\",\"namespace\":\"default\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"echo\",\"port\":{\"number\":1027}}},\"path\":\"/echo\",\"pathType\":\"ImplementationSpecific\"}]}}]}}\n"
+      },
+      "creationTimestamp": "2025-05-19T18:15:12Z",
+      "generation": 3,
+      "labels": {
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "echo",
+      "namespace": "default",
+      "resourceVersion": "1773930076806831012",
+      "uid": "eba66b57-30c0-4103-abfa-e4e4e07f924e"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "echo",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/echo",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.170.24.68"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "dev-center-backend",
+        "artifact.spinnaker.io/name": "dev-center-backend-ingress",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"dev-center-backend\",\"artifact.spinnaker.io/name\":\"dev-center-backend-ingress\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"dev-center-backend\",\"moniker.spinnaker.io/cluster\":\"ingress dev-center-backend-ingress\",\"nginx.ingress.kubernetes.io/rewrite-target\":\"/\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"dev-center-backend\"},\"name\":\"dev-center-backend-ingress\",\"namespace\":\"dev-center-backend\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"devcenter.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"dev-center-backend\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"devcenter.rdstation.com.br\"],\"secretName\":\"wildcard-rdstation-com-br\"}]}}\n",
+        "moniker.spinnaker.io/application": "dev-center-backend",
+        "moniker.spinnaker.io/cluster": "ingress dev-center-backend-ingress",
+        "nginx.ingress.kubernetes.io/rewrite-target": "/"
+      },
+      "creationTimestamp": "2025-07-17T13:33:34Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "dev-center-backend"
+      },
+      "name": "dev-center-backend-ingress",
+      "namespace": "dev-center-backend",
+      "resourceVersion": "1770945950386399005",
+      "uid": "e83e3102-1b37-44fe-9ecb-5440f468d22a"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "devcenter.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "dev-center-backend",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "devcenter.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.170.24.68"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "platagen2520",
+        "artifact.spinnaker.io/name": "flask-ingress",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"platagen2520\",\"artifact.spinnaker.io/name\":\"flask-ingress\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"kubernetes.io/ingress.class\":\"nginx\",\"moniker.spinnaker.io/application\":\"kong\",\"moniker.spinnaker.io/cluster\":\"ingress flask-ingress\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTP\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"false\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"kong\"},\"name\":\"flask-ingress\",\"namespace\":\"platagen2520\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"poc-romao-flask.rdops.system\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"flask-service\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "moniker.spinnaker.io/application": "kong",
+        "moniker.spinnaker.io/cluster": "ingress flask-ingress",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTP",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "false"
+      },
+      "creationTimestamp": "2025-06-28T23:53:25Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "kong"
+      },
+      "name": "flask-ingress",
+      "namespace": "platagen2520",
+      "resourceVersion": "427828197",
+      "uid": "fc7709a8-3600-450b-8908-faccf3b5cbb1"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "poc-romao-flask.rdops.system",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "flask-service",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.170.24.68"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "platagen2520",
+        "artifact.spinnaker.io/name": "flask-service",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "konghq.com/plugins": "rate-limiting",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http",
+        "konghq.com/strip-path": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"platagen2520\",\"artifact.spinnaker.io/name\":\"flask-service\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"konghq.com/plugins\":\"rate-limiting\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http\",\"moniker.spinnaker.io/application\":\"kong\",\"moniker.spinnaker.io/cluster\":\"ingress flask-service\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"kong\",\"app_name\":\"flask-service\",\"app_project\":\"poc-romao\",\"resource_kind\":\"ingress\",\"team\":\"kernel-infra\"},\"name\":\"flask-service\",\"namespace\":\"platagen2520\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"poc-romao-api-staging.rd.services\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"flask-service\",\"port\":{\"number\":80}}},\"path\":\"/simples\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"poc-staging.rdstation.com\"],\"secretName\":\"wildcard-rdstation-com\"}]}}\n",
+        "moniker.spinnaker.io/application": "kong",
+        "moniker.spinnaker.io/cluster": "ingress flask-service"
+      },
+      "creationTimestamp": "2025-06-29T18:28:09Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "kong",
+        "app_name": "flask-service",
+        "app_project": "poc-romao",
+        "resource_kind": "ingress",
+        "team": "kernel-infra"
+      },
+      "name": "flask-service",
+      "namespace": "platagen2520",
+      "resourceVersion": "428599931",
+      "uid": "9319b7a1-c758-4816-a69a-98e8765f6326"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "poc-romao-api-staging.rd.services",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "flask-service",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/simples",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "poc-staging.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.225.233.67"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "platagen2520",
+        "artifact.spinnaker.io/name": "flask-service-argparse",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "konghq.com/plugins": "request-transformer",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"platagen2520\",\"artifact.spinnaker.io/name\":\"flask-service-argparse\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"konghq.com/plugins\":\"request-transformer\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http\",\"moniker.spinnaker.io/application\":\"kong\",\"moniker.spinnaker.io/cluster\":\"ingress flask-service-argparse\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"kong\",\"app_name\":\"flask-service-argparse\",\"app_project\":\"poc-romao\",\"resource_kind\":\"ingress\",\"team\":\"kernel-infra\"},\"name\":\"flask-service-argparse\",\"namespace\":\"platagen2520\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"poc-romao-api-staging.rd.services\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"flask-service-argparse\",\"port\":{\"number\":80}}},\"path\":\"/argparse/(.+)\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"poc-staging.rdstation.com\"],\"secretName\":\"wildcard-rdstation-com\"}]}}\n",
+        "moniker.spinnaker.io/application": "kong",
+        "moniker.spinnaker.io/cluster": "ingress flask-service-argparse"
+      },
+      "creationTimestamp": "2025-06-29T18:35:59Z",
+      "generation": 5,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "kong",
+        "app_name": "flask-service-argparse",
+        "app_project": "poc-romao",
+        "resource_kind": "ingress",
+        "team": "kernel-infra"
+      },
+      "name": "flask-service-argparse",
+      "namespace": "platagen2520",
+      "resourceVersion": "428615026",
+      "uid": "9f4f83a4-909a-4722-b731-4cf6c7d25179"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "poc-romao-api-staging.rd.services",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "flask-service",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/~/argparse/(.*)",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "poc-staging.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.225.233.67"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "kong-system",
+        "artifact.spinnaker.io/name": "kong-ingress-controller-kong-admin",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"kong-system\",\"artifact.spinnaker.io/name\":\"kong-ingress-controller-kong-admin\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"kong\",\"moniker.spinnaker.io/cluster\":\"ingress kong-ingress-controller-kong-admin\"},\"labels\":{\"app.kubernetes.io/instance\":\"kong-ingress-controller\",\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"kong\",\"app.kubernetes.io/version\":\"3.9\",\"helm.sh/chart\":\"kong-2.49.0\"},\"name\":\"kong-ingress-controller-kong-admin\",\"namespace\":\"kong-system\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"poc-romao-kong-admin.rdops.system\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kong-ingress-controller-kong-admin\",\"port\":{\"number\":8444}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}]}}\n",
+        "moniker.spinnaker.io/application": "kong",
+        "moniker.spinnaker.io/cluster": "ingress kong-ingress-controller-kong-admin"
+      },
+      "creationTimestamp": "2025-06-29T15:00:16Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "kong-ingress-controller",
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "kong",
+        "app.kubernetes.io/version": "3.9",
+        "helm.sh/chart": "kong-2.49.0"
+      },
+      "name": "kong-ingress-controller-kong-admin",
+      "namespace": "kong-system",
+      "resourceVersion": "428454495",
+      "uid": "596faa33-ba42-4a8d-af32-2e081acbde26"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "poc-romao-kong-admin.rdops.system",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kong-ingress-controller-kong-admin",
+                    "port": {
+                      "number": 8444
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.170.24.68"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "kong-system",
+        "artifact.spinnaker.io/name": "kong-ingress-controller-kong-manager",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"kong-system\",\"artifact.spinnaker.io/name\":\"kong-ingress-controller-kong-manager\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"kong\",\"moniker.spinnaker.io/cluster\":\"ingress kong-ingress-controller-kong-manager\"},\"labels\":{\"app.kubernetes.io/instance\":\"kong-ingress-controller\",\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"kong\",\"app.kubernetes.io/version\":\"3.9\",\"helm.sh/chart\":\"kong-2.49.0\"},\"name\":\"kong-ingress-controller-kong-manager\",\"namespace\":\"kong-system\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"wildcard-rdops-systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kong-ingress-controller-kong-manager\",\"port\":{\"number\":8445}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"wildcard-rdops-systems\"],\"secretName\":\"kong-manager.example.com-tls\"}]}}\n",
+        "moniker.spinnaker.io/application": "kong",
+        "moniker.spinnaker.io/cluster": "ingress kong-ingress-controller-kong-manager"
+      },
+      "creationTimestamp": "2025-06-29T15:00:16Z",
+      "generation": 3,
+      "labels": {
+        "app.kubernetes.io/instance": "kong-ingress-controller",
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "kong",
+        "app.kubernetes.io/version": "3.9",
+        "helm.sh/chart": "kong-2.49.0"
+      },
+      "name": "kong-ingress-controller-kong-manager",
+      "namespace": "kong-system",
+      "resourceVersion": "429637034",
+      "uid": "4049143e-1cc4-4063-bf6d-7caaf7fe2b0a"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "wildcard-rdops-systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kong-ingress-controller-kong-manager",
+                    "port": {
+                      "number": 8445
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "wildcard-rdops-systems"
+          ],
+          "secretName": "kong-manager.example.com-tls"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.170.24.68"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "kong-system",
+        "artifact.spinnaker.io/name": "kong-manager",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"kong-system\",\"artifact.spinnaker.io/name\":\"kong-manager\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"kubernetes.io/ingress.class\":\"nginx\",\"moniker.spinnaker.io/application\":\"kong\",\"moniker.spinnaker.io/cluster\":\"ingress kong-manager\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTP\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"false\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"kong\"},\"name\":\"kong-manager\",\"namespace\":\"kong-system\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"kong-poc-manager.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kong-kong-manager\",\"port\":{\"number\":30652}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "moniker.spinnaker.io/application": "kong",
+        "moniker.spinnaker.io/cluster": "ingress kong-manager",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTP",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "false"
+      },
+      "creationTimestamp": "2025-06-28T23:46:19Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "kong"
+      },
+      "name": "kong-manager",
+      "namespace": "kong-system",
+      "resourceVersion": "427823245",
+      "uid": "9c9668c6-e5ce-4e59-9f76-90b3c5a9299b"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "kong-poc-manager.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kong-kong-manager",
+                    "port": {
+                      "number": 30652
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.170.24.68"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "rdsm",
+        "artifact.spinnaker.io/name": "model-app-ingress",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"rdsm\",\"artifact.spinnaker.io/name\":\"model-app-ingress\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"kubernetes.io/ingress.class\":\"nginx\",\"moniker.spinnaker.io/application\":\"poc-anthos\",\"moniker.spinnaker.io/cluster\":\"ingress model-app-ingress\",\"nginx.ingress.kubernetes.io/custom-http-errors\":\"599\",\"nginx.ingress.kubernetes.io/service-upstream\":\"true\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"model-app-svc.rdsm.svc.cluster.local\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"poc-anthos\"},\"name\":\"model-app-ingress\",\"namespace\":\"rdsm\"},\"spec\":{\"rules\":[{\"host\":\"model-app.34.170.24.68.nip.io\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"model-app-svc\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "moniker.spinnaker.io/application": "poc-anthos",
+        "moniker.spinnaker.io/cluster": "ingress model-app-ingress",
+        "nginx.ingress.kubernetes.io/custom-http-errors": "599",
+        "nginx.ingress.kubernetes.io/service-upstream": "true",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "model-app-svc.rdsm.svc.cluster.local"
+      },
+      "creationTimestamp": "2024-06-06T23:19:50Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "poc-anthos"
+      },
+      "name": "model-app-ingress",
+      "namespace": "rdsm",
+      "resourceVersion": "340409751",
+      "uid": "05aa1f07-c869-4fa9-b349-a265eb759be4"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "model-app.34.170.24.68.nip.io",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "model-app-svc",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.170.24.68"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "sre",
+        "artifact.spinnaker.io/name": "atlantis",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"sre\",\"artifact.spinnaker.io/name\":\"atlantis\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"kubernetes.io/ingress.global-static-ip-name\":\"ip-devops\",\"moniker.spinnaker.io/application\":\"atlantis\",\"moniker.spinnaker.io/cluster\":\"ingress atlantis\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"35.192.136.167/32,35.192.85.2/32,35.193.7.13/32,35.202.145.110/32,35.202.245.105/32,35.227.58.83/32,192.30.252.0/22,185.199.108.0/22,140.82.112.0/20,143.55.64.0/20,128.201.121.157/29,201.47.75.216/29,179.108.123.80/28,177.135.66.240/29,10.0.0.0/8,3.228.39.90/32,18.213.67.41/32,34.194.94.201/32,34.194.144.202/32,34.197.6.234/32,35.169.17.173/32,35.174.253.146/32,52.3.128.216/32,52.4.195.249/32,52.5.58.121/32,52.21.153.129/32,52.72.72.233/32,54.92.235.88/32,54.161.182.76/32,54.164.161.41/32,54.166.105.113/32,54.167.72.230/32,54.172.26.132/32,54.205.138.102/32,54.208.72.234/32,54.209.115.53\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"atlantis\"},\"name\":\"atlantis\",\"namespace\":\"sre\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"atlantis.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"atlantis\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"atlantis.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "kubernetes.io/ingress.global-static-ip-name": "ip-devops",
+        "moniker.spinnaker.io/application": "atlantis",
+        "moniker.spinnaker.io/cluster": "ingress atlantis",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "35.192.136.167/32,35.192.85.2/32,35.193.7.13/32,35.202.145.110/32,35.202.245.105/32,35.227.58.83/32,192.30.252.0/22,185.199.108.0/22,140.82.112.0/20,143.55.64.0/20,128.201.121.157/29,201.47.75.216/29,179.108.123.80/28,177.135.66.240/29,10.0.0.0/8,3.228.39.90/32,18.213.67.41/32,34.194.94.201/32,34.194.144.202/32,34.197.6.234/32,35.169.17.173/32,35.174.253.146/32,52.3.128.216/32,52.4.195.249/32,52.5.58.121/32,52.21.153.129/32,52.72.72.233/32,54.92.235.88/32,54.161.182.76/32,54.164.161.41/32,54.166.105.113/32,54.167.72.230/32,54.172.26.132/32,54.205.138.102/32,54.208.72.234/32,54.209.115.53",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-02-28T16:20:42Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "atlantis"
+      },
+      "name": "atlantis",
+      "namespace": "sre",
+      "resourceVersion": "340409749",
+      "uid": "823df63a-62fc-4a6d-857d-b2df87587c27"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "atlantis.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "atlantis",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "atlantis.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.170.24.68"
+          }
+        ]
+      }
+    }
+  }
+]

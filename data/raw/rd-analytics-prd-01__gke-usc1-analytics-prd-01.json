@@ -1,0 +1,1624 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "analyze",
+        "artifact.spinnaker.io/name": "access-orchestration-app",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"analyze\",\"artifact.spinnaker.io/name\":\"access-orchestration-app\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"access-orchestration-app\",\"moniker.spinnaker.io/cluster\":\"ingress access-orchestration-app\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"access-orchestration-app\",\"app_name\":\"access-orchestration-app\",\"app_project\":\"access-orchestration-app\",\"resource_kind\":\"ingress\",\"team\":\"c3po\"},\"name\":\"access-orchestration-app\",\"namespace\":\"analyze\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"access-orchestration-app.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"access-orchestration-app\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"access-orchestration-app.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "access-orchestration-app",
+        "moniker.spinnaker.io/cluster": "ingress access-orchestration-app",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-01-17T19:00:07Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "access-orchestration-app",
+        "app_name": "access-orchestration-app",
+        "app_project": "access-orchestration-app",
+        "resource_kind": "ingress",
+        "team": "c3po"
+      },
+      "name": "access-orchestration-app",
+      "namespace": "analyze",
+      "resourceVersion": "1775547272867551016",
+      "uid": "070260b2-7e1b-4b8c-95d7-aa2803a88ada"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "access-orchestration-app.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "access-orchestration-app",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "access-orchestration-app.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "analyze",
+        "artifact.spinnaker.io/name": "attribution-analysis-api",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"analyze\",\"artifact.spinnaker.io/name\":\"attribution-analysis-api\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"attribution-analysis-api\",\"moniker.spinnaker.io/cluster\":\"ingress attribution-analysis-api\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"attribution-analysis-api\",\"app_name\":\"attribution-analysis-api\",\"app_project\":\"attribution-analysis-api\",\"resource_kind\":\"ingress\",\"team\":\"c3po\"},\"name\":\"attribution-analysis-api\",\"namespace\":\"analyze\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"attribution-analysis-api.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"attribution-analysis-api\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"attribution-analysis-api.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "attribution-analysis-api",
+        "moniker.spinnaker.io/cluster": "ingress attribution-analysis-api",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-10-24T22:05:27Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "attribution-analysis-api",
+        "app_name": "attribution-analysis-api",
+        "app_project": "attribution-analysis-api",
+        "resource_kind": "ingress",
+        "team": "c3po"
+      },
+      "name": "attribution-analysis-api",
+      "namespace": "analyze",
+      "resourceVersion": "1775547272674271003",
+      "uid": "d797b873-2ae0-4e9d-a9db-5d2484cd9c9f"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "attribution-analysis-api.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "attribution-analysis-api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "attribution-analysis-api.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "analyze",
+        "artifact.spinnaker.io/name": "basic-analytics-ingress",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/backends": "{\"k8s-be-31914--0b06ba8d05326855\":\"HEALTHY\",\"k8s1-0b06ba8d-mushin-basic-analytics-v2-80-aa519a68\":\"HEALTHY\"}",
+        "ingress.kubernetes.io/forwarding-rule": "k8s2-fr-q7jh97t3-mushin-basic-analytics-ingress-197m56bh",
+        "ingress.kubernetes.io/https-forwarding-rule": "k8s2-fs-q7jh97t3-mushin-basic-analytics-ingress-197m56bh",
+        "ingress.kubernetes.io/https-target-proxy": "k8s2-ts-q7jh97t3-mushin-basic-analytics-ingress-197m56bh",
+        "ingress.kubernetes.io/ssl-cert": "k8s2-cr-q7jh97t3-n9be43vcxyz4s2qf-5b905f9d6299e231",
+        "ingress.kubernetes.io/static-ip": "k8s2-fr-q7jh97t3-mushin-basic-analytics-ingress-197m56bh",
+        "ingress.kubernetes.io/target-proxy": "k8s2-tp-q7jh97t3-mushin-basic-analytics-ingress-197m56bh",
+        "ingress.kubernetes.io/url-map": "k8s2-um-q7jh97t3-mushin-basic-analytics-ingress-197m56bh",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"analyze\",\"artifact.spinnaker.io/name\":\"basic-analytics-ingress\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/backends\":\"{\\\"k8s-be-31914--0b06ba8d05326855\\\":\\\"HEALTHY\\\",\\\"k8s1-0b06ba8d-mushin-basic-analytics-v2-80-aa519a68\\\":\\\"HEALTHY\\\"}\",\"ingress.kubernetes.io/forwarding-rule\":\"k8s2-fr-q7jh97t3-mushin-basic-analytics-ingress-197m56bh\",\"ingress.kubernetes.io/https-forwarding-rule\":\"k8s2-fs-q7jh97t3-mushin-basic-analytics-ingress-197m56bh\",\"ingress.kubernetes.io/https-target-proxy\":\"k8s2-ts-q7jh97t3-mushin-basic-analytics-ingress-197m56bh\",\"ingress.kubernetes.io/ssl-cert\":\"k8s2-cr-q7jh97t3-n9be43vcxyz4s2qf-5b905f9d6299e231\",\"ingress.kubernetes.io/static-ip\":\"k8s2-fr-q7jh97t3-mushin-basic-analytics-ingress-197m56bh\",\"ingress.kubernetes.io/target-proxy\":\"k8s2-tp-q7jh97t3-mushin-basic-analytics-ingress-197m56bh\",\"ingress.kubernetes.io/url-map\":\"k8s2-um-q7jh97t3-mushin-basic-analytics-ingress-197m56bh\",\"moniker.spinnaker.io/application\":\"basic-analytics\",\"moniker.spinnaker.io/cluster\":\"ingress basic-analytics-ingress\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"basic-analytics\"},\"name\":\"basic-analytics-ingress\",\"namespace\":\"analyze\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"basic-analytics.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"basic-analytics-v2\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"basic-analytics.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "basic-analytics",
+        "moniker.spinnaker.io/cluster": "ingress basic-analytics-ingress",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8"
+      },
+      "creationTimestamp": "2024-11-12T22:16:38Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "basic-analytics"
+      },
+      "name": "basic-analytics-ingress",
+      "namespace": "analyze",
+      "resourceVersion": "1775547271871775023",
+      "uid": "2419f9da-f9c0-4674-bebb-53d576e2d331"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "basic-analytics.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "basic-analytics-v2",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "basic-analytics.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "analyze",
+        "artifact.spinnaker.io/name": "data-platform-data-access-api",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"analyze\",\"artifact.spinnaker.io/name\":\"data-platform-data-access-api\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"data-platform-data-access-api\",\"moniker.spinnaker.io/cluster\":\"ingress data-platform-data-access-api\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8,45.235.52.24/29,189.28.39.112/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"data-platform-data-access-api\",\"app_name\":\"data-platform-data-access-api\",\"app_project\":\"data-platform-data-access-api\",\"resource_kind\":\"ingress\",\"team\":\"data-lake\"},\"name\":\"data-platform-data-access-api\",\"namespace\":\"analyze\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"data-platform-data-access-api.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"data-platform-data-access-api\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"data-platform-data-access-api.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "data-platform-data-access-api",
+        "moniker.spinnaker.io/cluster": "ingress data-platform-data-access-api",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8,45.235.52.24/29,189.28.39.112/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-10-21T22:06:40Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "data-platform-data-access-api",
+        "app_name": "data-platform-data-access-api",
+        "app_project": "data-platform-data-access-api",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "data-lake"
+      },
+      "name": "data-platform-data-access-api",
+      "namespace": "analyze",
+      "resourceVersion": "1775547272072271014",
+      "uid": "70d2da87-f7b6-4ef2-b251-56b2e062edb0"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "data-platform-data-access-api.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "data-platform-data-access-api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "data-platform-data-access-api.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "analyze",
+        "artifact.spinnaker.io/name": "insights-platform-api-v8",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"analyze\",\"artifact.spinnaker.io/name\":\"insights-platform-api-v8\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"insights-platform-api\",\"moniker.spinnaker.io/cluster\":\"ingress insights-platform-api-v8\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"insights-platform-api\",\"app_name\":\"insights-platform-api-v8\",\"app_project\":\"insights-platform-api\",\"resource_kind\":\"ingress\",\"team\":\"leia\"},\"name\":\"insights-platform-api-v8\",\"namespace\":\"analyze\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"insights-platform-api-v8.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"insights-platform-api-v8\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"insights-platform-api-v8.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "insights-platform-api",
+        "moniker.spinnaker.io/cluster": "ingress insights-platform-api-v8",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-08-05T20:00:23Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "insights-platform-api",
+        "app_name": "insights-platform-api-v8",
+        "app_project": "insights-platform-api",
+        "resource_kind": "ingress",
+        "team": "leia"
+      },
+      "name": "insights-platform-api-v8",
+      "namespace": "analyze",
+      "resourceVersion": "1775547275668527003",
+      "uid": "b86d84b3-7194-474f-ae36-03506a3a2893"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "insights-platform-api-v8.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "insights-platform-api-v8",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "insights-platform-api-v8.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "analyze",
+        "artifact.spinnaker.io/name": "rds-assets-app-api",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"analyze\",\"artifact.spinnaker.io/name\":\"rds-assets-app-api\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rds-assets-app-api\",\"moniker.spinnaker.io/cluster\":\"ingress rds-assets-app-api\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/server-snippet\":\"location ~* \\\"^/api/public\\\" {\\n  deny all;\\n  return 404;\\n}\\n\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rds-assets-app-api\",\"app_name\":\"rds-assets-app-api\",\"app_project\":\"rds-assets-app-api\",\"resource_kind\":\"ingress\",\"team\":\"c3po\"},\"name\":\"rds-assets-app-api\",\"namespace\":\"analyze\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"assets-api.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rds-assets-app-api\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"assets-api.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rds-assets-app-api",
+        "moniker.spinnaker.io/cluster": "ingress rds-assets-app-api",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/server-snippet": "location ~* \"^/api/public\" {\n  deny all;\n  return 404;\n}\n",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-12-10T21:43:26Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rds-assets-app-api",
+        "app_name": "rds-assets-app-api",
+        "app_project": "rds-assets-app-api",
+        "resource_kind": "ingress",
+        "team": "c3po"
+      },
+      "name": "rds-assets-app-api",
+      "namespace": "analyze",
+      "resourceVersion": "1775547272468079011",
+      "uid": "cf8190f7-34b9-4d38-a03d-09f5e524c48e"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "assets-api.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rds-assets-app-api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "assets-api.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "analyze",
+        "artifact.spinnaker.io/name": "rds-assets-app-api-internal",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"analyze\",\"artifact.spinnaker.io/name\":\"rds-assets-app-api-internal\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rds-assets-app-api\",\"moniker.spinnaker.io/cluster\":\"ingress rds-assets-app-api-internal\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rds-assets-app-api\",\"app_name\":\"rds-assets-app-api\",\"app_project\":\"rds-assets-app-api\",\"resource_kind\":\"ingress\",\"team\":\"c3po\"},\"name\":\"rds-assets-app-api-internal\",\"namespace\":\"analyze\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"assets-api-internal.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rds-assets-app-api\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"assets-api-internal.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rds-assets-app-api",
+        "moniker.spinnaker.io/cluster": "ingress rds-assets-app-api-internal",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-12-10T21:43:26Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rds-assets-app-api",
+        "app_name": "rds-assets-app-api",
+        "app_project": "rds-assets-app-api",
+        "resource_kind": "ingress",
+        "team": "c3po"
+      },
+      "name": "rds-assets-app-api-internal",
+      "namespace": "analyze",
+      "resourceVersion": "1775547272269359005",
+      "uid": "2b441afc-fc9e-45e6-a149-44cbea421c12"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "assets-api-internal.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rds-assets-app-api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "assets-api-internal.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "analyze",
+        "artifact.spinnaker.io/name": "report-builder-api",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"analyze\",\"artifact.spinnaker.io/name\":\"report-builder-api\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"report-builder-api\",\"moniker.spinnaker.io/cluster\":\"ingress report-builder-api\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8,45.235.52.24/29,189.28.39.112/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"report-builder-api\",\"app_name\":\"report-builder-api\",\"app_project\":\"report-builder-api\",\"resource_kind\":\"ingress\",\"team\":\"c3po\"},\"name\":\"report-builder-api\",\"namespace\":\"analyze\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"report-builder-api.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"report-builder-api\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"report-builder-api.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "report-builder-api",
+        "moniker.spinnaker.io/cluster": "ingress report-builder-api",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8,45.235.52.24/29,189.28.39.112/29,187.61.201.252/32,189.54.218.255/32,190.123.194.112/32,201.47.75.218/32,201.47.75.217/32,201.47.75.219/32,201.47.75.220/32,201.47.75.221/32,201.47.75.222/32,187.49.235.32/29,45.237.109.117/32,179.181.87.38/32,201.47.75.216/29,187.49.235.32/29,201.47.75.216/29,177.135.66.240/29,187.49.235.32/29,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.170.200.52,187.72.169.109",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-10-23T22:10:37Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "report-builder-api",
+        "app_name": "report-builder-api",
+        "app_project": "report-builder-api",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "c3po"
+      },
+      "name": "report-builder-api",
+      "namespace": "analyze",
+      "resourceVersion": "1775547273469967006",
+      "uid": "5242812f-f5b9-4532-9e2d-efe47424851a"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "report-builder-api.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "report-builder-api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "report-builder-api.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "insights",
+        "artifact.spinnaker.io/name": "executive-agent",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"insights\",\"artifact.spinnaker.io/name\":\"executive-agent\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"executive-agent\",\"moniker.spinnaker.io/cluster\":\"ingress executive-agent\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"executive-agent\",\"app_name\":\"executive-agent\",\"app_project\":\"executive-agent\",\"resource_kind\":\"ingress\",\"team\":\"leia\"},\"name\":\"executive-agent\",\"namespace\":\"insights\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"executive-agent.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"executive-agent\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"executive-agent.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "executive-agent",
+        "moniker.spinnaker.io/cluster": "ingress executive-agent",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-06-24T17:42:25Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "executive-agent",
+        "app_name": "executive-agent",
+        "app_project": "executive-agent",
+        "resource_kind": "ingress",
+        "team": "leia"
+      },
+      "name": "executive-agent",
+      "namespace": "insights",
+      "resourceVersion": "1775547276273999005",
+      "uid": "e258bc54-9f75-4ab3-98db-05e280509648"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "executive-agent.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "executive-agent",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "executive-agent.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "insights",
+        "artifact.spinnaker.io/name": "inngest",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "false",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"insights\",\"artifact.spinnaker.io/name\":\"inngest\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"false\",\"kubernetes.io/ingress.class\":\"nginx\",\"moniker.spinnaker.io/application\":\"ai-platform-inngest\",\"moniker.spinnaker.io/cluster\":\"ingress inngest\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.160.159.172,179.108.123.82/32\"},\"labels\":{\"alertGroup\":\"leia\",\"app.kubernetes.io/instance\":\"ai-platform-inngest\",\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"inngest\",\"app.kubernetes.io/version\":\"latest\",\"appProject\":\"ai-platform-inngest\",\"helm.sh/chart\":\"inngest-0.1.1\",\"team\":\"leia\",\"version\":\"production\"},\"name\":\"inngest\",\"namespace\":\"insights\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"inngest.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"inngest\",\"port\":{\"number\":8288}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"inngest.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "moniker.spinnaker.io/application": "ai-platform-inngest",
+        "moniker.spinnaker.io/cluster": "ingress inngest",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.160.159.172,179.108.123.82/32"
+      },
+      "creationTimestamp": "2026-02-12T21:03:15Z",
+      "generation": 1,
+      "labels": {
+        "alertGroup": "leia",
+        "app.kubernetes.io/instance": "ai-platform-inngest",
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "inngest",
+        "app.kubernetes.io/version": "latest",
+        "appProject": "ai-platform-inngest",
+        "helm.sh/chart": "inngest-0.1.1",
+        "team": "leia",
+        "version": "production"
+      },
+      "name": "inngest",
+      "namespace": "insights",
+      "resourceVersion": "1775547276668111007",
+      "uid": "a7c1d62b-91b9-4404-a34f-068407acc03f"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "inngest.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "inngest",
+                    "port": {
+                      "number": 8288
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "inngest.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "insights",
+        "artifact.spinnaker.io/name": "inngest-public",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"insights\",\"artifact.spinnaker.io/name\":\"inngest-public\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"kubernetes.io/ingress.class\":\"nginx\",\"moniker.spinnaker.io/application\":\"ai-platform-inngest\",\"moniker.spinnaker.io/cluster\":\"ingress inngest-public\",\"nginx.ingress.kubernetes.io/proxy-read-timeout\":\"3600\",\"nginx.ingress.kubernetes.io/proxy-send-timeout\":\"3600\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"0.0.0.0/0,::/0\"},\"labels\":{\"alertGroup\":\"leia\",\"app.kubernetes.io/instance\":\"ai-platform-inngest\",\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"inngest\",\"app.kubernetes.io/version\":\"latest\",\"appProject\":\"ai-platform-inngest\",\"helm.sh/chart\":\"inngest-0.1.1\",\"team\":\"leia\",\"version\":\"production\"},\"name\":\"inngest-public\",\"namespace\":\"insights\"},\"spec\":{\"rules\":[{\"host\":\"inngest.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"inngest\",\"port\":{\"number\":8288}}},\"path\":\"/v1/realtime/connect\",\"pathType\":\"Exact\"}]}}],\"tls\":[{\"hosts\":[\"inngest.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "moniker.spinnaker.io/application": "ai-platform-inngest",
+        "moniker.spinnaker.io/cluster": "ingress inngest-public",
+        "nginx.ingress.kubernetes.io/proxy-read-timeout": "3600",
+        "nginx.ingress.kubernetes.io/proxy-send-timeout": "3600",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "0.0.0.0/0,::/0"
+      },
+      "creationTimestamp": "2026-03-25T18:01:55Z",
+      "generation": 1,
+      "labels": {
+        "alertGroup": "leia",
+        "app.kubernetes.io/instance": "ai-platform-inngest",
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "inngest",
+        "app.kubernetes.io/version": "latest",
+        "appProject": "ai-platform-inngest",
+        "helm.sh/chart": "inngest-0.1.1",
+        "team": "leia",
+        "version": "production"
+      },
+      "name": "inngest-public",
+      "namespace": "insights",
+      "resourceVersion": "1775547277267119020",
+      "uid": "3292de67-5aa6-4d26-9589-396a6169d98c"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "inngest.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "inngest",
+                    "port": {
+                      "number": 8288
+                    }
+                  }
+                },
+                "path": "/v1/realtime/connect",
+                "pathType": "Exact"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "inngest.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "insights",
+        "artifact.spinnaker.io/name": "insights-platform-api",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"insights\",\"artifact.spinnaker.io/name\":\"insights-platform-api\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"insights-platform-api\",\"moniker.spinnaker.io/cluster\":\"ingress insights-platform-api\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"insights-platform-api\",\"app_name\":\"insights-platform-api\",\"app_project\":\"insights-platform-api\",\"resource_kind\":\"ingress\",\"team\":\"leia\"},\"name\":\"insights-platform-api\",\"namespace\":\"insights\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"insights-platform-api.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"insights-platform-api\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"insights-platform-api.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "insights-platform-api",
+        "moniker.spinnaker.io/cluster": "ingress insights-platform-api",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-08-11T22:14:08Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "insights-platform-api",
+        "app_name": "insights-platform-api",
+        "app_project": "insights-platform-api",
+        "resource_kind": "ingress",
+        "team": "leia"
+      },
+      "name": "insights-platform-api",
+      "namespace": "insights",
+      "resourceVersion": "1775547275870079016",
+      "uid": "72397a55-881a-44be-8eba-e313ad87d349"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "insights-platform-api.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "insights-platform-api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "insights-platform-api.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "insights",
+        "artifact.spinnaker.io/name": "marketing-mcp",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"insights\",\"artifact.spinnaker.io/name\":\"marketing-mcp\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"marketing-mcp\",\"moniker.spinnaker.io/cluster\":\"ingress marketing-mcp\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"marketing-mcp\",\"app_name\":\"marketing-mcp\",\"app_project\":\"marketing-mcp\",\"resource_kind\":\"ingress\",\"team\":\"leia\"},\"name\":\"marketing-mcp\",\"namespace\":\"insights\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"marketing-mcp.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"marketing-mcp\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"marketing-mcp.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "marketing-mcp",
+        "moniker.spinnaker.io/cluster": "ingress marketing-mcp",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-07-09T22:26:00Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "marketing-mcp",
+        "app_name": "marketing-mcp",
+        "app_project": "marketing-mcp",
+        "resource_kind": "ingress",
+        "team": "leia"
+      },
+      "name": "marketing-mcp",
+      "namespace": "insights",
+      "resourceVersion": "1775547277468415010",
+      "uid": "8c0aac5e-2cee-4446-a4ff-7489f9fe604f"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "marketing-mcp.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "marketing-mcp",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "marketing-mcp.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "insights",
+        "artifact.spinnaker.io/name": "rds-crm-copilot",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"insights\",\"artifact.spinnaker.io/name\":\"rds-crm-copilot\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rds-crm-copilot\",\"moniker.spinnaker.io/cluster\":\"ingress rds-crm-copilot\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.160.159.172\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rds-crm-copilot\",\"app_name\":\"rds-crm-copilot\",\"app_project\":\"rds-crm-copilot\",\"resource_kind\":\"ingress\",\"team\":\"leia\"},\"name\":\"rds-crm-copilot\",\"namespace\":\"insights\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"rds-crm-copilot.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rds-crm-copilot\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"rds-crm-copilot.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rds-crm-copilot",
+        "moniker.spinnaker.io/cluster": "ingress rds-crm-copilot",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.160.159.172",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-10-27T22:42:46Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rds-crm-copilot",
+        "app_name": "rds-crm-copilot",
+        "app_project": "rds-crm-copilot",
+        "resource_kind": "ingress",
+        "team": "leia"
+      },
+      "name": "rds-crm-copilot",
+      "namespace": "insights",
+      "resourceVersion": "1775547277068047016",
+      "uid": "628a7f55-a501-4d29-8d22-38646e969329"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "rds-crm-copilot.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rds-crm-copilot",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "rds-crm-copilot.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "insights",
+        "artifact.spinnaker.io/name": "rds-crm-copilot-public",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"insights\",\"artifact.spinnaker.io/name\":\"rds-crm-copilot-public\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rds-crm-copilot\",\"moniker.spinnaker.io/cluster\":\"ingress rds-crm-copilot-public\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rds-crm-copilot\",\"app_name\":\"rds-crm-copilot\",\"app_project\":\"rds-crm-copilot\",\"resource_kind\":\"ingress\",\"team\":\"leia\"},\"name\":\"rds-crm-copilot-public\",\"namespace\":\"insights\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"rds-crm-copilot.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rds-crm-copilot\",\"port\":{\"number\":80}}},\"path\":\"/chat\",\"pathType\":\"ImplementationSpecific\"},{\"backend\":{\"service\":{\"name\":\"rds-crm-copilot\",\"port\":{\"number\":80}}},\"path\":\"/feedback\",\"pathType\":\"ImplementationSpecific\"},{\"backend\":{\"service\":{\"name\":\"rds-crm-copilot\",\"port\":{\"number\":80}}},\"path\":\"/copilot-drawer-questions\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"rds-crm-copilot.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rds-crm-copilot",
+        "moniker.spinnaker.io/cluster": "ingress rds-crm-copilot-public",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2026-01-26T21:10:20Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rds-crm-copilot",
+        "app_name": "rds-crm-copilot",
+        "app_project": "rds-crm-copilot",
+        "resource_kind": "ingress",
+        "team": "leia"
+      },
+      "name": "rds-crm-copilot-public",
+      "namespace": "insights",
+      "resourceVersion": "1775547271666815006",
+      "uid": "cc63a3cf-37bb-4ca0-ab4d-10da86ade251"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "rds-crm-copilot.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rds-crm-copilot",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/chat",
+                "pathType": "ImplementationSpecific"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "rds-crm-copilot",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/feedback",
+                "pathType": "ImplementationSpecific"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "rds-crm-copilot",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/copilot-drawer-questions",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "rds-crm-copilot.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "insights",
+        "artifact.spinnaker.io/name": "rdsc-copilot",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"insights\",\"artifact.spinnaker.io/name\":\"rdsc-copilot\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rdsc-copilot\",\"moniker.spinnaker.io/cluster\":\"ingress rdsc-copilot\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rdsc-copilot\",\"app_name\":\"rdsc-copilot\",\"app_project\":\"rdsc-copilot\",\"resource_kind\":\"ingress\",\"team\":\"leia\"},\"name\":\"rdsc-copilot\",\"namespace\":\"insights\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"rdsc-copilot.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdsc-copilot\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"rdsc-copilot.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rdsc-copilot",
+        "moniker.spinnaker.io/cluster": "ingress rdsc-copilot",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-10-15T18:31:06Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rdsc-copilot",
+        "app_name": "rdsc-copilot",
+        "app_project": "rdsc-copilot",
+        "resource_kind": "ingress",
+        "team": "leia"
+      },
+      "name": "rdsc-copilot",
+      "namespace": "insights",
+      "resourceVersion": "1775547276069855021",
+      "uid": "c8109d6b-c585-45c2-a4a2-88612fa0ff10"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "rdsc-copilot.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdsc-copilot",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "rdsc-copilot.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "insights",
+        "artifact.spinnaker.io/name": "rudi-api",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"insights\",\"artifact.spinnaker.io/name\":\"rudi-api\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"rudi-api\",\"moniker.spinnaker.io/cluster\":\"ingress rudi-api\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rudi-api\",\"app_name\":\"rudi-api\",\"app_project\":\"rudi-api\",\"resource_kind\":\"ingress\",\"team\":\"leia\"},\"name\":\"rudi-api\",\"namespace\":\"insights\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"rudi-api.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rudi-api\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"rudi-api.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "rudi-api",
+        "moniker.spinnaker.io/cluster": "ingress rudi-api",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-02-25T17:25:51Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rudi-api",
+        "app_name": "rudi-api",
+        "app_project": "rudi-api",
+        "resource_kind": "ingress",
+        "team": "leia"
+      },
+      "name": "rudi-api",
+      "namespace": "insights",
+      "resourceVersion": "1775547273068351015",
+      "uid": "5cdebd0d-946c-49eb-9f0c-77f3c5160352"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "rudi-api.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rudi-api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "rudi-api.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "insights",
+        "artifact.spinnaker.io/name": "ai-platform-builder",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"insights\",\"artifact.spinnaker.io/name\":\"ai-platform-builder\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"ai-platform-builder\",\"moniker.spinnaker.io/cluster\":\"ingress ai-platform-builder\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"ai-platform-builder\",\"app_name\":\"ai-platform-builder\",\"app_project\":\"ai-platform-builder\",\"resource_kind\":\"ingress\",\"team\":\"leia\"},\"name\":\"ai-platform-builder\",\"namespace\":\"insights\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"agentes.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"ai-platform-builder\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}},{\"host\":\"www.agentes.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"ai-platform-builder\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"agentes.rdstation.com\"],\"secretName\":\"wildcard-rdstation-com\"}]}}\n",
+        "moniker.spinnaker.io/application": "ai-platform-builder",
+        "moniker.spinnaker.io/cluster": "ingress ai-platform-builder",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2026-02-13T18:20:30Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "ai-platform-builder",
+        "app_name": "ai-platform-builder",
+        "app_project": "ai-platform-builder",
+        "resource_kind": "ingress",
+        "team": "leia"
+      },
+      "name": "ai-platform-builder",
+      "namespace": "insights",
+      "resourceVersion": "1775547276477615007",
+      "uid": "57d33add-33c8-4119-91a1-351a3558bffe"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "agentes.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "ai-platform-builder",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        },
+        {
+          "host": "www.agentes.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "ai-platform-builder",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "agentes.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "insights",
+        "artifact.spinnaker.io/name": "ai-platform-litellm",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"insights\",\"artifact.spinnaker.io/name\":\"ai-platform-litellm\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"ai-platform\",\"moniker.spinnaker.io/cluster\":\"ingress ai-platform-litellm\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"100m\"},\"labels\":{\"alertGroup\":\"leia\",\"app.kubernetes.io/instance\":\"ai-platform\",\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"litellm\",\"app.kubernetes.io/version\":\"v1.80.0.rc.2\",\"appProject\":\"ai-platform\",\"helm.sh/chart\":\"litellm-0.1.824\",\"team\":\"leia\",\"version\":\"production\"},\"name\":\"ai-platform-litellm\",\"namespace\":\"insights\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"inference.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"ai-platform-litellm\",\"port\":{\"number\":4000}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"inference.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "ai-platform",
+        "moniker.spinnaker.io/cluster": "ingress ai-platform-litellm",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "100m"
+      },
+      "creationTimestamp": "2025-12-05T14:40:50Z",
+      "generation": 1,
+      "labels": {
+        "alertGroup": "leia",
+        "app.kubernetes.io/instance": "ai-platform",
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "litellm",
+        "app.kubernetes.io/version": "v1.80.0.rc.2",
+        "appProject": "ai-platform",
+        "helm.sh/chart": "litellm-0.1.824",
+        "team": "leia",
+        "version": "production"
+      },
+      "name": "ai-platform-litellm",
+      "namespace": "insights",
+      "resourceVersion": "1775547276868191012",
+      "uid": "8ef77d6c-854a-4ddb-a152-0ad116754e52"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "inference.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "ai-platform-litellm",
+                    "port": {
+                      "number": 4000
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "inference.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "insights",
+        "artifact.spinnaker.io/name": "marketing-copilot",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"insights\",\"artifact.spinnaker.io/name\":\"marketing-copilot\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"marketing-copilot\",\"moniker.spinnaker.io/cluster\":\"ingress marketing-copilot\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"10.0.0.0/8,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.160.159.172\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"marketing-copilot\",\"app_name\":\"marketing-copilot\",\"app_project\":\"marketing-copilot\",\"resource_kind\":\"ingress\",\"team\":\"leia\"},\"name\":\"marketing-copilot\",\"namespace\":\"insights\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"marketing-copilot.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"marketing-copilot\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"marketing-copilot.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "marketing-copilot",
+        "moniker.spinnaker.io/cluster": "ingress marketing-copilot",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "10.0.0.0/8,34.42.162.110,35.184.177.222,35.225.89.240,34.136.72.72,34.160.159.172",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-10-20T19:25:39Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "marketing-copilot",
+        "app_name": "marketing-copilot",
+        "app_project": "marketing-copilot",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "leia"
+      },
+      "name": "marketing-copilot",
+      "namespace": "insights",
+      "resourceVersion": "1775547273268431008",
+      "uid": "9977c85c-c3f1-49a5-9a57-1858591d958c"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "marketing-copilot.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "marketing-copilot",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "marketing-copilot.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "insights",
+        "artifact.spinnaker.io/name": "marketing-copilot-public",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"insights\",\"artifact.spinnaker.io/name\":\"marketing-copilot-public\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"marketing-copilot\",\"moniker.spinnaker.io/cluster\":\"ingress marketing-copilot-public\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"marketing-copilot\",\"app_name\":\"marketing-copilot\",\"app_project\":\"marketing-copilot\",\"resource_kind\":\"ingress\",\"team\":\"leia\"},\"name\":\"marketing-copilot-public\",\"namespace\":\"insights\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"marketing-copilot.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"marketing-copilot\",\"port\":{\"number\":80}}},\"path\":\"/chat\",\"pathType\":\"ImplementationSpecific\"},{\"backend\":{\"service\":{\"name\":\"marketing-copilot\",\"port\":{\"number\":80}}},\"path\":\"/feedback\",\"pathType\":\"ImplementationSpecific\"},{\"backend\":{\"service\":{\"name\":\"marketing-copilot\",\"port\":{\"number\":80}}},\"path\":\"/copilot-drawer-questions\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"marketing-copilot.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "marketing-copilot",
+        "moniker.spinnaker.io/cluster": "ingress marketing-copilot-public",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2026-01-22T16:57:13Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "marketing-copilot",
+        "app_name": "marketing-copilot",
+        "app_project": "marketing-copilot",
+        "resource_kind": "ingress",
+        "team": "leia"
+      },
+      "name": "marketing-copilot-public",
+      "namespace": "insights",
+      "resourceVersion": "1775547277866623022",
+      "uid": "df189f03-96d0-4195-9365-0bc863176720"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "marketing-copilot.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "marketing-copilot",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/chat",
+                "pathType": "ImplementationSpecific"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "marketing-copilot",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/feedback",
+                "pathType": "ImplementationSpecific"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "marketing-copilot",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/copilot-drawer-questions",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "marketing-copilot.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "104.154.80.242"
+          }
+        ]
+      }
+    }
+  }
+]

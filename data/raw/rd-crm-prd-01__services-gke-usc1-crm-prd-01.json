@@ -1,0 +1,766 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "crm",
+        "artifact.spinnaker.io/name": "api",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"crm\",\"artifact.spinnaker.io/name\":\"api\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"crm\",\"moniker.spinnaker.io/cluster\":\"ingress api\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"25M\",\"nginx.ingress.kubernetes.io/server-snippet\":\"keepalive_timeout 75;\\nclient_header_timeout 75;\\n\\nsendfile on;\\n\\ngzip on;\\ngzip_proxied any;\\ngzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;\\ngzip_vary on;\\ngzip_disable \\\"MSIE [1-6]\\\\.(?!.*SV1)\\\";\\n\\nlocation /assets/manifest.json {\\n  return 404;\\n}\\n\\nlocation ~ ^/api/v2/ {\\n  return 403;\\n}\\n\\nlocation /assets/ {\\n  gzip_static on;\\n  expires     max;\\n  add_header  Cache-Control public;\\n  add_header  Last-Modified \\\"\\\";\\n  add_header  ETag \\\"\\\";\\n  break;\\n}\\n\\nlocation / {\\n  try_files $uri/index.html $uri @default;\\n}\\n\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"crm\",\"app_name\":\"api\",\"app_project\":\"crm\",\"resource_kind\":\"ingress\",\"team\":\"chapolin\"},\"name\":\"api\",\"namespace\":\"crm\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"crm.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"api\",\"port\":{\"number\":80}}},\"path\":\"/api\",\"pathType\":\"ImplementationSpecific\"},{\"backend\":{\"service\":{\"name\":\"api\",\"port\":{\"number\":80}}},\"path\":\"/sendgrid\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"crm.rdstation.com\"],\"secretName\":\"wildcard-rdstation-com\"}]}}\n",
+        "moniker.spinnaker.io/application": "crm",
+        "moniker.spinnaker.io/cluster": "ingress api",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "25M",
+        "nginx.ingress.kubernetes.io/server-snippet": "keepalive_timeout 75;\nclient_header_timeout 75;\n\nsendfile on;\n\ngzip on;\ngzip_proxied any;\ngzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;\ngzip_vary on;\ngzip_disable \"MSIE [1-6]\\.(?!.*SV1)\";\n\nlocation /assets/manifest.json {\n  return 404;\n}\n\nlocation ~ ^/api/v2/ {\n  return 403;\n}\n\nlocation /assets/ {\n  gzip_static on;\n  expires     max;\n  add_header  Cache-Control public;\n  add_header  Last-Modified \"\";\n  add_header  ETag \"\";\n  break;\n}\n\nlocation / {\n  try_files $uri/index.html $uri @default;\n}\n",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-04-25T23:12:09Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "crm",
+        "app_name": "api",
+        "app_project": "crm",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "chapolin"
+      },
+      "name": "api",
+      "namespace": "crm",
+      "resourceVersion": "628209117",
+      "uid": "bb42b446-9928-42c9-8c37-23fff7377e47"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "crm.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/api",
+                "pathType": "ImplementationSpecific"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/sendgrid",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "crm.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.238.65.228"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "crm",
+        "artifact.spinnaker.io/name": "api-internal-v2",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"crm\",\"artifact.spinnaker.io/name\":\"api-internal-v2\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"crm\",\"moniker.spinnaker.io/cluster\":\"ingress api-internal-v2\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"25M\",\"nginx.ingress.kubernetes.io/server-snippet\":\"keepalive_timeout 75;\\nclient_header_timeout 75;\\n\\nsendfile on;\\n\\ngzip on;\\ngzip_proxied any;\\ngzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;\\ngzip_vary on;\\ngzip_disable \\\"MSIE [1-6]\\\\.(?!.*SV1)\\\";\\n\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"crm\",\"app_name\":\"api\",\"app_project\":\"crm\",\"resource_kind\":\"ingress\",\"team\":\"chapolin\"},\"name\":\"api-internal-v2\",\"namespace\":\"crm\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"crm-api-v2.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"api\",\"port\":{\"number\":80}}},\"path\":\"/api/v2\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"crm-api-v2.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "crm",
+        "moniker.spinnaker.io/cluster": "ingress api-internal-v2",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "25M",
+        "nginx.ingress.kubernetes.io/server-snippet": "keepalive_timeout 75;\nclient_header_timeout 75;\n\nsendfile on;\n\ngzip on;\ngzip_proxied any;\ngzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;\ngzip_vary on;\ngzip_disable \"MSIE [1-6]\\.(?!.*SV1)\";\n",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2025-07-21T16:57:38Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "crm",
+        "app_name": "api",
+        "app_project": "crm",
+        "resource_kind": "ingress",
+        "team": "chapolin"
+      },
+      "name": "api-internal-v2",
+      "namespace": "crm",
+      "resourceVersion": "628110459",
+      "uid": "ca687e9c-e509-40a2-8685-23353eef1041"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "crm-api-v2.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/api/v2",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "crm-api-v2.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.238.65.228"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "crm",
+        "artifact.spinnaker.io/name": "crm-aws-index-html",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"crm\",\"artifact.spinnaker.io/name\":\"crm-aws-index-html\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"kubernetes.io/ingress.class\":\"nginx\",\"moniker.spinnaker.io/application\":\"crm\",\"moniker.spinnaker.io/cluster\":\"ingress crm-aws-index-html\",\"nginx.ingress.kubernetes.io/backend-protocol\":\"HTTPS\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/rewrite-target\":\"/dialer/index.html\",\"nginx.ingress.kubernetes.io/upstream-vhost\":\"plugcrm-assets.s3.amazonaws.com\",\"nginx.ingress.kubernetes.io/use-regex\":\"true\"},\"labels\":{\"app\":\"crm\",\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"crm\"},\"name\":\"crm-aws-index-html\",\"namespace\":\"crm\"},\"spec\":{\"rules\":[{\"host\":\"crm.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"crm-aws-index\",\"port\":{\"number\":443}}},\"path\":\"/dialer$\",\"pathType\":\"Exact\"},{\"backend\":{\"service\":{\"name\":\"crm-aws-index\",\"port\":{\"number\":443}}},\"path\":\"/dialer/$\",\"pathType\":\"Exact\"}]}}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "moniker.spinnaker.io/application": "crm",
+        "moniker.spinnaker.io/cluster": "ingress crm-aws-index-html",
+        "nginx.ingress.kubernetes.io/backend-protocol": "HTTPS",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/rewrite-target": "/dialer/index.html",
+        "nginx.ingress.kubernetes.io/upstream-vhost": "plugcrm-assets.s3.amazonaws.com",
+        "nginx.ingress.kubernetes.io/use-regex": "true"
+      },
+      "creationTimestamp": "2024-04-25T23:12:03Z",
+      "generation": 1,
+      "labels": {
+        "app": "crm",
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "crm"
+      },
+      "name": "crm-aws-index-html",
+      "namespace": "crm",
+      "resourceVersion": "482841880",
+      "uid": "dc4e073f-6c24-4aab-882f-dad524391f3e"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "crm.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "crm-aws-index",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/dialer$",
+                "pathType": "Exact"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "crm-aws-index",
+                    "port": {
+                      "number": 443
+                    }
+                  }
+                },
+                "path": "/dialer/$",
+                "pathType": "Exact"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.238.65.228"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "crm",
+        "artifact.spinnaker.io/name": "plugcrm-blog-redirect",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"crm\",\"artifact.spinnaker.io/name\":\"plugcrm-blog-redirect\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"kubernetes.io/ingress.class\":\"nginx\",\"moniker.spinnaker.io/application\":\"notify-api\",\"moniker.spinnaker.io/cluster\":\"ingress plugcrm-blog-redirect\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"notify-api\"},\"name\":\"plugcrm-blog-redirect\",\"namespace\":\"crm\"},\"spec\":{\"rules\":[{\"host\":\"blog.plugcrm.net\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"plugcrm-blog-redirect\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "moniker.spinnaker.io/application": "notify-api",
+        "moniker.spinnaker.io/cluster": "ingress plugcrm-blog-redirect",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-04-10T16:22:51Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "notify-api"
+      },
+      "name": "plugcrm-blog-redirect",
+      "namespace": "crm",
+      "resourceVersion": "482841861",
+      "uid": "e27ec8a9-685a-4166-9a66-a1e0e120505b"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "blog.plugcrm.net",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "plugcrm-blog-redirect",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.238.65.228"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "crm",
+        "artifact.spinnaker.io/name": "sidekiq-okta-oauth",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"crm\",\"artifact.spinnaker.io/name\":\"sidekiq-okta-oauth\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"crm\",\"moniker.spinnaker.io/cluster\":\"ingress sidekiq-okta-oauth\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"crm\",\"app_name\":\"sidekiq-okta-oauth\",\"app_project\":\"crm\",\"resource_kind\":\"ingress\",\"team\":\"chapolin\"},\"name\":\"sidekiq-okta-oauth\",\"namespace\":\"crm\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"crm.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"sidekiq-okta-oauth\",\"port\":{\"number\":4180}}},\"path\":\"/oauth2\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"crm.rdstation.com\"],\"secretName\":\"wildcard-rdstation-com\"}]}}\n",
+        "moniker.spinnaker.io/application": "crm",
+        "moniker.spinnaker.io/cluster": "ingress sidekiq-okta-oauth",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-04-25T23:12:10Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "crm",
+        "app_name": "sidekiq-okta-oauth",
+        "app_project": "crm",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "chapolin"
+      },
+      "name": "sidekiq-okta-oauth",
+      "namespace": "crm",
+      "resourceVersion": "482841874",
+      "uid": "a13b8cd9-019a-40ca-a51a-93f46b9844d0"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "crm.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "sidekiq-okta-oauth",
+                    "port": {
+                      "number": 4180
+                    }
+                  }
+                },
+                "path": "/oauth2",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "crm.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.238.65.228"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "crm",
+        "artifact.spinnaker.io/name": "web",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"crm\",\"artifact.spinnaker.io/name\":\"web\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"crm\",\"moniker.spinnaker.io/cluster\":\"ingress web\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"25M\",\"nginx.ingress.kubernetes.io/server-snippet\":\"location ~ ^/signup/?$ {\\n  # It redirects if URL do not contains step=setup\\n  if ($args !~* \\\"step=setup\\\") {\\n    set $redirect_url \\\"https://accounts.rdstation.com/signup?product=crm\\u0026$args\\\";\\n    return 302 $redirect_url;\\n  }\\n\\n  proxy_pass http://web.crm.svc.cluster.local;\\n}\\nkeepalive_timeout 75;\\nclient_header_timeout 75;\\n\\nsendfile on;\\n\\ngzip on;\\ngzip_proxied any;\\ngzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;\\ngzip_vary on;\\ngzip_disable \\\"MSIE [1-6]\\\\.(?!.*SV1)\\\";\\n\\nlocation /assets/manifest.json {\\n  return 404;\\n}\\n\\nlocation ~ ^/api/v2/ {\\n  return 403;\\n}\\n\\nlocation /assets/ {\\n  gzip_static on;\\n  expires     max;\\n  add_header  Cache-Control public;\\n  add_header  Last-Modified \\\"\\\";\\n  add_header  ETag \\\"\\\";\\n  break;\\n}\\n\\nlocation / {\\n  try_files $uri/index.html $uri @default;\\n}\\n\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"crm\",\"app_name\":\"web\",\"app_project\":\"crm\",\"resource_kind\":\"ingress\",\"team\":\"chapolin\"},\"name\":\"web\",\"namespace\":\"crm\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"crm.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"web\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"crm.rdstation.com\"],\"secretName\":\"wildcard-rdstation-com\"}]}}\n",
+        "moniker.spinnaker.io/application": "crm",
+        "moniker.spinnaker.io/cluster": "ingress web",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "25M",
+        "nginx.ingress.kubernetes.io/server-snippet": "location ~ ^/signup/?$ {\n  # It redirects if URL do not contains step=setup\n  if ($args !~* \"step=setup\") {\n    set $redirect_url \"https://accounts.rdstation.com/signup?product=crm&$args\";\n    return 302 $redirect_url;\n  }\n\n  proxy_pass http://web.crm.svc.cluster.local;\n}\nkeepalive_timeout 75;\nclient_header_timeout 75;\n\nsendfile on;\n\ngzip on;\ngzip_proxied any;\ngzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;\ngzip_vary on;\ngzip_disable \"MSIE [1-6]\\.(?!.*SV1)\";\n\nlocation /assets/manifest.json {\n  return 404;\n}\n\nlocation ~ ^/api/v2/ {\n  return 403;\n}\n\nlocation /assets/ {\n  gzip_static on;\n  expires     max;\n  add_header  Cache-Control public;\n  add_header  Last-Modified \"\";\n  add_header  ETag \"\";\n  break;\n}\n\nlocation / {\n  try_files $uri/index.html $uri @default;\n}\n",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-04-25T23:12:08Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "crm",
+        "app_name": "web",
+        "app_project": "crm",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "chapolin"
+      },
+      "name": "web",
+      "namespace": "crm",
+      "resourceVersion": "1761153340635343003",
+      "uid": "7b26acec-519d-4ced-b61b-ffbf0c3cd4e0"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "crm.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "web",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "crm.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.238.65.228"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "crm",
+        "artifact.spinnaker.io/name": "web-internal",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"crm\",\"artifact.spinnaker.io/name\":\"web-internal\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"crm\",\"moniker.spinnaker.io/cluster\":\"ingress web-internal\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"crm\",\"app_name\":\"web-internal\",\"app_project\":\"crm\",\"resource_kind\":\"ingress\",\"team\":\"chapolin\"},\"name\":\"web-internal\",\"namespace\":\"crm\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"crm.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"web-internal\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"crm.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "crm",
+        "moniker.spinnaker.io/cluster": "ingress web-internal",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-04-25T23:12:09Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "crm",
+        "app_name": "web-internal",
+        "app_project": "crm",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "chapolin"
+      },
+      "name": "web-internal",
+      "namespace": "crm",
+      "resourceVersion": "482841871",
+      "uid": "3719c7b8-e929-4184-b99f-d69e210ebf24"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "crm.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "web-internal",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "crm.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.238.65.228"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "crm",
+        "artifact.spinnaker.io/name": "web-sidekiq-oauth",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"crm\",\"artifact.spinnaker.io/name\":\"web-sidekiq-oauth\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"crm\",\"moniker.spinnaker.io/cluster\":\"ingress web-sidekiq-oauth\",\"nginx.ingress.kubernetes.io/auth-response-headers\":\"Authorization\",\"nginx.ingress.kubernetes.io/auth-signin\":\"https://crm.rdstation.com/oauth2/start?rd=$escaped_request_uri\",\"nginx.ingress.kubernetes.io/auth-url\":\"http://sidekiq-okta-oauth.crm.svc.cluster.local:4180/oauth2/auth\",\"nginx.ingress.kubernetes.io/configuration-snippet\":\"auth_request_set $name_upstream_1 $upstream_cookie__oauth2_proxy_1;\\n\\naccess_by_lua_block {\\n  if ngx.var.name_upstream_1 ~= \\\"\\\" then\\n    ngx.header[\\\"Set-Cookie\\\"] = \\\"_oauth2_proxy_1=\\\" .. ngx.var.name_upstream_1 .. ngx.var.auth_cookie:match(\\\"(; .*)\\\")\\n  end\\n}\\n\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"crm\",\"app_name\":\"web\",\"app_project\":\"crm\",\"resource_kind\":\"ingress\",\"team\":\"chapolin\"},\"name\":\"web-sidekiq-oauth\",\"namespace\":\"crm\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"crm.rdstation.com\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"web\",\"port\":{\"number\":80}}},\"path\":\"/sidekiq\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"crm.rdstation.com\"],\"secretName\":\"wildcard-rdstation-com\"}]}}\n",
+        "moniker.spinnaker.io/application": "crm",
+        "moniker.spinnaker.io/cluster": "ingress web-sidekiq-oauth",
+        "nginx.ingress.kubernetes.io/auth-response-headers": "Authorization",
+        "nginx.ingress.kubernetes.io/auth-signin": "https://crm.rdstation.com/oauth2/start?rd=$escaped_request_uri",
+        "nginx.ingress.kubernetes.io/auth-url": "http://sidekiq-okta-oauth.crm.svc.cluster.local:4180/oauth2/auth",
+        "nginx.ingress.kubernetes.io/configuration-snippet": "auth_request_set $name_upstream_1 $upstream_cookie__oauth2_proxy_1;\n\naccess_by_lua_block {\n  if ngx.var.name_upstream_1 ~= \"\" then\n    ngx.header[\"Set-Cookie\"] = \"_oauth2_proxy_1=\" .. ngx.var.name_upstream_1 .. ngx.var.auth_cookie:match(\"(; .*)\")\n  end\n}\n",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-05-07T23:09:48Z",
+      "generation": 3,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "crm",
+        "app_name": "web",
+        "app_project": "crm",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "chapolin"
+      },
+      "name": "web-sidekiq-oauth",
+      "namespace": "crm",
+      "resourceVersion": "482841878",
+      "uid": "f3204b12-abde-409b-87e0-a95c9533937c"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "crm.rdstation.com",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "web",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/sidekiq",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "crm.rdstation.com"
+          ],
+          "secretName": "wildcard-rdstation-com"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.238.65.228"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "crm",
+        "artifact.spinnaker.io/name": "web-whitelist",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"crm\",\"artifact.spinnaker.io/name\":\"web-whitelist\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"crm\",\"moniker.spinnaker.io/cluster\":\"ingress web-whitelist\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"nginx.ingress.kubernetes.io/proxy-body-size\":\"25M\",\"nginx.ingress.kubernetes.io/server-snippet\":\"keepalive_timeout 75;\\nclient_header_timeout 75;\\n\\nsendfile on;\\n\\ngzip on;\\ngzip_proxied any;\\ngzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;\\ngzip_vary on;\\ngzip_disable \\\"MSIE [1-6]\\\\.(?!.*SV1)\\\";\\n\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"crm\",\"app_name\":\"web\",\"app_project\":\"crm\",\"resource_kind\":\"ingress\",\"team\":\"chapolin\"},\"name\":\"web-whitelist\",\"namespace\":\"crm\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"crm.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"web\",\"port\":{\"number\":80}}},\"path\":\"/activate\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"crm.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "crm",
+        "moniker.spinnaker.io/cluster": "ingress web-whitelist",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "nginx.ingress.kubernetes.io/proxy-body-size": "25M",
+        "nginx.ingress.kubernetes.io/server-snippet": "keepalive_timeout 75;\nclient_header_timeout 75;\n\nsendfile on;\n\ngzip on;\ngzip_proxied any;\ngzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;\ngzip_vary on;\ngzip_disable \"MSIE [1-6]\\.(?!.*SV1)\";\n",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-04-25T23:12:11Z",
+      "generation": 3,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "crm",
+        "app_name": "web",
+        "app_project": "crm",
+        "k8slens-edit-resource-version": "v1",
+        "resource_kind": "ingress",
+        "team": "chapolin"
+      },
+      "name": "web-whitelist",
+      "namespace": "crm",
+      "resourceVersion": "482841868",
+      "uid": "aa1af09f-695b-4c29-839a-f516a667b7a1"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "crm.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "web",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/activate",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "crm.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.238.65.228"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "hydra",
+        "artifact.spinnaker.io/name": "zendesk-hc-redirect",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"hydra\",\"artifact.spinnaker.io/name\":\"zendesk-hc-redirect\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"zendesk-hc-redirect\",\"moniker.spinnaker.io/cluster\":\"ingress zendesk-hc-redirect\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"zendesk-hc-redirect\"},\"name\":\"zendesk-hc-redirect\",\"namespace\":\"hydra\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"ajuda.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"zendesk-hc-redirect\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}},{\"host\":\"crmsupport.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"zendesk-hc-redirect\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"ajuda.rdstation.com.br\",\"crmsupport.rdstation.com.br\"],\"secretName\":\"rdstation-com-br\"}]}}\n",
+        "moniker.spinnaker.io/application": "zendesk-hc-redirect",
+        "moniker.spinnaker.io/cluster": "ingress zendesk-hc-redirect"
+      },
+      "creationTimestamp": "2024-08-06T18:58:35Z",
+      "generation": 4,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "zendesk-hc-redirect",
+        "k8slens-edit-resource-version": "v1"
+      },
+      "name": "zendesk-hc-redirect",
+      "namespace": "hydra",
+      "resourceVersion": "573425750",
+      "uid": "6c574aec-2d9d-419a-bf00-dad6deafe293"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "ajuda.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "zendesk-hc-redirect",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        },
+        {
+          "host": "crmsupport.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "zendesk-hc-redirect",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "ajuda.rdstation.com.br",
+            "crmsupport.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "35.238.65.228"
+          }
+        ]
+      }
+    }
+  }
+]

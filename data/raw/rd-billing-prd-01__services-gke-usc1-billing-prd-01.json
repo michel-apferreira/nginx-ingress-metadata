@@ -1,0 +1,628 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "billing",
+        "artifact.spinnaker.io/name": "cap-hook",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"billing\",\"artifact.spinnaker.io/name\":\"cap-hook\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"cap-hook\",\"moniker.spinnaker.io/cluster\":\"ingress cap-hook\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"cap-hook\"},\"name\":\"cap-hook\",\"namespace\":\"billing\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"cap-hook.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"cap-hook\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"cap-hook.rdstation.com.br\"],\"secretName\":\"wildcard-rdstation-com-br\"}]}}\n",
+        "moniker.spinnaker.io/application": "cap-hook",
+        "moniker.spinnaker.io/cluster": "ingress cap-hook",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true"
+      },
+      "creationTimestamp": "2025-01-10T18:42:22Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "cap-hook"
+      },
+      "name": "cap-hook",
+      "namespace": "billing",
+      "resourceVersion": "1775082627509903019",
+      "uid": "ca0f83af-091a-443d-b71c-8e8cd0a61458"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "cap-hook.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "cap-hook",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "cap-hook.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.123.246.199"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "billing",
+        "artifact.spinnaker.io/name": "financial-panel-api",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"billing\",\"artifact.spinnaker.io/name\":\"financial-panel-api\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"financial-panel-api\",\"moniker.spinnaker.io/cluster\":\"ingress financial-panel-api\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"financial-panel-api\",\"app_name\":\"financial-panel-api\",\"app_project\":\"financial-panel-api\",\"resource_kind\":\"ingress\",\"team\":\"billing\"},\"name\":\"financial-panel-api\",\"namespace\":\"billing\"},\"spec\":{\"rules\":[{\"host\":\"financial-panel-api.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"financial-panel-api\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"financial-panel-api.production.rdops.systems\"],\"secretName\":\"wildcard-production-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "financial-panel-api",
+        "moniker.spinnaker.io/cluster": "ingress financial-panel-api"
+      },
+      "creationTimestamp": "2025-08-19T18:02:59Z",
+      "finalizers": [
+        "networking.gke.io/ingress-finalizer-V2"
+      ],
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "financial-panel-api",
+        "app_name": "financial-panel-api",
+        "app_project": "financial-panel-api",
+        "resource_kind": "ingress",
+        "team": "billing"
+      },
+      "name": "financial-panel-api",
+      "namespace": "billing",
+      "resourceVersion": "1775082628298959023",
+      "uid": "5a2ea4c5-df48-4bf1-bcd7-eaa32dfeb2a4"
+    },
+    "spec": {
+      "rules": [
+        {
+          "host": "financial-panel-api.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "financial-panel-api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "financial-panel-api.production.rdops.systems"
+          ],
+          "secretName": "wildcard-production-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.123.246.199"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "billing",
+        "artifact.spinnaker.io/name": "partnership",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"billing\",\"artifact.spinnaker.io/name\":\"partnership\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"partnership\",\"moniker.spinnaker.io/cluster\":\"ingress partnership\",\"nginx.ingress.kubernetes.io/ssl-redirect\":\"false\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"partnership\"},\"name\":\"partnership\",\"namespace\":\"billing\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"partnership.rd.services\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"partnership\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"partnership.rd.services\"],\"secretName\":\"wildcard-rd-services\"}]}}\n",
+        "moniker.spinnaker.io/application": "partnership",
+        "moniker.spinnaker.io/cluster": "ingress partnership",
+        "nginx.ingress.kubernetes.io/ssl-redirect": "false",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-10-24T14:20:46Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "partnership"
+      },
+      "name": "partnership",
+      "namespace": "billing",
+      "resourceVersion": "1775082628701791020",
+      "uid": "f2f6b538-edad-46c8-8561-d25a2735e2b1"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "partnership.rd.services",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "partnership",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "partnership.rd.services"
+          ],
+          "secretName": "wildcard-rd-services"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.123.246.199"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "billing",
+        "artifact.spinnaker.io/name": "rabbitmq-cluster",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"billing\",\"artifact.spinnaker.io/name\":\"rabbitmq-cluster\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"saas-internal\",\"moniker.spinnaker.io/cluster\":\"ingress rabbitmq-cluster\",\"nginx.ingress.kubernetes.io/whitelist-source-range\":\"45.235.52.24/29,179.108.123.80/28,189.28.39.112/29,10.0.0.0/8\"},\"labels\":{\"app.kubernetes.io/instance\":\"rabbitmq-cluster\",\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rabbitmq\",\"app.kubernetes.io/version\":\"3.12.10\",\"helm.sh/chart\":\"rabbitmq-12.6.1\"},\"name\":\"rabbitmq-cluster\",\"namespace\":\"billing\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"rmq-stats-billing-prd.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rabbitmq-cluster\",\"port\":{\"name\":\"http-stats\"}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"rmq-stats-billing-prd.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "saas-internal",
+        "moniker.spinnaker.io/cluster": "ingress rabbitmq-cluster",
+        "nginx.ingress.kubernetes.io/whitelist-source-range": "45.235.52.24/29,179.108.123.80/28,189.28.39.112/29,10.0.0.0/8"
+      },
+      "creationTimestamp": "2024-12-03T18:28:42Z",
+      "generation": 4,
+      "labels": {
+        "app.kubernetes.io/instance": "rabbitmq-cluster",
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rabbitmq",
+        "app.kubernetes.io/version": "3.12.10",
+        "helm.sh/chart": "rabbitmq-12.6.1"
+      },
+      "name": "rabbitmq-cluster",
+      "namespace": "billing",
+      "resourceVersion": "1775082628501871013",
+      "uid": "4cbf53ed-7a22-475c-85fa-44a795f87425"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "rmq-stats-billing-prd.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rabbitmq-cluster",
+                    "port": {
+                      "name": "http-stats"
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "rmq-stats-billing-prd.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.123.246.199"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "billing",
+        "artifact.spinnaker.io/name": "rd-contas-smart-retry",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"billing\",\"artifact.spinnaker.io/name\":\"rd-contas-smart-retry\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"kubernetes.io/ingress.class\":\"nginx\",\"moniker.spinnaker.io/application\":\"rd-contas-smart-retry\",\"moniker.spinnaker.io/cluster\":\"ingress rd-contas-smart-retry\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"rd-contas-smart-retry\"},\"name\":\"rd-contas-smart-retry\",\"namespace\":\"billing\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"rd-contas-smart-retry.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rd-contas-smart-retry\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"smart-retry.rdstation.com.br\"],\"secretName\":\"wildcard-rdstation-com-br\"}]}}\n",
+        "kubernetes.io/ingress.class": "nginx",
+        "moniker.spinnaker.io/application": "rd-contas-smart-retry",
+        "moniker.spinnaker.io/cluster": "ingress rd-contas-smart-retry",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-10-29T17:17:50Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "rd-contas-smart-retry"
+      },
+      "name": "rd-contas-smart-retry",
+      "namespace": "billing",
+      "resourceVersion": "1775082627525999021",
+      "uid": "ce058722-3eb0-4a54-86a7-44dbe3b6a2df"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "rd-contas-smart-retry.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rd-contas-smart-retry",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "smart-retry.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.123.246.199"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "billing",
+        "artifact.spinnaker.io/name": "saas-internal",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "ingress.kubernetes.io/service-upstream": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"billing\",\"artifact.spinnaker.io/name\":\"saas-internal\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"ingress.kubernetes.io/service-upstream\":\"true\",\"moniker.spinnaker.io/application\":\"saas-internal\",\"moniker.spinnaker.io/cluster\":\"ingress saas-internal\",\"nginx.ingress.kubernetes.io/custom-http-errors\":\"404,500,502,503\",\"nginx.ingress.kubernetes.io/default-backend\":\"saas-internal\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\",\"prometheus.io/scrape\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"saas-internal\",\"app_project\":\"saas-internal\",\"environment\":\"production\",\"team\":\"billing\"},\"name\":\"saas-internal\",\"namespace\":\"billing\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"contas-k8s.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"saas-internal\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}},{\"host\":\"contas.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"saas-internal\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}},{\"host\":\"billing.rdstation.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"saas-internal\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}},{\"host\":\"rmq-contas.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdcontas-rabbitmq\",\"port\":{\"number\":15672}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}},{\"host\":\"amqp-contas.production.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rdcontas-rabbitmq\",\"port\":{\"number\":5672}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"contas.rdops.systems\",\"contas.production.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"},{\"hosts\":[\"contas-k8s.rdstation.com.br\",\"contas.rdstation.com.br\"],\"secretName\":\"wildcard-rdstation-com-br\"}]}}\n",
+        "moniker.spinnaker.io/application": "saas-internal",
+        "moniker.spinnaker.io/cluster": "ingress saas-internal",
+        "nginx.ingress.kubernetes.io/custom-http-errors": "404,500,502,503",
+        "nginx.ingress.kubernetes.io/default-backend": "saas-internal",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true",
+        "prometheus.io/scrape": "true"
+      },
+      "creationTimestamp": "2024-12-03T14:16:36Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "saas-internal",
+        "app_project": "saas-internal",
+        "environment": "production",
+        "team": "billing"
+      },
+      "name": "saas-internal",
+      "namespace": "billing",
+      "resourceVersion": "1775082628108047003",
+      "uid": "9a1b4369-0da3-47bc-acea-884fcd0b133c"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "contas-k8s.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "saas-internal",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        },
+        {
+          "host": "contas.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "saas-internal",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        },
+        {
+          "host": "billing.rdstation.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "saas-internal",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        },
+        {
+          "host": "rmq-contas.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdcontas-rabbitmq",
+                    "port": {
+                      "number": 15672
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        },
+        {
+          "host": "amqp-contas.production.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rdcontas-rabbitmq",
+                    "port": {
+                      "number": 5672
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "contas.rdops.systems",
+            "contas.production.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        },
+        {
+          "hosts": [
+            "contas-k8s.rdstation.com.br",
+            "contas.rdstation.com.br"
+          ],
+          "secretName": "wildcard-rdstation-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.123.246.199"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "artifact.spinnaker.io/location": "billing",
+        "artifact.spinnaker.io/name": "subscription-manager-api",
+        "artifact.spinnaker.io/type": "kubernetes/ingress",
+        "artifact.spinnaker.io/version": "",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"artifact.spinnaker.io/location\":\"billing\",\"artifact.spinnaker.io/name\":\"subscription-manager-api\",\"artifact.spinnaker.io/type\":\"kubernetes/ingress\",\"artifact.spinnaker.io/version\":\"\",\"moniker.spinnaker.io/application\":\"subscription-manager-api\",\"moniker.spinnaker.io/cluster\":\"ingress subscription-manager-api\",\"nginx.ingress.kubernetes.io/force-ssl-redirect\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"spinnaker\",\"app.kubernetes.io/name\":\"subscription-manager-api\"},\"name\":\"subscription-manager-api\",\"namespace\":\"billing\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"host\":\"rd-subscriber-internal.rdops.systems\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"subscription-manager-api\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"ImplementationSpecific\"}]}}],\"tls\":[{\"hosts\":[\"rd-subscriber-internal.rdops.systems\"],\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "moniker.spinnaker.io/application": "subscription-manager-api",
+        "moniker.spinnaker.io/cluster": "ingress subscription-manager-api",
+        "nginx.ingress.kubernetes.io/force-ssl-redirect": "true"
+      },
+      "creationTimestamp": "2024-10-29T17:33:16Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/managed-by": "spinnaker",
+        "app.kubernetes.io/name": "subscription-manager-api"
+      },
+      "name": "subscription-manager-api",
+      "namespace": "billing",
+      "resourceVersion": "1775082627901023007",
+      "uid": "e15aabcb-3e2f-49b1-80e7-16421b5b797a"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "host": "rd-subscriber-internal.rdops.systems",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "subscription-manager-api",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "ImplementationSpecific"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "rd-subscriber-internal.rdops.systems"
+          ],
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.123.246.199"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"nginx.ingress.kubernetes.io/server-snippet\":\"return 444;\\n\"},\"name\":\"catch-all-deny-ingress\",\"namespace\":\"ingress-nginx\"},\"spec\":{\"ingressClassName\":\"nginx\",\"rules\":[{\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"nginx-ingress-nginx-defaultbackend\",\"port\":{\"number\":8080}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"secretName\":\"wildcard-rdops-systems\"}]}}\n",
+        "nginx.ingress.kubernetes.io/server-snippet": "return 444;\n"
+      },
+      "creationTimestamp": "2025-07-15T14:50:54Z",
+      "generation": 1,
+      "name": "catch-all-deny-ingress",
+      "namespace": "ingress-nginx",
+      "resourceVersion": "1775082627705359011",
+      "uid": "fd856b47-20d0-43f6-88c5-db85ea8f4b17"
+    },
+    "spec": {
+      "ingressClassName": "nginx",
+      "rules": [
+        {
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "nginx-ingress-nginx-defaultbackend",
+                    "port": {
+                      "number": 8080
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "secretName": "wildcard-rdops-systems"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.123.246.199"
+          }
+        ]
+      }
+    }
+  }
+]

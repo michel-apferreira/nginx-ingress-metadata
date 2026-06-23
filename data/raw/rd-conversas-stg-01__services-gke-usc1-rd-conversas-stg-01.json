@@ -1,0 +1,4217 @@
+[
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"account-onboarding-service-stg\"},\"name\":\"account-onboarding-service-ingress\",\"namespace\":\"account-onboarding-service\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"account-onboarding-service\",\"port\":{\"number\":3000}}},\"path\":\"/account-onboarding-service\",\"pathType\":\"Prefix\"}]}}]}}\n"
+      },
+      "creationTimestamp": "2025-10-28T12:44:59Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "account-onboarding-service-stg"
+      },
+      "name": "account-onboarding-service-ingress",
+      "namespace": "account-onboarding-service",
+      "resourceVersion": "1761655500387775003",
+      "uid": "083f44da-4056-4a9a-afe9-76ae7ce8261b"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "account-onboarding-service",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/account-onboarding-service",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"automation-api-stg\"},\"name\":\"automation-api-ingress\",\"namespace\":\"automation-api\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"automation-api\",\"port\":{\"number\":3000}}},\"path\":\"/automation-api\",\"pathType\":\"Prefix\"}]}}]}}\n"
+      },
+      "creationTimestamp": "2025-12-08T18:15:02Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "automation-api-stg"
+      },
+      "name": "automation-api-ingress",
+      "namespace": "automation-api",
+      "resourceVersion": "1765217703374687001",
+      "uid": "73719a58-1b6d-4a32-a5aa-65223e89ddf8"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "automation-api",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/automation-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"automation-external-api-stg\"},\"name\":\"automation-external-ingress\",\"namespace\":\"automation-external\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"automation-external\",\"port\":{\"number\":3000}}},\"path\":\"/v4\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"automation-external\",\"port\":{\"number\":3000}}},\"path\":\"/automation-external-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:38Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "automation-external-api-stg"
+      },
+      "name": "automation-external-ingress",
+      "namespace": "automation-external",
+      "resourceVersion": "1757679320620015024",
+      "uid": "ab737a9b-bac4-4b1d-bade-881375ef45d2"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "automation-external",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/v4",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "automation-external",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/automation-external-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"broadcast-channels-api-stg\"},\"name\":\"broadcast-channels-ingress\",\"namespace\":\"broadcast-channels\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"broadcast-channels\",\"port\":{\"number\":3515}}},\"path\":\"/broadcast-channels\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"broadcast-channels\",\"port\":{\"number\":3515}}},\"path\":\"/broadcast-channels-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:38Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "broadcast-channels-api-stg"
+      },
+      "name": "broadcast-channels-ingress",
+      "namespace": "broadcast-channels",
+      "resourceVersion": "1760899152148911023",
+      "uid": "eed8df66-c84f-41d9-9e4e-a6f41d249c64"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "broadcast-channels",
+                    "port": {
+                      "number": 3515
+                    }
+                  }
+                },
+                "path": "/broadcast-channels",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "broadcast-channels",
+                    "port": {
+                      "number": 3515
+                    }
+                  }
+                },
+                "path": "/broadcast-channels-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"brokers-api-stg\"},\"name\":\"brokers-ingress\",\"namespace\":\"brokers\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"brokers\",\"port\":{\"number\":3221}}},\"path\":\"/brokers\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"brokers\",\"port\":{\"number\":3221}}},\"path\":\"/brokers-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:39Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "brokers-api-stg"
+      },
+      "name": "brokers-ingress",
+      "namespace": "brokers",
+      "resourceVersion": "1758217260542351018",
+      "uid": "b059b430-9462-4360-b16c-e595afe587e2"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "brokers",
+                    "port": {
+                      "number": 3221
+                    }
+                  }
+                },
+                "path": "/brokers",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "brokers",
+                    "port": {
+                      "number": 3221
+                    }
+                  }
+                },
+                "path": "/brokers-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/grpc": "true",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "grpc",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "false",
+        "konghq.com/tags": "grpc",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/grpc\":\"true\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"grpc\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"false\",\"konghq.com/tags\":\"grpc\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"brokers-api-stg\"},\"name\":\"brokers-ingress-grpc\",\"namespace\":\"brokers\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"brokers\",\"port\":{\"number\":50052}}},\"path\":\"/integrationBrokersPackage.IntegrationService/RevokeIntegration\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"brokers\",\"port\":{\"number\":50052}}},\"path\":\"/contactPackage.ContactService/OptInContact\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:39Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "brokers-api-stg"
+      },
+      "name": "brokers-ingress-grpc",
+      "namespace": "brokers",
+      "resourceVersion": "1758217260542271012",
+      "uid": "c502d4b0-63c5-49b2-aa7a-4e1901cc8b6e"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "brokers",
+                    "port": {
+                      "number": 50052
+                    }
+                  }
+                },
+                "path": "/integrationBrokersPackage.IntegrationService/RevokeIntegration",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "brokers",
+                    "port": {
+                      "number": 50052
+                    }
+                  }
+                },
+                "path": "/contactPackage.ContactService/OptInContact",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"business-management-api-stg\"},\"name\":\"business-management-ingress\",\"namespace\":\"business-management\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"business-management\",\"port\":{\"number\":7000}}},\"path\":\"/business-management\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"business-management\",\"port\":{\"number\":7000}}},\"path\":\"/business-management-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:39Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "business-management-api-stg"
+      },
+      "name": "business-management-ingress",
+      "namespace": "business-management",
+      "resourceVersion": "1760899321331135006",
+      "uid": "cfc50f3a-6977-4ef5-b087-b7ca37ed4a80"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "business-management",
+                    "port": {
+                      "number": 7000
+                    }
+                  }
+                },
+                "path": "/business-management",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "business-management",
+                    "port": {
+                      "number": 7000
+                    }
+                  }
+                },
+                "path": "/business-management-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"calls-management-api-stg\"},\"name\":\"calls-management-ingress\",\"namespace\":\"calls-management\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"calls-management\",\"port\":{\"number\":3000}}},\"path\":\"/calls-management\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"calls-management\",\"port\":{\"number\":3000}}},\"path\":\"/calls-management-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:39Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "calls-management-api-stg"
+      },
+      "name": "calls-management-ingress",
+      "namespace": "calls-management",
+      "resourceVersion": "1757962165127663000",
+      "uid": "24e5c1bb-0b11-4fe6-8f3b-24d14cc0e6d6"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "calls-management",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/calls-management",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "calls-management",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/calls-management-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"academy-api-stg\"},\"name\":\"academy-ingress\",\"namespace\":\"academy\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"academy\",\"port\":{\"number\":3010}}},\"path\":\"/academy\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"academy\",\"port\":{\"number\":3010}}},\"path\":\"/academy-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-10-07T17:25:45Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "academy-api-stg"
+      },
+      "name": "academy-ingress",
+      "namespace": "academy",
+      "resourceVersion": "1759857948367999016",
+      "uid": "f419c060-3bcc-4356-a06b-ec4a01cb0824"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "academy",
+                    "port": {
+                      "number": 3010
+                    }
+                  }
+                },
+                "path": "/academy",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "academy",
+                    "port": {
+                      "number": 3010
+                    }
+                  }
+                },
+                "path": "/academy-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"admin-api-stg\"},\"name\":\"admin-api-ingress\",\"namespace\":\"admin\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"admin\",\"port\":{\"number\":3030}}},\"path\":\"/admin\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"admin\",\"port\":{\"number\":3030}}},\"path\":\"/admin-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:38Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "admin-api-stg"
+      },
+      "name": "admin-api-ingress",
+      "namespace": "admin",
+      "resourceVersion": "1758665846292703006",
+      "uid": "51e861a4-5ca5-44c8-8557-dd4670095bce"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "admin",
+                    "port": {
+                      "number": 3030
+                    }
+                  }
+                },
+                "path": "/admin",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "admin",
+                    "port": {
+                      "number": 3030
+                    }
+                  }
+                },
+                "path": "/admin-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "301",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"301\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"albs-stg\"},\"name\":\"admin-app-ingress\",\"namespace\":\"admin-app\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"admin.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"admin-app\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"admin.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-08-15T22:50:11Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "albs-stg"
+      },
+      "name": "admin-app-ingress",
+      "namespace": "admin-app",
+      "resourceVersion": "1755298212957055004",
+      "uid": "af469f5a-93ed-4f5f-b14b-0ac694835ae1"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "admin.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "admin-app",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "admin.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"analytic-api-stg\"},\"name\":\"analytic-api-ingress\",\"namespace\":\"analytic-api\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"analytic-api\",\"port\":{\"number\":3000}}},\"path\":\"/analytic-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:38Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "analytic-api-stg"
+      },
+      "name": "analytic-api-ingress",
+      "namespace": "analytic-api",
+      "resourceVersion": "1757676504003087011",
+      "uid": "b07dd9fb-d1fc-49f5-b497-976e813820e2"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "analytic-api",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/analytic-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"megasac-api-stg\"},\"name\":\"megasac-ingress\",\"namespace\":\"megasac\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"megasac\",\"port\":{\"number\":3003}}},\"path\":\"/\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"megasac\",\"port\":{\"number\":3003}}},\"path\":\"/megasac\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"megasac\",\"port\":{\"number\":3003}}},\"path\":\"/megasac-api\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"megasac\",\"port\":{\"number\":3339}}},\"path\":\"/wss\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:47Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "megasac-api-stg"
+      },
+      "name": "megasac-ingress",
+      "namespace": "megasac",
+      "resourceVersion": "1757685323325999023",
+      "uid": "723fad97-d8b7-4b12-a271-840bdf95279a"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "megasac",
+                    "port": {
+                      "number": 3003
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "megasac",
+                    "port": {
+                      "number": 3003
+                    }
+                  }
+                },
+                "path": "/megasac",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "megasac",
+                    "port": {
+                      "number": 3003
+                    }
+                  }
+                },
+                "path": "/megasac-api",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "megasac",
+                    "port": {
+                      "number": 3339
+                    }
+                  }
+                },
+                "path": "/wss",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/plugins": "redirect-megasac-root",
+        "konghq.com/regex-priority": "10",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/plugins\":\"redirect-megasac-root\",\"konghq.com/regex-priority\":\"10\"},\"labels\":{\"app.kubernetes.io/instance\":\"megasac-api-stg\"},\"name\":\"megasac-root-redirect\",\"namespace\":\"megasac\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"megasac\",\"port\":{\"number\":3003}}},\"path\":\"/\",\"pathType\":\"Exact\"}]}}]}}\n"
+      },
+      "creationTimestamp": "2026-02-04T13:06:52Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "megasac-api-stg"
+      },
+      "name": "megasac-root-redirect",
+      "namespace": "megasac",
+      "resourceVersion": "1770210415435103012",
+      "uid": "dd9177bf-e254-40fd-b7d2-580d9ebb90a3"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "megasac",
+                    "port": {
+                      "number": 3003
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Exact"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"mid-billing-api-stg\"},\"name\":\"mid-billing-ingress\",\"namespace\":\"mid-billing\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"mid-billing\",\"port\":{\"number\":3000}}},\"path\":\"/rd-billing\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:47Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "mid-billing-api-stg"
+      },
+      "name": "mid-billing-ingress",
+      "namespace": "mid-billing",
+      "resourceVersion": "1759520375391743022",
+      "uid": "ba5983e0-8e25-4c95-b431-398eb1c53460"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "mid-billing",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/rd-billing",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"tai-stg\"},\"name\":\"tai-ingress\",\"namespace\":\"tai\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"tai\",\"port\":{\"number\":8899}}},\"path\":\"/tai\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:51:07Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "tai-stg"
+      },
+      "name": "tai-ingress",
+      "namespace": "tai",
+      "resourceVersion": "1760899143903871007",
+      "uid": "6c7c906b-e69b-4a9c-ac75-1a9194148ec8"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "tai",
+                    "port": {
+                      "number": 8899
+                    }
+                  }
+                },
+                "path": "/tai",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"telegram-api-stg\"},\"name\":\"telegram-api-ingress\",\"namespace\":\"telegram\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"telegram\",\"port\":{\"number\":8443}}},\"path\":\"/telegram-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:51:07Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "telegram-api-stg"
+      },
+      "name": "telegram-api-ingress",
+      "namespace": "telegram",
+      "resourceVersion": "1760899159476735005",
+      "uid": "a8fdb451-dc2c-4d27-80c5-32c9d4e76123"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "telegram",
+                    "port": {
+                      "number": 8443
+                    }
+                  }
+                },
+                "path": "/telegram-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"updates-api-stg\"},\"name\":\"updates-api-ingress\",\"namespace\":\"updates\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"updates\",\"port\":{\"number\":3051}}},\"path\":\"/updates\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"updates\",\"port\":{\"number\":3051}}},\"path\":\"/updates-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:51:08Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "updates-api-stg"
+      },
+      "name": "updates-api-ingress",
+      "namespace": "updates",
+      "resourceVersion": "1760899144034463012",
+      "uid": "b5495692-b358-48a0-b296-c39332834364"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "updates",
+                    "port": {
+                      "number": 3051
+                    }
+                  }
+                },
+                "path": "/updates",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "updates",
+                    "port": {
+                      "number": 3051
+                    }
+                  }
+                },
+                "path": "/updates-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"webstorage-api-stg\"},\"name\":\"webstorage-ingress\",\"namespace\":\"webstorage\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"webstorage\",\"port\":{\"number\":3212}}},\"path\":\"/webstorage\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"webstorage\",\"port\":{\"number\":3212}}},\"path\":\"/webstorage-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:51:08Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "webstorage-api-stg"
+      },
+      "name": "webstorage-ingress",
+      "namespace": "webstorage",
+      "resourceVersion": "1757955325096543004",
+      "uid": "c8759aad-b17b-4cad-a03d-39b78ce3205e"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "webstorage",
+                    "port": {
+                      "number": 3212
+                    }
+                  }
+                },
+                "path": "/webstorage",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "webstorage",
+                    "port": {
+                      "number": 3212
+                    }
+                  }
+                },
+                "path": "/webstorage-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"xnine-bot-stg\"},\"name\":\"xnine-bot-ingress\",\"namespace\":\"xnine-bot\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"xnine-bot\",\"port\":{\"number\":3000}}},\"path\":\"/xnine-bot\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:51:09Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "xnine-bot-stg"
+      },
+      "name": "xnine-bot-ingress",
+      "namespace": "xnine-bot",
+      "resourceVersion": "1760899164160559008",
+      "uid": "dfd49e43-4a6a-47bc-926d-d61719217267"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "xnine-bot",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/xnine-bot",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"counter-session-api-stg\"},\"name\":\"counter-session-ingress\",\"namespace\":\"counter-session\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"counter-session\",\"port\":{\"number\":3000}}},\"path\":\"/counter-session\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"counter-session\",\"port\":{\"number\":3000}}},\"path\":\"/counter-session-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:41Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "counter-session-api-stg"
+      },
+      "name": "counter-session-ingress",
+      "namespace": "counter-session",
+      "resourceVersion": "1757684064050079015",
+      "uid": "4a4f1823-2175-44e5-9e6b-711ada0b5524"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "counter-session",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/counter-session",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "counter-session",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/counter-session-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"customer-management-api-stg\"},\"name\":\"customer-management-api-ingress\",\"namespace\":\"customer-management\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"customer-management-api\",\"port\":{\"number\":3000}}},\"path\":\"/customer-management-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2026-03-02T19:43:18Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "customer-management-api-stg"
+      },
+      "name": "customer-management-api-ingress",
+      "namespace": "customer-management",
+      "resourceVersion": "1772480599255855000",
+      "uid": "d9638491-d280-4d5a-9f7d-2c57ae6eb404"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "customer-management-api",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/customer-management-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"faq-api-stg\"},\"name\":\"faq-ingress\",\"namespace\":\"faq\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"faq\",\"port\":{\"number\":3033}}},\"path\":\"/faq\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"faq\",\"port\":{\"number\":3033}}},\"path\":\"/faq-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:44Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "faq-api-stg"
+      },
+      "name": "faq-ingress",
+      "namespace": "faq",
+      "resourceVersion": "1760899159195983010",
+      "uid": "b16f93ab-ccc4-4db6-b701-7dec1a52bb6e"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "faq",
+                    "port": {
+                      "number": 3033
+                    }
+                  }
+                },
+                "path": "/faq",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "faq",
+                    "port": {
+                      "number": 3033
+                    }
+                  }
+                },
+                "path": "/faq-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "301",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"301\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"albs-stg\"},\"name\":\"faq-app-ingress\",\"namespace\":\"faq-app\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"faq-ufrpe.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"faq-app\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"faq-ufrpe.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-08-15T22:50:11Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "albs-stg"
+      },
+      "name": "faq-app-ingress",
+      "namespace": "faq-app",
+      "resourceVersion": "1755298213045871005",
+      "uid": "dbc0aaa7-58b9-4507-8d3e-c305e92ded9b"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "faq-ufrpe.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "faq-app",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "faq-ufrpe.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"faq-public-api-stg\"},\"name\":\"faq-public-ingress\",\"namespace\":\"faq-public\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"faq-public\",\"port\":{\"number\":3043}}},\"path\":\"/faq-public\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"faq-public\",\"port\":{\"number\":3043}}},\"path\":\"/faq-public-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:44Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "faq-public-api-stg"
+      },
+      "name": "faq-public-ingress",
+      "namespace": "faq-public",
+      "resourceVersion": "1760899159063631000",
+      "uid": "d847cd97-2ffc-4318-b0bb-9c5dbb9863f6"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "faq-public",
+                    "port": {
+                      "number": 3043
+                    }
+                  }
+                },
+                "path": "/faq-public",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "faq-public",
+                    "port": {
+                      "number": 3043
+                    }
+                  }
+                },
+                "path": "/faq-public-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "301",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"301\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"albs-stg\"},\"name\":\"frontend-ingress\",\"namespace\":\"frontend\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"app.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"frontend\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"app.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-08-15T22:50:11Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "albs-stg"
+      },
+      "name": "frontend-ingress",
+      "namespace": "frontend",
+      "resourceVersion": "1755298213069503018",
+      "uid": "f8ec9aad-072e-4b20-b4d2-c50fe73d9687"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "app.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "frontend",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "app.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "false",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"false\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"gupshup-partner-proxy-stg\"},\"name\":\"gupshup-partner-proxy-ingress\",\"namespace\":\"gupshup-partner-proxy\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"gupshup-partner-proxy\",\"port\":{\"number\":8080}}},\"path\":\"/proxy-message\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2026-03-24T20:08:45Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "gupshup-partner-proxy-stg"
+      },
+      "name": "gupshup-partner-proxy-ingress",
+      "namespace": "gupshup-partner-proxy",
+      "resourceVersion": "1775505847187711015",
+      "uid": "93989ba6-b2e0-481f-8b6c-dabe735c880a"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "gupshup-partner-proxy",
+                    "port": {
+                      "number": 8080
+                    }
+                  }
+                },
+                "path": "/proxy-message",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"import-contacts-api-stg\"},\"name\":\"import-contacts-ingress\",\"namespace\":\"import-contacts\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"import-contacts\",\"port\":{\"number\":3000}}},\"path\":\"/import-contacts\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"import-contacts\",\"port\":{\"number\":3000}}},\"path\":\"/import-contacts-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:45Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "import-contacts-api-stg"
+      },
+      "name": "import-contacts-ingress",
+      "namespace": "import-contacts",
+      "resourceVersion": "1760899149245151000",
+      "uid": "3ce00bc8-3cb0-4782-807b-f6a98f9cdb87"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "import-contacts",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/import-contacts",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "import-contacts",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/import-contacts-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"instagram-api-stg\"},\"name\":\"instagram-ingress\",\"namespace\":\"instagram\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"instagram\",\"port\":{\"number\":7742}}},\"path\":\"/instagram\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"instagram\",\"port\":{\"number\":7742}}},\"path\":\"/instagram-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:47Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "instagram-api-stg"
+      },
+      "name": "instagram-ingress",
+      "namespace": "instagram",
+      "resourceVersion": "1760562539571439014",
+      "uid": "0d5bdb35-9662-4a25-b602-bdb977e48071"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "instagram",
+                    "port": {
+                      "number": 7742
+                    }
+                  }
+                },
+                "path": "/instagram",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "instagram",
+                    "port": {
+                      "number": 7742
+                    }
+                  }
+                },
+                "path": "/instagram-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/protocols": "http,https",
+        "konghq.com/strip-path": "false",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/protocols\":\"http,https\",\"konghq.com/strip-path\":\"false\"},\"name\":\"tallos-sso-ingress-test-ip-kong\",\"namespace\":\"kong\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"tallos-sso-service\",\"port\":{\"number\":3400}}},\"path\":\"/tallos-sso\",\"pathType\":\"Prefix\"}]}}]}}\n"
+      },
+      "creationTimestamp": "2025-11-27T20:40:44Z",
+      "generation": 2,
+      "name": "tallos-sso-ingress-test-ip-kong",
+      "namespace": "kong",
+      "resourceVersion": "1764276089320431002",
+      "uid": "50bd3530-1b1f-4632-b2b0-a0dc0d1108df"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "tallos-sso-service",
+                    "port": {
+                      "number": 3400
+                    }
+                  }
+                },
+                "path": "/tallos-sso",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {}
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"mis-counter-contact-service-stg\"},\"name\":\"mis-counter-contact-service-ingress\",\"namespace\":\"mis-counter-contact-service\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"mis-counter-contact-service\",\"port\":{\"number\":3000}}},\"path\":\"/mis-counter-contact-service\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:50Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "mis-counter-contact-service-stg"
+      },
+      "name": "mis-counter-contact-service-ingress",
+      "namespace": "mis-counter-contact-service",
+      "resourceVersion": "1760899148697007000",
+      "uid": "b0a08e11-0fc0-45fb-955c-1f2e36aa4046"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "mis-counter-contact-service",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/mis-counter-contact-service",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"mis-counter-conversation-service-stg\"},\"name\":\"mis-counter-conversation-service-ingress\",\"namespace\":\"mis-counter-conversation-service\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"mis-counter-conversation-service\",\"port\":{\"number\":3000}}},\"path\":\"/mis-counter-conversation-service\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:51Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "mis-counter-conversation-service-stg"
+      },
+      "name": "mis-counter-conversation-service-ingress",
+      "namespace": "mis-counter-conversation-service",
+      "resourceVersion": "1760899153929615004",
+      "uid": "2ba8c41d-8aaf-4dbe-baab-684176641562"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "mis-counter-conversation-service",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/mis-counter-conversation-service",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"mis-counter-message-service-stg\"},\"name\":\"mis-counter-message-service-ingress\",\"namespace\":\"mis-counter-message-service\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"mis-counter-message-service\",\"port\":{\"number\":3000}}},\"path\":\"/mis-counter-message-service\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:51Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "mis-counter-message-service-stg"
+      },
+      "name": "mis-counter-message-service-ingress",
+      "namespace": "mis-counter-message-service",
+      "resourceVersion": "1760899164672911002",
+      "uid": "453903dc-172d-4b2d-910d-c07fbe9e1042"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "mis-counter-message-service",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/mis-counter-message-service",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"mis-counter-validate-service-stg\"},\"name\":\"mis-counter-validate-service-ingress\",\"namespace\":\"mis-counter-validate-service\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"mis-counter-validate-service\",\"port\":{\"number\":3000}}},\"path\":\"/mis-counter-validate-service\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:51Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "mis-counter-validate-service-stg"
+      },
+      "name": "mis-counter-validate-service-ingress",
+      "namespace": "mis-counter-validate-service",
+      "resourceVersion": "1760899151810015016",
+      "uid": "d0a93687-c8bf-4ab3-ba6a-4139c3607968"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "mis-counter-validate-service",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/mis-counter-validate-service",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"mis-observable-producer-stg\"},\"name\":\"mis-observable-producer-ingress\",\"namespace\":\"mis-observable-producer\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"mis-observable-producer\",\"port\":{\"number\":9977}}},\"path\":\"/mis-observable-producer\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:54Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "mis-observable-producer-stg"
+      },
+      "name": "mis-observable-producer-ingress",
+      "namespace": "mis-observable-producer",
+      "resourceVersion": "1760899158253119001",
+      "uid": "212f3503-7591-4e0a-9a15-38f293d0af20"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "mis-observable-producer",
+                    "port": {
+                      "number": 9977
+                    }
+                  }
+                },
+                "path": "/mis-observable-producer",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"mis-plan-features-hub-stg\"},\"name\":\"mis-plan-features-hub-ingress\",\"namespace\":\"mis-plan-features-hub\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"mis-plan-features-hub\",\"port\":{\"number\":3000}}},\"path\":\"/mis-plan-features-hub\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:55Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "mis-plan-features-hub-stg"
+      },
+      "name": "mis-plan-features-hub-ingress",
+      "namespace": "mis-plan-features-hub",
+      "resourceVersion": "1758823885377935002",
+      "uid": "2487d899-ffa4-429f-a18d-b61dc8e2941b"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "mis-plan-features-hub",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/mis-plan-features-hub",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"mis-rollouts-hub-stg\"},\"name\":\"mis-rollouts-hub-ingress\",\"namespace\":\"mis-rollouts-hub\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"mis-rollouts-hub\",\"port\":{\"number\":3000}}},\"path\":\"/rollouts-hub\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:56Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "mis-rollouts-hub-stg"
+      },
+      "name": "mis-rollouts-hub-ingress",
+      "namespace": "mis-rollouts-hub",
+      "resourceVersion": "1760899147605343010",
+      "uid": "e3d3b3c1-ba0d-4a49-8f6c-d7c57e51466a"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "mis-rollouts-hub",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/rollouts-hub",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/grpc": "true",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "grpc",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "false",
+        "konghq.com/tags": "grpc",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/grpc\":\"true\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"grpc\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"false\",\"konghq.com/tags\":\"grpc\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"mis-rollouts-hub-stg\"},\"name\":\"mis-rollouts-hub-ingress-grpc\",\"namespace\":\"mis-rollouts-hub\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"mis-rollouts-hub\",\"port\":{\"number\":50053}}},\"path\":\"/featureFlaggerRollout.FeatureFlaggerRollout/Rollout\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:56Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "mis-rollouts-hub-stg"
+      },
+      "name": "mis-rollouts-hub-ingress-grpc",
+      "namespace": "mis-rollouts-hub",
+      "resourceVersion": "1760899147413311005",
+      "uid": "e1d5ecc1-a691-4439-9904-e5aab0faa2cc"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "mis-rollouts-hub",
+                    "port": {
+                      "number": 50053
+                    }
+                  }
+                },
+                "path": "/featureFlaggerRollout.FeatureFlaggerRollout/Rollout",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"mis-services-gupshup-stg\"},\"name\":\"mis-services-gupshup-ingress\",\"namespace\":\"mis-services-gupshup\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"mis-services-gupshup\",\"port\":{\"number\":3000}}},\"path\":\"/mis-services-gupshup\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:57Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "mis-services-gupshup-stg"
+      },
+      "name": "mis-services-gupshup-ingress",
+      "namespace": "mis-services-gupshup",
+      "resourceVersion": "1760899154552383019",
+      "uid": "d9cc0215-05b8-4237-9bd6-de3b59e0c90e"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "mis-services-gupshup",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/mis-services-gupshup",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "false",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"false\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"public-api-stg\"},\"name\":\"public-api-ingress\",\"namespace\":\"public-api\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"public-api\",\"port\":{\"number\":3000}}},\"path\":\"/v1/analytics\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"public-api\",\"port\":{\"number\":3000}}},\"path\":\"/v1/employees\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2026-02-12T00:17:49Z",
+      "generation": 4,
+      "labels": {
+        "app.kubernetes.io/instance": "public-api-stg"
+      },
+      "name": "public-api-ingress",
+      "namespace": "public-api",
+      "resourceVersion": "1775504475066079010",
+      "uid": "01b09577-5e1d-43db-88c8-44e1a5ec7cbd"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "public-api",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/v1/analytics",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "public-api",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/v1/employees",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"push-notification-api-stg\"},\"name\":\"push-notification-ingress\",\"namespace\":\"push-notification\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"push-notification\",\"port\":{\"number\":4000}}},\"path\":\"/push-notification\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"push-notification\",\"port\":{\"number\":4000}}},\"path\":\"/push-notification-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:51:01Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "push-notification-api-stg"
+      },
+      "name": "push-notification-ingress",
+      "namespace": "push-notification",
+      "resourceVersion": "1760899165404911003",
+      "uid": "dc45eb43-ff27-4be9-8600-40e42f90eb51"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "push-notification",
+                    "port": {
+                      "number": 4000
+                    }
+                  }
+                },
+                "path": "/push-notification",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "push-notification",
+                    "port": {
+                      "number": 4000
+                    }
+                  }
+                },
+                "path": "/push-notification-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "301",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"301\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"albs-stg\"},\"name\":\"self-hiring-ingress\",\"namespace\":\"self-hiring\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"billing.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"self-hiring\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"billing.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-08-15T22:50:11Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "albs-stg"
+      },
+      "name": "self-hiring-ingress",
+      "namespace": "self-hiring",
+      "resourceVersion": "1755298213116607000",
+      "uid": "1b8d968e-7d95-4c23-b0c2-2f60a07f749c"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "billing.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "self-hiring",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "billing.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"shortener-api-stg\"},\"name\":\"shortener-ingress\",\"namespace\":\"shortener\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"shortener\",\"port\":{\"number\":3000}}},\"path\":\"/shortener\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:51:04Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "shortener-api-stg"
+      },
+      "name": "shortener-ingress",
+      "namespace": "shortener",
+      "resourceVersion": "1760899149396335021",
+      "uid": "e55fb24f-389e-42ff-91a3-556ed08cd455"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "shortener",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/shortener",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"shortener-worker-stg\"},\"name\":\"shortener-worker-ingress\",\"namespace\":\"shortener-worker\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"shortener-worker\",\"port\":{\"number\":3000}}},\"path\":\"/shortener-worker\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:51:05Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "shortener-worker-stg"
+      },
+      "name": "shortener-worker-ingress",
+      "namespace": "shortener-worker",
+      "resourceVersion": "1760899159541567022",
+      "uid": "24f53d0a-45a5-462d-a2f3-ae6ff92f6df4"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "shortener-worker",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/shortener-worker",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "301",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/request-buffering": "false",
+        "konghq.com/response-buffering": "false",
+        "konghq.com/retries": "0",
+        "konghq.com/strip-path": "true",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"301\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/request-buffering\":\"false\",\"konghq.com/response-buffering\":\"false\",\"konghq.com/retries\":\"0\",\"konghq.com/strip-path\":\"true\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"albs-stg\"},\"name\":\"socket-manager-ingress\",\"namespace\":\"socket-manager\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"socket.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"socket-manager\",\"port\":{\"number\":3000}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"socket.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-08-15T22:50:11Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "albs-stg"
+      },
+      "name": "socket-manager-ingress",
+      "namespace": "socket-manager",
+      "resourceVersion": "1755298213151487003",
+      "uid": "63e98b2f-369a-44f1-8e2e-d35badff1760"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "socket.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "socket-manager",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "socket.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"sso-stg\"},\"name\":\"sso-ingress\",\"namespace\":\"sso\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"sso\",\"port\":{\"number\":3400}}},\"path\":\"/sso\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"sso\",\"port\":{\"number\":3400}}},\"path\":\"/tallos-sso\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:51:06Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "sso-stg"
+      },
+      "name": "sso-ingress",
+      "namespace": "sso",
+      "resourceVersion": "1758307799855103021",
+      "uid": "ee0c206d-35ec-4513-aed4-96c067638d4a"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "sso",
+                    "port": {
+                      "number": 3400
+                    }
+                  }
+                },
+                "path": "/sso",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "sso",
+                    "port": {
+                      "number": 3400
+                    }
+                  }
+                },
+                "path": "/tallos-sso",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/strip-path": "true",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/strip-path\":\"true\"},\"name\":\"httpbin-ingress\",\"namespace\":\"default\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"httpbin\",\"port\":{\"number\":80}}},\"path\":\"/httpbin\",\"pathType\":\"Prefix\"}]}}]}}\n"
+      },
+      "creationTimestamp": "2025-07-17T18:20:14Z",
+      "generation": 1,
+      "name": "httpbin-ingress",
+      "namespace": "default",
+      "resourceVersion": "1752776417183711003",
+      "uid": "c117063f-1888-439c-8aa4-c280370b51bd"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "httpbin",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/httpbin",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"name\":\"ip-check-ingress\",\"namespace\":\"default\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"ip-check\",\"port\":{\"number\":80}}},\"path\":\"/ip-check\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-11-27T21:04:28Z",
+      "generation": 1,
+      "name": "ip-check-ingress",
+      "namespace": "default",
+      "resourceVersion": "1764277470406479022",
+      "uid": "98a3f493-f633-4dee-8a6f-fde7578996a1"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "ip-check",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/ip-check",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "301",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"301\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"albs-stg\"},\"name\":\"devlauncher-ingress\",\"namespace\":\"devlauncher\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"devlauncher.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"devlauncher\",\"port\":{\"number\":9523}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"devlauncher.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-08-15T22:50:11Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "albs-stg"
+      },
+      "name": "devlauncher-ingress",
+      "namespace": "devlauncher",
+      "resourceVersion": "1755298213024511001",
+      "uid": "a6dc1e65-33ba-4957-b784-026f1ab9fa35"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "devlauncher.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "devlauncher",
+                    "port": {
+                      "number": 9523
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "devlauncher.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"email-api-stg\"},\"name\":\"email-ingress\",\"namespace\":\"email\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"email\",\"port\":{\"number\":8082}}},\"path\":\"/email\",\"pathType\":\"Prefix\"},{\"backend\":{\"service\":{\"name\":\"email\",\"port\":{\"number\":8082}}},\"path\":\"/email-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:50:44Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "email-api-stg"
+      },
+      "name": "email-ingress",
+      "namespace": "email",
+      "resourceVersion": "1760101080543791015",
+      "uid": "c937f56b-b833-4442-a658-a021569c38aa"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "email",
+                    "port": {
+                      "number": 8082
+                    }
+                  }
+                },
+                "path": "/email",
+                "pathType": "Prefix"
+              },
+              {
+                "backend": {
+                  "service": {
+                    "name": "email",
+                    "port": {
+                      "number": 8082
+                    }
+                  }
+                },
+                "path": "/email-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"outlook-api-stg\"},\"name\":\"outlook-ingress\",\"namespace\":\"outlook\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"outlook\",\"port\":{\"number\":3000}}},\"path\":\"/outlook\",\"pathType\":\"Prefix\"}]}},{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"outlook\",\"port\":{\"number\":3000}}},\"path\":\"/outlook-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-11T22:51:00Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "outlook-api-stg"
+      },
+      "name": "outlook-ingress",
+      "namespace": "outlook",
+      "resourceVersion": "1758719304144335001",
+      "uid": "6dac196c-8971-4474-8153-8d9980f44d49"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "outlook",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/outlook",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        },
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "outlook",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/outlook-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "301",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"301\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"albs-stg\"},\"name\":\"devhub-ingress\",\"namespace\":\"devhub\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"devhub.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"devhub\",\"port\":{\"number\":3000}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"devhub.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-08-15T22:50:11Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "albs-stg"
+      },
+      "name": "devhub-ingress",
+      "namespace": "devhub",
+      "resourceVersion": "1755298212998015002",
+      "uid": "c743743e-5382-4ac2-ba0e-5c5a01661b01"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "devhub.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "devhub",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "devhub.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "426",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/regex-priority": "0",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/tags": "http",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"426\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/regex-priority\":\"0\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/tags\":\"http\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"integrations-api-stg\"},\"name\":\"integrations-ingress\",\"namespace\":\"integrations\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"api.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"integrations\",\"port\":{\"number\":3000}}},\"path\":\"/integrations-api\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"api.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2026-01-27T18:09:22Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/instance": "integrations-api-stg"
+      },
+      "name": "integrations-ingress",
+      "namespace": "integrations",
+      "resourceVersion": "1769620856720831023",
+      "uid": "b8cd02c4-1b2c-42f1-baf5-2908056a28c1"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "api.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "integrations",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/integrations-api",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "api.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "301",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"301\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"albs-stg\"},\"name\":\"rd-webhooks-ingress\",\"namespace\":\"rd-webhooks\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"rd-webhooks-wss.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rd-webhooks\",\"port\":{\"number\":3000}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"rd-webhooks-wss.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-08-15T22:50:11Z",
+      "generation": 1,
+      "labels": {
+        "app.kubernetes.io/instance": "albs-stg"
+      },
+      "name": "rd-webhooks-ingress",
+      "namespace": "rd-webhooks",
+      "resourceVersion": "1755298213091887012",
+      "uid": "9880caeb-11d3-47d3-9204-cd4a95f2dfc7"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "rd-webhooks-wss.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rd-webhooks",
+                    "port": {
+                      "number": 3000
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "rd-webhooks-wss.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/connect-timeout": "600000",
+        "konghq.com/https-redirect-status-code": "301",
+        "konghq.com/path-handling": "v0",
+        "konghq.com/preserve-host": "true",
+        "konghq.com/protocols": "http,https",
+        "konghq.com/read-timeout": "600000",
+        "konghq.com/request-buffering": "true",
+        "konghq.com/response-buffering": "true",
+        "konghq.com/retries": "5",
+        "konghq.com/strip-path": "true",
+        "konghq.com/write-timeout": "600000",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/connect-timeout\":\"600000\",\"konghq.com/https-redirect-status-code\":\"301\",\"konghq.com/path-handling\":\"v0\",\"konghq.com/preserve-host\":\"true\",\"konghq.com/protocols\":\"http,https\",\"konghq.com/read-timeout\":\"600000\",\"konghq.com/request-buffering\":\"true\",\"konghq.com/response-buffering\":\"true\",\"konghq.com/retries\":\"5\",\"konghq.com/strip-path\":\"true\",\"konghq.com/write-timeout\":\"600000\"},\"labels\":{\"app.kubernetes.io/instance\":\"albs-stg\"},\"name\":\"rd-webhooks-app-ingress\",\"namespace\":\"rd-webhooks-app\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"rd-webhooks.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"rd-webhooks-app\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"rd-webhooks.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-08-15T22:55:18Z",
+      "generation": 2,
+      "labels": {
+        "app.kubernetes.io/instance": "albs-stg"
+      },
+      "name": "rd-webhooks-app-ingress",
+      "namespace": "rd-webhooks-app",
+      "resourceVersion": "1755298633061887012",
+      "uid": "a2fff114-a66a-4339-9221-7098c6e4dc3b"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "rd-webhooks.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "rd-webhooks-app",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "rd-webhooks.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.k8s.io/v1",
+    "kind": "Ingress",
+    "metadata": {
+      "annotations": {
+        "konghq.com/https-redirect-status-code": "301",
+        "konghq.com/strip-path": "false",
+        "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"konghq.com/https-redirect-status-code\":\"301\",\"konghq.com/strip-path\":\"false\"},\"name\":\"kafka-dashboard-kong\",\"namespace\":\"kafka\"},\"spec\":{\"ingressClassName\":\"kong\",\"rules\":[{\"host\":\"kafka-ui.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kafka-dashboard\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}},{\"host\":\"admin-kafka-ui.staging.tallos.com.br\",\"http\":{\"paths\":[{\"backend\":{\"service\":{\"name\":\"kafka-dashboard-admin\",\"port\":{\"number\":80}}},\"path\":\"/\",\"pathType\":\"Prefix\"}]}}],\"tls\":[{\"hosts\":[\"kafka-ui.staging.tallos.com.br\",\"admin-kafka-ui.staging.tallos.com.br\"],\"secretName\":\"app-api-tallos-com-br\"}]}}\n"
+      },
+      "creationTimestamp": "2025-09-12T17:22:48Z",
+      "generation": 1,
+      "name": "kafka-dashboard-kong",
+      "namespace": "kafka",
+      "resourceVersion": "1757697769399327013",
+      "uid": "a5610be3-6c51-4544-84e4-b5c1fb5d0587"
+    },
+    "spec": {
+      "ingressClassName": "kong",
+      "rules": [
+        {
+          "host": "kafka-ui.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kafka-dashboard",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        },
+        {
+          "host": "admin-kafka-ui.staging.tallos.com.br",
+          "http": {
+            "paths": [
+              {
+                "backend": {
+                  "service": {
+                    "name": "kafka-dashboard-admin",
+                    "port": {
+                      "number": 80
+                    }
+                  }
+                },
+                "path": "/",
+                "pathType": "Prefix"
+              }
+            ]
+          }
+        }
+      ],
+      "tls": [
+        {
+          "hosts": [
+            "kafka-ui.staging.tallos.com.br",
+            "admin-kafka-ui.staging.tallos.com.br"
+          ],
+          "secretName": "app-api-tallos-com-br"
+        }
+      ]
+    },
+    "status": {
+      "loadBalancer": {
+        "ingress": [
+          {
+            "ip": "34.30.89.82"
+          }
+        ]
+      }
+    }
+  }
+]
